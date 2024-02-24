@@ -1,6 +1,6 @@
 import { authMiddleware } from "@clerk/nextjs";
 
-export default authMiddleware({});
+export default authMiddleware({ publicRoutes: ["/test"] });
 
 export const config = {
     // Protects all routes, including api/trpc.
