@@ -4,6 +4,7 @@ import axios from "axios";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
 import { useRouter } from "next/navigation";
+import toast from "react-hot-toast";
 
 import {
     Form,
@@ -18,7 +19,6 @@ import {
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import Link from "next/link";
-import { Router } from "lucide-react";
 
 const formSchema = z.object({
     title: z.string().min(1, {
@@ -43,7 +43,7 @@ const CreatePage = () => {
             const response = await axios.post("/api/course", values);
             router.push(`/teacher/courses/${response.data.id}`);
         } catch {
-            console.log("Something went wrong");
+            toast.error("Something went wrong");
         }
     };
 
