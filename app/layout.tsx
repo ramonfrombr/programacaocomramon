@@ -20,9 +20,10 @@ export default function RootLayout({
     return (
         <ClerkProvider localization={ptBR}>
             <html lang="en">
-                <body className={inter.className}>{children}</body>
-                <ToastProvider />
-                {children}
+                <body className={inter.className}>
+                    <ToastProvider />
+                    {children}
+                </body>
             </html>
         </ClerkProvider>
     );
