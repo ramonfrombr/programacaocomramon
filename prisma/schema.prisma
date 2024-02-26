@@ -31,6 +31,7 @@ model Course {
     updatedAt DateTime @updatedAt
 
     @@index([categoryId])
+    @@map("courses")
 }
 
 model Attachment {
@@ -45,10 +46,13 @@ model Attachment {
     updatedAt DateTime @updatedAt
 
     @@index([courseId])
+    @@map("attachments")
 }
 
 model Category {
     id String @id @default(auto()) @map("_id") @db.ObjectId
     name String @unique
     courses Course[]
+
+    @@map("categories")
 }
