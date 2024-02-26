@@ -1,5 +1,5 @@
-const CourseIdPage = () => {
-    return <div>CourseIdPage!</div>;
+const CourseIdPage = ({ params }: { params: { courseId: string } }) => {
+    return <div>Course ID: {params.courseId}</div>;
 };
 
 export default CourseIdPage;
