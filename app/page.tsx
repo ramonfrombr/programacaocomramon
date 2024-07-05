@@ -21,7 +21,7 @@ const VideoCard = ({ video }: { video: { id: string; title: string } }) => {
                     style={{ width: "100%", height: "auto" }} // optional
                 />
 
-                <h2 className="text-xl font-semibold text-gray-700">
+                <h2 className="text-xl font-semibold text-gray-600">
                     {video.title}
                 </h2>
             </a>
