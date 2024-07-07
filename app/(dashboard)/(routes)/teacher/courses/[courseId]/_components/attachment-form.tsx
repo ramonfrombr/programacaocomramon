@@ -2,7 +2,7 @@
 import * as z from "zod";
 import axios from "axios";
 import { Button } from "@/components/ui/button";
-import { File, ImageIcon, Pencil, PlusCircle } from "lucide-react";
+import { File, ImageIcon, Loader2, Pencil, PlusCircle, X } from "lucide-react";
 import { useState } from "react";
 import toast from "react-hot-toast";
 import { useRouter } from "next/navigation";
@@ -25,6 +25,7 @@ export const AttachmentForm = ({
 }: AttachmentFormProps) => {
     const router = useRouter();
     const [isEditing, setIsEditing] = useState(false);
+    const [deletingId, setDeletingId] = useState<string | null>(null);
 
     const toggleEdit = () => setIsEditing((current) => !current);
 
@@ -36,6 +37,19 @@ export const AttachmentForm = ({
             router.refresh();
         } catch {
             toast.error("Something went wrong.");
+        }
+    };
+
+    const onDelete = async (id: string) => {
+        try {
+            setDeletingId(id);
+            await axios.delete(`/api/courses/${courseId}/attachments/${id}`);
+            toast.success("Attachment deleted");
+            router.refresh();
+        } catch {
+            toast.error("Something went wrong");
+        } finally {
+            setDeletingId(null);
         }
     };
 
@@ -74,6 +88,23 @@ export const AttachmentForm = ({
                                     <p className="text-xs line-clamp-1">
                                         {attachment.name}
                                     </p>
+
+                                    {deletingId === attachment.id && (
+                                        <div>
+                                            <Loader2 className="h-4 w-4 animate-spin" />
+                                        </div>
+                                    )}
+
+                                    {deletingId !== attachment.id && (
+                                        <button
+                                            onClick={() =>
+                                                onDelete(attachment.id)
+                                            }
+                                            className="ml-auto hover:opacity-75 transition"
+                                        >
+                                            <X className="h-4 w-4" />
+                                        </button>
+                                    )}
                                 </div>
                             ))}
                         </div>
