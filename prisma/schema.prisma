@@ -79,6 +79,7 @@ model Chapter {
   updatedAt DateTime @updatedAt
 
   @@index([courseId])
+  @@map("chapters")
 }
 
 model MuxData {
@@ -88,6 +89,8 @@ model MuxData {
 
   chapterId String  @unique @db.ObjectId
   chapter   Chapter @relation(fields: [chapterId], references: [id], onDelete: Cascade)
+
+  @@map("mux_data")
 }
 
 model UserProgress {
@@ -101,6 +104,8 @@ model UserProgress {
 
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
+
+  @@map("users_progress")
 }
 
 model Purchase {
@@ -111,6 +116,8 @@ model Purchase {
 
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt()
+
+  @@map("purchases")
 }
 
 model StripeCustomer {
@@ -119,4 +126,6 @@ model StripeCustomer {
   stripeCustomerId String   @unique
   createdAt        DateTime @default(now())
   updatedAt        DateTime @updatedAt
+
+  @@map("stripe_customers")
 }
