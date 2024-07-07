@@ -42,3 +42,8 @@ Run prisma studio
 
 Format prisma schema
 `prisma format`
+
+Add new models to DB util
+`npx prisma generate`
+
+`npx prisma db push`
