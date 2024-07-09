@@ -37,7 +37,7 @@ export const Actions = ({ disabled, courseId, isPublished }: ActionsProps) => {
     } catch {
       toast.error("Something went wrong");
     } finally {
-      setIsLoading(true);
+      setIsLoading(false);
     }
   };
 
