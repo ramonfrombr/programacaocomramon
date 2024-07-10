@@ -47,7 +47,7 @@ export const VideoPlayer = ({
       {!isLocked && (
         <MuxPlayer
           title={title}
-          className={cn(!isReady && "hidden")}
+          className={cn("w-full", !isReady && "hidden")}
           onCanPlay={() => setIsReady(true)}
           onEnded={() => {}}
           autoPlay
