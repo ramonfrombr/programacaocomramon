@@ -49,3 +49,7 @@ Add new models to DB util
 `npx prisma db push`
 
 `npx prisma database reset`
+
+Run local stripe server
+
+`stripe listen --forward-to localhost:3000/api/webhook`
