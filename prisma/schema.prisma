@@ -107,6 +107,7 @@ model UserProgress {
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
 
+  @@unique([userId, chapterId])
   @@map("users_progress")
 }
 
@@ -119,6 +120,7 @@ model Purchase {
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt()
 
+  @@unique([userId, courseId])
   @@map("purchases")
 }
 
