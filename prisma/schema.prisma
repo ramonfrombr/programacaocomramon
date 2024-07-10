@@ -6,6 +6,7 @@
 
 generator client {
   provider = "prisma-client-js"
+  previewFeatures = ["fullTextSearch", "fullTextIndex"]
 }
 
 datasource db {
@@ -14,45 +15,121 @@ datasource db {
 }
 
 model Course {
-    id String @id @default(auto()) @map("_id") @db.ObjectId
-    userId String
-    title    String
-    description String?
-    imageUrl String?
-    price Float?
-    isPublished Boolean @default(false)
+  id          String  @id @default(auto()) @map("_id") @db.ObjectId
+  userId      String
+  title       String
+  description String?
+  imageUrl    String?
+  price       Float?
+  isPublished Boolean @default(false)
 
-    categoryId String? @db.ObjectId
-    category Category? @relation(fields: [categoryId], references: [id])
+  categoryId String?   @db.ObjectId
+  category   Category? @relation(fields: [categoryId], references: [id])
 
-    attachments Attachment[]
+  chapters    Chapter[]
+  attachments Attachment[]
+  purchases   Purchase[]
 
-    createdAt DateTime @default(now())
-    updatedAt DateTime @updatedAt
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
 
-    @@index([categoryId])
-    @@map("courses")
+  @@index([categoryId])
+  @@fulltext([title])
+  @@map("courses")
 }
 
 model Attachment {
-    id String @id @default(auto()) @map("_id") @db.ObjectId
-    name String
-    url String
+  id   String @id @default(auto()) @map("_id") @db.ObjectId
+  name String
+  url  String
 
-    courseId String @db.ObjectId
-    course Course @relation(fields: [courseId], references: [id], onDelete: Cascade)
+  courseId String @db.ObjectId
+  course   Course @relation(fields: [courseId], references: [id], onDelete: Cascade)
 
-    createdAt DateTime @default(now())
-    updatedAt DateTime @updatedAt
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
 
-    @@index([courseId])
-    @@map("attachments")
+  @@index([courseId])
+  @@map("attachments")
 }
 
 model Category {
-    id String @id @default(auto()) @map("_id") @db.ObjectId
-    name String @unique
-    courses Course[]
+  id      String   @id @default(auto()) @map("_id") @db.ObjectId
+  name    String   @unique
+  courses Course[]
 
-    @@map("categories")
+  @@map("categories")
+}
+
+model Chapter {
+  id          String  @id @default(auto()) @map("_id") @db.ObjectId
+  title       String
+  description String? @db.String
+  videoUrl    String? @db.String
+  position    Int
+  isPublished Boolean @default(false)
+  isFree      Boolean @default(false)
+
+  muxData MuxData?
+
+  courseId String @db.ObjectId
+  course   Course @relation(fields: [courseId], references: [id], onDelete: Cascade)
+
+  userProgress UserProgress[]
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@index([courseId])
+  @@map("chapters")
+}
+
+model MuxData {
+  id         String  @id @default(auto()) @map("_id") @db.ObjectId
+  assetId    String
+  playbackId String?
+
+  chapterId String  @unique @db.ObjectId
+  chapter   Chapter @relation(fields: [chapterId], references: [id], onDelete: Cascade)
+
+  @@map("mux_data")
+}
+
+model UserProgress {
+  id     String @id @default(auto()) @map("_id") @db.ObjectId
+  userId String @unique
+
+  chapterId String  @unique @db.ObjectId
+  chapter   Chapter @relation(fields: [chapterId], references: [id], onDelete: Cascade)
+
+  isCompleted Boolean @default(false)
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@unique([userId, chapterId])
+  @@map("users_progress")
+}
+
+model Purchase {
+  id       String @id @default(auto()) @map("_id") @db.ObjectId
+  userId   String
+  courseId String @unique @db.ObjectId
+  course   Course @relation(fields: [courseId], references: [id], onDelete: Cascade)
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt()
+
+  @@unique([userId, courseId])
+  @@map("purchases")
+}
+
+model StripeCustomer {
+  id               String   @id @default(auto()) @map("_id") @db.ObjectId
+  userId           String   @unique
+  stripeCustomerId String   @unique
+  createdAt        DateTime @default(now())
+  updatedAt        DateTime @updatedAt
+
+  @@map("stripe_customers")
 }
