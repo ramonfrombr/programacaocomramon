@@ -1,4 +1,5 @@
 import { Progress } from "@/components/ui/progress";
+import { cn } from "@/lib/utils";
 
 interface CourseProgressProps {
   value: number;
@@ -13,7 +14,7 @@ const colorByVariant = {
 
 const sizeByVariant = {
   default: "text-sm",
-  success: "text-xs",
+  sm: "text-xs",
 };
 
 export const CourseProgress = ({
@@ -24,6 +25,16 @@ export const CourseProgress = ({
   return (
     <div>
       <Progress variant={variant} className="h-2" value={value} />
+
+      <p
+        className={cn(
+          "font-medium mt-2 text-sky-700",
+          colorByVariant[variant || "default"],
+          sizeByVariant[size || "default"]
+        )}
+      >
+        {Math.round(value)}% Complete
+      </p>
     </div>
   );
 };
