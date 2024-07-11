@@ -9,13 +9,7 @@ const luckyiest_guy = Luckiest_Guy({
 export const Logo = () => {
   return (
     <div className="flex items-center">
-      <Image
-        height={100}
-        width={170}
-        alt="logo"
-        src="/logo-programacao-com-ramon.jpg"
-        className=""
-      />
+      <Image height={100} width={200} alt="logo" src="/logo-svg.svg" />
     </div>
   );
 };

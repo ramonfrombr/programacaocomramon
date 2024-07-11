@@ -5,7 +5,7 @@
 // Try Prisma Accelerate: https://pris.ly/cli/accelerate-init
 
 generator client {
-  provider = "prisma-client-js"
+  provider        = "prisma-client-js"
   previewFeatures = ["fullTextSearch", "fullTextIndex"]
 }
 
@@ -97,9 +97,9 @@ model MuxData {
 
 model UserProgress {
   id     String @id @default(auto()) @map("_id") @db.ObjectId
-  userId String @unique
+  userId String
 
-  chapterId String  @unique @db.ObjectId
+  chapterId String @db.ObjectId
   chapter   Chapter @relation(fields: [chapterId], references: [id], onDelete: Cascade)
 
   isCompleted Boolean @default(false)
@@ -114,7 +114,7 @@ model UserProgress {
 model Purchase {
   id       String @id @default(auto()) @map("_id") @db.ObjectId
   userId   String
-  courseId String @unique @db.ObjectId
+  courseId String @db.ObjectId
   course   Course @relation(fields: [courseId], references: [id], onDelete: Cascade)
 
   createdAt DateTime @default(now())
