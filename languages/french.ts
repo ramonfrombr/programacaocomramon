@@ -170,4 +170,8 @@ export const frenchLanguage: ILanguage = {
     chapterUnpublished: "Chapitre dépublié",
     chapterDeleted: "Chapitre supprimé",
   },
+  teacherAnalytics: {
+    totalRevenue: "Revenu total",
+    totalSales: "Ventes totales",
+  },
 };

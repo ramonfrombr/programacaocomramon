@@ -171,4 +171,8 @@ export const portugueseLanguage: ILanguage = {
     chapterUnpublished: "Capítulo não publicado",
     chapterDeleted: "Capítulo apagado",
   },
+  teacherAnalytics: {
+    totalRevenue: "Receita Total",
+    totalSales: "Vendas Totais",
+  },
 };

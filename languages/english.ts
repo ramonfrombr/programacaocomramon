@@ -170,4 +170,8 @@ export const englishLanguage: ILanguage = {
     chapterUnpublished: "Chapter unpublished",
     chapterDeleted: "Chapter deleted",
   },
+  teacherAnalytics: {
+    totalRevenue: "Total Revenue",
+    totalSales: "Total Sales",
+  },
 };

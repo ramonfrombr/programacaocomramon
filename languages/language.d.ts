@@ -7,6 +7,7 @@ type ILanguage = {
   teacherCreate: ILanguageTeacherCreate;
   teacherCourseSetup: ILanguageTeacherCourseSetup;
   teacherCourseChapterSetup: ILanguageTeacherCourseChapterSetup;
+  teacherAnalytics: ILanguageTeacherAnalytics;
 };
 
 type ILanguageNavbar = {
@@ -199,4 +200,9 @@ type ILanguageTeacherCourseChapterSetupVideo = {
   uploadThisChaptersVideo: string;
   editVideo: string;
   videosCanTakeAFewMinutesToProcess: string;
+};
+
+type ILanguageTeacherAnalytics = {
+  totalRevenue: string;
+  totalSales: string;
 };
