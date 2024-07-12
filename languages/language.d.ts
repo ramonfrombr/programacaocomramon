@@ -35,6 +35,15 @@ type ILanguageDashboard = {
 type ILanguageTeacher = {
   filterCourses: string;
   newCourse: string;
+  noResults: string;
+  title: string;
+  price: string;
+  published: string;
+  edit: string;
+  openMenu: string;
+  draft: string;
+  previous: string;
+  next: string;
 };
 
 type ILanguageTeacherCreate = {

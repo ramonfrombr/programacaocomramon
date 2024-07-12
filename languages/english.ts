@@ -24,6 +24,15 @@ export const englishLanguage: ILanguage = {
   teacher: {
     filterCourses: "Filter courses...",
     newCourse: "New Course",
+    noResults: "No results.",
+    title: "Title",
+    price: "Price",
+    published: "Published",
+    draft: "Draft",
+    edit: "Edit",
+    openMenu: "Open menu",
+    previous: "Previous",
+    next: "Next",
   },
   teacherCreate: {
     nameYourCourse: "Name Your Course",

@@ -24,6 +24,15 @@ export const spanishLanguage: ILanguage = {
   teacher: {
     filterCourses: "",
     newCourse: "",
+    noResults: "",
+    title: "",
+    price: "",
+    published: "",
+    draft: "",
+    edit: "",
+    openMenu: "",
+    previous: "",
+    next: "",
   },
   teacherCreate: {
     nameYourCourse: "",
