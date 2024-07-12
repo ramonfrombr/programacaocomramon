@@ -35,7 +35,7 @@ The easiest way to deploy your Next.js app is to use the [Vercel Platform](https
 
 Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
 
-## Commands
+## Useful Commands
 
 Run prisma studio
 `npx prisma studio`
@@ -46,10 +46,35 @@ Format prisma schema
 Add new models to DB util
 `npx prisma generate`
 
+Push changes
 `npx prisma db push`
 
+Reset database
 `npx prisma database reset`
 
 Run local stripe server
-
 `stripe listen --forward-to localhost:3000/api/webhook`
+
+## Environment Variables
+
+Create a .env file with the information bellow.
+
+```
+NODE_ENV=development
+NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY=
+CLERK_SECRET_KEY=
+DATABASE_URL=
+UPLOADTHING_SECRET=
+UPLOADTHING_APP_ID=
+NEXT_PUBLIC_CLERK_SIGN_IN_URL=/sign-in
+NEXT_PUBLIC_CLERK_SIGN_UP_URL=/sign-up
+NEXT_PUBLIC_CLERK_AFTER_SIGN_IN_URL=/
+NEXT_PUBLIC_CLERK_AFTER_SIGN_UP_URL=/
+MUX_TOKEN_ID=
+MUX_TOKEN_SECRET=
+STRIPE_API_KEY_DEV=
+STRIPE_API_KEY_PROD=
+STRIPE_WEBHOOK_SECRET=
+NEXT_PUBLIC_APP_URL=http://localhost:3000
+NEXT_PUBLIC_TEACHER_ID=
+```
