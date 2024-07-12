@@ -57,8 +57,10 @@ export const englishLanguage: ILanguage = {
     coursePublished: "Course published",
     courseUnpublished: "Couse unpublished",
     courseDeleted: "Course deleted",
+    courseUpdated: "Course updated",
     areYouSure: "Are you sure?",
     thisActionsCannotBeUndone: "This action cannot be undone.",
+    save: "Save",
     cancel: "Cancel",
     continue: "Continue",
     somethingWentWrong: "Something went wrong",
@@ -66,8 +68,6 @@ export const englishLanguage: ILanguage = {
     courseTitleField: {
       courseTitle: "Course Title",
       editTitle: "Edit title",
-      cancel: "Cancel",
-      save: "Save",
       courseTitleInputPlaceholder: "e.g. 'Advanced Web Development'",
     },
     courseDescriptionField: {
@@ -79,6 +79,7 @@ export const englishLanguage: ILanguage = {
     courseImageField: {
       courseImage: "Course Image",
       addAnImage: "Add an image",
+      editImage: "Edit image",
       aspectRatioRecommended:
         "An image with a 16:9 aspect ratio is recommended",
     },
@@ -86,8 +87,9 @@ export const englishLanguage: ILanguage = {
       courseCategory: "Course Category",
       editCategory: "Edit category",
       noCategory: "No category",
-      selectOption: "Select option",
-      searchFramework: "Search tool...",
+      selectOption: "Select option...",
+      searchCategory: "Search category...",
+      noOptionFound: "No option found.",
     },
     courseChapters: "Course Chapters",
     courseChaptersField: {

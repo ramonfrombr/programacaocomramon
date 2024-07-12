@@ -55,8 +55,10 @@ export const frenchLanguage: ILanguage = {
     coursePublished: "",
     courseUnpublished: "",
     courseDeleted: "",
+    courseUpdated: "",
     areYouSure: "",
     thisActionsCannotBeUndone: "",
+    save: "",
     cancel: "",
     continue: "",
     somethingWentWrong: "",
@@ -64,8 +66,6 @@ export const frenchLanguage: ILanguage = {
     courseTitleField: {
       courseTitle: "",
       editTitle: "",
-      cancel: "",
-      save: "",
       courseTitleInputPlaceholder: "",
     },
     courseDescriptionField: {
@@ -77,6 +77,7 @@ export const frenchLanguage: ILanguage = {
     courseImageField: {
       courseImage: "",
       addAnImage: "",
+      editImage: "",
       aspectRatioRecommended: "",
     },
     courseCategoryField: {
@@ -84,7 +85,8 @@ export const frenchLanguage: ILanguage = {
       editCategory: "",
       noCategory: "",
       selectOption: "",
-      searchFramework: "",
+      searchCategory: "",
+      noOptionFound: "",
     },
     courseChapters: "",
     courseChaptersField: {

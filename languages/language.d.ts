@@ -68,8 +68,10 @@ type ILanguageTeacherCourseSetup = {
   coursePublished: string;
   courseUnpublished: string;
   courseDeleted: string;
+  courseUpdated: string;
   areYouSure: string;
   thisActionsCannotBeUndone: string;
+  save: string;
   cancel: string;
   continue: string;
   somethingWentWrong: string;
@@ -89,8 +91,6 @@ type ILanguageTeacherCourseSetup = {
 type ILanguageTeacherCourseSetupTitle = {
   courseTitle: string;
   editTitle: string;
-  cancel: string;
-  save: string;
   courseTitleInputPlaceholder: string;
 };
 
@@ -104,6 +104,7 @@ type ILanguageTeacherCourseSetupDescription = {
 type ILanguageTeacherCourseSetupImage = {
   courseImage: string;
   addAnImage: string;
+  editImage: string;
   aspectRatioRecommended: string;
 };
 
@@ -112,7 +113,8 @@ type ILanguageTeacherCourseSetupCategory = {
   editCategory: string;
   noCategory: string;
   selectOption: string;
-  searchFramework: string;
+  searchCategory: string;
+  noOptionFound: string;
 };
 
 type ILanguageTeacherCourseSetupChapters = {

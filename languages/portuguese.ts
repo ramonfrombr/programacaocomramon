@@ -57,8 +57,10 @@ export const portugueseLanguage: ILanguage = {
     coursePublished: "Curso publicado",
     courseUnpublished: "Curso não publicado",
     courseDeleted: "Curso apagado",
+    courseUpdated: "Curso atualizado",
     areYouSure: "Tem certeza?",
     thisActionsCannotBeUndone: "Esta ação não pode ser desfeita",
+    save: "Salvar",
     cancel: "Cancelar",
     continue: "Continuar",
     somethingWentWrong: "Algo deu errado",
@@ -66,8 +68,6 @@ export const portugueseLanguage: ILanguage = {
     courseTitleField: {
       courseTitle: "Título do Curso",
       editTitle: "Editar título",
-      cancel: "Cancelar",
-      save: "Salvar",
       courseTitleInputPlaceholder: "ex: 'Desenvolvimento Web Avançado'",
     },
     courseDescriptionField: {
@@ -79,14 +79,16 @@ export const portugueseLanguage: ILanguage = {
     courseImageField: {
       courseImage: "Imagem do Curso",
       addAnImage: "Adicionar uma imagem",
+      editImage: "Editar imagem",
       aspectRatioRecommended: "É recomendado uma imagem com dimensões 16:9",
     },
     courseCategoryField: {
       courseCategory: "Categoria do Curso",
       editCategory: "Editar categoria",
       noCategory: "Sem categoria",
-      selectOption: "Selecionar opção",
-      searchFramework: "Pesquisar ferramenta...",
+      selectOption: "Selecione uma opção...",
+      searchCategory: "Pesquisar categoria...",
+      noOptionFound: "Nenhuma opção encontrada.",
     },
     courseChapters: "Capítulos do Curso",
     courseChaptersField: {
