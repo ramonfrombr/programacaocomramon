@@ -1,6 +1,7 @@
 "use client";
 
 import { Button } from "@/components/ui/button";
+import { useLanguageStore } from "@/hooks/use-language-store";
 import { formatPrice } from "@/lib/format";
 import axios from "axios";
 import { useState } from "react";
@@ -15,6 +16,8 @@ export const CourseEnrollButton = ({
   price,
   courseId,
 }: CourseEnrollButtonProps) => {
+  const language = useLanguageStore().videoPlayer;
+
   const [isLoading, setIsLoading] = useState(false);
 
   const onClick = async () => {
@@ -25,7 +28,7 @@ export const CourseEnrollButton = ({
 
       window.location.assign(response.data.url);
     } catch (error) {
-      toast.error("Something went wrong");
+      toast.error(language.somethingWentWrong);
     } finally {
       setIsLoading(false);
     }
@@ -37,7 +40,7 @@ export const CourseEnrollButton = ({
       size="sm"
       className="w-full md:w-auto"
     >
-      Enroll for {formatPrice(price)}
+      {language.enrollFor} {formatPrice(price)}
     </Button>
   );
 };

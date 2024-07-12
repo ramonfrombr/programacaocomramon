@@ -1,3 +1,4 @@
+"use client";
 import { Progress } from "@/components/ui/progress";
 import { useLanguageStore } from "@/hooks/use-language-store";
 import { cn } from "@/lib/utils";

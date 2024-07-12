@@ -176,4 +176,14 @@ export const spanishLanguage: ILanguage = {
     totalRevenue: "Ingresos totales",
     totalSales: "Ventas totales",
   },
+  videoPlayer: {
+    youAlreadyCompletedThisChapter: "Ya has completado este capítulo.",
+    youNeedToPurchaseThisCourse: "",
+    markAsNotCompleted: "Marcar como no completado",
+    markAsCompleted: "Marcar como completado",
+    progressUpdated: "",
+    somethingWentWrong: "",
+    thisChapterIsLocked: "",
+    enrollFor: "",
+  },
 };

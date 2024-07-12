@@ -174,4 +174,15 @@ export const englishLanguage: ILanguage = {
     totalRevenue: "Total Revenue",
     totalSales: "Total Sales",
   },
+  videoPlayer: {
+    youAlreadyCompletedThisChapter: "You already completed this chapter.",
+    youNeedToPurchaseThisCourse:
+      "You need to purchase this course to watch this chapter.",
+    markAsNotCompleted: "Mark as not completed",
+    markAsCompleted: "Mark as completed",
+    progressUpdated: "Progress updated",
+    somethingWentWrong: "Something went wrong",
+    thisChapterIsLocked: "This chapter is locked",
+    enrollFor: "Enroll for",
+  },
 };

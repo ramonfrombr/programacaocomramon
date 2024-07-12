@@ -175,4 +175,15 @@ export const portugueseLanguage: ILanguage = {
     totalRevenue: "Receita Total",
     totalSales: "Vendas Totais",
   },
+  videoPlayer: {
+    youAlreadyCompletedThisChapter: "Você já completou este capítulo.",
+    youNeedToPurchaseThisCourse:
+      "Você precisa comprar este curso para assistir este capítulo.",
+    markAsNotCompleted: "Marcar como não completado",
+    markAsCompleted: "Marcar como completado",
+    progressUpdated: "Progresso atualizado",
+    somethingWentWrong: "Algo deu errado",
+    thisChapterIsLocked: "Este capítulo está bloqueado",
+    enrollFor: "Compre o curso por",
+  },
 };

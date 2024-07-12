@@ -8,6 +8,7 @@ type ILanguage = {
   teacherCourseSetup: ILanguageTeacherCourseSetup;
   teacherCourseChapterSetup: ILanguageTeacherCourseChapterSetup;
   teacherAnalytics: ILanguageTeacherAnalytics;
+  videoPlayer: ILanguageVideoPlayer;
 };
 
 type ILanguageNavbar = {
@@ -205,4 +206,15 @@ type ILanguageTeacherCourseChapterSetupVideo = {
 type ILanguageTeacherAnalytics = {
   totalRevenue: string;
   totalSales: string;
+};
+
+type ILanguageVideoPlayer = {
+  youAlreadyCompletedThisChapter: string;
+  youNeedToPurchaseThisCourse: string;
+  markAsCompleted: string;
+  markAsNotCompleted: string;
+  progressUpdated: string;
+  somethingWentWrong: string;
+  thisChapterIsLocked: string;
+  enrollFor: string;
 };
