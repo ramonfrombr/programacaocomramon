@@ -3,6 +3,7 @@
 import { ConfirmModal } from "@/components/modals/confirm-modal";
 import { Button } from "@/components/ui/button";
 import { useConfettiStore } from "@/hooks/use-confetti-store";
+import { useLanguageStore } from "@/hooks/use-language-store";
 import axios from "axios";
 import { Trash } from "lucide-react";
 import { useRouter } from "next/navigation";
@@ -16,6 +17,8 @@ interface ActionsProps {
 }
 
 export const Actions = ({ disabled, courseId, isPublished }: ActionsProps) => {
+  const language = useLanguageStore().teacherCourseSetup;
+
   const router = useRouter();
   const [isLoading, setIsLoading] = useState(false);
   const confetti = useConfettiStore();
@@ -26,16 +29,16 @@ export const Actions = ({ disabled, courseId, isPublished }: ActionsProps) => {
 
       if (isPublished) {
         await axios.patch(`/api/courses/${courseId}//unpublish`);
-        toast.success("Course unpublished");
+        toast.success(language.courseUnpublished);
       } else {
         await axios.patch(`/api/courses/${courseId}/publish`);
-        toast.success("Course published");
+        toast.success(language.coursePublished);
         confetti.onOpen();
       }
 
       router.refresh();
     } catch {
-      toast.error("Something went wrong");
+      toast.error(language.somethingWentWrong);
     } finally {
       setIsLoading(false);
     }
@@ -45,11 +48,11 @@ export const Actions = ({ disabled, courseId, isPublished }: ActionsProps) => {
     try {
       setIsLoading(true);
       await axios.delete(`/api/courses/${courseId}`);
-      toast.success("Course deleted");
+      toast.success(language.courseDeleted);
       router.push(`/teacher/courses`);
       router.refresh();
     } catch {
-      toast.error("Something went wrong");
+      toast.error(language.somethingWentWrong);
     } finally {
       setIsLoading(false);
     }
@@ -62,7 +65,7 @@ export const Actions = ({ disabled, courseId, isPublished }: ActionsProps) => {
         variant="outline"
         size="sm"
       >
-        {isPublished ? "Unpublish" : "Publish"}
+        {isPublished ? language.unpublish : language.publish}
       </Button>
 
       <ConfirmModal onConfirm={onDelete}>

@@ -64,6 +64,15 @@ type ILanguageTeacherCourseSetup = {
   courseSetup: string;
   completeAllFields: string;
   publish: string;
+  unpublish: string;
+  coursePublished: string;
+  courseUnpublished: string;
+  courseDeleted: string;
+  areYouSure: string;
+  thisActionsCannotBeUndone: string;
+  cancel: string;
+  continue: string;
+  somethingWentWrong: string;
   customizeYourCourse: string;
   courseTitleField: ILanguageTeacherCourseSetupTitle;
   courseDescriptionField: ILanguageTeacherCourseSetupDescription;
