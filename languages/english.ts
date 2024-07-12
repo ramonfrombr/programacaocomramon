@@ -63,6 +63,7 @@ export const englishLanguage: ILanguage = {
     save: "Save",
     cancel: "Cancel",
     continue: "Continue",
+    create: "Create",
     somethingWentWrong: "Something went wrong",
     customizeYourCourse: "Customize your course",
     courseTitleField: {
@@ -99,6 +100,11 @@ export const englishLanguage: ILanguage = {
       create: "Create",
       noChapters: "No chapters",
       courseChapterInputDescription: "Drag and drop to reorder chapters",
+      chapterCreated: "Chapter created",
+      chaptersReordered: "Chapters reordered",
+      published: "Published",
+      draft: "Draft",
+      free: "Free",
     },
     sellYourCourse: "Sell your course",
     coursePriceField: {
@@ -114,6 +120,7 @@ export const englishLanguage: ILanguage = {
       noAttachments: "No attachments yet",
       coursePriceInputDescription:
         "Add anything that your students might need to complete the course",
+      attachmentDeleted: "",
     },
   },
 };

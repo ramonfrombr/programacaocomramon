@@ -61,6 +61,7 @@ export const frenchLanguage: ILanguage = {
     save: "",
     cancel: "",
     continue: "",
+    create: "",
     somethingWentWrong: "",
     customizeYourCourse: "",
     courseTitleField: {
@@ -96,6 +97,11 @@ export const frenchLanguage: ILanguage = {
       create: "",
       noChapters: "",
       courseChapterInputDescription: "",
+      chapterCreated: "",
+      chaptersReordered: "",
+      published: "",
+      draft: "",
+      free: "",
     },
     sellYourCourse: "",
     coursePriceField: {
@@ -110,6 +116,7 @@ export const frenchLanguage: ILanguage = {
       addAFile: "",
       noAttachments: "",
       coursePriceInputDescription: "",
+      attachmentDeleted: "",
     },
   },
 };

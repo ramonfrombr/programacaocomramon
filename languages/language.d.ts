@@ -74,6 +74,7 @@ type ILanguageTeacherCourseSetup = {
   save: string;
   cancel: string;
   continue: string;
+  create: string;
   somethingWentWrong: string;
   customizeYourCourse: string;
   courseTitleField: ILanguageTeacherCourseSetupTitle;
@@ -124,6 +125,11 @@ type ILanguageTeacherCourseSetupChapters = {
   create: string;
   noChapters: string;
   courseChapterInputDescription: string;
+  chapterCreated: string;
+  chaptersReordered: string;
+  published: string;
+  draft: string;
+  free: string;
 };
 
 type ILanguageTeacherCourseSetupPrice = {
@@ -137,5 +143,6 @@ type ILanguageTeacherCourseSetupAttachments = {
   courseAttachments: string;
   addAFile: string;
   noAttachments: string;
-  coursePriceInputDescription;
+  coursePriceInputDescription: string;
+  attachmentDeleted: string;
 };
