@@ -123,4 +123,51 @@ export const englishLanguage: ILanguage = {
       attachmentDeleted: "",
     },
   },
+  teacherCourseChapterSetup: {
+    thisChapterIsUnpublished:
+      "This chapter is unpublished. It will not be visible in the course.",
+    backToCourse: "Back to course",
+    chapterCreation: "Chapter Creation",
+    completeAllFields: "Complete all fields",
+    publish: "Publish",
+    unpublish: "Unpublish",
+    areYouSure: "Are you sure?",
+    thisActionsCannotBeUndone: "This action cannot be undone",
+    cancel: "Cancel",
+    continue: "Continue",
+    customizeYourChapter: "Customize your chapter",
+    chapterTitleField: {
+      chapterTitle: "Chapter title",
+      editTitle: "Edit title",
+      chapterTitleInputPlaceholder: "e.g. 'Introduction to the course'",
+    },
+    chapterDescriptionField: {
+      chapterDescription: "Chapter description",
+      editDescription: "Edit description",
+      noDescription: "No description",
+    },
+    accessSettings: "Access Settings",
+    chapterAccessField: {
+      chapterAccess: "Chapter access",
+      thisChapterIsNotFree: "This chapter is not free",
+      thisChapterIsFreeForPreview: "This chapter is free for preview",
+      checkThisBox:
+        "Check this box if you want to make this chapter free for preview",
+      editAccess: "Edit access",
+    },
+    addAVideo: "Add a video",
+    chapterVideoField: {
+      chapterVideo: "Chapter video",
+      uploadThisChaptersVideo: "Upload this chapter's video",
+      editVideo: "Edit video",
+      videosCanTakeAFewMinutesToProcess:
+        "Videos can take a few minutes to process. Refresh the page if video does not appear.",
+    },
+    chapterUpdated: "Chapter updated",
+    somethingWentWrong: "Something went wrong",
+    save: "Save",
+    chapterPublished: "Chapter published",
+    chapterUnpublished: "Chapter unpublished",
+    chapterDeleted: "Chapter deleted",
+  },
 };

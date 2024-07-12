@@ -104,7 +104,7 @@ export const portugueseLanguage: ILanguage = {
       chaptersReordered: "Capítulos reordenados",
       published: "Publicado",
       draft: "Rascunho",
-      free: "Grátis",
+      free: "Gratuito",
     },
     sellYourCourse: "Venda o curso",
     coursePriceField: {
@@ -122,5 +122,53 @@ export const portugueseLanguage: ILanguage = {
         "Adicione arquivos que seus alunos precisam para completar o curso",
       attachmentDeleted: "Arquivo apagado",
     },
+  },
+  teacherCourseChapterSetup: {
+    thisChapterIsUnpublished:
+      "Este capítulo não está publicado. Ele não está visível no curso.",
+    backToCourse: "Voltar para Cursos",
+    chapterCreation: "Criação de Capítulo",
+    completeAllFields: "Complete todos os campos",
+    publish: "Publicar",
+    unpublish: "Não publicar",
+    areYouSure: "Você tem certeza?",
+    thisActionsCannotBeUndone: "Esta ação não pode ser desfeita.",
+    cancel: "Cancelar",
+    continue: "Continuar",
+    customizeYourChapter: "Personalizar o capítulo",
+    chapterTitleField: {
+      chapterTitle: "Título do capítulo",
+      editTitle: "Editar capítulo",
+      chapterTitleInputPlaceholder: "ex: 'Introdução ao curso'",
+    },
+    chapterDescriptionField: {
+      chapterDescription: "Descrição do capítulo",
+      editDescription: "Editar descrição",
+      noDescription: "Sem descrição",
+    },
+    accessSettings: "Configuração de acesso",
+    chapterAccessField: {
+      chapterAccess: "Acesso ao capítulo",
+      thisChapterIsNotFree: "Este capítulo não é gratuito.",
+      thisChapterIsFreeForPreview:
+        "Este capítulo é gratuito para visualização.",
+      checkThisBox:
+        "Marque esta caixa se você quer tornar este capítulo gratuito para visualização",
+      editAccess: "Editar acesso",
+    },
+    addAVideo: "Adicionar um vídeo",
+    chapterVideoField: {
+      chapterVideo: "Vídeo do capítulo",
+      uploadThisChaptersVideo: "Carregue o vídeo deste capítulo",
+      editVideo: "Editar vídeo",
+      videosCanTakeAFewMinutesToProcess:
+        "Vídeos levam alguns minutos para processar. Atualize a página se o vídeo não aparecer.",
+    },
+    chapterUpdated: "Capítulo atualizado",
+    somethingWentWrong: "Algo deu errado",
+    save: "Salvar",
+    chapterPublished: "Capítulo publicado",
+    chapterUnpublished: "Capítulo não publicado",
+    chapterDeleted: "Capítulo apagado",
   },
 };

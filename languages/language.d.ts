@@ -6,6 +6,7 @@ type ILanguage = {
   teacher: ILanguageTeacher;
   teacherCreate: ILanguageTeacherCreate;
   teacherCourseSetup: ILanguageTeacherCourseSetup;
+  teacherCourseChapterSetup: ILanguageTeacherCourseChapterSetup;
 };
 
 type ILanguageNavbar = {
@@ -145,4 +146,57 @@ type ILanguageTeacherCourseSetupAttachments = {
   noAttachments: string;
   coursePriceInputDescription: string;
   attachmentDeleted: string;
+};
+
+type ILanguageTeacherCourseChapterSetup = {
+  thisChapterIsUnpublished: string;
+  backToCourse: string;
+  chapterCreation: string;
+  completeAllFields: string;
+  publish: string;
+  unpublish: string;
+  areYouSure: string;
+  thisActionsCannotBeUndone: string;
+  cancel: string;
+  continue: string;
+  customizeYourChapter: string;
+  chapterTitleField: ILanguageTeacherCourseChapterSetupTitle;
+  chapterDescriptionField: ILanguageTeacherCourseChapterSetupDescription;
+  accessSettings: string;
+  chapterAccessField: ILanguageTeacherCourseChapterSetupAccess;
+  addAVideo: string;
+  chapterVideoField: ILanguageTeacherCourseChapterSetupVideo;
+  chapterUpdated: string;
+  somethingWentWrong: string;
+  save: string;
+  chapterPublished: string;
+  chapterUnpublished: string;
+  chapterDeleted: string;
+};
+
+type ILanguageTeacherCourseChapterSetupTitle = {
+  chapterTitle: string;
+  editTitle: string;
+  chapterTitleInputPlaceholder: string;
+};
+
+type ILanguageTeacherCourseChapterSetupDescription = {
+  chapterDescription: string;
+  editDescription: string;
+  noDescription: string;
+};
+
+type ILanguageTeacherCourseChapterSetupAccess = {
+  chapterAccess: string;
+  thisChapterIsNotFree: string;
+  thisChapterIsFreeForPreview: string;
+  checkThisBox: string;
+  editAccess: string;
+};
+
+type ILanguageTeacherCourseChapterSetupVideo = {
+  chapterVideo: string;
+  uploadThisChaptersVideo: string;
+  editVideo: string;
+  videosCanTakeAFewMinutesToProcess: string;
 };
