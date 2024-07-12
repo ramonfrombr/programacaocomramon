@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
 import { ClerkProvider } from "@clerk/nextjs";
-import { ptBR } from "@clerk/localizations";
+import { ptBR, frFR, esES, enUS } from "@clerk/localizations";
 import { ToastProvider } from "@/components/providers/toast-provider";
 import { ConfettiProvider } from "@/components/providers/confetti-provider";
 
@@ -19,8 +19,27 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  let localization;
+
+  switch (process.env.NEXT_PUBLIC_LANGUAGE) {
+    case "portuguese":
+      localization = ptBR;
+      break;
+    case "english":
+      localization = enUS;
+      break;
+    case "spanish":
+      localization = esES;
+      break;
+    case "french":
+      localization = frFR;
+      break;
+    default:
+      localization = enUS;
+  }
+
   return (
-    <ClerkProvider localization={ptBR}>
+    <ClerkProvider localization={localization}>
       <html lang="en">
         <body className={inter.className}>
           <ConfettiProvider />

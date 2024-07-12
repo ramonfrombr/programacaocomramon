@@ -1,9 +1,11 @@
+"use client";
 import Image from "next/image";
 import Link from "next/link";
 import { IconBadge } from "@/components/icon-badge";
 import { BookOpen } from "lucide-react";
 import { formatPrice } from "@/lib/format";
 import { CourseProgress } from "@/components/course-progress";
+import { useLanguageStore } from "@/hooks/use-language-store";
 
 interface CourseCardProps {
   id: string;
@@ -24,6 +26,8 @@ export const CourseCard = ({
   progress,
   category,
 }: CourseCardProps) => {
+  const language = useLanguageStore().dashboard;
+
   return (
     <Link href={`/courses/${id}`}>
       <div className="group hover:shadow-sm transition overflow-hidden border rounded-lg p-3 h-full">
@@ -42,7 +46,7 @@ export const CourseCard = ({
               <IconBadge size="sm" icon={BookOpen} />
               <span>
                 {chaptersLength}{" "}
-                {chaptersLength === 1 ? " Chapter" : "Chapters"}
+                {chaptersLength === 1 ? language.chapter : language.chapters}
               </span>
             </div>
           </div>

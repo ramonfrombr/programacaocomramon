@@ -1,4 +1,6 @@
+"use client";
 import { Progress } from "@/components/ui/progress";
+import { useLanguageStore } from "@/hooks/use-language-store";
 import { cn } from "@/lib/utils";
 
 interface CourseProgressProps {
@@ -22,6 +24,8 @@ export const CourseProgress = ({
   variant,
   size,
 }: CourseProgressProps) => {
+  const language = useLanguageStore().dashboard;
+
   return (
     <div>
       <Progress variant={variant} className="h-2" value={value} />
@@ -33,7 +37,7 @@ export const CourseProgress = ({
           sizeByVariant[size || "default"]
         )}
       >
-        {Math.round(value)}% Complete
+        {Math.round(value)}% {language.complete}
       </p>
     </div>
   );

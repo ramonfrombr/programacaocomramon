@@ -2,6 +2,7 @@
 
 import { ConfirmModal } from "@/components/modals/confirm-modal";
 import { Button } from "@/components/ui/button";
+import { useLanguageStore } from "@/hooks/use-language-store";
 import axios from "axios";
 import { Trash } from "lucide-react";
 import { useRouter } from "next/navigation";
@@ -21,6 +22,8 @@ export const ChapterActions = ({
   chapterId,
   isPublished,
 }: ChapterActionsProps) => {
+  const language = useLanguageStore().teacherCourseChapterSetup;
+
   const router = useRouter();
   const [isLoading, setIsLoading] = useState(false);
 
@@ -32,17 +35,17 @@ export const ChapterActions = ({
         await axios.patch(
           `/api/courses/${courseId}/chapters/${chapterId}/unpublish`
         );
-        toast.success("Chapter unpublished");
+        toast.success(language.chapterUnpublished);
       } else {
         await axios.patch(
           `/api/courses/${courseId}/chapters/${chapterId}/publish`
         );
-        toast.success("Chapter published");
+        toast.success(language.chapterPublished);
       }
 
       router.refresh();
     } catch {
-      toast.error("Something went wrong");
+      toast.error(language.somethingWentWrong);
     } finally {
       setIsLoading(false);
     }
@@ -52,11 +55,11 @@ export const ChapterActions = ({
     try {
       setIsLoading(true);
       await axios.delete(`/api/courses/${courseId}/chapters/${chapterId}`);
-      toast.success("Chapter deleted");
+      toast.success(language.chapterDeleted);
       router.push(`/teacher/courses/${courseId}`);
       router.refresh();
     } catch {
-      toast.error("Something went wrong");
+      toast.error(language.somethingWentWrong);
     } finally {
       setIsLoading(false);
     }
@@ -69,7 +72,7 @@ export const ChapterActions = ({
         variant="outline"
         size="sm"
       >
-        {isPublished ? "Unpublish" : "Publish"}
+        {isPublished ? language.unpublish : language.publish}
       </Button>
 
       <ConfirmModal onConfirm={onDelete}>
