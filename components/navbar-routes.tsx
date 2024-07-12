@@ -6,6 +6,7 @@ import { LogOut } from "lucide-react";
 import Link from "next/link";
 import { SearchInput } from "./search-input";
 import { isTeacher } from "@/lib/teacher";
+import { useLanguageStore } from "@/hooks/use-language-store";
 
 export const NavbarRoutes = () => {
   const { userId } = useAuth();
@@ -13,6 +14,7 @@ export const NavbarRoutes = () => {
   const isTeacherPage = pathname?.startsWith("/teacher");
   const isCoursePage = pathname?.includes("/courses");
   const isSearchPage = pathname === "/search";
+  const language = useLanguageStore().navbar;
 
   return (
     <>
@@ -25,13 +27,13 @@ export const NavbarRoutes = () => {
         {isTeacherPage || isCoursePage ? (
           <Link href="/">
             <Button size="sm" variant="ghost">
-              <LogOut className="w-4 h-4 mr-2" /> Exit
+              <LogOut className="w-4 h-4 mr-2" /> {language.goBackToCourses}
             </Button>
           </Link>
         ) : isTeacher(userId) ? (
           <Link href="/teacher/courses">
             <Button size="sm" variant="ghost">
-              Teacher mode
+              {language.teacherMode}
             </Button>
           </Link>
         ) : null}
