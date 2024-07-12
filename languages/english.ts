@@ -45,6 +45,7 @@ export const englishLanguage: ILanguage = {
     continue: "Continue",
     courseCreated: "Course created",
     somethingWentWrong: "Something went wrong",
+    titleIsRequired: "Title is required",
   },
   teacherCourseSetup: {
     thisCourseIsUnpublished:

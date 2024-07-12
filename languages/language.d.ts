@@ -55,7 +55,8 @@ type ILanguageTeacherCreate = {
   cancel: string;
   continue: string;
   courseCreated: string;
-  somethingWentWrong;
+  somethingWentWrong: string;
+  titleIsRequired: string;
 };
 
 type ILanguageTeacherCourseSetup = {

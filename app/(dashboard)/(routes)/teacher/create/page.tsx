@@ -7,102 +7,101 @@ import { useRouter } from "next/navigation";
 import toast from "react-hot-toast";
 
 import {
-    Form,
-    FormControl,
-    FormDescription,
-    FormField,
-    FormItem,
-    FormLabel,
-    FormMessage,
+  Form,
+  FormControl,
+  FormDescription,
+  FormField,
+  FormItem,
+  FormLabel,
+  FormMessage,
 } from "@/components/ui/form";
 
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import Link from "next/link";
-
-const formSchema = z.object({
-    title: z.string().min(1, {
-        message: "Title is required",
-    }),
-});
+import { useLanguageStore } from "@/hooks/use-language-store";
 
 const CreatePage = () => {
-    const router = useRouter();
+  const language = useLanguageStore().teacherCreate;
 
-    const form = useForm<z.infer<typeof formSchema>>({
-        resolver: zodResolver(formSchema),
-        defaultValues: {
-            title: "",
-        },
-    });
+  const router = useRouter();
 
-    const { isSubmitting, isValid } = form.formState;
+  const formSchema = z.object({
+    title: z.string().min(1, {
+      message: language.titleIsRequired,
+    }),
+  });
 
-    const onSubmit = async (values: z.infer<typeof formSchema>) => {
-        try {
-            const response = await axios.post("/api/courses", values);
-            router.push(`/teacher/courses/${response.data.id}`);
-            toast.success("Course created");
-        } catch {
-            toast.error("Something went wrong");
-        }
-    };
+  const form = useForm<z.infer<typeof formSchema>>({
+    resolver: zodResolver(formSchema),
+    defaultValues: {
+      title: "",
+    },
+  });
 
-    return (
-        <div className="max-w-5xl mx-auto flex md:items-center md:justify-center h-full p-6">
-            <div>
-                <h1 className="text-2xl">Name your course</h1>
+  const { isSubmitting, isValid } = form.formState;
 
-                <p className="text-sm text-slate-600">
-                    What would you like to name your course? Don&apos;t worry,
-                    you can change this later
-                </p>
+  const onSubmit = async (values: z.infer<typeof formSchema>) => {
+    try {
+      const response = await axios.post("/api/courses", values);
+      router.push(`/teacher/courses/${response.data.id}`);
+      toast.success(language.courseCreated);
+    } catch {
+      toast.error(language.somethingWentWrong);
+    }
+  };
 
-                <Form {...form}>
-                    <form
-                        onSubmit={form.handleSubmit(onSubmit)}
-                        className="space-y-8 mt-8"
-                    >
-                        <FormField
-                            control={form.control}
-                            name="title"
-                            render={({ field }) => (
-                                <FormItem>
-                                    <FormLabel>Course Title</FormLabel>
-                                    <FormControl>
-                                        <Input
-                                            disabled={isSubmitting}
-                                            placeholder="e.g. 'Avanced web development"
-                                            {...field}
-                                        />
-                                    </FormControl>
-                                    <FormDescription>
-                                        What will you teach in this course?
-                                    </FormDescription>
-                                    <FormMessage />
-                                </FormItem>
-                            )}
-                        />
+  return (
+    <div className="max-w-5xl mx-auto flex md:items-center md:justify-center h-full p-6">
+      <div>
+        <h1 className="text-2xl">{language.nameYourCourse}</h1>
 
-                        <div className="flex items-center gap-x-2">
-                            <Link href="/">
-                                <Button variant="ghost" type="button">
-                                    Cancel
-                                </Button>
-                            </Link>
+        <p className="text-sm text-slate-600">
+          {language.nameYourCourseDescription}
+        </p>
 
-                            <Button
-                                type="submit"
-                                disabled={!isValid || isSubmitting}
-                            >
-                                Continue
-                            </Button>
-                        </div>
-                    </form>
-                </Form>
+        <Form {...form}>
+          <form
+            onSubmit={form.handleSubmit(onSubmit)}
+            className="space-y-8 mt-8"
+          >
+            <FormField
+              control={form.control}
+              name="title"
+              render={({ field }) => (
+                <FormItem>
+                  <FormLabel>{language.courseTitle}</FormLabel>
+                  <FormControl>
+                    <Input
+                      disabled={isSubmitting}
+                      placeholder={language.courseTitleInputPlaceholder}
+                      {...field}
+                    />
+                  </FormControl>
+                  <FormDescription>
+                    {language.courseTitleInputDescription}
+                  </FormDescription>
+                  <FormMessage />
+                </FormItem>
+              )}
+            />
+
+            <div className="flex items-center gap-x-2">
+              <Link href="/">
+                <Button variant="ghost" type="button">
+                  {language.cancel}
+                </Button>
+              </Link>
+
+              <Button type="submit" disabled={!isValid || isSubmitting}>
+                {language.continue}
+              </Button>
             </div>
-        </div>
-    );
+          </form>
+        </Form>
+      </div>
+    </div>
+  );
 };
 
 export default CreatePage;

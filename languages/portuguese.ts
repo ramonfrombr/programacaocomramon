@@ -45,6 +45,7 @@ export const portugueseLanguage: ILanguage = {
     continue: "Continuar",
     courseCreated: "Curso criado",
     somethingWentWrong: "Erro ao tentar criar o curso",
+    titleIsRequired: "É necessário um título",
   },
   teacherCourseSetup: {
     thisCourseIsUnpublished:
