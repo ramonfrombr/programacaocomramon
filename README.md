@@ -50,7 +50,7 @@ Push changes
 `npx prisma db push`
 
 Reset database
-`npx prisma database reset`
+`npx prisma migrate reset`
 
 Run local stripe server
 `stripe listen --forward-to localhost:3000/api/webhook`
