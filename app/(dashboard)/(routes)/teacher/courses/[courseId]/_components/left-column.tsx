@@ -5,8 +5,8 @@ import { LayoutDashboard } from "lucide-react";
 import { TitleForm } from "./title-form";
 import { DescriptionForm } from "./description-form";
 import { ImageForm } from "./image-form";
-import { CategoryForm } from "./category-form";
 import { useLanguageStore } from "@/hooks/use-language-store";
+import { CategoriesForm } from "./categories-form";
 
 interface LeftColumnProps {
   course: Course & {
@@ -28,7 +28,7 @@ export const LeftColumn = ({ course, categories }: LeftColumnProps) => {
       <TitleForm initialData={course} courseId={course.id} />
       <DescriptionForm initialData={course} courseId={course.id} />
       <ImageForm initialData={course} courseId={course.id} />
-      <CategoryForm
+      <CategoriesForm
         initialData={course}
         courseId={course.id}
         options={categories.map((category) => ({

@@ -39,7 +39,7 @@ export async function PATCH(
       !course.title ||
       !course.description ||
       !course.imageUrl ||
-      !course.categoryId ||
+      !course.categoryIDs ||
       !hasPublishedChapter
     ) {
       return new NextResponse("Missing required fields", { status: 401 });

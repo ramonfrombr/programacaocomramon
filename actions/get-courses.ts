@@ -3,7 +3,7 @@ import { getProgress } from "@/actions/get-progress";
 import { db } from "@/lib/db";
 
 type CourseWithProgressWithCategory = Course & {
-  category: Category | null;
+  categories: Category[] | null;
   chapters: { id: string }[];
   progress: number | null;
 };
@@ -11,7 +11,7 @@ type CourseWithProgressWithCategory = Course & {
 type GetCourses = {
   userId: string;
   title?: string;
-  categoryId?: string;
+  categoryId: string;
 };
 
 export const getCourses = async ({
@@ -26,10 +26,14 @@ export const getCourses = async ({
         title: {
           contains: title,
         },
-        categoryId,
+        categoryIDs: categoryId
+          ? {
+              has: categoryId,
+            }
+          : { isEmpty: false },
       },
       include: {
-        category: true,
+        categories: true,
         chapters: {
           where: {
             isPublished: true,
