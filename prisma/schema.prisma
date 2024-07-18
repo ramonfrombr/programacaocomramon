@@ -23,6 +23,7 @@ model Course {
   imageUrl    String?
   price       Float?
   isPublished Boolean @default(false)
+  githubLink String?
 
   categoryIDs String[]   @db.ObjectId
   categories  Category[] @relation(fields: [categoryIDs], references: [id])

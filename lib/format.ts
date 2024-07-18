@@ -1,5 +1,5 @@
-let currency;
-let languageFormat;
+let currency = "USD";
+let languageFormat = "en-US";
 
 switch (process.env.NEXT_PUBLIC_LANGUAGE) {
   case "portuguese":
