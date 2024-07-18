@@ -1,13 +1,22 @@
 import { db } from "@/lib/db";
 import Image from "next/image";
 import { redirect } from "next/navigation";
-import { WatchBanner } from "@/app/(dashboard)/(routes)/projects/[courseSlug]/_components/watch-banner";
 import { ChaptersBadge } from "@/components/chapters-badge";
+import { YoutubeBadge } from "@/components/youtube-badge";
+import { YoutubeBanner } from "./_components/youtube-banner";
+import { CourseProgress } from "@/components/course-progress";
+import { getProgress } from "@/actions/get-progress";
+import { auth } from "@clerk/nextjs";
+import { StartWatchingBanner } from "./_components/start-watch-banner";
+import { ContinueWatchingBanner } from "./_components/continue-watching-banner";
+
 const CourseSlugPage = async ({
   params,
 }: {
   params: { courseSlug: string };
 }) => {
+  const { userId } = auth();
+
   const course = await db.course.findFirst({
     where: {
       slug: params.courseSlug,
@@ -24,6 +33,8 @@ const CourseSlugPage = async ({
       categories: true,
     },
   });
+
+  const progress = userId ? await getProgress(userId!, course?.id!) : 0;
 
   if (!course) {
     return redirect("/");
@@ -45,7 +56,11 @@ const CourseSlugPage = async ({
 
         <div className="bg-white border p-5 rounded-md">
           <div className="self-start">
-            <ChaptersBadge chaptersLength={course.chapters.length} />
+            {course.youtube ? (
+              <YoutubeBadge />
+            ) : (
+              <ChaptersBadge chaptersLength={course.chapters.length} />
+            )}
           </div>
 
           <h1 className="text-2xl font-semibold">{course.title}</h1>
@@ -53,23 +68,37 @@ const CourseSlugPage = async ({
             {course.description}
           </p>
 
-          <ul className="flex gap-2">
+          <ul className="flex gap-2 mb-4">
             {course.categories
               .sort((a, b) => a.name.localeCompare(b.name))
               .map((category) => (
                 <li
-                  className="rounded bg-white border font-semibold px-2 text-xs"
+                  className="rounded bg-white border font-semibold px-2 py-1 text-xs"
                   key={category.id}
                 >
                   {category.name}
                 </li>
               ))}
           </ul>
+
+          {!course.youtube && (
+            <CourseProgress
+              size="sm"
+              value={progress}
+              variant={progress === 100 ? "success" : "default"}
+            />
+          )}
         </div>
       </div>
 
       <div className="lg:w-[700px]">
-        <WatchBanner courseId={course.id} />
+        {course.youtube ? (
+          <YoutubeBanner youtubeLink={course.youtubeLink!} />
+        ) : progress == 0 ? (
+          <StartWatchingBanner courseId={course.id} />
+        ) : (
+          <ContinueWatchingBanner courseId={course.id} />
+        )}
       </div>
     </div>
   );
