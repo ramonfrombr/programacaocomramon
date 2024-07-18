@@ -18,13 +18,14 @@ model Course {
   id          String  @id @default(auto()) @map("_id") @db.ObjectId
   userId      String
   title       String
+  slug        String? @unique
   description String?
   imageUrl    String?
   price       Float?
   isPublished Boolean @default(false)
 
   categoryIDs String[]   @db.ObjectId
-  categories   Category[] @relation(fields: [categoryIDs], references: [id])
+  categories  Category[] @relation(fields: [categoryIDs], references: [id])
 
   chapters    Chapter[]
   attachments Attachment[]
@@ -53,10 +54,10 @@ model Attachment {
 }
 
 model Category {
-  id      String   @id @default(auto()) @map("_id") @db.ObjectId
-  name    String   @unique
+  id        String   @id @default(auto()) @map("_id") @db.ObjectId
+  name      String   @unique
   courseIDs String[] @db.ObjectId
-  courses   Course[]   @relation(fields: [courseIDs], references: [id])
+  courses   Course[] @relation(fields: [courseIDs], references: [id])
 
   @@map("categories")
 }
@@ -99,7 +100,7 @@ model UserProgress {
   id     String @id @default(auto()) @map("_id") @db.ObjectId
   userId String
 
-  chapterId String @db.ObjectId
+  chapterId String  @db.ObjectId
   chapter   Chapter @relation(fields: [chapterId], references: [id], onDelete: Cascade)
 
   isCompleted Boolean @default(false)
