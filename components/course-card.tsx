@@ -1,12 +1,11 @@
 "use client";
 import Image from "next/image";
 import Link from "next/link";
-import { IconBadge } from "@/components/icon-badge";
-import { BookOpen } from "lucide-react";
 import { formatPrice } from "@/lib/format";
 import { CourseProgress } from "@/components/course-progress";
 import { useLanguageStore } from "@/hooks/use-language-store";
 import { ChaptersBadge } from "./chapters-badge";
+import { YoutubeBadge } from "./youtube-badge";
 
 interface CourseCardProps {
   id: string;
@@ -17,6 +16,7 @@ interface CourseCardProps {
   price: number;
   progress: number | null;
   categories: string[];
+  youtube: boolean | null;
 }
 
 export const CourseCard = ({
@@ -28,6 +28,7 @@ export const CourseCard = ({
   price,
   progress,
   categories,
+  youtube,
 }: CourseCardProps) => {
   const language = useLanguageStore().dashboard;
 
@@ -43,9 +44,15 @@ export const CourseCard = ({
             {title}
           </div>
 
-          <ChaptersBadge chaptersLength={chaptersLength} />
+          {youtube ? (
+            <YoutubeBadge />
+          ) : (
+            <ChaptersBadge chaptersLength={chaptersLength} />
+          )}
 
-          {progress !== null ? (
+          {youtube ? (
+            <div className="text-secondary-foreground">Grátis</div>
+          ) : progress !== null ? (
             <CourseProgress
               size="sm"
               value={progress}

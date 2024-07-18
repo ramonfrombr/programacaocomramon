@@ -32,6 +32,7 @@ export const CoursesList = ({ items }: CorusesListProps) => {
             categories={[
               ...item?.categories?.map((category) => category.name)!,
             ]}
+            youtube={item.youtube}
           />
         ))}
       </div>
