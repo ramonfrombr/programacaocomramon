@@ -9,6 +9,7 @@ type ILanguage = {
   teacherCourseChapterSetup: ILanguageTeacherCourseChapterSetup;
   teacherAnalytics: ILanguageTeacherAnalytics;
   videoPlayer: ILanguageVideoPlayer;
+  course: ILanguageCourse;
 };
 
 type ILanguageNavbar = {
@@ -217,4 +218,10 @@ type ILanguageVideoPlayer = {
   somethingWentWrong: string;
   thisChapterIsLocked: string;
   enrollFor: string;
+};
+
+type ILanguageCourse = {
+  continueWhereYouLeftOff: string;
+  watchFromTheLastCompletedChapter: string;
+  continueWatching: string;
 };

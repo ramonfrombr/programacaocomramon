@@ -186,4 +186,9 @@ export const spanishLanguage: ILanguage = {
     thisChapterIsLocked: "",
     enrollFor: "",
   },
+  course: {
+    continueWhereYouLeftOff: "",
+    watchFromTheLastCompletedChapter: "",
+    continueWatching: "",
+  },
 };

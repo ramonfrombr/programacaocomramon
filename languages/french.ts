@@ -184,4 +184,9 @@ export const frenchLanguage: ILanguage = {
     thisChapterIsLocked: "",
     enrollFor: "",
   },
+  course: {
+    continueWhereYouLeftOff: "",
+    watchFromTheLastCompletedChapter: "",
+    continueWatching: "",
+  },
 };

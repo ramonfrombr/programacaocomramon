@@ -185,4 +185,9 @@ export const englishLanguage: ILanguage = {
     thisChapterIsLocked: "This chapter is locked",
     enrollFor: "Enroll for",
   },
+  course: {
+    continueWhereYouLeftOff: "",
+    watchFromTheLastCompletedChapter: "",
+    continueWatching: "",
+  },
 };

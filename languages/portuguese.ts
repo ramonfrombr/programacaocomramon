@@ -186,4 +186,10 @@ export const portugueseLanguage: ILanguage = {
     thisChapterIsLocked: "Este capítulo está bloqueado",
     enrollFor: "Compre o curso por",
   },
+  course: {
+    continueWhereYouLeftOff: "Continue de onde você parou.",
+    watchFromTheLastCompletedChapter:
+      "Assista a partir do último capítulo completado.",
+    continueWatching: "Continue assistindo",
+  },
 };
