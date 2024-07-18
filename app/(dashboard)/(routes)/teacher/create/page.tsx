@@ -43,7 +43,15 @@ const CreatePage = () => {
 
   const onSubmit = async (values: z.infer<typeof formSchema>) => {
     try {
-      const response = await axios.post("/api/courses", values);
+      const valuesWithSlug = {
+        slug: values.title
+          .normalize("NFD")
+          .replace(/[\u0300-\u036f]/g, "")
+          .replaceAll(" ", "-")
+          .toLowerCase(),
+        ...values,
+      };
+      const response = await axios.post("/api/courses", valuesWithSlug);
       router.push(`/teacher/courses/${response.data.id}`);
       toast.success(language.courseCreated);
     } catch {

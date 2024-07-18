@@ -6,14 +6,14 @@ import { NextResponse } from "next/server";
 export async function POST(req: Request) {
   try {
     const { userId } = auth();
-    const { title } = await req.json();
+    const { title, slug } = await req.json();
 
     if (!userId || !isTeacher(userId)) {
       return new NextResponse("Unauthorized", { status: 401 });
     }
 
     const course = await db.course.create({
-      data: { userId, title },
+      data: { userId, title, slug },
     });
 
     return NextResponse.json(course);
