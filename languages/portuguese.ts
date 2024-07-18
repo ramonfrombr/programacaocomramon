@@ -122,6 +122,12 @@ export const portugueseLanguage: ILanguage = {
         "Adicione arquivos que seus alunos precisam para completar o curso",
       attachmentDeleted: "Arquivo apagado",
     },
+    courseYoutubeLink: {
+      courseYoutubeLink: "Link do curso no YouTube",
+      editYoutubeLink: "Editar Link",
+      noYoutubeLink: "Sem link",
+      youtubeLinkIsRequired: "É necessário informar um link para um vídeo",
+    },
   },
   teacherCourseChapterSetup: {
     thisChapterIsUnpublished:
@@ -187,9 +193,17 @@ export const portugueseLanguage: ILanguage = {
     enrollFor: "Compre o curso por",
   },
   course: {
+    readyToStartBuilding: "Pronto para começar a construir?",
+    trackYourProgress:
+      "Acompanhe seu progresso, assista com legendas, altere a qualidade & a velocidade do vídeo e muito mais.",
+    startWatching: "Comece a assistir",
     continueWhereYouLeftOff: "Continue de onde você parou.",
     watchFromTheLastCompletedChapter:
       "Assista a partir do último capítulo completado.",
     continueWatching: "Continue assistindo",
+    onlyOnYoutube: "Disponível apenas no YouTube",
+    thisCourseIsOnlyAvailableOnYoutube:
+      "Este curso está disponível apenas no YouTube por enquanto. Irei adicionar na plataforma assim que possível.",
+    watchOnYoutube: "Assista no YouTube",
   },
 };

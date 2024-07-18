@@ -85,6 +85,7 @@ type ILanguageTeacherCourseSetup = {
   courseDescriptionField: ILanguageTeacherCourseSetupDescription;
   courseImageField: ILanguageTeacherCourseSetupImage;
   courseCategoryField: ILanguageTeacherCourseSetupCategory;
+  courseYoutubeLink: ILanguageTeacherCourseSetupYoutubeLink;
   courseChapters: string;
   courseChaptersField: ILanguageTeacherCourseSetupChapters;
   sellYourCourse: string;
@@ -149,6 +150,13 @@ type ILanguageTeacherCourseSetupAttachments = {
   noAttachments: string;
   coursePriceInputDescription: string;
   attachmentDeleted: string;
+};
+
+type ILanguageTeacherCourseSetupYoutubeLink = {
+  courseYoutubeLink: string;
+  editYoutubeLink: string;
+  noYoutubeLink: string;
+  youtubeLinkIsRequired: string;
 };
 
 type ILanguageTeacherCourseChapterSetup = {
@@ -221,7 +229,13 @@ type ILanguageVideoPlayer = {
 };
 
 type ILanguageCourse = {
+  readyToStartBuilding: string;
+  trackYourProgress: string;
+  startWatching: string;
   continueWhereYouLeftOff: string;
   watchFromTheLastCompletedChapter: string;
   continueWatching: string;
+  onlyOnYoutube: string;
+  thisCourseIsOnlyAvailableOnYoutube: string;
+  watchOnYoutube: string;
 };

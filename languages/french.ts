@@ -122,6 +122,12 @@ export const frenchLanguage: ILanguage = {
         "Ajoutez tout ce dont vos étudiants pourraient avoir besoin pour suivre le cours",
       attachmentDeleted: "",
     },
+    courseYoutubeLink: {
+      courseYoutubeLink: "",
+      editYoutubeLink: "",
+      noYoutubeLink: "",
+      youtubeLinkIsRequired: "",
+    },
   },
   teacherCourseChapterSetup: {
     thisChapterIsUnpublished:
@@ -185,8 +191,15 @@ export const frenchLanguage: ILanguage = {
     enrollFor: "",
   },
   course: {
-    continueWhereYouLeftOff: "",
-    watchFromTheLastCompletedChapter: "",
-    continueWatching: "",
+    readyToStartBuilding: "",
+    trackYourProgress: "",
+    startWatching: "",
+    continueWhereYouLeftOff: "Continue where you left off.",
+    watchFromTheLastCompletedChapter: "Watch from the last completed chapter.",
+    continueWatching: "Continue watching",
+    onlyOnYoutube: "Only on YouTube for now.",
+    thisCourseIsOnlyAvailableOnYoutube:
+      "This course is only available on YouTube for now. I'll add it to the platform as soon as possible.",
+    watchOnYoutube: "Watch on YouTube",
   },
 };

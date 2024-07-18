@@ -4,6 +4,7 @@ import { redirect } from "next/navigation";
 import { CourseSetupHeader } from "./_components/course-setup-header";
 import { LeftColumn } from "./_components/left-column";
 import { RightColumn } from "./_components/right-column";
+import { YoutubeRightColumn } from "./_components/youtube-right-column";
 
 const CourseIdPage = async ({ params }: { params: { courseId: string } }) => {
   const { userId } = auth();
@@ -41,14 +42,22 @@ const CourseIdPage = async ({ params }: { params: { courseId: string } }) => {
     return redirect("/");
   }
 
-  const requiredFields = [
-    course.title,
-    course.description,
-    course.imageUrl,
-    course.price,
-    course.categoryIDs,
-    course.chapters.some((chapter) => chapter.isPublished),
-  ];
+  const requiredFields = course.youtube
+    ? [
+        course.title,
+        course.description,
+        course.imageUrl,
+        course.categoryIDs,
+        course.youtubeLink,
+      ]
+    : [
+        course.title,
+        course.description,
+        course.imageUrl,
+        course.price,
+        course.categoryIDs,
+        course.chapters.some((chapter) => chapter.isPublished),
+      ];
 
   const totalFields = requiredFields.length;
   const completedFields = requiredFields.filter(Boolean).length;
@@ -68,7 +77,11 @@ const CourseIdPage = async ({ params }: { params: { courseId: string } }) => {
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6 p-6">
         <LeftColumn course={course} categories={categories} />
-        <RightColumn course={course} />
+        {course.youtube ? (
+          <YoutubeRightColumn course={course} />
+        ) : (
+          <RightColumn course={course} />
+        )}
       </div>
     </>
   );
