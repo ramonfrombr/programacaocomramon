@@ -1,4 +1,4 @@
-import { auth } from "@clerk/nextjs";
+import { auth } from "@clerk/nextjs/server";
 import { columns } from "./_components/columns";
 import { DataTable } from "./_components/data-table";
 import { redirect } from "next/navigation";

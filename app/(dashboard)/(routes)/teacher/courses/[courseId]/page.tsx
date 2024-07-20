@@ -1,5 +1,5 @@
 import { db } from "@/lib/db";
-import { auth } from "@clerk/nextjs";
+import { auth } from "@clerk/nextjs/server";
 import { redirect } from "next/navigation";
 import { CourseSetupHeader } from "./_components/course-setup-header";
 import { LeftColumn } from "./_components/left-column";

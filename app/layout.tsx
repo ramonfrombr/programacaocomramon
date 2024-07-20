@@ -39,7 +39,7 @@ export default function RootLayout({
   }
 
   return (
-    <ClerkProvider localization={localization}>
+    <ClerkProvider localization={localization} afterSignOutUrl="/">
       <html lang="en">
         <body className={inter.className}>
           <ConfettiProvider />

@@ -6,7 +6,7 @@ import { YoutubeBadge } from "@/components/youtube-badge";
 import { YoutubeBanner } from "./_components/youtube-banner";
 import { CourseProgress } from "@/components/course-progress";
 import { getProgress } from "@/actions/get-progress";
-import { auth } from "@clerk/nextjs";
+import { auth } from "@clerk/nextjs/server";
 import { StartWatchingBanner } from "./_components/start-watch-banner";
 import { ContinueWatchingBanner } from "./_components/continue-watching-banner";
 
