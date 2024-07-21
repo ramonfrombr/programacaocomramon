@@ -19,7 +19,7 @@ export const InfoCard = ({
   const language = useLanguageStore().dashboard;
 
   return (
-    <div className="border rounded-md flex items-center gap-x-2 p-3">
+    <div className="border rounded-md flex items-center gap-x-2 p-3 bg-white">
       <IconBadge variant={variant} icon={Icon} />
 
       <div>

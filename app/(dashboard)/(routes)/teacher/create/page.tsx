@@ -20,6 +20,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import Link from "next/link";
 import { useLanguageStore } from "@/hooks/use-language-store";
+import { Checkbox } from "@/components/ui/checkbox";
 
 const CreatePage = () => {
   const language = useLanguageStore().teacherCreate;
@@ -30,12 +31,14 @@ const CreatePage = () => {
     title: z.string().min(1, {
       message: language.titleIsRequired,
     }),
+    youtube: z.boolean(),
   });
 
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
     defaultValues: {
       title: "",
+      youtube: false,
     },
   });
 
@@ -43,7 +46,15 @@ const CreatePage = () => {
 
   const onSubmit = async (values: z.infer<typeof formSchema>) => {
     try {
-      const response = await axios.post("/api/courses", values);
+      const valuesWithSlug = {
+        slug: values.title
+          .normalize("NFD")
+          .replace(/[\u0300-\u036f]/g, "")
+          .replaceAll(" ", "-")
+          .toLowerCase(),
+        ...values,
+      };
+      const response = await axios.post("/api/courses", valuesWithSlug);
       router.push(`/teacher/courses/${response.data.id}`);
       toast.success(language.courseCreated);
     } catch {
@@ -82,6 +93,27 @@ const CreatePage = () => {
                     {language.courseTitleInputDescription}
                   </FormDescription>
                   <FormMessage />
+                </FormItem>
+              )}
+            />
+
+            <FormField
+              control={form.control}
+              name="youtube"
+              render={({ field }) => (
+                <FormItem>
+                  <FormLabel>Available on YouTube</FormLabel>
+                  <div className="flex flex-row items-center space-x-3 space-y-0 rounded-md p-4">
+                    <FormControl>
+                      <Checkbox
+                        checked={field.value}
+                        onCheckedChange={field.onChange}
+                      />
+                    </FormControl>
+                    <FormDescription>
+                      This course is available only on YouTube
+                    </FormDescription>
+                  </div>
                 </FormItem>
               )}
             />

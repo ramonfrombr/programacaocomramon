@@ -122,6 +122,12 @@ export const englishLanguage: ILanguage = {
         "Add anything that your students might need to complete the course",
       attachmentDeleted: "",
     },
+    courseYoutubeLink: {
+      courseYoutubeLink: "",
+      editYoutubeLink: "",
+      noYoutubeLink: "",
+      youtubeLinkIsRequired: "",
+    },
   },
   teacherCourseChapterSetup: {
     thisChapterIsUnpublished:
@@ -184,5 +190,18 @@ export const englishLanguage: ILanguage = {
     somethingWentWrong: "Something went wrong",
     thisChapterIsLocked: "This chapter is locked",
     enrollFor: "Enroll for",
+  },
+  course: {
+    readyToStartBuilding: "Ready to start building?",
+    trackYourProgress:
+      "Track your progress, watch with subtitles, change quality & speed, and more.",
+    startWatching: "Start watching",
+    continueWhereYouLeftOff: "Continue where you left off.",
+    watchFromTheLastCompletedChapter: "Watch from the last completed chapter.",
+    continueWatching: "Continue watching",
+    onlyOnYoutube: "Only on YouTube for now.",
+    thisCourseIsOnlyAvailableOnYoutube:
+      "This course is only available on YouTube for now. I'll add it to the platform as soon as possible.",
+    watchOnYoutube: "Watch on YouTube",
   },
 };

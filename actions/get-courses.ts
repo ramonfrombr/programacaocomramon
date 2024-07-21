@@ -3,15 +3,15 @@ import { getProgress } from "@/actions/get-progress";
 import { db } from "@/lib/db";
 
 type CourseWithProgressWithCategory = Course & {
-  category: Category | null;
+  categories: Category[] | null;
   chapters: { id: string }[];
   progress: number | null;
 };
 
 type GetCourses = {
-  userId: string;
+  userId: string | null;
   title?: string;
-  categoryId?: string;
+  categoryId: string;
 };
 
 export const getCourses = async ({
@@ -26,10 +26,14 @@ export const getCourses = async ({
         title: {
           contains: title,
         },
-        categoryId,
+        categoryIDs: categoryId
+          ? {
+              has: categoryId,
+            }
+          : { isEmpty: false },
       },
       include: {
-        category: true,
+        categories: true,
         chapters: {
           where: {
             isPublished: true,
@@ -40,7 +44,7 @@ export const getCourses = async ({
         },
         purchases: {
           where: {
-            userId,
+            userId: userId || undefined,
           },
         },
       },
@@ -59,7 +63,9 @@ export const getCourses = async ({
             };
           }
 
-          const progressPercentage = await getProgress(userId, course.id);
+          const progressPercentage = userId
+            ? await getProgress(userId, course.id)
+            : null;
 
           return {
             ...course,
@@ -67,7 +73,6 @@ export const getCourses = async ({
           };
         })
       );
-
     return coursesWithProgress;
   } catch (error) {
     console.log("[GET_COURSES]", error);

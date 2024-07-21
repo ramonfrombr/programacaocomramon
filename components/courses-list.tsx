@@ -4,7 +4,7 @@ import { CourseCard } from "@/components/course-card";
 import { useLanguageStore } from "@/hooks/use-language-store";
 
 type CourseWithProgressWithCategory = Course & {
-  category: Category | null;
+  categories: Category[] | null;
   chapters: { id: string }[];
   progress: number | null;
 };
@@ -24,11 +24,15 @@ export const CoursesList = ({ items }: CorusesListProps) => {
             key={item.id}
             id={item.id}
             title={item.title}
+            slug={item.slug!}
             imageUrl={item.imageUrl!}
             chaptersLength={item.chapters.length}
             price={item.price!}
             progress={item.progress}
-            category={item?.category?.name!}
+            categories={[
+              ...item?.categories?.map((category) => category.name)!,
+            ]}
+            youtube={item.youtube}
           />
         ))}
       </div>

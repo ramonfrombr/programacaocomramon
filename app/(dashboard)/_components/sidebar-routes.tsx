@@ -5,21 +5,31 @@ import { SidebarItem } from "./sidebar-item";
 import { usePathname } from "next/navigation";
 import { useLanguageStore } from "@/hooks/use-language-store";
 
-export const SidebarRoutes = () => {
-  const language = useLanguageStore().sidebar;
+interface SidebarRoutesProps {
+  userLoggedIn: boolean;
+}
+
+export const SidebarRoutes = ({ userLoggedIn }: SidebarRoutesProps) => {
   const pathname = usePathname();
   const isTeacherPage = pathname.includes("/teacher");
+  const language = useLanguageStore().sidebar;
 
-  const guestRoutes = [
-    { icon: Layout, label: language.dashboard, href: "/" },
-    { icon: Compass, label: language.browse, href: "/search" },
+  const guestRoutes = [{ icon: Compass, label: language.browse, href: "/" }];
+
+  const userRoutes = [
+    { icon: Compass, label: language.browse, href: "/" },
+    { icon: Layout, label: language.dashboard, href: "/dashboard" },
   ];
 
   const teacherRoutes = [
     { icon: List, label: language.courses, href: "/teacher/courses" },
     { icon: BarChart, label: language.analytics, href: "/teacher/analytics" },
   ];
-  const routes = isTeacherPage ? teacherRoutes : guestRoutes;
+  const routes = isTeacherPage
+    ? teacherRoutes
+    : userLoggedIn
+    ? userRoutes
+    : guestRoutes;
 
   return (
     <div className="flex flex-col w-full">

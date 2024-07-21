@@ -1,5 +1,5 @@
 import { isTeacher } from "@/lib/teacher";
-import { auth } from "@clerk/nextjs";
+import { auth } from "@clerk/nextjs/server";
 import { redirect } from "next/navigation";
 
 const TeacherLayout = ({ children }: { children: React.ReactNode }) => {
@@ -9,7 +9,7 @@ const TeacherLayout = ({ children }: { children: React.ReactNode }) => {
     return redirect("/");
   }
 
-  return <>{children}</>;
+  return <div className="bg-white">{children}</div>;
 };
 
 export default TeacherLayout;

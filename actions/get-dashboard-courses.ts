@@ -3,7 +3,7 @@ import { Category, Chapter, Course } from "@prisma/client";
 import { getProgress } from "@/actions/get-progress";
 
 type CourseWithProgressWithCategory = Course & {
-  category: Category;
+  categories: Category[];
   chapters: Chapter[];
   progress: number | null;
 };
@@ -24,7 +24,7 @@ export const getDashboardCourses = async (
       select: {
         course: {
           include: {
-            category: true,
+            categories: true,
             chapters: {
               where: {
                 isPublished: true,

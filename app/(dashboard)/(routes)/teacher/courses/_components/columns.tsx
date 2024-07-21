@@ -61,10 +61,15 @@ const IsPublishedCell = ({ row }: { row: any }) => {
 
   const isPublished = row.getValue("isPublished") || false;
 
+  const youtube = row.original.youtube;
+
   return (
-    <Badge className={cn("bg-slate-500", isPublished && "bg-sky-700")}>
-      {isPublished ? language.published : language.draft}
-    </Badge>
+    <>
+      <Badge className={cn("bg-slate-500", isPublished && "bg-sky-700")}>
+        {isPublished ? language.published : language.draft}
+      </Badge>
+      {youtube && <Badge className={"bg-red-500 ml-1"}>YouTube</Badge>}
+    </>
   );
 };
 

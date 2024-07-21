@@ -38,7 +38,6 @@ export const DescriptionForm = ({
   courseId,
 }: DescriptionFormProps) => {
   const language = useLanguageStore().teacherCourseSetup;
-
   const router = useRouter();
   const [isEditing, setIsEditing] = useState(false);
 
