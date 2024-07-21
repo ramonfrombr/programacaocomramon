@@ -13,7 +13,7 @@ export const NavbarRoutes = () => {
   const pathname = usePathname();
   const isTeacherPage = pathname?.startsWith("/teacher");
   const isCoursePage = pathname?.includes("/courses");
-  const isSearchPage = pathname === "/search";
+  const isSearchPage = pathname === "/";
   const language = useLanguageStore().navbar;
 
   return (
@@ -37,7 +37,17 @@ export const NavbarRoutes = () => {
             </Button>
           </Link>
         ) : null}
-        <UserButton afterSignOutUrl="/" />
+        <UserButton />
+        {!userId && (
+          <>
+            <Link href="/sign-up">
+              <Button variant="secondary">Criar conta</Button>
+            </Link>
+            <Link href="/sign-in">
+              <Button variant="default">Entrar</Button>
+            </Link>
+          </>
+        )}
       </div>
     </>
   );
