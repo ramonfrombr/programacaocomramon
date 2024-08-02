@@ -51,7 +51,7 @@ export const CourseCard = ({
           )}
 
           {youtube ? (
-            <div className="text-secondary-foreground">Grátis</div>
+            <></>
           ) : progress !== null ? (
             <CourseProgress
               size="sm"

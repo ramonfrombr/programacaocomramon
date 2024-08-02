@@ -34,6 +34,8 @@ async function main() {
         { name: "Prisma" },
         { name: "Redis" },
         { name: "Docker" },
+        { name: "Kubernetes" },
+        { name: "Terraform" },
         { name: "RabbitMQ" },
         { name: "C" },
         { name: "TailwindCSS" },
