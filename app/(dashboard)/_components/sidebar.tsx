@@ -6,7 +6,7 @@ export const Sidebar = () => {
   const { userId } = auth();
 
   return (
-    <div className="h-full border-r flex-col overflow-y-auto bg-white shadow-sm">
+    <div className="h-full border-r flex-col overflow-y-auto bg-white shadow-sm md:w-[300px]">
       <div className="p-3">
         <Logo />
       </div>
