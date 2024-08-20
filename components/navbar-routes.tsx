@@ -12,8 +12,8 @@ export const NavbarRoutes = () => {
   const { userId } = useAuth();
   const pathname = usePathname();
   const isTeacherPage = pathname?.startsWith("/teacher");
-  const isCoursePage = pathname?.includes("/courses");
-  const isSearchPage = pathname === "/";
+  const isCoursePage = pathname?.includes("/courses/");
+  const isSearchPage = pathname === "/courses";
   const language = useLanguageStore().navbar;
 
   return (

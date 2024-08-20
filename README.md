@@ -24,22 +24,40 @@ This is a computer science LMS (Learning Management System) platform. It is buil
 ## Useful Commands
 
 Run prisma studio
-`npx prisma studio`
+
+```
+npx prisma studio
+```
 
 Format prisma schema
-`prisma format`
+
+```
+prisma format
+```
 
 Add new models to DB util
-`npx prisma generate`
+
+```
+npx prisma generate
+```
 
 Push changes
-`npx prisma db push`
+
+```
+npx prisma db push
+```
 
 Reset database
-`npx prisma migrate reset`
+
+```
+npx prisma migrate reset
+```
 
 Run local stripe server
-`stripe listen --forward-to localhost:3000/api/webhook`
+
+```
+stripe listen --forward-to localhost:3000/api/webhook
+```
 
 ## Environment Variables
 

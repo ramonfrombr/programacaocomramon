@@ -17,7 +17,7 @@ export const SidebarRoutes = ({ userLoggedIn }: SidebarRoutesProps) => {
   const guestRoutes = [{ icon: Compass, label: language.browse, href: "/" }];
 
   const userRoutes = [
-    { icon: Compass, label: language.browse, href: "/" },
+    { icon: Compass, label: language.browse, href: "/courses" },
     { icon: Layout, label: language.dashboard, href: "/dashboard" },
   ];
 
