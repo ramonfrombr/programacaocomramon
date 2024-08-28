@@ -16,7 +16,7 @@ export const Feature = ({ heading, paragraph, image }: FeatureProps) => {
         src={image}
         height={0}
         width={0}
-        className="w-4/5 border rounded-md"
+        className="md:w-4/5 lg:w-3/5 border rounded-md"
         alt={heading}
       ></Image>
     </div>

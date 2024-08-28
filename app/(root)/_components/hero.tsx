@@ -31,7 +31,7 @@ export const Hero = () => {
         </p>
 
         <div className="text-center md:text-left">
-          <Link href="">
+          <Link href="/career" data-testid="link-getting-started">
             <Button className="rounded-full bg-blue-600 w-full md:w-[60%] p-7 md:p-5 lg:p-7 text-lg md:text-base mb-2 hover:bg-blue-700 font-bold">
               Escolha uma Carreira
             </Button>
