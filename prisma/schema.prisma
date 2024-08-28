@@ -15,20 +15,24 @@ datasource db {
 }
 
 model Course {
-  id          String  @id @default(auto()) @map("_id") @db.ObjectId
+  id          String   @id @default(auto()) @map("_id") @db.ObjectId
   userId      String
   title       String
-  slug        String? @unique
+  slug        String?  @unique
   description String?
   imageUrl    String?
   price       Float?
-  isPublished Boolean @default(false)
+  isPublished Boolean  @default(false)
   youtube     Boolean? @default(false)
   githubLink  String?
   youtubeLink String?
+  level       Level    @default(BEGINNER)
 
   categoryIDs String[]   @db.ObjectId
   categories  Category[] @relation(fields: [categoryIDs], references: [id])
+
+  careerIDs String[] @db.ObjectId
+  careers   Career[] @relation(fields: [careerIDs], references: [id])
 
   chapters    Chapter[]
   attachments Attachment[]
@@ -39,6 +43,13 @@ model Course {
 
   @@fulltext([title])
   @@map("courses")
+}
+
+enum Level {
+  BEGINNER
+  INTERMEDIATE
+  ADVANCED
+  SPECIALIST
 }
 
 model Attachment {
@@ -54,6 +65,16 @@ model Attachment {
 
   @@index([courseId])
   @@map("attachments")
+}
+
+model Career {
+  id        String   @id @default(auto()) @map("_id") @db.ObjectId
+  name      String   @unique
+  slug      String   @unique
+  courseIDs String[] @db.ObjectId
+  courses   Course[] @relation(fields: [courseIDs], references: [id])
+
+  @@map("careers")
 }
 
 model Category {
