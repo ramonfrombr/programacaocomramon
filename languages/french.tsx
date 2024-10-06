@@ -1,3 +1,7 @@
+import fernando from "@/public/testimonials/fernando.jpg";
+import weverton from "@/public/testimonials/weverton.jpg";
+import jhonatan from "@/public/testimonials/jhonatan.jpg";
+
 export const frenchLanguage: ILanguage = {
   id: "french",
   homepage: {
@@ -24,6 +28,26 @@ export const frenchLanguage: ILanguage = {
       description:
         "Avec cette option, vous avez accès à l'ensemble du catalogue de cours, avec un accès exclusif à des cours spéciaux et des avantages.",
       learnMore: "En Savoir Plus",
+    },
+    testimonials: {
+      testimonial1: {
+        testimonial:
+          "Programmation avec Ramon - Je ne peux pas insister sur le bénéfice que votre plateforme m'apporte. Les PDFs téléchargeables, le contenu vidéo et les tests axés sur mes faiblesses. Un véritable trésor.",
+        personName: "Fernando Otone",
+        image: fernando,
+      },
+      testimonial2: {
+        testimonial:
+          "Un grand merci à Ramon Rodrigues de Programmation avec Ramon, dont le matériel de cours m'a aidé à obtenir mon premier emploi en tant que développeuse hier. Le matériel était bien structuré et soutenu par des documents fantastiques, des cas pratiques, des cartes mémoire et des examens pratiques.",
+        personName: "Jhonatan Brendo",
+        image: jhonatan,
+      },
+      testimonial3: {
+        testimonial:
+          "Ce cours était excellent et en valait la peine. Il a mis à l'épreuve mes compétences techniques, mais j'ai acquis beaucoup de connaissances dans le processus. Je suis maintenant plus confiant pour construire des applications full stack. Merci Ramon Rodrigues d'avoir organisé cela.",
+        personName: "Weverton Santos",
+        image: weverton,
+      },
     },
   },
   navbar: {

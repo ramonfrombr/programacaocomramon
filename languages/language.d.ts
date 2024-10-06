@@ -25,6 +25,17 @@ type IHomepage = {
     description: string;
     learnMore: string;
   };
+  testimonials: {
+    testimonial1: ITestimonial;
+    testimonial2: ITestimonial;
+    testimonial3: ITestimonial;
+  };
+};
+
+type ITestimonial = {
+  testimonial: string;
+  personName: string;
+  image: StaticImageData;
 };
 
 type ILanguageNavbar = {
