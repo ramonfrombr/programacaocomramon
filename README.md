@@ -32,7 +32,7 @@ npx prisma studio
 Format prisma schema
 
 ```
-prisma format
+npx prisma format
 ```
 
 Add new models to DB util

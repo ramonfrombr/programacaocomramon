@@ -38,6 +38,12 @@ const CourseIdPage = async ({ params }: { params: { courseId: string } }) => {
     },
   });
 
+  const careers = await db.career.findMany({
+    orderBy: {
+      name: "asc",
+    },
+  });
+
   if (!course) {
     return redirect("/");
   }
@@ -76,7 +82,7 @@ const CourseIdPage = async ({ params }: { params: { courseId: string } }) => {
       />
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6 p-6">
-        <LeftColumn course={course} categories={categories} />
+        <LeftColumn course={course} categories={categories} careers={careers} />
         {course.youtube ? (
           <YoutubeRightColumn course={course} />
         ) : (

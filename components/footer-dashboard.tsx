@@ -1,12 +1,11 @@
 import Link from "next/link";
 
 const footerLinks = [
-  { text: "Sobre", url: "" },
-  { text: "Artigos", url: "" },
-  { text: "Perguntas Frequentes", url: "" },
-  { text: "Contato", url: "" },
-  { text: "Termos de Uso", url: "" },
-  { text: "Política de Privacidade", url: "" },
+  { text: "Sobre", url: "/about" },
+  { text: "Perguntas Frequentes", url: "/faqs" },
+  { text: "Contato", url: "/contact" },
+  { text: "Termos de Uso", url: "/terms-of-use" },
+  { text: "Política de Privacidade", url: "/privacy-policy" },
 ];
 
 export const Footer = () => {
@@ -24,7 +23,7 @@ export const Footer = () => {
         ))}
       </div>
 
-      <p className="text-center text-sm py-3 text-slate-500">
+      <p className="px-5 lg:text-center text-sm py-3 text-slate-500">
         &copy; Programação com Ramon
       </p>
     </footer>

@@ -56,42 +56,33 @@ const LandingPage = () => {
   }
 
   return (
-    <div className={`${nunito.className}`}>
-      <Navbar />
-      <div className="p-2 md:p-10 lg:p-14 flex flex-col items-center">
-        <Hero />
-        <LanguageList />
+    <div className="p-2 md:p-10 lg:p-14 flex flex-col items-center">
+      <Hero />
+      <LanguageList />
 
-        <Banner
-          heading="Assinatura no Plano Anual"
-          paragraph="Nesta opção, você tem acesso ao catálogo completo de cursos, com acesso exclusivo a cursos especiais e benefícios."
-          buttonText="Saiba Mais"
-        />
+      <Banner
+        heading="Assinatura no Plano Anual"
+        paragraph="Nesta opção, você tem acesso ao catálogo completo de cursos, com acesso exclusivo a cursos especiais e benefícios."
+        buttonText="Saiba Mais"
+        url="/subscription"
+      />
 
-        <Banner
-          heading="Pacotes"
-          paragraph="Quando você compra vários cursos você economiza com pacotes."
-          buttonText="Ver Pacotes"
-        />
+      <Testimonials />
 
-        <Testimonials />
+      <section className="flex flex-col items-center mt-20 w-[90%] md:w-4/5">
+        <Instructor />
 
-        <section className="flex flex-col items-center mt-20 w-[90%] md:w-3/5">
-          <Instructor />
-
-          <div className="mt-20">
-            {features.map((feature) => (
-              <Feature
-                key={feature.heading}
-                heading={feature.heading}
-                paragraph={feature.paragraph}
-                image={feature.image}
-              />
-            ))}
-          </div>
-        </section>
-      </div>
-      <Footer />
+        <div className="mt-20">
+          {features.map((feature) => (
+            <Feature
+              key={feature.heading}
+              heading={feature.heading}
+              paragraph={feature.paragraph}
+              image={feature.image}
+            />
+          ))}
+        </div>
+      </section>
     </div>
   );
 };

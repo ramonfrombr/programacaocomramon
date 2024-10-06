@@ -2,13 +2,6 @@ import { auth } from "@clerk/nextjs/server";
 import { redirect } from "next/navigation";
 
 import { db } from "@/lib/db";
-import Link from "next/link";
-import { ArrowLeft, Eye, LayoutDashboard, Video } from "lucide-react";
-import { IconBadge } from "@/components/icon-badge";
-import { ChapterTitleForm } from "./_components/chapter-title-form";
-import { ChapterDescriptionForm } from "./_components/chapter-description-form";
-import { ChapterAccessForm } from "./_components/chapter-access-form";
-import { ChapterVideoForm } from "./_components/chapter-video-form";
 import { ChapterSetupHeader } from "./_components/chapter-setup-header";
 import { ChapterSetupLeftColumn } from "./_components/chapter-setup-left-column";
 import { ChapterSetupRightColumn } from "./_components/chapter-setup-right-column";

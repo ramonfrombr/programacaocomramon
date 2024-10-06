@@ -17,7 +17,6 @@ export const CourseEnrollButton = ({
   courseId,
 }: CourseEnrollButtonProps) => {
   const language = useLanguageStore().videoPlayer;
-
   const [isLoading, setIsLoading] = useState(false);
 
   const onClick = async () => {
@@ -38,7 +37,7 @@ export const CourseEnrollButton = ({
       onClick={onClick}
       disabled={isLoading}
       size="sm"
-      className="w-full md:w-auto"
+      className="w-full text-lg p-8 mb-5 md:mb-0"
     >
       {language.enrollFor} {formatPrice(price)}
     </Button>
