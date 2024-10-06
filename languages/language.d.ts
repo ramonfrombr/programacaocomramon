@@ -1,5 +1,6 @@
 type ILanguage = {
   id: string;
+  homepage: IHomepage;
   navbar: ILanguageNavbar;
   sidebar: ILanguageSidebar;
   dashboard: ILanguageDashboard;
@@ -10,6 +11,15 @@ type ILanguage = {
   teacherAnalytics: ILanguageTeacherAnalytics;
   videoPlayer: ILanguageVideoPlayer;
   course: ILanguageCourse;
+};
+
+type IHomepage = {
+  hero: {
+    header: React.ReactNode;
+    headerDescription: React.ReactNode;
+    chooseACareer: string;
+    chooseACareerDescription: string;
+  };
 };
 
 type ILanguageNavbar = {

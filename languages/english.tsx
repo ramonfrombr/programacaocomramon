@@ -1,5 +1,25 @@
 export const englishLanguage: ILanguage = {
   id: "english",
+  homepage: {
+    hero: {
+      header: (
+        <>
+          Learn Programming <br /> <span className="underline">For Real</span>
+        </>
+      ),
+      headerDescription: (
+        <>
+          The <span className="text-black">quick</span> and{" "}
+          <span className="text-black">easy</span> way to master{" "}
+          <span className="text-black">the highest-paying</span> profession in
+          the market.
+        </>
+      ),
+      chooseACareer: "Choose a Career",
+      chooseACareerDescription:
+        "Which area of programming interests you the most?",
+    },
+  },
   navbar: {
     goBackToCourses: "Go Back to Courses",
     teacherMode: "Teacher Mode",

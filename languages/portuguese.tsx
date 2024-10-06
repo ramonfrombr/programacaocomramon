@@ -1,5 +1,24 @@
 export const portugueseLanguage: ILanguage = {
   id: "portuguese",
+  homepage: {
+    hero: {
+      header: (
+        <>
+          Aprenda Programação <br />{" "}
+          <span className="underline">De Verdade</span>
+        </>
+      ),
+      headerDescription: (
+        <>
+          O jeito <span className="text-black">rápido</span> e{" "}
+          <span className="text-black">fácil</span> de aprender a profissão{" "}
+          <span className="text-black">mais bem paga</span> do mercado,
+        </>
+      ),
+      chooseACareer: "Escolha uma Carreira",
+      chooseACareerDescription: "Que área da programação mais te interessa?",
+    },
+  },
   navbar: {
     goBackToCourses: "Voltar para Cursos",
     teacherMode: "Modo Professor",
