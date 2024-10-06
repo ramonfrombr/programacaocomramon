@@ -1,5 +1,5 @@
-import CareerPage from "../_components/career-page";
 import image from "@/public/careers/mobile.png";
+import CareerPage from "@/app/(root)/(routes)/career/_components/career-page";
 
 const ChooseACareerMobile = () => {
   const heading = "Desenvolvimento Mobile";

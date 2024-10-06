@@ -1,5 +1,5 @@
-import CareerPage from "../_components/career-page";
 import image from "@/public/careers/data-science.png";
+import CareerPage from "@/app/(root)/(routes)/career/_components/career-page";
 
 const ChooseACareerDataScience = () => {
   const heading = "Ciência de Dados";

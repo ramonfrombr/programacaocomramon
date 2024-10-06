@@ -1,5 +1,5 @@
-import { Star } from "lucide-react";
 import Image, { StaticImageData } from "next/image";
+import { Star } from "lucide-react";
 
 interface TestimonialProps {
   testimonial: string;

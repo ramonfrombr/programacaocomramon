@@ -1,12 +1,12 @@
 "use client";
-import { Button } from "@/components/ui/button";
 import Image from "next/image";
-import { Play } from "lucide-react";
-import { SimpleModal } from "@/components/modals/simple-modal";
-import { Nunito_Sans } from "next/font/google";
 import Link from "next/link";
-import placeholder from "@/public/placeholder.webp";
+import { Play } from "lucide-react";
+import { Nunito_Sans } from "next/font/google";
 import { useLanguageStore } from "@/hooks/use-language-store";
+import { Button } from "@/components/ui/button";
+import { SimpleModal } from "@/components/modals/simple-modal";
+import placeholder from "@/public/placeholder.webp";
 
 const nunito = Nunito_Sans({
   subsets: ["latin"],

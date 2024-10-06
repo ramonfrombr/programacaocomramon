@@ -1,7 +1,6 @@
 "use client";
-import React from "react";
-import { Banner } from "./banner";
 import { useLanguageStore } from "@/hooks/use-language-store";
+import { Banner } from "@/app/(root)/_components/banner";
 
 const Promotions = () => {
   const language = useLanguageStore().homepage.subcriptionBanner;

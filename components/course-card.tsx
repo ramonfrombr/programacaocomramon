@@ -3,8 +3,8 @@ import Image from "next/image";
 import Link from "next/link";
 import { formatPrice } from "@/lib/format";
 import { CourseProgress } from "@/components/course-progress";
-import { ChaptersBadge } from "./chapters-badge";
-import { YoutubeBadge } from "./youtube-badge";
+import { ChaptersBadge } from "@/components/chapters-badge";
+import { YoutubeBadge } from "@/components/youtube-badge";
 
 interface CourseCardProps {
   id: string;

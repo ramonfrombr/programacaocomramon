@@ -1,6 +1,6 @@
 "use client";
 import { useLanguageStore } from "@/hooks/use-language-store";
-import { Testimonial } from "./testimonial";
+import { Testimonial } from "@/app/(root)/_components/testimonial";
 
 export const Testimonials = () => {
   const language = useLanguageStore().homepage.testimonials;

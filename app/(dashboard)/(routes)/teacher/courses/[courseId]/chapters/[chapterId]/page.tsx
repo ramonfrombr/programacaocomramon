@@ -1,10 +1,9 @@
-import { auth } from "@clerk/nextjs/server";
 import { redirect } from "next/navigation";
-
+import { auth } from "@clerk/nextjs/server";
 import { db } from "@/lib/db";
-import { ChapterSetupHeader } from "./_components/chapter-setup-header";
-import { ChapterSetupLeftColumn } from "./_components/chapter-setup-left-column";
-import { ChapterSetupRightColumn } from "./_components/chapter-setup-right-column";
+import { ChapterSetupHeader } from "@/app/(dashboard)/(routes)/teacher/courses/[courseId]/chapters/[chapterId]/_components/chapter-setup-header";
+import { ChapterSetupLeftColumn } from "@/app/(dashboard)/(routes)/teacher/courses/[courseId]/chapters/[chapterId]/_components/chapter-setup-left-column";
+import { ChapterSetupRightColumn } from "@/app/(dashboard)/(routes)/teacher/courses/[courseId]/chapters/[chapterId]/_components/chapter-setup-right-column";
 
 const ChapterIdPage = async ({
   params,

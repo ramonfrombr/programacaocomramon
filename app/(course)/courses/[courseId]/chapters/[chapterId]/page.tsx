@@ -1,13 +1,13 @@
-import { getChapter } from "@/actions/get-chapter";
-import { auth } from "@clerk/nextjs/server";
 import { redirect } from "next/navigation";
-import { VideoPlayer } from "./_components/video-player";
-import { CourseEnrollButton } from "./_components/course-enroll-button";
-import { Separator } from "@/components/ui/separator";
-import { Preview } from "@/components/preview";
 import { File } from "lucide-react";
-import { CourseProgressButton } from "./_components/course-progress-button";
-import { ChapterBanners } from "./_components/chapter-banners";
+import { auth } from "@clerk/nextjs/server";
+import { getChapter } from "@/actions/get-chapter";
+import { Preview } from "@/components/preview";
+import { Separator } from "@/components/ui/separator";
+import { VideoPlayer } from "@/app/(course)/courses/[courseId]/chapters/[chapterId]/_components/video-player";
+import { CourseEnrollButton } from "@/app/(course)/courses/[courseId]/chapters/[chapterId]/_components/course-enroll-button";
+import { CourseProgressButton } from "@/app/(course)/courses/[courseId]/chapters/[chapterId]/_components/course-progress-button";
+import { ChapterBanners } from "@/app/(course)/courses/[courseId]/chapters/[chapterId]/_components/chapter-banners";
 
 const ChapterIdPage = async ({
   params,

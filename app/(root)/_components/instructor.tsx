@@ -1,6 +1,6 @@
 import Image from "next/image";
-import portrait from "@/public/portrait.jpg";
 import { Cat, Clock, Wand, Coffee, Swords } from "lucide-react";
+import portrait from "@/public/portrait.jpg";
 
 export const Instructor = () => {
   return (

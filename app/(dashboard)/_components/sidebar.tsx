@@ -1,6 +1,6 @@
-import { Logo } from "./Logo";
-import { SidebarRoutes } from "./sidebar-routes";
 import { auth } from "@clerk/nextjs/server";
+import { Logo } from "@/app/(dashboard)/_components/Logo";
+import { SidebarRoutes } from "@/app/(dashboard)/_components/sidebar-routes";
 
 export const Sidebar = () => {
   const { userId } = auth();

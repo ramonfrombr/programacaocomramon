@@ -1,6 +1,6 @@
 "use client";
 import { CheckCircle, Clock } from "lucide-react";
-import { InfoCard } from "./info-card";
+import { InfoCard } from "@/app/(dashboard)/(routes)/dashboard/_components/info-card";
 import { useLanguageStore } from "@/hooks/use-language-store";
 
 interface InfoCardsProps {
