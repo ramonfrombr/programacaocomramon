@@ -1,7 +1,6 @@
 import { StaticImageData } from "next/image";
 import Header from "./header";
 import CoursesSection from "./courses-section";
-import { CoursesInterface } from "../page";
 import { db } from "@/lib/db";
 import { Level } from "@prisma/client";
 
@@ -107,7 +106,7 @@ const CareerPage = async ({
           bgColor="bg-violet-700"
           color="text-violet-700"
           heading="Especialista"
-          courses={courses.intermediate}
+          courses={courses.specialist}
         />
       )}
     </div>
