@@ -24,11 +24,11 @@ export const Hero = () => {
         <h1
           className={`text-4xl md:text-[4vw] lg:text-[2.6rem] xl:text-5xl font-bold mb-3`}
         >
-          {language.header}
+          {language.heading}
         </h1>
 
         <p className="text-gray-500 text-base md:text-xl lg:text-2xl mb-3 md:mb-5">
-          {language.headerDescription}
+          {language.headingDescription}
         </p>
 
         <div className="text-center md:text-left">

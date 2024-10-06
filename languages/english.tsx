@@ -2,12 +2,12 @@ export const englishLanguage: ILanguage = {
   id: "english",
   homepage: {
     hero: {
-      header: (
+      heading: (
         <>
           Learn Programming <br /> <span className="underline">For Real</span>
         </>
       ),
-      headerDescription: (
+      headingDescription: (
         <>
           The <span className="text-black">quick</span> and{" "}
           <span className="text-black">easy</span> way to master{" "}
@@ -18,6 +18,12 @@ export const englishLanguage: ILanguage = {
       chooseACareer: "Choose a Career",
       chooseACareerDescription:
         "Which area of programming interests you the most?",
+    },
+    subcriptionBanner: {
+      heading: "Yearly Supporter Subscription",
+      description:
+        "When you want full access to the entire catalog along with exclusive courses and benefits.",
+      learnMore: "Learn More",
     },
   },
   navbar: {

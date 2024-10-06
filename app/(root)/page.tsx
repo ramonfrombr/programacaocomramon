@@ -1,20 +1,12 @@
-import { Banner } from "./_components/banner";
 import { Feature } from "./_components/feature";
-import { Footer } from "@/components/footer";
 import { Hero } from "./_components/hero";
 import { Instructor } from "./_components/instructor";
 import { LanguageList } from "./_components/language-list";
-import { Navbar } from "./_components/navbar";
 import { Testimonials } from "./_components/testimonials";
-import { Nunito_Sans } from "next/font/google";
 import placeholder from "@/public/placeholder.webp";
 import { auth } from "@clerk/nextjs/server";
 import { redirect } from "next/navigation";
-
-const nunito = Nunito_Sans({
-  subsets: ["latin"],
-  weight: ["400", "500", "600", "700", "800"],
-});
+import Promotions from "./_components/promotions";
 
 const features = [
   {
@@ -59,16 +51,8 @@ const LandingPage = () => {
     <div className="p-2 md:p-10 lg:p-14 flex flex-col items-center">
       <Hero />
       <LanguageList />
-
-      <Banner
-        heading="Assinatura no Plano Anual"
-        paragraph="Nesta opção, você tem acesso ao catálogo completo de cursos, com acesso exclusivo a cursos especiais e benefícios."
-        buttonText="Saiba Mais"
-        url="/subscription"
-      />
-
+      <Promotions />
       <Testimonials />
-
       <section className="flex flex-col items-center mt-20 w-[90%] md:w-4/5">
         <Instructor />
 

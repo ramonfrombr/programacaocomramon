@@ -2,13 +2,13 @@ export const portugueseLanguage: ILanguage = {
   id: "portuguese",
   homepage: {
     hero: {
-      header: (
+      heading: (
         <>
           Aprenda Programação <br />{" "}
           <span className="underline">De Verdade</span>
         </>
       ),
-      headerDescription: (
+      headingDescription: (
         <>
           O jeito <span className="text-black">rápido</span> e{" "}
           <span className="text-black">fácil</span> de aprender a profissão{" "}
@@ -17,6 +17,12 @@ export const portugueseLanguage: ILanguage = {
       ),
       chooseACareer: "Escolha uma Carreira",
       chooseACareerDescription: "Que área da programação mais te interessa?",
+    },
+    subcriptionBanner: {
+      heading: "Assinatura no Plano Anual",
+      description:
+        "Nesta opção, você tem acesso ao catálogo completo de cursos, com acesso exclusivo a cursos especiais e benefícios.",
+      learnMore: "Saiba Mais",
     },
   },
   navbar: {

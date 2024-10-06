@@ -2,13 +2,13 @@ export const frenchLanguage: ILanguage = {
   id: "french",
   homepage: {
     hero: {
-      header: (
+      heading: (
         <>
           Apprenez la Programmation <br />{" "}
           <span className="underline">Pour de Vrai</span>
         </>
       ),
-      headerDescription: (
+      headingDescription: (
         <>
           La façon <span className="text-black">rapide</span> et{" "}
           <span className="text-black">facile</span> de maîtriser la profession
@@ -18,6 +18,12 @@ export const frenchLanguage: ILanguage = {
       chooseACareer: "Choisissez une Carrière",
       chooseACareerDescription:
         "Quelle domaine de la programmation vous intéresse le plus ?",
+    },
+    subcriptionBanner: {
+      heading: "Abonnement au Plan Annuel",
+      description:
+        "Avec cette option, vous avez accès à l'ensemble du catalogue de cours, avec un accès exclusif à des cours spéciaux et des avantages.",
+      learnMore: "En Savoir Plus",
     },
   },
   navbar: {

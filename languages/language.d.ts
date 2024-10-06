@@ -15,10 +15,15 @@ type ILanguage = {
 
 type IHomepage = {
   hero: {
-    header: React.ReactNode;
-    headerDescription: React.ReactNode;
+    heading: React.ReactNode;
+    headingDescription: React.ReactNode;
     chooseACareer: string;
     chooseACareerDescription: string;
+  };
+  subcriptionBanner: {
+    heading: string;
+    description: string;
+    learnMore: string;
   };
 };
 
