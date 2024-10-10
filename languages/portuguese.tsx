@@ -94,6 +94,37 @@ export const portugueseLanguage: ILanguage = {
       },
     },
   },
+  careersPage: {
+    chooseAProgrammingField: "Escolha uma área da programação",
+    whatKindOfProgramsDoYouWantToCreate:
+      "Que tipo de programas você quer criar?",
+    levels: {
+      beginner: "Iniciante",
+      intermediate: "Intermediário",
+      advanced: "Avançado",
+      specialist: "Especialista",
+    },
+    webDevelopment: {
+      title: "Desenvolvimento Web",
+      description:
+        "Desenvolvimento web é o desenvolvimento de sites na internet. O profissional que trabalha desenvolvendo websites pode ser um web designer (desenvolvedor do layout) ou um web developer (desenvolvedor de sistemas).",
+    },
+    mobileDevelopment: {
+      title: "Desenvolvimento Mobile",
+      description:
+        "O desenvolvimento mobile é o processo de criação de aplicativos e soluções que se voltam especificamente para dispositivos móveis, como smartphones e tablets.",
+    },
+    embeddedSystems: {
+      title: "Sistemas Embarcados",
+      description:
+        "Um sistema embarcado é um sistema eletrônico microprocessado, completamente encapsulado, dedicado ao dispositivo ou sistema que ele controla.",
+    },
+    dataScience: {
+      title: "Ciências de Dados",
+      description:
+        "A ciência de dados é uma área interdisciplinar, que localiza-se entre a estatística e a ciência da computação e utiliza o método científico; processos, algoritmos e sistemas, para extrair conhecimento e tomar decisões a partir de dados dos diversos tipos, sendo eles ruidosos, nebulosos, estruturados ou não-estruturados.",
+    },
+  },
   navbar: {
     goBackToCourses: "Voltar para Cursos",
     teacherMode: "Modo Professor",

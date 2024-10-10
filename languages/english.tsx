@@ -64,30 +64,61 @@ export const englishLanguage: ILanguage = {
         heading: "Perfect reference pages to review the content",
         description:
           "Our reference pages are perfect for printing and contain everything you need to know.",
-        image: "placeholder",
+        image: placeholder,
       },
       feature2: {
         heading: "Our flashcards help you never forget.",
         description: "Based on spaced repetition learning algorithms.",
-        image: "placeholder",
+        image: placeholder,
       },
       feature3: {
         heading: "Save time and copy our study notes.",
         description: "In each lesson, we create detailed study notes.",
-        image: "placeholder",
+        image: placeholder,
       },
       feature4: {
         heading: "Track your progress in the course",
         description:
           "In our system, you can track your progress through the course.",
-        image: "placeholder",
+        image: placeholder,
       },
       feature5: {
         heading: "Ask programming questions, get expert answers",
         description:
           "We take the time to write complete and detailed explanations for your programming questions.",
-        image: "placeholder",
+        image: placeholder,
       },
+    },
+  },
+  careersPage: {
+    chooseAProgrammingField: "Choose a programming field",
+    whatKindOfProgramsDoYouWantToCreate:
+      "What kind of programs do you want to create?",
+    levels: {
+      beginner: "Beginner",
+      intermediate: "Intermediate",
+      advanced: "Advanced",
+      specialist: "Specialist",
+    },
+    webDevelopment: {
+      title: "Web Development",
+      description:
+        "Web development is the creation of websites on the internet. The professional working on website development can be a web designer (responsible for layout design) or a web developer (responsible for systems).",
+    },
+    mobileDevelopment: {
+      title: "Mobile Development",
+      description:
+        "Mobile development is the process of creating applications and solutions specifically designed for mobile devices, such as smartphones and tablets.",
+    },
+    embeddedSystems: {
+      title: "Embedded Systems",
+      description:
+        "An embedded system is a microprocessor-based electronic system, fully encapsulated, dedicated to the device or system it controls.",
+    },
+    dataScience: {
+      title: "Data Science",
+      description:
+        "Data science is an interdisciplinary field that lies between statistics and computer science and uses the scientific method, processes, algorithms, and systems to extract knowledge and make decisions from various types of data, whether noisy, ambiguous, structured, or unstructured.",
     },
   },
   navbar: {

@@ -1,6 +1,7 @@
 type ILanguage = {
   id: string;
   homepage: IHomepage;
+  careersPage: ICareerPage;
   navbar: ILanguageNavbar;
   sidebar: ILanguageSidebar;
   dashboard: ILanguageDashboard;
@@ -45,6 +46,26 @@ type IHomepage = {
     feature4: ICourseFeature;
     feature5: ICourseFeature;
   };
+};
+
+type ICareerPage = {
+  chooseAProgrammingField: string;
+  whatKindOfProgramsDoYouWantToCreate: string;
+  levels: {
+    beginner: string;
+    intermediate: string;
+    advanced: string;
+    specialist: string;
+  };
+  webDevelopment: ICareer;
+  mobileDevelopment: ICareer;
+  embeddedSystems: ICareer;
+  dataScience: ICareer;
+};
+
+type ICareer = {
+  title: string;
+  description: string;
 };
 
 type ICourseFeature = {

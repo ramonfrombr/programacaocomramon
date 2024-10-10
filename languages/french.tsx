@@ -65,33 +65,64 @@ export const frenchLanguage: ILanguage = {
         heading: "Pages de référence parfaites pour réviser le contenu",
         description:
           "Nos pages de référence sont parfaites pour l'impression et contiennent tout ce que vous devez savoir.",
-        image: "placeholder",
+        image: placeholder,
       },
       feature2: {
         heading: "Nos fiches vous aident à ne jamais oublier.",
         description:
           "Basé sur des algorithmes d'apprentissage par répétition espacée.",
-        image: "placeholder",
+        image: placeholder,
       },
       feature3: {
         heading: "Gagnez du temps et copiez nos notes d'étude.",
         description:
           "Dans chaque leçon, nous créons des notes d'étude détaillées.",
-        image: "placeholder",
+        image: placeholder,
       },
       feature4: {
         heading: "Suivez votre progression dans le cours",
         description:
           "Dans notre système, vous pouvez suivre votre progression à travers le cours.",
-        image: "placeholder",
+        image: placeholder,
       },
       feature5: {
         heading:
           "Posez des questions de programmation, obtenez des réponses d'experts",
         description:
           "Nous prenons le temps d'écrire des explications complètes et détaillées pour vos questions sur la programmation.",
-        image: "placeholder",
+        image: placeholder,
       },
+    },
+  },
+  careersPage: {
+    chooseAProgrammingField: "Choisissez un domaine de programmation",
+    whatKindOfProgramsDoYouWantToCreate:
+      "Quel type de programmes voulez-vous créer ?",
+    levels: {
+      beginner: "Débutant",
+      intermediate: "Intermédiaire",
+      advanced: "Avancé",
+      specialist: "Spécialiste",
+    },
+    webDevelopment: {
+      title: "Développement Web",
+      description:
+        "Le développement web est la création de sites internet. Le professionnel qui travaille à la création de sites web peut être un web designer (responsable de la mise en page) ou un développeur web (responsable des systèmes).",
+    },
+    mobileDevelopment: {
+      title: "Développement Mobile",
+      description:
+        "Le développement mobile est le processus de création d'applications et de solutions spécifiquement destinées aux appareils mobiles, tels que les smartphones et les tablettes.",
+    },
+    embeddedSystems: {
+      title: "Systèmes Embarqués",
+      description:
+        "Un système embarqué est un système électronique à microprocesseur, entièrement encapsulé, dédié à l'appareil ou au système qu'il contrôle.",
+    },
+    dataScience: {
+      title: "Science des Données",
+      description:
+        "La science des données est un domaine interdisciplinaire, à la croisée de la statistique et de l'informatique, qui utilise la méthode scientifique, les processus, les algorithmes et les systèmes pour extraire des connaissances et prendre des décisions à partir de données de différents types, qu'elles soient bruitées, ambiguës, structurées ou non-structurées.",
     },
   },
   navbar: {

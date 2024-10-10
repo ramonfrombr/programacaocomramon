@@ -65,31 +65,61 @@ export const spanishLanguage: ILanguage = {
         heading: "Páginas de referencia perfectas para revisar el contenido",
         description:
           "Nuestras páginas de referencia son perfectas para imprimir y contienen todo lo que necesitas saber.",
-        image: "placeholder",
+        image: placeholder,
       },
       feature2: {
         heading: "Nuestras tarjetas de memoria te ayudan a no olvidar.",
         description:
           "Basado en algoritmos de aprendizaje con repetición espaciada.",
-        image: "placeholder",
+        image: placeholder,
       },
       feature3: {
         heading: "Ahorra tiempo y copia nuestras notas de estudio.",
         description: "En cada lección, creamos notas de estudio detalladas.",
-        image: "placeholder",
+        image: placeholder,
       },
       feature4: {
         heading: "Haz seguimiento de tu progreso en el curso",
         description:
           "En nuestro sistema, puedes controlar tu progreso a lo largo del curso.",
-        image: "placeholder",
+        image: placeholder,
       },
       feature5: {
         heading: "Haz preguntas de programación, recibe respuestas de expertos",
         description:
           "Nos tomamos el tiempo para escribir explicaciones completas y detalladas para tus preguntas sobre programación.",
-        image: "placeholder",
+        image: placeholder,
       },
+    },
+  },
+  careersPage: {
+    chooseAProgrammingField: "Elige un campo de programación",
+    whatKindOfProgramsDoYouWantToCreate: "Qué tipo de programas quieres crear?",
+    levels: {
+      beginner: "Principiante",
+      intermediate: "Intermedio",
+      advanced: "Avanzado",
+      specialist: "Especialista",
+    },
+    webDevelopment: {
+      title: "Desarrollo Web",
+      description:
+        "El desarrollo web es la creación de sitios en internet. El profesional que trabaja desarrollando sitios web puede ser un diseñador web (responsable del diseño) o un desarrollador web (responsable de los sistemas).",
+    },
+    mobileDevelopment: {
+      title: "Desarrollo Móvil",
+      description:
+        "El desarrollo móvil es el proceso de creación de aplicaciones y soluciones específicamente dirigidas a dispositivos móviles, como smartphones y tabletas.",
+    },
+    embeddedSystems: {
+      title: "Sistemas Embebidos",
+      description:
+        "Un sistema embebido es un sistema electrónico microprocesado, completamente encapsulado, dedicado al dispositivo o sistema que controla.",
+    },
+    dataScience: {
+      title: "Ciencia de Datos",
+      description:
+        "La ciencia de datos es un área interdisciplinaria, que se sitúa entre la estadística y la informática, y utiliza el método científico, procesos, algoritmos y sistemas para extraer conocimientos y tomar decisiones a partir de datos de diversos tipos, ya sean ruidosos, ambiguos, estructurados o no estructurados.",
     },
   },
   navbar: {
