@@ -1,41 +1,41 @@
+"use client";
 import React from "react";
 import placeholder from "@/public/placeholder.webp";
 import { Instructor } from "@/app/(root)/_components/instructor";
 import { Feature } from "@/app/(root)/_components/feature";
-
-const features = [
-  {
-    heading: "Páginas de referência perfeitas para fixar consultar o conteúdo",
-    paragraph:
-      "Nossas páginas de referência são perfeitas para imprimir e contém tudo que você precisa saber.",
-    image: placeholder,
-  },
-  {
-    heading: "Nossos cartões de memorização te ajudam a nunca esquecer.",
-    paragraph: "Baseado em algoritmos de aprendizado com repetição alternada.",
-    image: placeholder,
-  },
-  {
-    heading: "Economize tempo e copie nossas anotações de estudo.",
-    paragraph: "Em cada lição, nós criamos anotações de estudo detalhadas.",
-    image: placeholder,
-  },
-  {
-    heading: "Acompanhe seu progresso no curso",
-    paragraph:
-      "Em nosso sistema, você tem controle sobre seu percurso no curso.",
-    image: placeholder,
-  },
-  {
-    heading:
-      "Faça perguntas sobre programação, receba respostas de especialistas",
-    paragraph:
-      "Nós investimos tempo para escrever explicações completas e detalhadas para suas perguntas sobre programação.",
-    image: placeholder,
-  },
-];
+import { useLanguageStore } from "@/hooks/use-language-store";
 
 const Features = () => {
+  const language = useLanguageStore().homepage.features;
+
+  const features = [
+    {
+      heading: language.feature1.heading,
+      description: language.feature1.description,
+      image: placeholder,
+    },
+    {
+      heading: language.feature2.heading,
+      description: language.feature2.description,
+      image: placeholder,
+    },
+    {
+      heading: language.feature3.heading,
+      description: language.feature3.description,
+      image: placeholder,
+    },
+    {
+      heading: language.feature4.heading,
+      description: language.feature4.description,
+      image: placeholder,
+    },
+    {
+      heading: language.feature5.heading,
+      description: language.feature5.description,
+      image: placeholder,
+    },
+  ];
+
   return (
     <section className="flex flex-col items-center mt-20 w-[90%] md:w-4/5">
       <Instructor />
@@ -45,7 +45,7 @@ const Features = () => {
           <Feature
             key={feature.heading}
             heading={feature.heading}
-            paragraph={feature.paragraph}
+            paragraph={feature.description}
             image={feature.image}
           />
         ))}

@@ -1,6 +1,7 @@
 import fernando from "@/public/testimonials/fernando.jpg";
 import weverton from "@/public/testimonials/weverton.jpg";
 import jhonatan from "@/public/testimonials/jhonatan.jpg";
+import placeholder from "@/public/placeholder.webp";
 
 export const spanishLanguage: ILanguage = {
   id: "english",
@@ -46,6 +47,48 @@ export const spanishLanguage: ILanguage = {
           "Este curso fue excelente y valió la pena. Desafió mis habilidades técnicas, pero adquirí mucho conocimiento en el proceso. Ahora tengo más confianza para construir aplicaciones de pila completa. Gracias Ramon Rodrigues por organizar esto.",
         personName: "Weverton Santos",
         image: weverton,
+      },
+    },
+    features: {
+      instructor: {
+        heading:
+          "Conoce a tu instructor de programación favorito, Ramon Rodrigues",
+        programmerForOver10Years:
+          "Programador con más de 10 años de experiencia",
+        creatorOfCS50x: "Creador del curso CS50x en portugués",
+        experientInDifferentTechnologies:
+          "Con experiencia en diferentes tecnologías",
+        brazilian: "Brasileño",
+        fanOfGameOfThrones: "Fan de Game of Thrones",
+      },
+      feature1: {
+        heading: "Páginas de referencia perfectas para revisar el contenido",
+        description:
+          "Nuestras páginas de referencia son perfectas para imprimir y contienen todo lo que necesitas saber.",
+        image: "placeholder",
+      },
+      feature2: {
+        heading: "Nuestras tarjetas de memoria te ayudan a no olvidar.",
+        description:
+          "Basado en algoritmos de aprendizaje con repetición espaciada.",
+        image: "placeholder",
+      },
+      feature3: {
+        heading: "Ahorra tiempo y copia nuestras notas de estudio.",
+        description: "En cada lección, creamos notas de estudio detalladas.",
+        image: "placeholder",
+      },
+      feature4: {
+        heading: "Haz seguimiento de tu progreso en el curso",
+        description:
+          "En nuestro sistema, puedes controlar tu progreso a lo largo del curso.",
+        image: "placeholder",
+      },
+      feature5: {
+        heading: "Haz preguntas de programación, recibe respuestas de expertos",
+        description:
+          "Nos tomamos el tiempo para escribir explicaciones completas y detalladas para tus preguntas sobre programación.",
+        image: "placeholder",
       },
     },
   },

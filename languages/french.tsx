@@ -1,6 +1,7 @@
 import fernando from "@/public/testimonials/fernando.jpg";
 import weverton from "@/public/testimonials/weverton.jpg";
 import jhonatan from "@/public/testimonials/jhonatan.jpg";
+import placeholder from "@/public/placeholder.webp";
 
 export const frenchLanguage: ILanguage = {
   id: "french",
@@ -47,6 +48,49 @@ export const frenchLanguage: ILanguage = {
           "Ce cours était excellent et en valait la peine. Il a mis à l'épreuve mes compétences techniques, mais j'ai acquis beaucoup de connaissances dans le processus. Je suis maintenant plus confiant pour construire des applications full stack. Merci Ramon Rodrigues d'avoir organisé cela.",
         personName: "Weverton Santos",
         image: weverton,
+      },
+    },
+    features: {
+      instructor: {
+        heading:
+          "Rencontrez votre instructeur de programmation préféré Ramon Rodrigues",
+        programmerForOver10Years: "Programmeur depuis plus de 10 ans",
+        creatorOfCS50x: "Créateur du cours CS50x en portugais",
+        experientInDifferentTechnologies:
+          "Expérimenté avec différentes technologies",
+        brazilian: "Brésilien",
+        fanOfGameOfThrones: "Fan de Game of Thrones",
+      },
+      feature1: {
+        heading: "Pages de référence parfaites pour réviser le contenu",
+        description:
+          "Nos pages de référence sont parfaites pour l'impression et contiennent tout ce que vous devez savoir.",
+        image: "placeholder",
+      },
+      feature2: {
+        heading: "Nos fiches vous aident à ne jamais oublier.",
+        description:
+          "Basé sur des algorithmes d'apprentissage par répétition espacée.",
+        image: "placeholder",
+      },
+      feature3: {
+        heading: "Gagnez du temps et copiez nos notes d'étude.",
+        description:
+          "Dans chaque leçon, nous créons des notes d'étude détaillées.",
+        image: "placeholder",
+      },
+      feature4: {
+        heading: "Suivez votre progression dans le cours",
+        description:
+          "Dans notre système, vous pouvez suivre votre progression à travers le cours.",
+        image: "placeholder",
+      },
+      feature5: {
+        heading:
+          "Posez des questions de programmation, obtenez des réponses d'experts",
+        description:
+          "Nous prenons le temps d'écrire des explications complètes et détaillées pour vos questions sur la programmation.",
+        image: "placeholder",
       },
     },
   },

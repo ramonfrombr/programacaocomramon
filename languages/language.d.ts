@@ -30,6 +30,27 @@ type IHomepage = {
     testimonial2: ITestimonial;
     testimonial3: ITestimonial;
   };
+  features: {
+    instructor: {
+      heading: string;
+      programmerForOver10Years: string;
+      creatorOfCS50x: string;
+      experientInDifferentTechnologies: string;
+      brazilian: string;
+      fanOfGameOfThrones: string;
+    };
+    feature1: ICourseFeature;
+    feature2: ICourseFeature;
+    feature3: ICourseFeature;
+    feature4: ICourseFeature;
+    feature5: ICourseFeature;
+  };
+};
+
+type ICourseFeature = {
+  heading: string;
+  description: string;
+  image: StaticImageData;
 };
 
 type ITestimonial = {
