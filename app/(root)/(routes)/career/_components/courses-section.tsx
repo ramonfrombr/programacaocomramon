@@ -1,19 +1,38 @@
+import { typeLEVELS } from "@/constants/levels";
 import { Course } from "@prisma/client";
 import Link from "next/link";
 
 interface CoursesSectionProps {
-  bgColor: string;
-  color: string;
-  heading: string;
   courses: Course[];
+  level: typeLEVELS;
 }
 
 const CoursesSection = ({
-  bgColor,
-  color,
-  heading,
   courses,
+  level
 }: CoursesSectionProps) => {
+  const backgroundColors = {
+    BEGINNER: 'bg-slate-800',
+    INTERMEDIATE: 'bg-blue-700',
+    ADVANCED: 'bg-emerald-600',
+    SPECIALIST: 'bg-violet-700'
+  }
+  const bgColor = backgroundColors[level];
+  const colors = {
+    BEGINNER: 'text-slate-800',
+    INTERMEDIATE: 'text-blue-700',
+    ADVANCED: 'text-emerald-600',
+    SPECIALIST: 'text-violet-700'
+  }
+  const color = colors[level];
+  const headings = {
+    BEGINNER: "Iniciante",
+    INTERMEDIATE: 'Intermediário',
+    ADVANCED: 'Avançado',
+    SPECIALIST: 'Especialista'
+  }
+  const heading = headings[level];
+
   return (
     <section className="mb-5">
       <h2 className={`py-2 text-white rounded-md pl-8 mb-5 ${bgColor}`}>
