@@ -1,12 +1,12 @@
 "use client";
 import Image from "next/image";
-import logo from "@/public/logo.png";
-import { Poppins } from "next/font/google";
 import Link from "next/link";
+import { Poppins } from "next/font/google";
+import { useAuth, UserButton } from "@clerk/nextjs";
 import { Menu } from "lucide-react";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import { Button } from "@/components/ui/button";
-import { useAuth, UserButton } from "@clerk/nextjs";
+import logo from "@/public/logo.png";
 
 const poppins = Poppins({
   subsets: ["latin"],

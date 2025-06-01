@@ -1,15 +1,15 @@
-import CareerPage from "../_components/career-page";
+"use client";
 import image from "@/public/careers/data-science.png";
+import CareerPage from "@/app/(root)/(routes)/career/_components/career-page";
+import { useLanguageStore } from "@/hooks/use-language-store";
 
 const ChooseACareerDataScience = () => {
-  const heading = "Ciência de Dados";
-  const description =
-    "A ciência de dados é uma área interdisciplinar, que localiza-se entre a estatística e a ciência da computação e utiliza o método científico; processos, algoritmos e sistemas, para extrair conhecimento e tomar decisões a partir de dados dos diversos tipos, sendo eles ruidosos, nebulosos, estruturados ou não-estruturados.";
+  const language = useLanguageStore().careersPage.dataScience;
 
   return (
     <CareerPage
-      heading={heading}
-      description={description}
+      heading={language.title}
+      description={language.description}
       image={image}
       slug="data-science"
     />

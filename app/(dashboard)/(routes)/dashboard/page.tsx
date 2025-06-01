@@ -1,8 +1,8 @@
+import { redirect } from "next/navigation";
+import { auth } from "@clerk/nextjs/server";
 import { getDashboardCourses } from "@/actions/get-dashboard-courses";
 import { CoursesList } from "@/components/courses-list";
-import { auth } from "@clerk/nextjs/server";
-import { redirect } from "next/navigation";
-import { InfoCards } from "./_components/info-cards";
+import { InfoCards } from "@/app/(dashboard)/(routes)/dashboard/_components/info-cards";
 
 export default async function Dashboard() {
   const { userId } = auth();

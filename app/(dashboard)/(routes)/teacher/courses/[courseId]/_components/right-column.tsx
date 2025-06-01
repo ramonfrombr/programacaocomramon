@@ -1,11 +1,11 @@
 "use client";
-import { IconBadge } from "@/components/icon-badge";
-import { Attachment, Chapter, Course } from "@prisma/client";
-import { ChaptersForm } from "./chapters-form";
 import { CircleDollarSign, File, ListChecks } from "lucide-react";
-import { PriceForm } from "./price-form";
-import { AttachmentForm } from "./attachment-form";
+import { Attachment, Chapter, Course } from "@prisma/client";
 import { useLanguageStore } from "@/hooks/use-language-store";
+import { IconBadge } from "@/components/icon-badge";
+import { PriceForm } from "@/app/(dashboard)/(routes)/teacher/courses/[courseId]/_components/price-form";
+import { ChaptersForm } from "@/app/(dashboard)/(routes)/teacher/courses/[courseId]/_components/chapters-form";
+import { AttachmentForm } from "@/app/(dashboard)/(routes)/teacher/courses/[courseId]/_components/attachment-form";
 
 interface RightColumnProps {
   course: Course & {

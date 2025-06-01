@@ -1,5 +1,130 @@
+import fernando from "@/public/testimonials/fernando.jpg";
+import weverton from "@/public/testimonials/weverton.jpg";
+import jhonatan from "@/public/testimonials/jhonatan.jpg";
+import placeholder from "@/public/placeholder.webp";
+
 export const portugueseLanguage: ILanguage = {
   id: "portuguese",
+  homepage: {
+    hero: {
+      heading: (
+        <>
+          Aprenda Programação <br />{" "}
+          <span className="underline">De Verdade</span>
+        </>
+      ),
+      headingDescription: (
+        <>
+          O jeito <span className="text-black">rápido</span> e{" "}
+          <span className="text-black">fácil</span> de aprender a profissão{" "}
+          <span className="text-black">mais bem paga</span> do mercado,
+        </>
+      ),
+      chooseACareer: "Escolha uma Carreira",
+      chooseACareerDescription: "Que área da programação mais te interessa?",
+    },
+    subcriptionBanner: {
+      heading: "Assinatura no Plano Anual",
+      description:
+        "Nesta opção, você tem acesso ao catálogo completo de cursos, com acesso exclusivo a cursos especiais e benefícios.",
+      learnMore: "Saiba Mais",
+    },
+    testimonials: {
+      testimonial1: {
+        testimonial:
+          "Programação com  Ramon - É impossível explicar com palavras o quanto sua plataforma é benéfica. Os PDFs para download, o conteúdo em vídeo e os testes focados nas minhas fraquezas. Um verdadeiro tesouro.",
+        personName: "Fernando Otone",
+        image: fernando,
+      },
+      testimonial2: {
+        testimonial:
+          "Um agradecimento público ao Ramon Rodrigues, do Programação com Ramon, cujo material do curso me ajudou a conseguir meu primeiro emprego como desenvolvedora ontem. O material era bem estruturado e apoiado por documentos fantásticos, casos práticos, cartões de memorização e exames práticos.",
+        personName: "Jhonatan Brendo",
+        image: jhonatan,
+      },
+      testimonial3: {
+        testimonial:
+          "Este curso foi excelente e valeu a pena. Desafiou minhas habilidades técnicas, mas adquiri muito conhecimento no processo. Agora estou mais confiante para criar aplicações full stack. Obrigado Ramon Rodrigues por organizar isso.",
+        personName: "Weverton Santos",
+        image: weverton,
+      },
+    },
+    features: {
+      instructor: {
+        heading:
+          "Conheça seu Professor de Programação Favorito Ramon Rodrigues",
+        programmerForOver10Years: "Programador a mais de 10 anos",
+        creatorOfCS50x: "Criador do curso CS50x em Português",
+        experientInDifferentTechnologies:
+          "Experiente com diferentes tecnologias",
+        brazilian: "Brasileiro",
+        fanOfGameOfThrones: "Fã de Game of Thrones",
+      },
+      feature1: {
+        heading:
+          "Páginas de referência perfeitas para fixar consultar o conteúdo",
+        description:
+          "Nossas páginas de referência são perfeitas para imprimir e contém tudo que você precisa saber.",
+        image: placeholder,
+      },
+      feature2: {
+        heading: "Nossos cartões de memorização te ajudam a nunca esquecer.",
+        description:
+          "Baseado em algoritmos de aprendizado com repetição alternada.",
+        image: placeholder,
+      },
+      feature3: {
+        heading: "Economize tempo e copie nossas anotações de estudo.",
+        description:
+          "Em cada lição, nós criamos anotações de estudo detalhadas.",
+        image: placeholder,
+      },
+      feature4: {
+        heading: "Acompanhe seu progresso no curso",
+        description:
+          "Em nosso sistema, você tem controle sobre seu percurso no curso.",
+        image: placeholder,
+      },
+      feature5: {
+        heading:
+          "Faça perguntas sobre programação, receba respostas de especialistas",
+        description:
+          "Nós investimos tempo para escrever explicações completas e detalhadas para suas perguntas sobre programação.",
+        image: placeholder,
+      },
+    },
+  },
+  careersPage: {
+    chooseAProgrammingField: "Escolha uma área da programação",
+    whatKindOfProgramsDoYouWantToCreate:
+      "Que tipo de programas você quer criar?",
+    levels: {
+      beginner: "Iniciante",
+      intermediate: "Intermediário",
+      advanced: "Avançado",
+      specialist: "Especialista",
+    },
+    webDevelopment: {
+      title: "Desenvolvimento Web",
+      description:
+        "Desenvolvimento web é o desenvolvimento de sites na internet. O profissional que trabalha desenvolvendo websites pode ser um web designer (desenvolvedor do layout) ou um web developer (desenvolvedor de sistemas).",
+    },
+    mobileDevelopment: {
+      title: "Desenvolvimento Mobile",
+      description:
+        "O desenvolvimento mobile é o processo de criação de aplicativos e soluções que se voltam especificamente para dispositivos móveis, como smartphones e tablets.",
+    },
+    embeddedSystems: {
+      title: "Sistemas Embarcados",
+      description:
+        "Um sistema embarcado é um sistema eletrônico microprocessado, completamente encapsulado, dedicado ao dispositivo ou sistema que ele controla.",
+    },
+    dataScience: {
+      title: "Ciências de Dados",
+      description:
+        "A ciência de dados é uma área interdisciplinar, que localiza-se entre a estatística e a ciência da computação e utiliza o método científico; processos, algoritmos e sistemas, para extrair conhecimento e tomar decisões a partir de dados dos diversos tipos, sendo eles ruidosos, nebulosos, estruturados ou não-estruturados.",
+    },
+  },
   navbar: {
     goBackToCourses: "Voltar para Cursos",
     teacherMode: "Modo Professor",

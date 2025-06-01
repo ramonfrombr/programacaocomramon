@@ -1,7 +1,7 @@
 "use client";
-import { IconBadge } from "@/components/icon-badge";
-import { useLanguageStore } from "@/hooks/use-language-store";
 import { LucideIcon } from "lucide-react";
+import { useLanguageStore } from "@/hooks/use-language-store";
+import { IconBadge } from "@/components/icon-badge";
 
 interface InfoCardProps {
   numberOfItems: number;

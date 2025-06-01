@@ -1,15 +1,15 @@
-import CareerPage from "../_components/career-page";
+"use client";
 import image from "@/public/careers/mobile.png";
+import CareerPage from "@/app/(root)/(routes)/career/_components/career-page";
+import { useLanguageStore } from "@/hooks/use-language-store";
 
 const ChooseACareerMobile = () => {
-  const heading = "Desenvolvimento Mobile";
-  const description =
-    "O desenvolvimento mobile é o processo de criação de aplicativos e soluções que se voltam especificamente para dispositivos móveis, como smartphones e tablets.  ";
+  const language = useLanguageStore().careersPage.embeddedSystems;
 
   return (
     <CareerPage
-      heading={heading}
-      description={description}
+      heading={language.title}
+      description={language.description}
       image={image}
       slug="mobile"
     />

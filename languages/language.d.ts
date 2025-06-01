@@ -1,5 +1,7 @@
 type ILanguage = {
   id: string;
+  homepage: IHomepage;
+  careersPage: ICareerPage;
   navbar: ILanguageNavbar;
   sidebar: ILanguageSidebar;
   dashboard: ILanguageDashboard;
@@ -10,6 +12,72 @@ type ILanguage = {
   teacherAnalytics: ILanguageTeacherAnalytics;
   videoPlayer: ILanguageVideoPlayer;
   course: ILanguageCourse;
+};
+
+type IHomepage = {
+  hero: {
+    heading: React.ReactNode;
+    headingDescription: React.ReactNode;
+    chooseACareer: string;
+    chooseACareerDescription: string;
+  };
+  subcriptionBanner: {
+    heading: string;
+    description: string;
+    learnMore: string;
+  };
+  testimonials: {
+    testimonial1: ITestimonial;
+    testimonial2: ITestimonial;
+    testimonial3: ITestimonial;
+  };
+  features: {
+    instructor: {
+      heading: string;
+      programmerForOver10Years: string;
+      creatorOfCS50x: string;
+      experientInDifferentTechnologies: string;
+      brazilian: string;
+      fanOfGameOfThrones: string;
+    };
+    feature1: ICourseFeature;
+    feature2: ICourseFeature;
+    feature3: ICourseFeature;
+    feature4: ICourseFeature;
+    feature5: ICourseFeature;
+  };
+};
+
+type ICareerPage = {
+  chooseAProgrammingField: string;
+  whatKindOfProgramsDoYouWantToCreate: string;
+  levels: {
+    beginner: string;
+    intermediate: string;
+    advanced: string;
+    specialist: string;
+  };
+  webDevelopment: ICareer;
+  mobileDevelopment: ICareer;
+  embeddedSystems: ICareer;
+  dataScience: ICareer;
+};
+
+type ICareer = {
+  title: string;
+  description: string;
+};
+
+type ICourseFeature = {
+  heading: string;
+  description: string;
+  image: StaticImageData;
+};
+
+type ITestimonial = {
+  testimonial: string;
+  personName: string;
+  image: StaticImageData;
 };
 
 type ILanguageNavbar = {

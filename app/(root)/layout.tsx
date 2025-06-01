@@ -1,6 +1,6 @@
 import React from "react";
 import { Navbar } from "@/app/(root)/_components/navbar";
-import { Footer } from "@/components/footer-dashboard";
+import { Footer } from "@/components/footer";
 import { Nunito_Sans } from "next/font/google";
 
 const nunito = Nunito_Sans({

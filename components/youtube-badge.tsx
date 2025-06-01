@@ -1,6 +1,6 @@
 "use client";
 import { Video } from "lucide-react";
-import { IconBadge } from "./icon-badge";
+import { IconBadge } from "@/components/icon-badge";
 
 export const YoutubeBadge = () => {
   return (

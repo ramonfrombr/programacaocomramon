@@ -1,11 +1,11 @@
 "use client";
-import { IconBadge } from "@/components/icon-badge";
-import { Eye, LayoutDashboard } from "lucide-react";
-import { ChapterTitleForm } from "./chapter-title-form";
-import { ChapterDescriptionForm } from "./chapter-description-form";
-import { ChapterAccessForm } from "./chapter-access-form";
 import { Chapter } from "@prisma/client";
+import { Eye, LayoutDashboard } from "lucide-react";
 import { useLanguageStore } from "@/hooks/use-language-store";
+import { IconBadge } from "@/components/icon-badge";
+import { ChapterTitleForm } from "@/app/(dashboard)/(routes)/teacher/courses/[courseId]/chapters/[chapterId]/_components/chapter-title-form";
+import { ChapterAccessForm } from "@/app/(dashboard)/(routes)/teacher/courses/[courseId]/chapters/[chapterId]/_components/chapter-access-form";
+import { ChapterDescriptionForm } from "@/app/(dashboard)/(routes)/teacher/courses/[courseId]/chapters/[chapterId]/_components/chapter-description-form";
 
 interface ChapterSetupLeftColumnProps {
   chapter: Chapter;

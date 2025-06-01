@@ -2,7 +2,7 @@ import { db } from "@/lib/db";
 import { auth } from "@clerk/nextjs/server";
 import { Chapter, Course, UserProgress } from "@prisma/client";
 import { redirect } from "next/navigation";
-import { CourseSidebarItem } from "./course-siderbar-item";
+import { CourseSidebarItem } from "@/app/(course)/courses/[courseId]/_components/course-siderbar-item";
 import { CourseProgress } from "@/components/course-progress";
 import { isTeacher } from "@/lib/teacher";
 

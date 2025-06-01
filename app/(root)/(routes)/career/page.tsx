@@ -1,6 +1,8 @@
-import { Course } from "@prisma/client";
+"use client";
 import Link from "next/link";
-
+import { Course } from "@prisma/client";
+import { useLanguageStore } from "@/hooks/use-language-store";
+import { CARRERS_URLS } from "@/app/_constants/careers-urls";
 export interface CoursesInterface {
   beginner: Course[];
   intermediate: Course[];
@@ -10,24 +12,26 @@ export interface CoursesInterface {
 
 type CareerType = {
   url: string;
-  name: string;
+  title: string;
 };
 
-const careers: CareerType[] = [
-  { url: "webdev", name: "Desenvolvimento Web" },
-  { url: "mobile", name: "Desenvolvimento Mobile" },
-  { url: "embedded", name: "Sistemas Embarcados" },
-  { url: "data-science", name: "Ciências de Dados" },
-];
-
 const ChooseACareer = () => {
+  const language = useLanguageStore().careersPage;
+
+  const careers: CareerType[] = [
+    { url: CARRERS_URLS.WEBDEV, title: language.webDevelopment.title },
+    { url: CARRERS_URLS.MOBILE, title: language.mobileDevelopment.title },
+    { url: CARRERS_URLS.EMBEDDED, title: language.embeddedSystems.title },
+    { url: CARRERS_URLS.DATA_SCIENCE, title: language.dataScience.title },
+  ];
+
   return (
     <div className="pt-5 text-center flex flex-col items-center">
       <h1 className="text-2xl md:text-4xl font-semibold mb-3">
-        Escolha uma área da programação
+        {language.chooseAProgrammingField}
       </h1>
       <p className="text-gray-500 mb-3">
-        Que tipo de programas você quer criar?
+        {language.whatKindOfProgramsDoYouWantToCreate}{" "}
       </p>
       <div className="flex flex-col p-3 md:w-[500px]">
         {careers.map((career) => (
@@ -37,7 +41,7 @@ const ChooseACareer = () => {
             data-testid={career.url}
             className="p-3 mb-3 border border-slate-300 text-slate-600 rounded-lg hover:bg-slate-200 font-semibold"
           >
-            {career.name}
+            {career.title}
           </Link>
         ))}
       </div>

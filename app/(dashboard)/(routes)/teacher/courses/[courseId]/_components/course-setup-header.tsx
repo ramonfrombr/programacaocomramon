@@ -1,8 +1,7 @@
 "use client";
-
 import { useLanguageStore } from "@/hooks/use-language-store";
-import { Actions } from "./actions";
 import { Banner } from "@/components/banner";
+import { Actions } from "@/app/(dashboard)/(routes)/teacher/courses/[courseId]/_components/actions";
 
 interface LeftColumnProps {
   completionText: string;
