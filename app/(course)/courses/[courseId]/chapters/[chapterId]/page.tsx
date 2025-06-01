@@ -8,6 +8,7 @@ import { VideoPlayer } from "@/app/(course)/courses/[courseId]/chapters/[chapter
 import { CourseEnrollButton } from "@/app/(course)/courses/[courseId]/chapters/[chapterId]/_components/course-enroll-button";
 import { CourseProgressButton } from "@/app/(course)/courses/[courseId]/chapters/[chapterId]/_components/course-progress-button";
 import { ChapterBanners } from "@/app/(course)/courses/[courseId]/chapters/[chapterId]/_components/chapter-banners";
+import { isTeacher } from "@/lib/teacher";
 
 const ChapterIdPage = async ({
   params,
@@ -38,8 +39,10 @@ const ChapterIdPage = async ({
     return redirect("/");
   }
 
-  const isLocked = !chapter.isFree && !purchase;
+  const isLocked = !isTeacher(userId) && !chapter.isFree && !purchase;
   const completeOnEnd = !!purchase && !userProgress?.isCompleted;
+
+  const showPurchaseButton: boolean = (!purchase && !isTeacher(userId));
 
   return (
     <div>
@@ -49,12 +52,15 @@ const ChapterIdPage = async ({
       />
 
       <div className="flex flex-col max-w-4xl mx-auto pb-20">
-        <div className="p-5">
-          <CourseEnrollButton
-            courseId={params.courseId}
-            price={course.price!}
-          />
-        </div>
+        {showPurchaseButton && (
+          <div className="p-5">
+            <CourseEnrollButton
+              courseId={params.courseId}
+              price={course.price!}
+            />
+          </div>
+        )}
+        
         <div className="p-4">
           <VideoPlayer
             chapterId={params.chapterId}

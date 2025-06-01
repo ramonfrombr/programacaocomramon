@@ -4,7 +4,7 @@ import CareerPage from "@/app/(root)/(routes)/career/_components/career-page";
 import { useLanguageStore } from "@/hooks/use-language-store";
 
 const ChooseACareerMobile = () => {
-  const language = useLanguageStore().careersPage.embeddedSystems;
+  const language = useLanguageStore().careersPage.mobileDevelopment;
 
   return (
     <CareerPage

@@ -3,6 +3,7 @@ import { Level } from "@prisma/client";
 import { db } from "@/lib/db";
 import Header from "@/app/(root)/(routes)/career/_components/header";
 import CoursesSection from "@/app/(root)/(routes)/career/_components/courses-section";
+import LEVELS from "@/constants/levels";
 
 interface CareerPageProps {
   heading: string;
@@ -76,37 +77,29 @@ const CareerPage = async ({
 
       {!!courses.beginner.length && (
         <CoursesSection
-          bgColor="bg-slate-800"
-          color="text-slate-800"
-          heading="Iniciante"
           courses={courses.beginner}
+          level={LEVELS.BEGINNER}
         />
       )}
 
       {!!courses.intermediate.length && (
         <CoursesSection
-          bgColor="bg-blue-700"
-          color="text-blue-700"
-          heading="Intermediário"
           courses={courses.intermediate}
+          level={LEVELS.INTERMEDIATE}
         />
       )}
 
       {!!courses.advanced.length && (
         <CoursesSection
-          bgColor="bg-emerald-600"
-          color="text-emerald-600"
-          heading="Avançado"
-          courses={courses.intermediate}
+          courses={courses.advanced}
+          level={LEVELS.ADVANCED}
         />
       )}
 
       {!!courses.specialist.length && (
         <CoursesSection
-          bgColor="bg-violet-700"
-          color="text-violet-700"
-          heading="Especialista"
           courses={courses.specialist}
+          level={LEVELS.SPECIALIST}
         />
       )}
     </div>

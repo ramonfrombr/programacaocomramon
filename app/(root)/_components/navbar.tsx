@@ -2,7 +2,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { Poppins } from "next/font/google";
-import { useAuth } from "@clerk/nextjs";
+import { useAuth, UserButton } from "@clerk/nextjs";
 import { Menu } from "lucide-react";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import { Button } from "@/components/ui/button";
@@ -41,7 +41,7 @@ export const Navbar = () => {
         </div>
       </Link>
 
-      {!userId && (
+      {!userId ? (
         <div className="gap-2 hidden md:flex">
           <Link href="/sign-in">
             <Button variant="default">Entrar</Button>
@@ -50,6 +50,10 @@ export const Navbar = () => {
             <Button variant="secondary">Criar conta</Button>
           </Link>
         </div>
+      ) : (
+        <span className="hidden md:inline">
+          <UserButton />
+        </span>
       )}
 
       <Sheet>
