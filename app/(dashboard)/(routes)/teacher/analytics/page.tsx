@@ -1,9 +1,8 @@
-import { auth } from "@clerk/nextjs/server";
 import { redirect } from "next/navigation";
-
+import { auth } from "@clerk/nextjs/server";
 import { getAnalytics } from "@/actions/get-analytics";
-import { Chart } from "./_components/chart";
-import { DataCards } from "./_components/data-cards";
+import { Chart } from "@/app/(dashboard)/(routes)/teacher/analytics/_components/chart";
+import { DataCards } from "@/app/(dashboard)/(routes)/teacher/analytics//_components/data-cards";
 
 const AnalyticsPage = async () => {
   const { userId } = auth();

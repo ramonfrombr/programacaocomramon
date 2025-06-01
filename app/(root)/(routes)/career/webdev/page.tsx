@@ -1,15 +1,15 @@
-import CareerPage from "../_components/career-page";
+"use client";
 import image from "@/public/careers/webdev.webp";
+import CareerPage from "@/app/(root)/(routes)/career/_components/career-page";
+import { useLanguageStore } from "@/hooks/use-language-store";
 
-const ChooseACareerWebDev = async () => {
-  const heading = "Desenvolvimento Web";
-  const description =
-    "Desenvolvimento web é o desenvolvimento de sites na internet. O profissional que trabalha desenvolvendo websites pode ser um web designer (desenvolvedor do layout) ou um web developer (desenvolvedor de sistemas).";
+const ChooseACareerWebDev = () => {
+  const language = useLanguageStore().careersPage.webDevelopment;
 
   return (
     <CareerPage
-      heading={heading}
-      description={description}
+      heading={language.title}
+      description={language.description}
       image={image}
       slug="webdev"
     />

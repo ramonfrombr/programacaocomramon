@@ -1,15 +1,15 @@
-import CareerPage from "../_components/career-page";
+"use client";
 import image from "@/public/careers/embedded.png";
+import CareerPage from "@/app/(root)/(routes)/career/_components/career-page";
+import { useLanguageStore } from "@/hooks/use-language-store";
 
 const ChooseACareerEmbedded = () => {
-  const heading = "Sistemas Embarcados";
-  const description =
-    "Um sistema embarcado é um sistema eletrônico microprocessado, completamente encapsulado, dedicado ao dispositivo ou sistema que ele controla.";
+  const language = useLanguageStore().careersPage.embeddedSystems;
 
   return (
     <CareerPage
-      heading={heading}
-      description={description}
+      heading={language.title}
+      description={language.description}
       image={image}
       slug="embedded"
     />

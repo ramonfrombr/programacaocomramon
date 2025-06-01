@@ -1,9 +1,8 @@
-import React from "react";
-import { Sidebar } from "./_components/sidebar";
-import { Navbar } from "./_components/Navbar";
-import { Footer } from "@/components/footer-dashboard";
-import { auth } from "@clerk/nextjs/server";
 import { redirect } from "next/navigation";
+import { auth } from "@clerk/nextjs/server";
+import { Sidebar } from "@/app/(dashboard)/_components/sidebar";
+import { Navbar } from "@/app/(dashboard)/_components/Navbar";
+import { Footer } from "@/components/footer";
 
 const DashboardLayout = ({ children }: { children: React.ReactNode }) => {
   const { userId } = auth();

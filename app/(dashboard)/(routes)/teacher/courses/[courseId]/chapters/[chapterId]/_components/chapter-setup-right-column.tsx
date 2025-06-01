@@ -1,9 +1,9 @@
 "use client";
-import { IconBadge } from "@/components/icon-badge";
-import { Chapter } from "@prisma/client";
-import { ChapterVideoForm } from "./chapter-video-form";
 import { Video } from "lucide-react";
+import { Chapter } from "@prisma/client";
 import { useLanguageStore } from "@/hooks/use-language-store";
+import { IconBadge } from "@/components/icon-badge";
+import { ChapterVideoForm } from "@/app/(dashboard)/(routes)/teacher/courses/[courseId]/chapters/[chapterId]/_components/chapter-video-form";
 
 interface ChapterSetupRightColumnProps {
   chapter: Chapter;

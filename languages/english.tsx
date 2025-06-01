@@ -1,5 +1,126 @@
+import fernando from "@/public/testimonials/fernando.jpg";
+import weverton from "@/public/testimonials/weverton.jpg";
+import jhonatan from "@/public/testimonials/jhonatan.jpg";
+import placeholder from "@/public/placeholder.webp";
+
 export const englishLanguage: ILanguage = {
   id: "english",
+  homepage: {
+    hero: {
+      heading: (
+        <>
+          Learn Programming <br /> <span className="underline">For Real</span>
+        </>
+      ),
+      headingDescription: (
+        <>
+          The <span className="text-black">quick</span> and{" "}
+          <span className="text-black">easy</span> way to master{" "}
+          <span className="text-black">the highest-paying</span> profession in
+          the market.
+        </>
+      ),
+      chooseACareer: "Choose a Career",
+      chooseACareerDescription:
+        "Which area of programming interests you the most?",
+    },
+    subcriptionBanner: {
+      heading: "Yearly Supporter Subscription",
+      description:
+        "When you want full access to the entire catalog along with exclusive courses and benefits.",
+      learnMore: "Learn More",
+    },
+    testimonials: {
+      testimonial1: {
+        testimonial:
+          "Programming with Ramon I can't overstate how beneficial your platform is. The downloadable PDFs, video content, and tests that are based around my weakness. Such a treasure.",
+        personName: "Fernando Otone",
+        image: fernando,
+      },
+      testimonial2: {
+        testimonial:
+          "A public thank you to Ramon Rodrigues at Programming with Ramon whose course material helped me to obtain my first job as a developer yesterday. The material was well structured, and supported by fantastic documents, practical cases, flash cards and practice exams.",
+        personName: "Jhonatan Brendo",
+        image: jhonatan,
+      },
+      testimonial3: {
+        testimonial:
+          "This course was excellent and worth it. It stretched my technical skills but gained a lot of knowledge in the process. I'm more confident building full stack applications now. Thank you Ramon Rodrigues for organising this.",
+        personName: "Weverton Santos",
+        image: weverton,
+      },
+    },
+    features: {
+      instructor: {
+        heading: "Meet Your Favorite Programming Instructor Ramon Rodrigues",
+        programmerForOver10Years: "Programmer for over 10 years",
+        creatorOfCS50x: "Creator of the CS50x Course in Portuguese",
+        experientInDifferentTechnologies:
+          "Experienced with different technologies",
+        brazilian: "Brazilian",
+        fanOfGameOfThrones: "Game of Thrones fan",
+      },
+      feature1: {
+        heading: "Perfect reference pages to review the content",
+        description:
+          "Our reference pages are perfect for printing and contain everything you need to know.",
+        image: placeholder,
+      },
+      feature2: {
+        heading: "Our flashcards help you never forget.",
+        description: "Based on spaced repetition learning algorithms.",
+        image: placeholder,
+      },
+      feature3: {
+        heading: "Save time and copy our study notes.",
+        description: "In each lesson, we create detailed study notes.",
+        image: placeholder,
+      },
+      feature4: {
+        heading: "Track your progress in the course",
+        description:
+          "In our system, you can track your progress through the course.",
+        image: placeholder,
+      },
+      feature5: {
+        heading: "Ask programming questions, get expert answers",
+        description:
+          "We take the time to write complete and detailed explanations for your programming questions.",
+        image: placeholder,
+      },
+    },
+  },
+  careersPage: {
+    chooseAProgrammingField: "Choose a programming field",
+    whatKindOfProgramsDoYouWantToCreate:
+      "What kind of programs do you want to create?",
+    levels: {
+      beginner: "Beginner",
+      intermediate: "Intermediate",
+      advanced: "Advanced",
+      specialist: "Specialist",
+    },
+    webDevelopment: {
+      title: "Web Development",
+      description:
+        "Web development is the creation of websites on the internet. The professional working on website development can be a web designer (responsible for layout design) or a web developer (responsible for systems).",
+    },
+    mobileDevelopment: {
+      title: "Mobile Development",
+      description:
+        "Mobile development is the process of creating applications and solutions specifically designed for mobile devices, such as smartphones and tablets.",
+    },
+    embeddedSystems: {
+      title: "Embedded Systems",
+      description:
+        "An embedded system is a microprocessor-based electronic system, fully encapsulated, dedicated to the device or system it controls.",
+    },
+    dataScience: {
+      title: "Data Science",
+      description:
+        "Data science is an interdisciplinary field that lies between statistics and computer science and uses the scientific method, processes, algorithms, and systems to extract knowledge and make decisions from various types of data, whether noisy, ambiguous, structured, or unstructured.",
+    },
+  },
   navbar: {
     goBackToCourses: "Go Back to Courses",
     teacherMode: "Teacher Mode",

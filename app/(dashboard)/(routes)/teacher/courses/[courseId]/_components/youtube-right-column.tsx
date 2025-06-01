@@ -1,7 +1,7 @@
 import { Video } from "lucide-react";
-import { YoutubeLinkForm } from "./youtube-link-form";
-import { IconBadge } from "@/components/icon-badge";
 import { Course } from "@prisma/client";
+import { IconBadge } from "@/components/icon-badge";
+import { YoutubeLinkForm } from "@/app/(dashboard)/(routes)/teacher/courses/[courseId]/_components/youtube-link-form";
 
 interface YoutubeRightColumnProps {
   course: Course;

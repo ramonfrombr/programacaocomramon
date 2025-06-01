@@ -1,10 +1,10 @@
-import { db } from "@/lib/db";
-import { auth } from "@clerk/nextjs/server";
 import { redirect } from "next/navigation";
-import { CourseSetupHeader } from "./_components/course-setup-header";
-import { LeftColumn } from "./_components/left-column";
-import { RightColumn } from "./_components/right-column";
-import { YoutubeRightColumn } from "./_components/youtube-right-column";
+import { auth } from "@clerk/nextjs/server";
+import { db } from "@/lib/db";
+import { CourseSetupHeader } from "@/app/(dashboard)/(routes)/teacher/courses/[courseId]/_components/course-setup-header";
+import { LeftColumn } from "@/app/(dashboard)/(routes)/teacher/courses/[courseId]/_components/left-column";
+import { RightColumn } from "@/app/(dashboard)/(routes)/teacher/courses/[courseId]/_components/right-column";
+import { YoutubeRightColumn } from "@/app/(dashboard)/(routes)/teacher/courses/[courseId]/_components/youtube-right-column";
 
 const CourseIdPage = async ({ params }: { params: { courseId: string } }) => {
   const { userId } = auth();

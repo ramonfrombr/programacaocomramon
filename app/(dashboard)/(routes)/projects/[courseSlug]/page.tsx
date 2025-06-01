@@ -1,14 +1,14 @@
-import { db } from "@/lib/db";
 import Image from "next/image";
 import { redirect } from "next/navigation";
+import { db } from "@/lib/db";
+import { auth } from "@clerk/nextjs/server";
+import { getProgress } from "@/actions/get-progress";
 import { ChaptersBadge } from "@/components/chapters-badge";
 import { YoutubeBadge } from "@/components/youtube-badge";
-import { YoutubeBanner } from "./_components/youtube-banner";
 import { CourseProgress } from "@/components/course-progress";
-import { getProgress } from "@/actions/get-progress";
-import { auth } from "@clerk/nextjs/server";
-import { StartWatchingBanner } from "./_components/start-watch-banner";
-import { ContinueWatchingBanner } from "./_components/continue-watching-banner";
+import { YoutubeBanner } from "@/app/(dashboard)/(routes)/projects/[courseSlug]/_components/youtube-banner";
+import { StartWatchingBanner } from "@/app/(dashboard)/(routes)/projects/[courseSlug]/_components/start-watch-banner";
+import { ContinueWatchingBanner } from "@/app/(dashboard)/(routes)/projects/[courseSlug]/_components/continue-watching-banner";
 
 const CourseSlugPage = async ({
   params,

@@ -1,6 +1,17 @@
+import Image, { StaticImageData } from "next/image";
 import { Star } from "lucide-react";
 
-export const Testimonial = () => {
+interface TestimonialProps {
+  testimonial: string;
+  personName: string;
+  image: StaticImageData;
+}
+
+export const Testimonial = ({
+  testimonial,
+  personName,
+  image,
+}: TestimonialProps) => {
   return (
     <div className="text-center flex flex-col items-center text-sm text-slate-500">
       <div className="flex mb-3">
@@ -9,16 +20,19 @@ export const Testimonial = () => {
         ))}
       </div>
 
-      <p>
-        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Est voluptatem
-        reprehenderit pariatur possimus, earum mollitia molestiae. Deleniti
-        nulla veritatis ex repudiandae fugiat esse omnis nesciunt quisquam
-        architecto porro. Nobis, commodi?
-      </p>
+      <p>{testimonial}</p>
 
       <div className="flex items-center mt-3">
-        <span className="mr-2 w-[30px] h-[30px] rounded-full bg-black inline-block"></span>
-        <span className="font-semibold">Ramon Rodrigues</span>
+        <span className="mr-2 w-[30px] h-[30px] rounded-full bg-black inline-block overflow-hidden">
+          <Image
+            src={image}
+            height={30}
+            width={30}
+            alt="Testimonial person image"
+            className="object-cover"
+          />
+        </span>
+        <span className="font-semibold">{personName}</span>
       </div>
     </div>
   );

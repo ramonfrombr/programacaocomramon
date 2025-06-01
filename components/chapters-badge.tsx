@@ -1,6 +1,6 @@
 "use client";
 import { BookOpen } from "lucide-react";
-import { IconBadge } from "./icon-badge";
+import { IconBadge } from "@/components/icon-badge";
 import { useLanguageStore } from "@/hooks/use-language-store";
 
 export const ChaptersBadge = ({

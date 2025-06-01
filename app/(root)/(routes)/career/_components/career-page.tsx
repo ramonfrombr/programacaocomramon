@@ -1,8 +1,8 @@
 import { StaticImageData } from "next/image";
-import Header from "./header";
-import CoursesSection from "./courses-section";
-import { db } from "@/lib/db";
 import { Level } from "@prisma/client";
+import { db } from "@/lib/db";
+import Header from "@/app/(root)/(routes)/career/_components/header";
+import CoursesSection from "@/app/(root)/(routes)/career/_components/courses-section";
 
 interface CareerPageProps {
   heading: string;

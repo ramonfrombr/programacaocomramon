@@ -1,7 +1,6 @@
 "use client";
-
 import { useLanguageStore } from "@/hooks/use-language-store";
-import { DataCard } from "./data-card";
+import { DataCard } from "@/app/(dashboard)/(routes)/teacher/analytics/_components/data-card";
 
 interface DataCardsProps {
   totalRevenue: number;

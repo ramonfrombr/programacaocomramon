@@ -1,15 +1,15 @@
 "use client";
-import { IconBadge } from "@/components/icon-badge";
-import { Attachment, Career, Category, Chapter, Course } from "@prisma/client";
 import { LayoutDashboard } from "lucide-react";
-import { TitleForm } from "./title-form";
-import { DescriptionForm } from "./description-form";
-import { ImageForm } from "./image-form";
-import { useLanguageStore } from "@/hooks/use-language-store";
-import { CategoriesForm } from "./categories-form";
 import { Level } from "@prisma/client";
-import { LevelForm } from "./level-form";
-import { CareersForm } from "./careers-form";
+import { Attachment, Career, Category, Chapter, Course } from "@prisma/client";
+import { useLanguageStore } from "@/hooks/use-language-store";
+import { IconBadge } from "@/components/icon-badge";
+import { TitleForm } from "@/app/(dashboard)/(routes)/teacher/courses/[courseId]/_components/title-form";
+import { ImageForm } from "@/app/(dashboard)/(routes)/teacher/courses/[courseId]/_components/image-form";
+import { LevelForm } from "@/app/(dashboard)/(routes)/teacher/courses/[courseId]/_components/level-form";
+import { CareersForm } from "@/app/(dashboard)/(routes)/teacher/courses/[courseId]/_components/careers-form";
+import { CategoriesForm } from "@/app/(dashboard)/(routes)/teacher/courses/[courseId]/_components/categories-form";
+import { DescriptionForm } from "@/app/(dashboard)/(routes)/teacher/courses/[courseId]/_components/description-form";
 
 interface LeftColumnProps {
   course: Course & {

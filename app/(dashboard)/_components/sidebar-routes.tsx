@@ -1,9 +1,8 @@
 "use client";
-
-import { Layout, Compass, List, BarChart } from "lucide-react";
-import { SidebarItem } from "./sidebar-item";
 import { usePathname } from "next/navigation";
+import { Layout, Compass, List, BarChart } from "lucide-react";
 import { useLanguageStore } from "@/hooks/use-language-store";
+import { SidebarItem } from "@/app/(dashboard)/_components/sidebar-item";
 
 interface SidebarRoutesProps {
   userLoggedIn: boolean;

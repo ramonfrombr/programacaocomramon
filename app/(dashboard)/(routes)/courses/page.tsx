@@ -1,9 +1,9 @@
 import { db } from "@/lib/db";
-import { Categories } from "./_components/categories";
-import { SearchInput } from "@/components/search-input";
-import { getCourses } from "@/actions/get-courses";
 import { auth } from "@clerk/nextjs/server";
+import { getCourses } from "@/actions/get-courses";
+import { SearchInput } from "@/components/search-input";
 import { CoursesList } from "@/components/courses-list";
+import { Categories } from "@/app/(dashboard)/(routes)/courses/_components/categories";
 
 interface SearchPageProps {
   searchParams: {

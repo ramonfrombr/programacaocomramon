@@ -1,10 +1,10 @@
 "use client";
-import { Banner } from "@/components/banner";
-import { Chapter } from "@prisma/client";
-import { ArrowLeft } from "lucide-react";
 import Link from "next/link";
-import { ChapterActions } from "./chapter-actions";
+import { ArrowLeft } from "lucide-react";
+import { Chapter } from "@prisma/client";
 import { useLanguageStore } from "@/hooks/use-language-store";
+import { Banner } from "@/components/banner";
+import { ChapterActions } from "@/app/(dashboard)/(routes)/teacher/courses/[courseId]/chapters/[chapterId]/_components/chapter-actions";
 
 interface ChapterSetupHeaderProps {
   chapter: Chapter;

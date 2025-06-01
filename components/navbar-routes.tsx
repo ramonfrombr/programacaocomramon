@@ -1,10 +1,10 @@
 "use client";
 import { useAuth, UserButton } from "@clerk/nextjs";
 import { usePathname } from "next/navigation";
-import { Button } from "./ui/button";
+import { Button } from "@/components/ui/button";
 import { LogOut } from "lucide-react";
 import Link from "next/link";
-import { SearchInput } from "./search-input";
+import { SearchInput } from "@/components/search-input";
 import { isTeacher } from "@/lib/teacher";
 import { useLanguageStore } from "@/hooks/use-language-store";
 

@@ -1,9 +1,11 @@
-import { Button } from "@/components/ui/button";
+"use client";
 import Image from "next/image";
-import { Play } from "lucide-react";
-import { SimpleModal } from "@/components/modals/simple-modal";
-import { Nunito_Sans } from "next/font/google";
 import Link from "next/link";
+import { Play } from "lucide-react";
+import { Nunito_Sans } from "next/font/google";
+import { useLanguageStore } from "@/hooks/use-language-store";
+import { Button } from "@/components/ui/button";
+import { SimpleModal } from "@/components/modals/simple-modal";
 import placeholder from "@/public/placeholder.webp";
 
 const nunito = Nunito_Sans({
@@ -12,6 +14,8 @@ const nunito = Nunito_Sans({
 });
 
 export const Hero = () => {
+  const language = useLanguageStore().homepage.hero;
+
   return (
     <div
       className={`${nunito.className} text-center md:text-left md:grid grid-cols-2 gap-5 items-start`}
@@ -20,25 +24,22 @@ export const Hero = () => {
         <h1
           className={`text-4xl md:text-[4vw] lg:text-[2.6rem] xl:text-5xl font-bold mb-3`}
         >
-          Aprenda Programação <br />{" "}
-          <span className="underline">De Verdade</span>
+          {language.heading}
         </h1>
 
         <p className="text-gray-500 text-base md:text-xl lg:text-2xl mb-3 md:mb-5">
-          O jeito <span className="text-black">rápido</span> e{" "}
-          <span className="text-black">fácil</span> de aprender a profissão{" "}
-          <span className="text-black">mais bem paga</span> do mercado
+          {language.headingDescription}
         </p>
 
         <div className="text-center md:text-left">
           <Link href="/career" data-testid="link-getting-started">
             <Button className="rounded-full bg-blue-600 w-full md:w-[60%] p-7 md:p-5 lg:p-7 text-lg md:text-base mb-2 hover:bg-blue-700 font-bold">
-              Escolha uma Carreira
+              {language.chooseACareer}
             </Button>
           </Link>
 
           <p className="text-slate-500 text-base md:text-base lg:text-lg">
-            Que área da programação mais te interessa?
+            {language.chooseACareerDescription}
           </p>
         </div>
       </div>

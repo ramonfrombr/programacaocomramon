@@ -1,16 +1,16 @@
-import { Button } from "@/components/ui/button";
+import Link from "next/link";
+import { redirect } from "next/navigation";
 import { db } from "@/lib/db";
 import { formatPrice } from "@/lib/format";
-import { redirect } from "next/navigation";
-import { VideoPlayer } from "./_components/video-player";
 import {
   Accordion,
   AccordionContent,
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
+import { Button } from "@/components/ui/button";
 import { Preview } from "@/components/preview";
-import Link from "next/link";
+import { VideoPlayer } from "@/app/(root)/(routes)/career/[courseSlug]/_components/video-player";
 
 const CourseSlugPage = async ({
   params,
