@@ -7,6 +7,7 @@ import { useLanguageStore } from "@/hooks/use-language-store";
 import { Button } from "@/components/ui/button";
 import { SimpleModal } from "@/components/modals/simple-modal";
 import placeholder from "@/public/placeholder.webp";
+import thumbnail from "@/public/thumbnail-programacaocomramon.png";
 
 const nunito = Nunito_Sans({
   subsets: ["latin"],
@@ -47,15 +48,15 @@ export const Hero = () => {
       <SimpleModal
         trigger={
           <>
-            <div className="rounded-xl overflow-hidden relative cursor-pointer">
+            <div className="rounded-xl overflow-hidden relative cursor-pointer border-8 group">
               <Image
-                src={placeholder}
+                src={thumbnail}
                 height={1080}
                 width={1920}
                 alt="Thumbnail"
               />
 
-              <span className="bg-blue-800 absolute top-[50%] left-[50%] w-[50px] h-[50px] -translate-y-2/4 -translate-x-2/4 rounded-full flex items-center justify-center ">
+              <span className="bg-blue-400 absolute top-[50%] left-[50%] w-[50px] h-[50px] -translate-y-2/4 -translate-x-2/4 rounded-full flex items-center justify-center group-hover:bg-blue-600 transition">
                 <Play fill="white" color="white" />
               </span>
             </div>
@@ -65,7 +66,7 @@ export const Hero = () => {
         <iframe
           width="100%"
           height="315"
-          src="https://www.youtube.com/embed/yaqVbs9f_xg"
+          src={`https://www.youtube.com/embed/${process.env.NEXT_PUBLIC_LANDING_PAGE_VIDEO_URL}`}
         ></iframe>
       </SimpleModal>
     </div>

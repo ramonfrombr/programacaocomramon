@@ -37,7 +37,7 @@ const Features = () => {
   ];
 
   return (
-    <section className="flex flex-col items-center mt-20 w-[90%] md:w-4/5">
+    <section className="flex flex-col items-center mt-20 w-[90%] md:w-4/5 hidden">
       <Instructor />
 
       <div className="mt-20">

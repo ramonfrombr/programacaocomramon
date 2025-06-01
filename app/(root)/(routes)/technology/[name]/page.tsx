@@ -21,14 +21,13 @@ const TechnologyPage = async ({
 }: {
   params: { name: string };
 }) => {
-  console.log(params.name)
-    const technology = await db.category.findFirst({
-      where: {
-        name: params.name,
-      },
-    });
-  
-    const beginnerCourses = await db.course.findMany({
+  const technology = await db.category.findFirst({
+    where: {
+      name: params.name,
+    },
+  });
+
+  const beginnerCourses = await db.course.findMany({
     where: {
       level: Level.BEGINNER,
       isPublished: true,
@@ -89,9 +88,16 @@ const TechnologyPage = async ({
     "Redis": Redis,
   }
 
+  const description = {
+    HTML: "HTML significa HyperText Markup Language, ou em português, Linguagem de Marcação de Hipertexto. É a linguagem padrão usada para criar páginas na web.",
+    CSS: "CSS significa Cascading Style Sheets, ou em português, Folhas de Estilo em Cascata. É a linguagem usada para estilizar páginas feitas com HTML.",
+    JavaScript: "JavaScript é uma linguagem de programação usada principalmente para tornar páginas web interativas e dinâmicas.",
+    Python: "Python é uma linguagem de programação de alto nível, conhecida por ser simples, clara e poderosa. É muito usada tanto por iniciantes quanto por profissionais experientes em várias áreas da tecnologia."
+  }
+
   return (
     <div className="px-5 md:px-10 lg:px-20">
-      <Header heading={params.name} image={programmingLanguagesImages[params.name as keyof typeof programmingLanguagesImages]} description={params.name} />
+      <Header heading={params.name} image={programmingLanguagesImages[params.name as keyof typeof programmingLanguagesImages]} description={description[params.name as keyof typeof description]} />
 
       {!!courses.beginner.length && (
         <CoursesSection

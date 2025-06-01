@@ -6,7 +6,7 @@ const Promotions = () => {
   const language = useLanguageStore().homepage.subcriptionBanner;
 
   return (
-    <section className="flex flex-col items-center">
+    <section className="flex flex-col items-center hidden">
       <Banner
         heading={language.heading}
         paragraph={language.description}
