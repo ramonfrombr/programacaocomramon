@@ -1,3 +1,4 @@
+"use client";
 import { SimpleModal } from "@/components/modals/simple-modal";
 import { Play } from "lucide-react";
 import Image from "next/image";
@@ -15,6 +16,9 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
+import toast from "react-hot-toast";
+import axios from "axios";
+import { useEffect, useState } from "react";
 
 const features = [
   {
@@ -84,61 +88,106 @@ const faqs = [
 ];
 
 const SubscriptionPage = () => {
+  const [isLoading, setIsLoading] = useState(false);
+  const [isSubscribed, setIsSubscribed] = useState(false);
+
+  useEffect(() => {
+    async function fetchData() {
+      const response = await axios.get(`/api/subscription/check`);
+      console.log("response2 >>>> ", response);
+      setIsSubscribed(response.data.subscribed);
+    }
+    fetchData();
+  }, []);
+
+  const onClickSubscription = async () => {
+    try {
+      setIsLoading(true);
+      const response = await axios.post(`/api/subscription/checkout`);
+      console.log(response)
+      window.location.assign(response.data.url);
+    } catch (error) {
+      toast.error("Algo deu errado.");
+    } finally {
+      setIsLoading(false);
+    }
+  };
+
+  const onClickCancelSubscription = () => {
+    
+  }
+
   return (
     <div className="p-3 sm:px-16 md:px-24 lg:px-36">
-      <div className={`text-center md:grid grid-cols-2 gap-5 items-start`}>
-        <SimpleModal
-          trigger={
-            <>
-              <div className="rounded-xl overflow-hidden relative cursor-pointer">
-                <Image
-                  src={placeholder}
-                  height={1080}
-                  width={1920}
-                  alt="Thumbnail"
-                />
-
-                <span className="bg-blue-800 absolute top-[50%] left-[50%] w-[50px] h-[50px] -translate-y-2/4 -translate-x-2/4 rounded-full flex items-center justify-center ">
-                  <Play fill="white" color="white" />
-                </span>
-              </div>
-            </>
-          }
-        >
-          <iframe
-            width="100%"
-            height="315"
-            src="https://www.youtube.com/embed/yaqVbs9f_xg"
-          ></iframe>
-        </SimpleModal>
-
-        <div className="p-5 rounded-md border shadow-md">
+      {false ? (
+        <>
           <h2 className="font-semibold text-xl mb-3">
-            Assinatura de Membro Mensal
+            Você já é assinante do Plano Mensal para Membros!
           </h2>
-          <ul className="text-left list-disc pl-5 mb-5 text-[14px]">
-            <li>Tenha Acesso Completo ao nosso Catálogo</li>
-            <li>Um Pagamento Recorrente Mensal</li>
-            <li>
-              Domine as Áreas de Desenvolvimento Web, Mobile, Data Science, e
-              muito mais
-            </li>
-            <li>
-              Tenha Acesso Antecipado aos nossos Cursos em Desenvolvimento antes
-              do lançamento
-            </li>
-            <li>Vote para escolher quais novos cursos serão lançados</li>
-          </ul>
-
-          <div className="text-2xl mb-3">
-            <span className="font-bold">R$199</span> / mês
-          </div>
-
-          <Button className="w-full rounded-full p-8 text-xl bg-blue-600 hover:bg-blue-700">
-            Inscreva-se Agora
+          <Button onClick={onClickCancelSubscription} variant={"destructive"}> 
+            Cancelar Assinatura
           </Button>
+        </>
+        
+      ) : (
+        <div className={`text-center md:grid grid-cols-2 gap-5 items-start`}>
+          <SimpleModal
+            trigger={
+              <>
+                <div className="rounded-xl overflow-hidden relative cursor-pointer">
+                  <Image
+                    src={placeholder}
+                    height={1080}
+                    width={1920}
+                    alt="Thumbnail"
+                  />
+
+                  <span className="bg-blue-800 absolute top-[50%] left-[50%] w-[50px] h-[50px] -translate-y-2/4 -translate-x-2/4 rounded-full flex items-center justify-center ">
+                    <Play fill="white" color="white" />
+                  </span>
+                </div>
+              </>
+            }
+          >
+            <iframe
+              width="100%"
+              height="315"
+              src="https://www.youtube.com/embed/yaqVbs9f_xg"
+            ></iframe>
+          </SimpleModal>
+
+          <div className="p-5 rounded-md border shadow-md">
+            <h2 className="font-semibold text-xl mb-3">
+              Assinatura de Membro Mensal
+            </h2>
+            <ul className="text-left list-disc pl-5 mb-5 text-[14px]">
+              <li>Tenha Acesso Completo ao nosso Catálogo</li>
+              <li>Um Pagamento Recorrente Mensal</li>
+              <li>
+                Domine as Áreas de Desenvolvimento Web, Mobile, Data Science, e
+                muito mais
+              </li>
+              <li>
+                Tenha Acesso Antecipado aos nossos Cursos em Desenvolvimento
+                antes do lançamento
+              </li>
+              <li>Vote para escolher quais novos cursos serão lançados</li>
+            </ul>
+
+            <div className="text-2xl mb-3">
+              <span className="font-bold">R$199</span> / mês
+            </div>
+
+            <Button
+              onClick={onClickSubscription}
+              disabled={isLoading}
+              className="w-full rounded-full p-8 text-xl bg-blue-600 hover:bg-blue-700"
+            >
+              Inscreva-se Agora
+            </Button>
+          </div>
         </div>
-      </div>
+      )}
 
       <div className="my-12">
         <h2 className="text-2xl md:text-3xl font-bold text-center mb-5">
