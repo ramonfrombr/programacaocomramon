@@ -5,6 +5,8 @@ import placeholder from "@/public/placeholder.webp";
 
 export const portugueseLanguage: ILanguage = {
   id: "portuguese",
+  title: "Programação com Ramon",
+  subtitle: "Construa algo incrível!",
   homepage: {
     hero: {
       heading: (
@@ -104,6 +106,7 @@ export const portugueseLanguage: ILanguage = {
       advanced: "Avançado",
       specialist: "Especialista",
     },
+    chooseACourse: "Escolha um curso de",
     webDevelopment: {
       title: "Desenvolvimento Web",
       description:
@@ -124,6 +127,7 @@ export const portugueseLanguage: ILanguage = {
       description:
         "A ciência de dados é uma área interdisciplinar, que localiza-se entre a estatística e a ciência da computação e utiliza o método científico; processos, algoritmos e sistemas, para extrair conhecimento e tomar decisões a partir de dados dos diversos tipos, sendo eles ruidosos, nebulosos, estruturados ou não-estruturados.",
     },
+    learnMore: "Aprenda Mais"
   },
   navbar: {
     goBackToCourses: "Voltar para Cursos",
@@ -171,6 +175,8 @@ export const portugueseLanguage: ILanguage = {
     courseCreated: "Curso criado",
     somethingWentWrong: "Erro ao tentar criar o curso",
     titleIsRequired: "É necessário um título",
+    availableOnYouTube: "Disponível no YouTube",
+    thisCourseIsAvailableOnlyOnYouTube: "Este curso está disponível apenas no YouTube"
   },
   teacherCourseSetup: {
     thisCourseIsUnpublished:
@@ -195,18 +201,21 @@ export const portugueseLanguage: ILanguage = {
       courseTitle: "Título do curso",
       editTitle: "Editar título",
       courseTitleInputPlaceholder: "ex: 'Desenvolvimento Web Avançado'",
+      titleIsNecessary: "Um título é necessário."
     },
     courseDescriptionField: {
       courseDescription: "Descrição do curso",
       editDescription: "Editar descrição",
       noDescription: "Sem descrição",
       courseDescriptionInputPlaceholder: "ex: 'Este curso é sobre'",
+      descriptionIsRequired: "Descrição é necessário."
     },
     courseImageField: {
       courseImage: "Imagem do curso",
       addAnImage: "Adicionar uma imagem",
       editImage: "Editar imagem",
       aspectRatioRecommended: "É recomendado uma imagem com dimensões 16:9",
+      imageIsNecessary: "Uma imagem é necessária."
     },
     courseCategoryField: {
       courseCategory: "Categoria do curso",
@@ -215,6 +224,7 @@ export const portugueseLanguage: ILanguage = {
       selectOption: "Selecione uma opção...",
       searchCategory: "Pesquisar categoria...",
       noOptionFound: "Nenhuma opção encontrada.",
+      youHaveToSelectAtLeastOneItem: "Você precisa selecionar pelo menos um item."
     },
     courseChapters: "Capítulos do curso",
     courseChaptersField: {
@@ -253,6 +263,16 @@ export const portugueseLanguage: ILanguage = {
       noYoutubeLink: "Sem link",
       youtubeLinkIsRequired: "É necessário informar um link para um vídeo",
     },
+    courseCareersField: {
+      courseCareers: "Carreiras do Curso",
+      editCareers: "Editar Carreiras",
+      noCareer: "Nenhuma carreira selecionada",
+      youHaveToSelectAtLeastOneItem: "Você precisa selecionar pelo menos um item."
+    },
+    courseLevelField: {
+      courseLevel: "Nível do Curso",
+      editLevel: "Editar Nível"
+    }
   },
   teacherCourseChapterSetup: {
     thisChapterIsUnpublished:

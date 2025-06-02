@@ -1,4 +1,5 @@
 import { typeLEVELS } from "@/constants/levels";
+import { useLanguageStore } from "@/hooks/use-language-store";
 import { Course } from "@prisma/client";
 import Link from "next/link";
 
@@ -11,6 +12,8 @@ const CoursesSection = ({
   courses,
   level
 }: CoursesSectionProps) => {
+  const language = useLanguageStore().careersPage;
+  
   const backgroundColors = {
     BEGINNER: 'bg-slate-800',
     INTERMEDIATE: 'bg-blue-700',
@@ -26,10 +29,10 @@ const CoursesSection = ({
   }
   const color = colors[level];
   const headings = {
-    BEGINNER: "Iniciante",
-    INTERMEDIATE: 'Intermediário',
-    ADVANCED: 'Avançado',
-    SPECIALIST: 'Especialista'
+    BEGINNER: language.levels.beginner,
+    INTERMEDIATE: language.levels.intermediate,
+    ADVANCED: language.levels.advanced,
+    SPECIALIST: language.levels.specialist
   }
   const heading = headings[level];
 
@@ -54,7 +57,7 @@ const CoursesSection = ({
             <span
               className={`rounded-full py-2 text-sm px-6 font-semibold ${bgColor} text-white`}
             >
-              Aprenda Mais
+              {language.learnMore}
             </span>
           </Link>
         ))}

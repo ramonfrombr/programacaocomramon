@@ -20,6 +20,7 @@ import { useRouter } from "next/navigation";
 import { cn } from "@/lib/utils";
 import { Course } from "@prisma/client";
 import { Combobox } from "@/components/ui/combobox";
+import { useLanguageStore } from "@/hooks/use-language-store";
 
 interface LevelFormProps {
   initialData: Course;
@@ -36,6 +37,7 @@ export const LevelForm = ({
   courseId,
   options,
 }: LevelFormProps) => {
+  const language = useLanguageStore().teacherCourseSetup;
   const router = useRouter();
   const [isEditing, setIsEditing] = useState(false);
 
@@ -53,11 +55,11 @@ export const LevelForm = ({
   const onSubmit = async (values: z.infer<typeof formSchema>) => {
     try {
       await axios.patch(`/api/courses/${courseId}`, values);
-      toast.success("Course updated");
+      toast.success(language.courseUpdated);
       toggleEdit();
       router.refresh();
     } catch {
-      toast.error("Something went wrong.");
+      toast.error(language.somethingWentWrong);
     }
   };
 
@@ -68,14 +70,14 @@ export const LevelForm = ({
   return (
     <div className="mt-6 border bg-slate-100 roudned-md p-4">
       <div className="font-medium flex items-center justify-between">
-        Course level
+        {language.courseLevelField.courseLevel}
         <Button onClick={toggleEdit} variant="ghost">
           {isEditing ? (
-            <>Cancel</>
+            <>{language.cancel}</>
           ) : (
             <>
               <Pencil className="h-4 w-4 mr-2" />
-              Edit level
+              {language.courseLevelField.editLevel}
             </>
           )}
         </Button>
@@ -113,7 +115,7 @@ export const LevelForm = ({
 
             <div className="flex items-center gap-x-2">
               <Button disabled={!isValid || isSubmitting} type="submit">
-                Save
+                {language.save}
               </Button>
             </div>
           </form>

@@ -27,11 +27,6 @@ interface TitleFormProps {
   courseId: string;
 }
 
-const formSchema = z.object({
-  title: z.string().min(1, {
-    message: "Title is required",
-  }),
-});
 
 export const TitleForm = ({ initialData, courseId }: TitleFormProps) => {
   const language = useLanguageStore().teacherCourseSetup;
@@ -39,6 +34,12 @@ export const TitleForm = ({ initialData, courseId }: TitleFormProps) => {
   const [isEditing, setIsEditing] = useState(false);
 
   const toggleEdit = () => setIsEditing((current) => !current);
+
+  const formSchema = z.object({
+    title: z.string().min(1, {
+      message: language.courseTitleField.titleIsNecessary,
+    }),
+  });
 
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),

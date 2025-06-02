@@ -1,6 +1,8 @@
+"use client";
 import Image from "next/image";
 import { Poppins } from "next/font/google";
 import Link from "next/link";
+import { useLanguageStore } from "@/hooks/use-language-store";
 
 const poppins = Poppins({
   subsets: ["latin"],
@@ -8,6 +10,8 @@ const poppins = Poppins({
 });
 
 export const Logo = () => {
+  const language = useLanguageStore();
+  
   return (
     <Link href="/">
       <div className="flex items-center">
@@ -17,11 +21,11 @@ export const Logo = () => {
           <p
             className={`leading-5 font-semibold text-base text-sky-900 ${poppins.className}`}
           >
-            Programação Com Ramon
+            {language.title}
           </p>
 
           <p className="text-sm text-muted-foreground">
-            Construa algo incrível!
+            {language.subtitle}
           </p>
         </div>
       </div>

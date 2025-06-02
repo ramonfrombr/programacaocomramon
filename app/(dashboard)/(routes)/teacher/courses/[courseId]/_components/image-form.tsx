@@ -16,12 +16,6 @@ interface ImageFormProps {
   courseId: string;
 }
 
-const formSchema = z.object({
-  imageUrl: z.string().min(1, {
-    message: "Image is required",
-  }),
-});
-
 export const ImageForm = ({ initialData, courseId }: ImageFormProps) => {
   const language = useLanguageStore().teacherCourseSetup;
 
@@ -29,6 +23,12 @@ export const ImageForm = ({ initialData, courseId }: ImageFormProps) => {
   const [isEditing, setIsEditing] = useState(false);
 
   const toggleEdit = () => setIsEditing((current) => !current);
+  
+  const formSchema = z.object({
+    imageUrl: z.string().min(1, {
+      message: language.courseImageField.imageIsNecessary,
+    }),
+  });
 
   const onSubmit = async (values: z.infer<typeof formSchema>) => {
     try {

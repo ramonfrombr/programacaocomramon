@@ -27,12 +27,6 @@ interface DescriptionFormProps {
   courseId: string;
 }
 
-const formSchema = z.object({
-  description: z.string().min(1, {
-    message: "Description is required",
-  }),
-});
-
 export const DescriptionForm = ({
   initialData,
   courseId,
@@ -42,6 +36,12 @@ export const DescriptionForm = ({
   const [isEditing, setIsEditing] = useState(false);
 
   const toggleEdit = () => setIsEditing((current) => !current);
+
+  const formSchema = z.object({
+    description: z.string().min(1, {
+      message: language.courseDescriptionField.descriptionIsRequired,
+    }),
+  });
 
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
@@ -69,7 +69,7 @@ export const DescriptionForm = ({
         {language.courseDescriptionField.courseDescription}
         <Button onClick={toggleEdit} variant="ghost">
           {isEditing ? (
-            <>Cancel</>
+            <>{language.cancel}</>
           ) : (
             <>
               <Pencil className="h-4 w-4 mr-2" />

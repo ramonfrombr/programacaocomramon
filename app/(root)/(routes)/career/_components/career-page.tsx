@@ -1,9 +1,9 @@
 import { StaticImageData } from "next/image";
-import { Level } from "@prisma/client";
-import { db } from "@/lib/db";
 import Header from "@/app/(root)/(routes)/career/_components/header";
 import CoursesSection from "@/app/(root)/(routes)/career/_components/courses-section";
 import LEVELS from "@/constants/levels";
+import { useEffect, useState } from "react";
+import axios from "axios";
 
 interface CareerPageProps {
   heading: string;
@@ -12,93 +12,57 @@ interface CareerPageProps {
   slug: string;
 }
 
-const CareerPage = async ({
+const CareerPage = ({
   heading,
   image,
   description,
   slug,
 }: CareerPageProps) => {
-  const career = await db.career.findFirst({
-    where: {
-      slug: slug,
-    },
-  });
 
-  const beginnerCourses = await db.course.findMany({
-    where: {
-      level: Level.BEGINNER,
-      isPublished: true,
-      careerIDs: {
-        has: career!.id,
-      },
-    },
-  });
+  const [beginnerCourses, setBeginnerCourses] = useState([]);
+  const [intermediateCourses, setIntermediateCourses] = useState([]);
+  const [advancedCourses, setAdvancedCourses] = useState([]);
+  const [specialistCourses, setSpecialistCourses] = useState([]);
 
-  const intermediateCourses = await db.course.findMany({
-    where: {
-      level: Level.INTERMEDIATE,
-      isPublished: true,
-      careerIDs: {
-        has: career!.id,
-      },
-    },
-  });
-
-  const advancedCourses = await db.course.findMany({
-    where: {
-      level: Level.ADVANCED,
-      isPublished: true,
-      careerIDs: {
-        has: career!.id,
-      },
-    },
-  });
-
-  const specialistCourses = await db.course.findMany({
-    where: {
-      level: Level.SPECIALIST,
-      isPublished: true,
-      careerIDs: {
-        has: career!.id,
-      },
-    },
-  });
-
-  const courses = {
-    beginner: beginnerCourses,
-    intermediate: intermediateCourses,
-    advanced: advancedCourses,
-    specialist: specialistCourses,
-  };
-
+  useEffect(() => {
+    async function fetchData() {
+      const response = await axios.get(`/api/careers/${slug}`);
+      setBeginnerCourses(response.data.beginner);
+      setIntermediateCourses(response.data.intermediate);
+      setAdvancedCourses(response.data.advanced);
+      setSpecialistCourses(response.data.specialist);
+    }
+    fetchData();
+  }, [slug]);
+  
   return (
     <div className="px-5 md:px-10 lg:px-20">
       <Header heading={heading} image={image} description={description} />
 
-      {!!courses.beginner.length && (
+      {!!beginnerCourses.length && (
         <CoursesSection
-          courses={courses.beginner}
+          courses={beginnerCourses}
           level={LEVELS.BEGINNER}
         />
       )}
 
-      {!!courses.intermediate.length && (
+      {!!intermediateCourses.length && (
         <CoursesSection
-          courses={courses.intermediate}
+          courses={intermediateCourses}
           level={LEVELS.INTERMEDIATE}
         />
       )}
 
-      {!!courses.advanced.length && (
+      {!!advancedCourses.length && (
         <CoursesSection
-          courses={courses.advanced}
+          courses={advancedCourses}
           level={LEVELS.ADVANCED}
         />
       )}
 
-      {!!courses.specialist.length && (
+      {!!specialistCourses.length && (
         <CoursesSection
-          courses={courses.specialist}
+          courses={specialistCourses}
           level={LEVELS.SPECIALIST}
         />
       )}
