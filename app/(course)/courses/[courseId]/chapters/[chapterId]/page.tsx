@@ -40,6 +40,7 @@ const ChapterIdPage = async ({
   }
 
   const isLocked = !isTeacher(userId) && !chapter.isFree && !purchase;
+  
   const completeOnEnd = !!purchase && !userProgress?.isCompleted;
 
   const showPurchaseButton: boolean = (!purchase && !isTeacher(userId));

@@ -1,4 +1,5 @@
 import { db } from "@/lib/db";
+import { isTeacher } from "@/lib/teacher";
 import { Attachment, Chapter } from "@prisma/client";
 
 interface GetChapterProps {
@@ -55,7 +56,7 @@ export const getChapter = async ({
       });
     }
 
-    if (chapter.isFree || purchase) {
+    if (chapter.isFree || purchase || isTeacher(userId)) {
       muxData = await db.muxData.findUnique({
         where: {
           chapterId: chapterId,
