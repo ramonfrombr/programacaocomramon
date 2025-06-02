@@ -6,7 +6,7 @@ import { Nunito_Sans } from "next/font/google";
 import { useLanguageStore } from "@/hooks/use-language-store";
 import { Button } from "@/components/ui/button";
 import { SimpleModal } from "@/components/modals/simple-modal";
-import thumbnail from "@/public/thumbnail-programacaocomramon.png";
+import thumbnail from "@/public/thumbnail.png";
 
 const nunito = Nunito_Sans({
   subsets: ["latin"],
