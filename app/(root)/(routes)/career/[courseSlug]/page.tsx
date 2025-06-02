@@ -44,13 +44,8 @@ const CourseSlugPage = async ({
       <div className="flex flex-col items-center lg:items-start lg:flex-row-reverse gap-2">
         <div className="w-4/5 md:w-[70%] border-8 rounded-md">
           <VideoPlayer
-            chapterId={course.chapters[0].id}
-            title={course.chapters[0].title}
-            courseId={course.id}
-            nextChapterId={course.chapters[0].id}
             playbackId={course.chapters[0].muxData?.playbackId!}
             isLocked={false}
-            completeOnEnd={false}
           />
         </div>
         <div className="text-center lg:text-left pt-5">

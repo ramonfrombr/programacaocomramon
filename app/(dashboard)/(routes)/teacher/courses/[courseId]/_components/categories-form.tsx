@@ -7,7 +7,6 @@ import { Checkbox } from "@/components/ui/checkbox";
 import {
   Form,
   FormControl,
-  FormDescription,
   FormField,
   FormItem,
   FormLabel,
@@ -19,7 +18,6 @@ import { useLanguageStore } from "@/hooks/use-language-store";
 import axios from "axios";
 import { useState } from "react";
 import { useRouter } from "next/navigation";
-import { cn } from "@/lib/utils";
 import { Pencil } from "lucide-react";
 
 interface CategoryFormProps {
@@ -27,14 +25,6 @@ interface CategoryFormProps {
   courseId: string;
   options: { label: string; value: string }[];
 }
-
-const formSchema = z.object({
-  categoryIDs: z
-    .array(z.string())
-    .refine((value) => value.some((item) => item), {
-      message: "You have to select at least one item.",
-    }),
-});
 
 export const CategoriesForm = ({
   initialData,
@@ -45,6 +35,14 @@ export const CategoriesForm = ({
   const router = useRouter();
   const [isEditing, setIsEditing] = useState(false);
   const toggleEdit = () => setIsEditing((current) => !current);
+
+  const formSchema = z.object({
+    categoryIDs: z
+      .array(z.string())
+      .refine((value) => value.some((item) => item), {
+        message: language.courseCategoryField.youHaveToSelectAtLeastOneItem,
+      }),
+  });
 
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),

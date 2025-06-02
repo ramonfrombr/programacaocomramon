@@ -5,6 +5,8 @@ import placeholder from "@/public/placeholder.webp";
 
 export const englishLanguage: ILanguage = {
   id: "english",
+  title: "Programming with Ramon",
+  subtitle: "Build something amazing!",
   homepage: {
     hero: {
       heading: (
@@ -100,6 +102,7 @@ export const englishLanguage: ILanguage = {
       advanced: "Advanced",
       specialist: "Specialist",
     },
+    chooseACourse: "Choose a course in",
     webDevelopment: {
       title: "Web Development",
       description:
@@ -120,6 +123,7 @@ export const englishLanguage: ILanguage = {
       description:
         "Data science is an interdisciplinary field that lies between statistics and computer science and uses the scientific method, processes, algorithms, and systems to extract knowledge and make decisions from various types of data, whether noisy, ambiguous, structured, or unstructured.",
     },
+    learnMore: "Learn More"
   },
   navbar: {
     goBackToCourses: "Go Back to Courses",
@@ -167,6 +171,8 @@ export const englishLanguage: ILanguage = {
     courseCreated: "Course created",
     somethingWentWrong: "Something went wrong",
     titleIsRequired: "Title is required",
+    availableOnYouTube: "Available on YouTube",
+    thisCourseIsAvailableOnlyOnYouTube: "This course is available only on YouTube"
   },
   teacherCourseSetup: {
     thisCourseIsUnpublished:
@@ -191,12 +197,14 @@ export const englishLanguage: ILanguage = {
       courseTitle: "Course Title",
       editTitle: "Edit title",
       courseTitleInputPlaceholder: "e.g. 'Advanced Web Development'",
+      titleIsNecessary: "Title is necessary."
     },
     courseDescriptionField: {
       courseDescription: "Course Description",
       editDescription: "Edit description",
       noDescription: "No description",
       courseDescriptionInputPlaceholder: "e.g. 'This course is about'",
+      descriptionIsRequired: "Description is necessary."
     },
     courseImageField: {
       courseImage: "Course Image",
@@ -204,6 +212,7 @@ export const englishLanguage: ILanguage = {
       editImage: "Edit image",
       aspectRatioRecommended:
         "An image with a 16:9 aspect ratio is recommended",
+      imageIsNecessary: "Image is necessary."
     },
     courseCategoryField: {
       courseCategory: "Course Category",
@@ -212,6 +221,7 @@ export const englishLanguage: ILanguage = {
       selectOption: "Select option...",
       searchCategory: "Search category...",
       noOptionFound: "No option found.",
+      youHaveToSelectAtLeastOneItem: "You need to select at least one item."
     },
     courseChapters: "Course Chapters",
     courseChaptersField: {
@@ -244,11 +254,21 @@ export const englishLanguage: ILanguage = {
       attachmentDeleted: "",
     },
     courseYoutubeLink: {
-      courseYoutubeLink: "",
-      editYoutubeLink: "",
-      noYoutubeLink: "",
-      youtubeLinkIsRequired: "",
+      courseYoutubeLink: "Course link on YouTube",
+      editYoutubeLink: "Edit Link",
+      noYoutubeLink: "No link",
+      youtubeLinkIsRequired: "A link to a video is required"
     },
+    courseCareersField: {
+      courseCareers: "Course Careers",
+      editCareers: "Edit Careers",
+      noCareer: "No career selected",
+      youHaveToSelectAtLeastOneItem: "You need to select at least one item."
+    },
+    courseLevelField: {
+      courseLevel: "Course Level",
+      editLevel: "Edit Level"
+    }
   },
   teacherCourseChapterSetup: {
     thisChapterIsUnpublished:

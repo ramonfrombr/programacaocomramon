@@ -26,6 +26,8 @@ export const LeftColumn = ({
   careers,
 }: LeftColumnProps) => {
   const language = useLanguageStore().teacherCourseSetup;
+  const languageRoot = useLanguageStore();
+
   const levels = [
     Level.BEGINNER,
     Level.INTERMEDIATE,
@@ -54,7 +56,7 @@ export const LeftColumn = ({
         initialData={course}
         courseId={course.id}
         options={levels.map((level) => ({
-          label: level,
+          label: languageRoot.careersPage.levels[level.toLowerCase() as keyof typeof languageRoot.careersPage.levels],
           value: level,
         }))}
       />

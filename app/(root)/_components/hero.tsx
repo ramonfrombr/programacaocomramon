@@ -6,7 +6,6 @@ import { Nunito_Sans } from "next/font/google";
 import { useLanguageStore } from "@/hooks/use-language-store";
 import { Button } from "@/components/ui/button";
 import { SimpleModal } from "@/components/modals/simple-modal";
-import placeholder from "@/public/placeholder.webp";
 import thumbnail from "@/public/thumbnail-programacaocomramon.png";
 
 const nunito = Nunito_Sans({

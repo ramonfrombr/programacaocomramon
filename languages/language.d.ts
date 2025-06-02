@@ -1,5 +1,7 @@
 type ILanguage = {
   id: string;
+  title: string;
+  subtitle: string;
   homepage: IHomepage;
   careersPage: ICareerPage;
   navbar: ILanguageNavbar;
@@ -57,10 +59,12 @@ type ICareerPage = {
     advanced: string;
     specialist: string;
   };
+  chooseACourse: string;
   webDevelopment: ICareer;
   mobileDevelopment: ICareer;
   embeddedSystems: ICareer;
   dataScience: ICareer;
+  learnMore: string;
 };
 
 type ICareer = {
@@ -129,6 +133,8 @@ type ILanguageTeacherCreate = {
   courseCreated: string;
   somethingWentWrong: string;
   titleIsRequired: string;
+  availableOnYouTube: string;
+  thisCourseIsAvailableOnlyOnYouTube: string;
 };
 
 type ILanguageTeacherCourseSetup = {
@@ -160,12 +166,15 @@ type ILanguageTeacherCourseSetup = {
   coursePriceField: ILanguageTeacherCourseSetupPrice;
   resourcesAndAttachments: string;
   courseAttachmentsField: ILanguageTeacherCourseSetupAttachments;
+  courseCareersField: ILanguageTeacherCourseSetupCareers;
+  courseLevelField: ILanguageTeacherCourseSetupLevel;
 };
 
 type ILanguageTeacherCourseSetupTitle = {
   courseTitle: string;
   editTitle: string;
   courseTitleInputPlaceholder: string;
+  titleIsNecessary: string;
 };
 
 type ILanguageTeacherCourseSetupDescription = {
@@ -173,6 +182,7 @@ type ILanguageTeacherCourseSetupDescription = {
   editDescription: string;
   noDescription: string;
   courseDescriptionInputPlaceholder: string;
+  descriptionIsRequired: string;
 };
 
 type ILanguageTeacherCourseSetupImage = {
@@ -180,6 +190,7 @@ type ILanguageTeacherCourseSetupImage = {
   addAnImage: string;
   editImage: string;
   aspectRatioRecommended: string;
+  imageIsNecessary: string;
 };
 
 type ILanguageTeacherCourseSetupCategory = {
@@ -189,6 +200,7 @@ type ILanguageTeacherCourseSetupCategory = {
   selectOption: string;
   searchCategory: string;
   noOptionFound: string;
+  youHaveToSelectAtLeastOneItem: string;
 };
 
 type ILanguageTeacherCourseSetupChapters = {
@@ -226,6 +238,18 @@ type ILanguageTeacherCourseSetupYoutubeLink = {
   noYoutubeLink: string;
   youtubeLinkIsRequired: string;
 };
+
+type ILanguageTeacherCourseSetupCareers = {
+  courseCareers: string;
+  editCareers: string;
+  noCareer: string;
+  youHaveToSelectAtLeastOneItem: string;
+}
+
+type ILanguageTeacherCourseSetupLevel = {
+  courseLevel: string;
+  editLevel: string;
+}
 
 type ILanguageTeacherCourseChapterSetup = {
   thisChapterIsUnpublished: string;

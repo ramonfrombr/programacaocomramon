@@ -50,7 +50,7 @@ npx prisma db push
 Reset database
 
 ```
-npx prisma migrate reset
+npx prisma db push --force-reset
 ```
 
 Run local stripe server
@@ -82,6 +82,7 @@ STRIPE_WEBHOOK_SECRET=
 NEXT_PUBLIC_APP_URL=http://localhost:3000
 NEXT_PUBLIC_TEACHER_ID=
 NEXT_PUBLIC_LANGUAGE=portuguese
+NEXT_PUBLIC_LANDING_PAGE_VIDEO_URL=
 ```
 
 ## Screenshots

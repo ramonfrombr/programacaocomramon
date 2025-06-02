@@ -7,7 +7,6 @@ import { Checkbox } from "@/components/ui/checkbox";
 import {
   Form,
   FormControl,
-  FormDescription,
   FormField,
   FormItem,
   FormLabel,
@@ -27,12 +26,6 @@ interface CareerFormProps {
   options: { label: string; value: string }[];
 }
 
-const formSchema = z.object({
-  careerIDs: z.array(z.string()).refine((value) => value.some((item) => item), {
-    message: "You have to select at least one item.",
-  }),
-});
-
 export const CareersForm = ({
   initialData,
   courseId,
@@ -42,6 +35,12 @@ export const CareersForm = ({
   const router = useRouter();
   const [isEditing, setIsEditing] = useState(false);
   const toggleEdit = () => setIsEditing((current) => !current);
+
+  const formSchema = z.object({
+    careerIDs: z.array(z.string()).refine((value) => value.some((item) => item), {
+      message: language.courseCareersField.youHaveToSelectAtLeastOneItem,
+    }),
+  });
 
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
@@ -70,14 +69,14 @@ export const CareersForm = ({
   return (
     <div className="mt-6 border bg-slate-100 roudned-md p-4">
       <div className="font-medium flex items-center justify-between">
-        Course Careers
+        {language.courseCareersField.courseCareers}
         <Button onClick={toggleEdit} variant="ghost">
           {isEditing ? (
             <>{language.cancel}</>
           ) : (
             <>
               <Pencil className="h-4 w-4 mr-2" />
-              Edit
+              {language.courseCareersField.editCareers}
             </>
           )}
         </Button>
@@ -91,7 +90,7 @@ export const CareersForm = ({
         </ul>
       ) : (
         !isEditing && (
-          <p className="text-sm mt-2 text-slate-500 italic">No career</p>
+          <p className="text-sm mt-2 text-slate-500 italic">{language.courseCareersField.noCareer}</p>
         )
       )}
 

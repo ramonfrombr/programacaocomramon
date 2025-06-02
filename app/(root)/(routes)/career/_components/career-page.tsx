@@ -1,6 +1,4 @@
 import { StaticImageData } from "next/image";
-import { Level } from "@prisma/client";
-import { db } from "@/lib/db";
 import Header from "@/app/(root)/(routes)/career/_components/header";
 import CoursesSection from "@/app/(root)/(routes)/career/_components/courses-section";
 import LEVELS from "@/constants/levels";

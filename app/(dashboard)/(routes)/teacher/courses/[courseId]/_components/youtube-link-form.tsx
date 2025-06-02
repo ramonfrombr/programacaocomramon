@@ -85,7 +85,7 @@ export const YoutubeLinkForm = ({
             !initialData.youtubeLink && "text-slate-500 italic"
           )}
         >
-          {initialData.youtubeLink || "No YouTube link"}
+          {initialData.youtubeLink || language.courseYoutubeLink.noYoutubeLink}
         </p>
       )}
 

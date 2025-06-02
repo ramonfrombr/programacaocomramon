@@ -1,91 +1,44 @@
-import { db } from '@/lib/db';
-import { Level } from '@prisma/client';
-import React from 'react'
+"use client";
+import React, { useEffect, useState } from 'react'
 import HTML from "@/public/programming_languages/html-logo.png";
 import CSS from "@/public/programming_languages/css-logo.png";
 import JavaScript from "@/public/programming_languages/javascript-logo.png";
 import Python from "@/public/programming_languages/python-logo.webp";
-import Ruby from "@/public/programming_languages/ruby-logo.png";
-import PHP from "@/public/programming_languages/php-logo.png";
-import C from "@/public/programming_languages/c-logo.png";
-import PostgreSQL from "@/public/programming_languages/postgresql-logo.png";
-import MySQL from "@/public/programming_languages/mysql-logo.png";
-import MongoDB from "@/public/programming_languages/mongodb-logo.webp";
-import Redis from "@/public/programming_languages/redis-logo.webp";
 import Header from '../../career/_components/header';
 import CoursesSection from '../../career/_components/courses-section';
 import LEVELS from '@/constants/levels';
+import axios from 'axios';
+import { useLanguageStore } from '@/hooks/use-language-store';
 
-const TechnologyPage = async ({
+const TechnologyPage = ({
   params,
 }: {
   params: { name: string };
 }) => {
-  const technology = await db.category.findFirst({
-    where: {
-      name: params.name,
-    },
-  });
+    const language = useLanguageStore().careersPage;
+  
+    const [beginnerCourses, setBeginnerCourses] = useState([]);
+    const [intermediateCourses, setIntermediateCourses] = useState([]);
+    const [advancedCourses, setAdvancedCourses] = useState([]);
+    const [specialistCourses, setSpecialistCourses] = useState([]);
+  
+    useEffect(() => {
+      async function fetchData() {
+        const response = await axios.get(`/api/categories/${params.name}`);
+        setBeginnerCourses(response.data.beginner);
+        setIntermediateCourses(response.data.intermediate);
+        setAdvancedCourses(response.data.advanced);
+        setSpecialistCourses(response.data.specialist);
+      }
+      fetchData();
+    }, [params]);
 
-  const beginnerCourses = await db.course.findMany({
-    where: {
-      level: Level.BEGINNER,
-      isPublished: true,
-      categoryIDs: {
-          has: technology!.id,
-        },
-    },
-  });
-
-  const intermediateCourses = await db.course.findMany({
-    where: {
-      level: Level.INTERMEDIATE,
-      isPublished: true,
-      categoryIDs: {
-          has: technology!.id,
-        },
-    },
-  });
-
-  const advancedCourses = await db.course.findMany({
-    where: {
-      level: Level.ADVANCED,
-      isPublished: true,
-      categoryIDs: {
-          has: technology!.id,
-        },
-    },
-  });
-
-  const specialistCourses = await db.course.findMany({
-    where: {
-      level: Level.SPECIALIST,
-      isPublished: true,
-      categoryIDs: {
-          has: technology!.id,
-        },
-    },
-  });
-
-  const courses = {
-    beginner: beginnerCourses,
-    intermediate: intermediateCourses,
-    advanced: advancedCourses,
-    specialist: specialistCourses,
-  };
 
   const programmingLanguagesImages = {
     "HTML": HTML,
     "CSS": CSS,
     "JavaScript": JavaScript,
-    "Python": Python,
-    "PHP": PHP,
-    "Ruby": Ruby,
-    "C": C,
-    "PostgreSQL": PostgreSQL,
-    "MySQL": MySQL,
-    "MongoDB": MongoDB,
-    "Redis": Redis,
+    "Python": Python
   }
 
   const description = {
@@ -97,32 +50,32 @@ const TechnologyPage = async ({
 
   return (
     <div className="px-5 md:px-10 lg:px-20">
-      <Header heading={params.name} image={programmingLanguagesImages[params.name as keyof typeof programmingLanguagesImages]} description={description[params.name as keyof typeof description]} />
+      <Header heading={`${language.chooseACourse} ${params.name}`} image={programmingLanguagesImages[params.name as keyof typeof programmingLanguagesImages]} description={description[params.name as keyof typeof description]} />
 
-      {!!courses.beginner.length && (
+      {!!beginnerCourses.length && (
         <CoursesSection
-          courses={courses.beginner}
+          courses={beginnerCourses}
           level={LEVELS.BEGINNER}
         />
       )}
 
-      {!!courses.intermediate.length && (
+      {!!intermediateCourses.length && (
         <CoursesSection
-          courses={courses.intermediate}
+          courses={intermediateCourses}
           level={LEVELS.INTERMEDIATE}
         />
       )}
 
-      {!!courses.advanced.length && (
+      {!!advancedCourses.length && (
         <CoursesSection
-          courses={courses.advanced}
+          courses={advancedCourses}
           level={LEVELS.ADVANCED}
         />
       )}
 
-      {!!courses.specialist.length && (
+      {!!specialistCourses.length && (
         <CoursesSection
-          courses={courses.specialist}
+          courses={specialistCourses}
           level={LEVELS.SPECIALIST}
         />
       )}

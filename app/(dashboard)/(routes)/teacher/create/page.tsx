@@ -102,7 +102,7 @@ const CreatePage = () => {
               name="youtube"
               render={({ field }) => (
                 <FormItem>
-                  <FormLabel>Available on YouTube</FormLabel>
+                  <FormLabel>{language.availableOnYouTube}</FormLabel>
                   <div className="flex flex-row items-center space-x-3 space-y-0 rounded-md p-4">
                     <FormControl>
                       <Checkbox
@@ -111,7 +111,7 @@ const CreatePage = () => {
                       />
                     </FormControl>
                     <FormDescription>
-                      This course is available only on YouTube
+                      {language.thisCourseIsAvailableOnlyOnYouTube}
                     </FormDescription>
                   </div>
                 </FormItem>
