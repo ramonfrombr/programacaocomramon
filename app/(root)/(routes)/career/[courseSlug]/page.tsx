@@ -11,6 +11,8 @@ import {
 import { Button } from "@/components/ui/button";
 import { Preview } from "@/components/preview";
 import { VideoPlayer } from "@/app/(root)/(routes)/career/[courseSlug]/_components/video-player";
+import Image from "next/image";
+import discount from "@/public/50_off.png";
 
 const CourseSlugPage = async ({
   params,
@@ -53,10 +55,11 @@ const CourseSlugPage = async ({
             {course.title}
           </h1>
           <p className="text-lg mb-3">{course.description}</p>
-          <Link href={`/sign-up?courseId=${course.id}`}>
+          <Link href={`/sign-up?courseId=${course.id}`} className="relative">
             <Button className="rounded-full p-8 text-lg mb-5 md:mb-2 bg-slate-700">
               Tenha Acesso Agora
             </Button>
+            <Image src={discount} height={50} className="absolute -top-2 right-[-85px]" alt="Etiqueta 50% de desconto" />
           </Link>
 
           <p className="text-4xl md:text-3xl font-bold">

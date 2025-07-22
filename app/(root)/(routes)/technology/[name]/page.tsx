@@ -9,6 +9,7 @@ import CoursesSection from '../../career/_components/courses-section';
 import LEVELS from '@/constants/levels';
 import axios from 'axios';
 import { useLanguageStore } from '@/hooks/use-language-store';
+import { ClipLoader } from 'react-spinners';
 
 const TechnologyPage = ({
   params,
@@ -21,10 +22,15 @@ const TechnologyPage = ({
     const [intermediateCourses, setIntermediateCourses] = useState([]);
     const [advancedCourses, setAdvancedCourses] = useState([]);
     const [specialistCourses, setSpecialistCourses] = useState([]);
-  
+
+    const [loading, setLoading] = useState(true);
+
     useEffect(() => {
       async function fetchData() {
         const response = await axios.get(`/api/categories/${params.name}`);
+
+        setLoading(false);
+
         setBeginnerCourses(response.data.beginner);
         setIntermediateCourses(response.data.intermediate);
         setAdvancedCourses(response.data.advanced);
@@ -52,32 +58,40 @@ const TechnologyPage = ({
     <div className="px-5 md:px-10 lg:px-20">
       <Header heading={`${language.chooseACourse} ${params.name}`} image={programmingLanguagesImages[params.name as keyof typeof programmingLanguagesImages]} description={description[params.name as keyof typeof description]} />
 
-      {!!beginnerCourses.length && (
-        <CoursesSection
-          courses={beginnerCourses}
-          level={LEVELS.BEGINNER}
-        />
-      )}
+      {loading ? (
+        <div className="flex items-center justify-center">
+          <ClipLoader />
+        </div>
+      ) : (
+        <div>
+          {!!beginnerCourses.length && (
+            <CoursesSection
+              courses={beginnerCourses}
+              level={LEVELS.BEGINNER}
+            />
+          )}
 
-      {!!intermediateCourses.length && (
-        <CoursesSection
-          courses={intermediateCourses}
-          level={LEVELS.INTERMEDIATE}
-        />
-      )}
+          {!!intermediateCourses.length && (
+            <CoursesSection
+              courses={intermediateCourses}
+              level={LEVELS.INTERMEDIATE}
+            />
+          )}
 
-      {!!advancedCourses.length && (
-        <CoursesSection
-          courses={advancedCourses}
-          level={LEVELS.ADVANCED}
-        />
-      )}
+          {!!advancedCourses.length && (
+            <CoursesSection
+              courses={advancedCourses}
+              level={LEVELS.ADVANCED}
+            />
+          )}
 
-      {!!specialistCourses.length && (
-        <CoursesSection
-          courses={specialistCourses}
-          level={LEVELS.SPECIALIST}
-        />
+          {!!specialistCourses.length && (
+            <CoursesSection
+              courses={specialistCourses}
+              level={LEVELS.SPECIALIST}
+            />
+          )}
+        </div>
       )}
     </div>
   )

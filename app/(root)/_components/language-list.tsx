@@ -2,7 +2,6 @@ import Image from "next/image";
 import HTML from "@/public/programming_languages/html-logo.png";
 import CSS from "@/public/programming_languages/css-logo.png";
 import JavaScript from "@/public/programming_languages/javascript-logo.png";
-import Python from "@/public/programming_languages/python-logo.webp";
 import Link from "next/link";
 
 const programmingLanguages = [
@@ -17,10 +16,6 @@ const programmingLanguages = [
   {
     image: JavaScript,
     name: "JavaScript",
-  },
-  {
-    image: Python,
-    name: "Python",
   },
 ];
 

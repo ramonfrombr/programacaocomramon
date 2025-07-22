@@ -4,6 +4,7 @@ import CoursesSection from "@/app/(root)/(routes)/career/_components/courses-sec
 import LEVELS from "@/constants/levels";
 import { useEffect, useState } from "react";
 import axios from "axios";
+import { ClipLoader } from "react-spinners";
 
 interface CareerPageProps {
   heading: string;
@@ -24,13 +25,19 @@ const CareerPage = ({
   const [advancedCourses, setAdvancedCourses] = useState([]);
   const [specialistCourses, setSpecialistCourses] = useState([]);
 
+  const [loading, setLoading] = useState(true);
+
   useEffect(() => {
     async function fetchData() {
       const response = await axios.get(`/api/careers/${slug}`);
+
+      setLoading(false);
+
       setBeginnerCourses(response.data.beginner);
       setIntermediateCourses(response.data.intermediate);
       setAdvancedCourses(response.data.advanced);
       setSpecialistCourses(response.data.specialist);
+      
     }
     fetchData();
   }, [slug]);
@@ -39,32 +46,40 @@ const CareerPage = ({
     <div className="px-5 md:px-10 lg:px-20">
       <Header heading={heading} image={image} description={description} />
 
-      {!!beginnerCourses.length && (
-        <CoursesSection
-          courses={beginnerCourses}
-          level={LEVELS.BEGINNER}
-        />
-      )}
+      {loading ? (
+        <div className="flex items-center justify-center">
+          <ClipLoader />
+        </div>
+      ) : (
+        <div>
+          {!!beginnerCourses.length && (
+            <CoursesSection
+              courses={beginnerCourses}
+              level={LEVELS.BEGINNER}
+            />
+          )}
+  
+          {!!intermediateCourses.length && (
+            <CoursesSection
+              courses={intermediateCourses}
+              level={LEVELS.INTERMEDIATE}
+            />
+          )}
 
-      {!!intermediateCourses.length && (
-        <CoursesSection
-          courses={intermediateCourses}
-          level={LEVELS.INTERMEDIATE}
-        />
-      )}
+          {!!advancedCourses.length && (
+            <CoursesSection
+              courses={advancedCourses}
+              level={LEVELS.ADVANCED}
+            />
+          )}
 
-      {!!advancedCourses.length && (
-        <CoursesSection
-          courses={advancedCourses}
-          level={LEVELS.ADVANCED}
-        />
-      )}
-
-      {!!specialistCourses.length && (
-        <CoursesSection
-          courses={specialistCourses}
-          level={LEVELS.SPECIALIST}
-        />
+          {!!specialistCourses.length && (
+            <CoursesSection
+              courses={specialistCourses}
+              level={LEVELS.SPECIALIST}
+            />
+          )}
+        </div>  
       )}
     </div>
   );

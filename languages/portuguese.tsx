@@ -19,7 +19,7 @@ export const portugueseLanguage: ILanguage = {
         <>
           O jeito <span className="text-black">rápido</span> e{" "}
           <span className="text-black">fácil</span> de aprender a profissão{" "}
-          <span className="text-black">mais bem paga</span> do mercado,
+          <span className="text-black">mais bem paga</span> do mercado.
         </>
       ),
       chooseACareer: "Escolha uma Carreira",
