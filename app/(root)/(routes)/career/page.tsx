@@ -20,7 +20,6 @@ const ChooseACareer = () => {
 
   const careers: CareerType[] = [
     { url: CARRERS_URLS.WEBDEV, title: language.webDevelopment.title },
-    { url: CARRERS_URLS.MOBILE, title: language.mobileDevelopment.title },
   ];
 
   return (
