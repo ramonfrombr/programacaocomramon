@@ -34,8 +34,7 @@ export const VideoPlayer = ({ playbackId, isLocked }: VideoPlayerProps) => {
                     className={cn("w-full", !isReady && "hidden")}
                     onCanPlay={() => setIsReady(true)}
                     playbackId={playbackId}
-                    poster={`https://image.mux.com/${playbackId}/thumbnail.jpg?time=0`}
-                    preload="none"
+                    thumbnailTime={0}
                 />
             )}
         </div>
