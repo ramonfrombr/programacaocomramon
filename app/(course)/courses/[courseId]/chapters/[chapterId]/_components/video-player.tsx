@@ -11,82 +11,84 @@ import { useConfettiStore } from "@/hooks/use-confetti-store";
 import { useLanguageStore } from "@/hooks/use-language-store";
 
 interface VideoPlayerProps {
-  playbackId: string;
-  courseId: string;
-  chapterId: string;
-  nextChapterId?: string;
-  isLocked: boolean;
-  completeOnEnd: boolean;
-  title: string;
+    playbackId: string;
+    courseId: string;
+    chapterId: string;
+    nextChapterId?: string;
+    isLocked: boolean;
+    completeOnEnd: boolean;
+    title: string;
 }
 
 export const VideoPlayer = ({
-  playbackId,
-  courseId,
-  chapterId,
-  nextChapterId,
-  isLocked,
-  completeOnEnd,
-  title,
+    playbackId,
+    courseId,
+    chapterId,
+    nextChapterId,
+    isLocked,
+    completeOnEnd,
+    title,
 }: VideoPlayerProps) => {
-  const language = useLanguageStore().videoPlayer;
-  const [isReady, setIsReady] = useState(false);
-  const router = useRouter();
-  const confetti = useConfettiStore();
+    const language = useLanguageStore().videoPlayer;
+    const [isReady, setIsReady] = useState(false);
+    const router = useRouter();
+    const confetti = useConfettiStore();
 
-  const onEnd = async () => {
-    try {
-      if (completeOnEnd) {
-        await axios.put(
-          `/api/courses/${courseId}/chapters/${chapterId}/progress`,
-          {
-            isCompleted: true,
-          }
-        );
+    const onEnd = async () => {
+        try {
+            if (completeOnEnd) {
+                await axios.put(
+                    `/api/courses/${courseId}/chapters/${chapterId}/progress`,
+                    {
+                        isCompleted: true,
+                    }
+                );
 
-        if (!nextChapterId) {
-          confetti.onOpen();
+                if (!nextChapterId) {
+                    confetti.onOpen();
+                }
+
+                toast.success(language.progressUpdated);
+                router.refresh();
+
+                if (nextChapterId) {
+                    router.push(
+                        `/courses/${courseId}/chapters/${nextChapterId}`
+                    );
+                }
+            }
+        } catch {
+            toast.error(language.somethingWentWrong);
         }
+    };
 
-        toast.success(language.progressUpdated);
-        router.refresh();
+    return (
+        <div className="relative aspect-video">
+            {!isReady && !isLocked && (
+                <div className="absolute inset-0 flex items-center justify-center bg-slate-800">
+                    <Loader2 className="h-8 w-8 animate-spin text-secondary" />
+                </div>
+            )}
+            {isLocked && (
+                <div className="absolute inset-0 flex items-center justify-center bg-slate-800 flex-col gap-y-2 text-secondary">
+                    <Lock className="w-8 h-8" />
+                    <p className="text-sm">{language.thisChapterIsLocked}</p>
+                </div>
+            )}
 
-        if (nextChapterId) {
-          router.push(`/courses/${courseId}/chapters/${nextChapterId}`);
-        }
-      }
-    } catch {
-      toast.error(language.somethingWentWrong);
-    }
-  };
-
-  return (
-    <div className="relative aspect-video">
-      {!isReady && !isLocked && (
-        <div className="absolute inset-0 flex items-center justify-center bg-slate-800">
-          <Loader2 className="h-8 w-8 animate-spin text-secondary" />
+            {!isLocked && (
+                <MuxPlayer
+                    title={title}
+                    className={cn("overflow-x-hidden", !isReady && "hidden")}
+                    onCanPlay={() => setIsReady(true)}
+                    onEnded={onEnd}
+                    autoPlay
+                    playbackId={playbackId}
+                    streamType="on-demand"
+                    playsInline
+                    preferPlayback="mse"
+                />
+            )}
         </div>
-      )}
-      {isLocked && (
-        <div className="absolute inset-0 flex items-center justify-center bg-slate-800 flex-col gap-y-2 text-secondary">
-          <Lock className="w-8 h-8" />
-          <p className="text-sm">{language.thisChapterIsLocked}</p>
-        </div>
-      )}
-
-        
-      {!isLocked && (
-        <MuxPlayer
-          title={title}
-          className={cn("overflow-x-hidden", !isReady && "hidden")}
-          onCanPlay={() => setIsReady(true)}
-          onEnded={onEnd}
-          autoPlay
-          playbackId={playbackId}
-          streamType="on-demand"
-          playsInline
-        />
-      )}
-    </div>
-  );
+    );
 };
