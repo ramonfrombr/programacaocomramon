@@ -83,6 +83,8 @@ export const VideoPlayer = ({
           onEnded={onEnd}
           autoPlay
           playbackId={playbackId}
+          streamType="on-demand"
+          playsInline
         />
       )}
     </div>
