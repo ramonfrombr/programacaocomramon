@@ -4,29 +4,29 @@ import { InfoCard } from "@/app/(dashboard)/(routes)/dashboard/_components/info-
 import { useLanguageStore } from "@/hooks/use-language-store";
 
 interface InfoCardsProps {
-  numberOfCoursesInProgress: number;
-  numberOfCompletedCourses: number;
+    numberOfCoursesInProgress: number;
+    numberOfCompletedCourses: number;
 }
 
 export const InfoCards = ({
-  numberOfCompletedCourses,
-  numberOfCoursesInProgress,
+    numberOfCompletedCourses,
+    numberOfCoursesInProgress,
 }: InfoCardsProps) => {
-  const language = useLanguageStore().dashboard;
+    const language = useLanguageStore().dashboard;
 
-  return (
-    <>
-      <InfoCard
-        icon={Clock}
-        label={language.inProgress}
-        numberOfItems={numberOfCompletedCourses}
-      />
-      <InfoCard
-        icon={CheckCircle}
-        label={language.completed}
-        numberOfItems={numberOfCoursesInProgress}
-        variant="success"
-      />
-    </>
-  );
+    return (
+        <>
+            <InfoCard
+                icon={Clock}
+                label={language.inProgress}
+                numberOfItems={numberOfCoursesInProgress}
+            />
+            <InfoCard
+                icon={CheckCircle}
+                label={language.completed}
+                numberOfItems={numberOfCompletedCourses}
+                variant="success"
+            />
+        </>
+    );
 };
