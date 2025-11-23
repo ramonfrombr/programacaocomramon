@@ -161,6 +161,7 @@ export async function PATCH(
                 input: values.videoUrl,
                 playback_policy: ["public"],
                 test: false,
+                // @ts-ignore
                 meta: {
                     title: `${ownCourse.slug}__${chapterTitleSlug}`,
                 },
