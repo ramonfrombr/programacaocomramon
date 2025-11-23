@@ -4,21 +4,21 @@ import { auth } from "@clerk/nextjs/server";
 import { NextResponse } from "next/server";
 
 export async function POST(req: Request) {
-  try {
-    const { userId } = auth();
-    const { title, slug, youtube } = await req.json();
+    try {
+        const { userId } = auth();
+        const { title, slug, youtube } = await req.json();
 
-    if (!userId || !isTeacher(userId)) {
-      return new NextResponse("Unauthorized", { status: 401 });
+        if (!userId || !isTeacher(userId)) {
+            return new NextResponse("Unauthorized", { status: 401 });
+        }
+
+        const course = await db.course.create({
+            data: { userId, title, slug, youtube, position: 1 },
+        });
+
+        return NextResponse.json(course);
+    } catch (error) {
+        console.log("[COURSES]", error);
+        return new NextResponse("Internal Error", { status: 500 });
     }
-
-    const course = await db.course.create({
-      data: { userId, title, slug, youtube },
-    });
-
-    return NextResponse.json(course);
-  } catch (error) {
-    console.log("[COURSES]", error);
-    return new NextResponse("Internal Error", { status: 500 });
-  }
 }
