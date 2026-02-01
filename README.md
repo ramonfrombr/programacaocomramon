@@ -1,4 +1,4 @@
-# Programação com Ramon - A Computer Science Educational Platform
+# Escola de Programação - A Computer Science Educational Platform
 
 This is a computer science LMS (Learning Management System) platform. It is built with Next 13 with the App Router, Prisma as an ORM, Stripe for payments, and many more.
 
