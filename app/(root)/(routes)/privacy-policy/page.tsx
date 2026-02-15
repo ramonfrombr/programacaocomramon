@@ -210,7 +210,7 @@ const PrivacyPolicyPage = () => {
             </h2>
             <p>
                 Se você é da Área Econômica Europeia (EEA), a base legal do
-                Programação com Ramon para coletar e usar as informações
+                Escola de Programação para coletar e usar as informações
                 pessoais descritas nesta Política de Privacidade depende dos
                 Dados Pessoais que coletamos e do contexto específico em que os
                 coletamos.
@@ -292,8 +292,8 @@ const PrivacyPolicyPage = () => {
             <ul>
                 <li>Cumprir com uma obrigação legal</li>
                 <li>
-                    Proteger e defender os direitos ou propriedade do
-                    Programação com Ramon
+                    Proteger e defender os direitos ou propriedade do Escola de
+                    Programação
                 </li>
                 <li>
                     Prevenir ou investigar possíveis infrações relacionadas ao
@@ -369,7 +369,7 @@ const PrivacyPolicyPage = () => {
                 <li>
                     <b>O direito de retirar o consentimento.</b> Você também tem
                     o direito de retirar seu consentimento a qualquer momento
-                    quando o Programação com Ramon confiar no seu consentimento
+                    quando o Escola de Programação confiar no seu consentimento
                     para processar suas informações pessoais.
                 </li>
             </ul>
@@ -504,7 +504,7 @@ const PrivacyPolicyPage = () => {
                 entre em contato conosco:
             </p>
             <ul>
-                <li>Por e-mail: contato@escoladeprogramacao.com</li>
+                <li>Por e-mail: programacaocomramon@gmail.com</li>
             </ul>
         </div>
     );

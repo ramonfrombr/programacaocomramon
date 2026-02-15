@@ -27,7 +27,7 @@ export const Navbar = () => {
                         src={logo}
                         height={40}
                         width={40}
-                        alt="Logo Programação com Ramon"
+                        alt="Logo Escola de Programação"
                     />
                 </span>
                 <span className="hidden md:inline">
@@ -35,7 +35,7 @@ export const Navbar = () => {
                         src={logo}
                         height={45}
                         width={45}
-                        alt="Logo Programação com Ramon"
+                        alt="Logo Escola de Programação"
                     />
                 </span>
 

@@ -184,13 +184,13 @@ const TermsOfUsePage = () => {
                 Respeitamos os direitos de propriedade intelectual dos outros e
                 esperamos que os usuários façam o mesmo. Reclamações de violação
                 de direitos autorais devem ser enviadas por escrito para
-                contato@escoladeprogramacao.com, incluindo uma descrição
-                detalhada da suposta violação.
+                programacaocomramon@gmail.com, incluindo uma descrição detalhada
+                da suposta violação.
             </p>
             <h2>Links para Outros Sites</h2>
             <p>
                 Nosso Serviço pode incluir links para sites de terceiros. O
-                Programação com Ramon não é responsável pelo conteúdo ou pelas
+                Escola de Programação não é responsável pelo conteúdo ou pelas
                 práticas desses sites. Encorajamos você a revisar seus termos e
                 condições.
             </p>

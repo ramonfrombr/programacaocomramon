@@ -34,6 +34,10 @@ const programmingLanguages = [
         image: JavaScript,
         name: "JavaScript",
     },
+    {
+        image: React,
+        name: "React.js",
+    },
     /*
     {
         image: TypeScript,
@@ -51,10 +55,7 @@ const programmingLanguages = [
         image: Nest,
         name: "Nest.js",
     },
-    {
-        image: React,
-        name: "React.js",
-    },
+
     {
         image: Next,
         name: "Next.js",

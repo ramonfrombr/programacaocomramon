@@ -4,6 +4,7 @@ import HTML from "@/public/programming_languages/html-logo.png";
 import CSS from "@/public/programming_languages/css-logo.png";
 import JavaScript from "@/public/programming_languages/javascript-logo.png";
 import Python from "@/public/programming_languages/python-logo.webp";
+import ReactJS from "@/public/programming_languages/react-logo.png";
 import Header from '../../career/_components/header';
 import CoursesSection from '../../career/_components/courses-section';
 import LEVELS from '@/constants/levels';
@@ -44,14 +45,16 @@ const TechnologyPage = ({
     "HTML": HTML,
     "CSS": CSS,
     "JavaScript": JavaScript,
-    "Python": Python
+    "Python": Python,
+    "React.js": ReactJS
   }
 
   const description = {
     HTML: "HTML significa HyperText Markup Language, ou em português, Linguagem de Marcação de Hipertexto. É a linguagem padrão usada para criar páginas na web.",
     CSS: "CSS significa Cascading Style Sheets, ou em português, Folhas de Estilo em Cascata. É a linguagem usada para estilizar páginas feitas com HTML.",
     JavaScript: "JavaScript é uma linguagem de programação usada principalmente para tornar páginas web interativas e dinâmicas.",
-    Python: "Python é uma linguagem de programação de alto nível, conhecida por ser simples, clara e poderosa. É muito usada tanto por iniciantes quanto por profissionais experientes em várias áreas da tecnologia."
+    Python: "Python é uma linguagem de programação de alto nível, conhecida por ser simples, clara e poderosa. É muito usada tanto por iniciantes quanto por profissionais experientes em várias áreas da tecnologia.",
+    "React.js": "Aprenda React.js do zero ao avançado e domine uma das bibliotecas mais usadas do mundo para criação de interfaces modernas e interativas."
   }
 
   return (

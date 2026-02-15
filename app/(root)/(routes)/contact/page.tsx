@@ -27,7 +27,7 @@ const ContactPage = () => {
                     Respondemos dentro de 48 horas úteis para solicitações de
                     suporte
                 </li>
-                <li>contato@escoladeprogramacao.com</li>
+                <li>programacaocomramon@gmail.com</li>
             </ul>
         </div>
     );

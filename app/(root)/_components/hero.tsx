@@ -22,7 +22,7 @@ export const Hero = () => {
         >
             <div className="mb-5">
                 <h1
-                    className={`text-4xl md:text-[4vw] lg:text-[2.5rem] lg:leading-tight xl:text-[3.5rem] font-bold mb-3`}
+                    className={`text-4xl md:text-[4vw] lg:text-[2.5rem] lg:leading-tight xl:text-[3.3rem] font-bold mb-3`}
                 >
                     {language.heading}
                 </h1>
@@ -47,7 +47,7 @@ export const Hero = () => {
             <SimpleModal
                 trigger={
                     <>
-                        <div className="rounded-xl overflow-hidden relative cursor-pointer border shadow-lg hover:shadow-xl transition">
+                        <div className="rounded-xl overflow-hidden relative cursor-pointer border shadow-lg hover:shadow-2xl transition">
                             <Image
                                 src={thumbnail}
                                 height={1080}

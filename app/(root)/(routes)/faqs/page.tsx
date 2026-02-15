@@ -10,7 +10,7 @@ const generalQuestions = [
     {
         question:
             "Quanto tempo terei acesso aos meus cursos no Escola de Programação?",
-        answer: "A maioria dos planos de curso oferece 12 meses de acesso ao material. Após o período de 12 meses, você precisará comprar o curso novamente para manter o acesso.",
+        answer: "Quando você compra um curso, você tem acesso vitalício.",
     },
 ];
 
