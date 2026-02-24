@@ -6,7 +6,7 @@ import { useAuth, UserButton } from "@clerk/nextjs";
 import { Menu } from "lucide-react";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import { Button } from "@/components/ui/button";
-import logo from "@/public/logo-2.png";
+import logo from "@/public/logo.png";
 
 const poppins = Poppins({
     subsets: ["latin"],
@@ -33,8 +33,8 @@ export const Navbar = () => {
                 <span className="hidden md:inline">
                     <Image
                         src={logo}
-                        height={45}
-                        width={45}
+                        height={40}
+                        width={40}
                         alt="Logo Escola de Programação"
                     />
                 </span>

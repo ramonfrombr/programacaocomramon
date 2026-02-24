@@ -15,7 +15,7 @@ export const Logo = () => {
     return (
         <Link href="/">
             <div className="flex items-center">
-                <Image height={40} width={40} alt="logo" src="/logo-2.png" />
+                <Image height={40} width={40} alt="logo" src="/logo.png" />
 
                 <div className="ml-3">
                     <p
