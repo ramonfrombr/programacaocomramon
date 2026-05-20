@@ -1,0 +1,32 @@
+"use client";
+import { CheckCircle, Clock } from "lucide-react";
+import { InfoCard } from "@/app/(root)/(routes)/dashboard/_components/info-card";
+import { useLanguageStore } from "@/hooks/use-language-store";
+
+interface InfoCardsProps {
+    numberOfCoursesInProgress: number;
+    numberOfCompletedCourses: number;
+}
+
+export const InfoCards = ({
+    numberOfCompletedCourses,
+    numberOfCoursesInProgress,
+}: InfoCardsProps) => {
+    const language = useLanguageStore().dashboard;
+
+    return (
+        <>
+            <InfoCard
+                icon={Clock}
+                label={language.inProgress}
+                numberOfItems={numberOfCoursesInProgress}
+            />
+            <InfoCard
+                icon={CheckCircle}
+                label={language.completed}
+                numberOfItems={numberOfCompletedCourses}
+                variant="success"
+            />
+        </>
+    );
+};

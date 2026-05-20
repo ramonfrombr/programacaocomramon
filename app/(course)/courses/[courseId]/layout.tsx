@@ -16,10 +16,6 @@ const CourseLayout = async ({
 }) => {
   const { userId } = auth();
 
-  if (!userId) {
-    return redirect("/");
-  }
-
   const course = await db.course.findUnique({
     where: {
       id: params.courseId,
@@ -32,7 +28,7 @@ const CourseLayout = async ({
         include: {
           userProgress: {
             where: {
-              userId,
+              userId: userId || "",
             },
           },
         },
@@ -47,7 +43,7 @@ const CourseLayout = async ({
     return redirect("/");
   }
 
-  const progressCount = await getProgress(userId, course.id);
+  const progressCount = await getProgress(userId ?? "", course.id);
 
   return (
     <div className="h-full">

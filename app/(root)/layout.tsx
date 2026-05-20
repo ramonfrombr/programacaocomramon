@@ -1,25 +1,32 @@
-import React from "react";
-import { Navbar } from "@/app/(root)/_components/navbar";
+import { redirect } from "next/navigation";
+import { auth } from "@clerk/nextjs/server";
+import { Sidebar } from "@/app/(root)/_components/sidebar";
+import { Navbar } from "@/app/(root)/_components/Navbar";
 import { Footer } from "@/components/footer";
-import { Nunito_Sans } from "next/font/google";
 
-const nunito = Nunito_Sans({
-  subsets: ["latin"],
-  weight: ["400", "500", "600", "700", "800"],
-});
+const DashboardLayout = ({ children }: { children: React.ReactNode }) => {
+    const { userId } = auth();
 
-const RootLayout = ({ children }: { children: React.ReactNode }) => {
-  return (
-    <div
-      className={`${nunito.className} flex flex-col justify-between min-h-screen`}
-    >
-      <div>
-        <Navbar />
-        {children}
-      </div>
-      <Footer />
-    </div>
-  );
+    /*
+    if (!userId) {
+        return redirect("/");
+    }
+    */
+
+    return (
+        <div className="h-full">
+            <div className="h-[80px] md:pl-[320px] fixed inset-y-0 w-full z-50">
+                <Navbar />
+            </div>
+            <div className="hidden md:flex w-56 flex-col fixed inset-y-0 z-50">
+                <Sidebar />
+            </div>
+            <main className="md:pl-[320px] pt-[80px] min-h-screen bg-gray-50 flex flex-col justify-between">
+                {children}
+                <Footer />
+            </main>
+        </div>
+    );
 };
 
-export default RootLayout;
+export default DashboardLayout;

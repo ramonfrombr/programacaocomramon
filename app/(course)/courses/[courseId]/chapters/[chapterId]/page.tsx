@@ -19,10 +19,6 @@ const ChapterIdPage = async ({
 }) => {
     const { userId } = auth();
 
-    if (!userId) {
-        return redirect("/");
-    }
-
     const {
         chapter,
         course,
@@ -32,7 +28,7 @@ const ChapterIdPage = async ({
         userProgress,
         purchase,
     } = await getChapter({
-        userId,
+        userId: userId || "",
         chapterId: params.chapterId,
         courseId: params.courseId,
     });
@@ -79,7 +75,7 @@ const ChapterIdPage = async ({
             />
 
             <div className="flex flex-col max-w-4xl mx-auto pb-20">
-                {showPurchaseButton && <SelectedCheckoutButton />}
+                {userId && showPurchaseButton && <SelectedCheckoutButton />}
 
                 <div className="p-4">
                     <VideoPlayer
@@ -99,7 +95,7 @@ const ChapterIdPage = async ({
                             {chapter.title}
                         </h2>
 
-                        {purchase || !isLocked ? (
+                        {userId && (purchase || !isLocked) ? (
                             <CourseProgressButton
                                 chapterId={params.chapterId}
                                 courseId={params.courseId}
