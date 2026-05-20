@@ -13,7 +13,7 @@ export const NavbarRoutes = () => {
   const pathname = usePathname();
   const isTeacherPage = pathname?.startsWith("/teacher");
   const isCoursePage = pathname?.includes("/courses/");
-  const isSearchPage = pathname === "/courses";
+  const isSearchPage = pathname === "/";
   const language = useLanguageStore().navbar;
 
   return (
@@ -25,7 +25,7 @@ export const NavbarRoutes = () => {
       )}
       <div className="flex gap-x-2 ml-auto">
         {isTeacherPage || isCoursePage ? (
-          <Link href="/courses">
+          <Link href="/">
             <Button size="sm" variant="ghost">
               <LogOut className="w-4 h-4 mr-2" /> {language.goBackToCourses}
             </Button>
