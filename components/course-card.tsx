@@ -1,6 +1,7 @@
 "use client";
 import Image from "next/image";
 import Link from "next/link";
+import { useAuth } from "@clerk/nextjs";
 import { formatPrice } from "@/lib/format";
 import { CourseProgress } from "@/components/course-progress";
 import { ChaptersBadge } from "@/components/chapters-badge";
@@ -32,6 +33,7 @@ export const CourseCard = ({
   level
 }: CourseCardProps) => {
   const language = useLanguageStore().careersPage;
+  const { userId } = useAuth();
 
   const backgroundColors = {
     BEGINNER: 'bg-slate-800',
@@ -76,7 +78,7 @@ export const CourseCard = ({
           </div>
 
 
-          {youtube ? (
+          {youtube || !userId ? (
             <></>
           ) : progress !== null ? (
             <CourseProgress
