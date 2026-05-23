@@ -9,6 +9,7 @@ interface SidebarItemProps {
     label: string;
     href: string;
     locked: boolean;
+    onClick?: () => void;
 }
 
 export const SidebarItem = ({
@@ -16,6 +17,7 @@ export const SidebarItem = ({
     label,
     href,
     locked,
+    onClick,
 }: SidebarItemProps) => {
     const pathname = usePathname();
     const router = useRouter();
@@ -26,13 +28,17 @@ export const SidebarItem = ({
         pathname === href ||
         pathname?.startsWith(`${href}/`);
 
-    const onClick = () => {
+    const handleClick = () => {
         router.push(href);
+
+        if (onClick) {
+            onClick();
+        }
     };
 
     return (
         <button
-            onClick={onClick}
+            onClick={handleClick}
             type="button"
             className={cn(
                 "relative flex items-stretch gap-x-2 text-slate-500 text-sm font-[500] pl-6 transition-all hover:text-slate-600 hover:bg-slate-300/20",

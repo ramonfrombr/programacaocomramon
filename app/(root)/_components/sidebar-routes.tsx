@@ -19,9 +19,10 @@ import { SidebarItem } from "@/app/(root)/_components/sidebar-item";
 
 interface SidebarRoutesProps {
     userLoggedIn: boolean;
+    onNavigate?: () => void;
 }
 
-export const SidebarRoutes = ({ userLoggedIn }: SidebarRoutesProps) => {
+export const SidebarRoutes = ({ userLoggedIn, onNavigate }: SidebarRoutesProps) => {
     const pathname = usePathname();
     const isTeacherPage = pathname.includes("/teacher");
     const language = useLanguageStore().sidebar;
@@ -97,6 +98,7 @@ export const SidebarRoutes = ({ userLoggedIn }: SidebarRoutesProps) => {
                     label={route.label}
                     href={route.href}
                     locked={route.locked}
+                    onClick={onNavigate}
                 />
             ))}
         </div>

@@ -1,18 +1,8 @@
-import { redirect } from "next/navigation";
-import { auth } from "@clerk/nextjs/server";
 import { Sidebar } from "@/app/(root)/_components/sidebar";
 import { Navbar } from "@/app/(root)/_components/Navbar";
 import { Footer } from "@/components/footer";
 
 const DashboardLayout = ({ children }: { children: React.ReactNode }) => {
-    const { userId } = auth();
-
-    /*
-    if (!userId) {
-        return redirect("/");
-    }
-    */
-
     return (
         <div className="h-full">
             <div className="h-[80px] md:pl-[320px] fixed inset-y-0 w-full z-50">
