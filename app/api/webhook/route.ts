@@ -37,6 +37,7 @@ export async function POST(req: Request) {
       data: {
         courseId: courseId,
         userId: userId,
+        price:  (session.amount_total || 0) / 100
       },
     });
   } else {
