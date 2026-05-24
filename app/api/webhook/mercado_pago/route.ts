@@ -34,7 +34,7 @@ export async function POST(request: Request) {
 
                 if (!already) {
                     await db.purchase.create({
-                        data: { userId, courseId, price: mpPayment.transaction_amount },
+                        data: { userId, courseId, price: mpPayment.transaction_amount || 0 },
                     });
                 }
             }
