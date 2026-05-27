@@ -1,5 +1,6 @@
 "use client";
 
+import { useLanguageStore } from "@/hooks/use-language-store";
 import { cn } from "@/lib/utils";
 import { CheckCircle, Lock, PlayCircle } from "lucide-react";
 import { usePathname, useRouter } from "next/navigation";
@@ -19,6 +20,7 @@ export const CourseSidebarItem = ({
   courseId,
   isLocked,
 }: CourseSidebarItemProps) => {
+    const language = useLanguageStore().course;
   const pathname = usePathname();
   const router = useRouter();
 
@@ -27,7 +29,7 @@ export const CourseSidebarItem = ({
   const isActive = pathname?.includes(id);
 
   const onClick = () => {
-    router.push(`/courses/${courseId}/chapters/${id}`);
+    router.push(`/${language.watchCourseURL}/${courseId}/${language.chaptersURL}/${id}`);
   };
 
   return (

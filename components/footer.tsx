@@ -1,14 +1,20 @@
+"use client";
+import { useLanguageStore } from "@/hooks/use-language-store";
 import Link from "next/link";
 
-const footerLinks = [
-    { text: "Sobre", url: "/about" },
-    { text: "Perguntas Frequentes", url: "/faqs" },
-    { text: "Contato", url: "/contact" },
-    { text: "Termos de Uso", url: "/terms-of-use" },
-    { text: "Política de Privacidade", url: "/privacy-policy" },
-];
-
 export const Footer = () => {
+    const language = useLanguageStore().footer;
+
+    const footerLinks = [
+        { text: language.about.title, url: `/${language.about.url}` },
+        { text: language.faqs.title, url: `/${language.faqs.url}` },
+        { text: language.contact.title, url: `/${language.contact.url}` },
+        { text: language.termsOfUse.title, url: `/${language.termsOfUse.url}` },
+        {
+            text: language.privacyPolicy.title,
+            url: `/${language.privacyPolicy.url}`,
+        },
+    ];
     return (
         <footer className="w-full mt-10 flex flex-col lg:items-center justify-between border-t lg:p-2 bg-white pt-3">
             <div className="flex flex-wrap flex-row md:border-0 md:gap-2 text-blue-400 text-xs md:text-sm">

@@ -4,11 +4,11 @@ import { auth } from "@clerk/nextjs/server";
 import { getChapter } from "@/actions/get-chapter";
 import { Preview } from "@/components/preview";
 import { Separator } from "@/components/ui/separator";
-import { VideoPlayer } from "@/app/(course)/courses/[courseId]/chapters/[chapterId]/_components/video-player";
-import { StripeCheckoutButton } from "@/app/(course)/courses/[courseId]/chapters/[chapterId]/_components/course-enroll-button-stripe";
-import { MercadoPagoCheckoutButton } from "@/app/(course)/courses/[courseId]/chapters/[chapterId]/_components/course-enroll-button-mercado-pago";
-import { CourseProgressButton } from "@/app/(course)/courses/[courseId]/chapters/[chapterId]/_components/course-progress-button";
-import { ChapterBanners } from "@/app/(course)/courses/[courseId]/chapters/[chapterId]/_components/chapter-banners";
+import { VideoPlayer } from "@/app/(course)/watch-course/[courseId]/chapters/[chapterId]/_components/video-player";
+import { StripeCheckoutButton } from "@/app/(course)/watch-course/[courseId]/chapters/[chapterId]/_components/course-enroll-button-stripe";
+import { MercadoPagoCheckoutButton } from "@/app/(course)/watch-course/[courseId]/chapters/[chapterId]/_components/course-enroll-button-mercado-pago";
+import { CourseProgressButton } from "@/app/(course)/watch-course/[courseId]/chapters/[chapterId]/_components/course-progress-button";
+import { ChapterBanners } from "@/app/(course)/watch-course/[courseId]/chapters/[chapterId]/_components/chapter-banners";
 import { isTeacher } from "@/lib/teacher";
 import { getCourse } from "@/actions/get-course";
 

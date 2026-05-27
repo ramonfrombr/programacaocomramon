@@ -29,7 +29,9 @@ export const VideoPlayer = ({
     completeOnEnd,
     title,
 }: VideoPlayerProps) => {
-    const language = useLanguageStore().videoPlayer;
+    const language = useLanguageStore();
+    const videoPlayerLanguage = language.videoPlayer;
+    const courseLanguage = language.course;
     const [isReady, setIsReady] = useState(false);
     const router = useRouter();
     const confetti = useConfettiStore();
@@ -48,17 +50,17 @@ export const VideoPlayer = ({
                     confetti.onOpen();
                 }
 
-                toast.success(language.progressUpdated);
+                toast.success(videoPlayerLanguage.progressUpdated);
                 router.refresh();
 
                 if (nextChapterId) {
                     router.push(
-                        `/courses/${courseId}/chapters/${nextChapterId}`
+                        `/${courseLanguage.watchCourseURL}/${courseId}/${courseLanguage.chaptersURL}/${nextChapterId}`
                     );
                 }
             }
         } catch {
-            toast.error(language.somethingWentWrong);
+            toast.error(videoPlayerLanguage.somethingWentWrong);
         }
     };
 
@@ -72,7 +74,7 @@ export const VideoPlayer = ({
             {isLocked && (
                 <div className="absolute inset-0 flex items-center justify-center bg-slate-800 flex-col gap-y-2 text-secondary">
                     <Lock className="w-8 h-8" />
-                    <p className="text-sm">{language.thisChapterIsLocked}</p>
+                    <p className="text-sm">{videoPlayerLanguage.thisChapterIsLocked}</p>
                 </div>
             )}
 

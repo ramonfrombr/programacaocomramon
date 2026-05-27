@@ -1,3 +1,4 @@
+import { language } from "@/lib/serverSideLanguage";
 import { db } from "@/lib/db";
 import { redirect } from "next/navigation";
 
@@ -22,7 +23,7 @@ const CourseIdPage = async ({ params }: { params: { courseId: string } }) => {
     return redirect("/");
   }
 
-  return redirect(`/courses/${course.id}/chapters/${course.chapters[0].id}`);
+  return redirect(`/${language.course.watchCourseURL}/${course.id}/${language.course.chaptersURL}/${course.chapters[0].id}`);
 };
 
 export default CourseIdPage;

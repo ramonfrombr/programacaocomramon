@@ -6,9 +6,9 @@ import { getProgress } from "@/actions/get-progress";
 import { ChaptersBadge } from "@/components/chapters-badge";
 import { YoutubeBadge } from "@/components/youtube-badge";
 import { CourseProgress } from "@/components/course-progress";
-import { YoutubeBanner } from "@/app/(root)/(routes)/projects/[courseSlug]/_components/youtube-banner";
-import { StartWatchingBanner } from "@/app/(root)/(routes)/projects/[courseSlug]/_components/start-watch-banner";
-import { ContinueWatchingBanner } from "@/app/(root)/(routes)/projects/[courseSlug]/_components/continue-watching-banner";
+import { YoutubeBanner } from "@/app/(root)/(routes)/courses/[courseSlug]/_components/youtube-banner";
+import { StartWatchingBanner } from "@/app/(root)/(routes)/courses/[courseSlug]/_components/start-watch-banner";
+import { ContinueWatchingBanner } from "@/app/(root)/(routes)/courses/[courseSlug]/_components/continue-watching-banner";
 
 const CourseSlugPage = async ({
     params,
