@@ -22,7 +22,9 @@ export const CourseProgressButton = ({
   isCompleted,
   nextChapterId,
 }: CourseProgressButtonProps) => {
-  const language = useLanguageStore().videoPlayer;
+  const language = useLanguageStore();
+  const videoPlayerLanguage = language.videoPlayer;
+  const courseLanguage = language.course;
   const router = useRouter();
   const confetti = useConfettiStore();
   const [isLoading, setIsLoading] = useState(false);
@@ -43,13 +45,13 @@ export const CourseProgressButton = ({
       }
 
       if (!isCompleted && nextChapterId) {
-        router.push(`/courses/${courseId}/chapters/${nextChapterId}`);
+        router.push(`/${courseLanguage.watchCourseURL}/${courseId}/${courseLanguage.chaptersURL}/${nextChapterId}`);
       }
 
-      toast.success(language.progressUpdated);
+      toast.success(videoPlayerLanguage.progressUpdated);
       router.refresh();
     } catch (error) {
-      toast.error(language.somethingWentWrong);
+      toast.error(videoPlayerLanguage.somethingWentWrong);
     } finally {
       setIsLoading(false);
     }
@@ -65,7 +67,7 @@ export const CourseProgressButton = ({
       variant={isCompleted ? "outline" : "success"}
       className="w-full md:w-auto"
     >
-      {isCompleted ? language.markAsNotCompleted : language.markAsCompleted}
+      {isCompleted ? videoPlayerLanguage.markAsNotCompleted : videoPlayerLanguage.markAsCompleted}
       <Icon className="h-4 w-4 ml-2" />
     </Button>
   );

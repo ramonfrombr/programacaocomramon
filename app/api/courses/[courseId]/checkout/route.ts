@@ -80,8 +80,8 @@ export async function POST(
       line_items,
       mode: "payment",
       payment_method_types: ['card'],
-      success_url: `${process.env.NEXT_PUBLIC_APP_URL}/courses/${course.id}?success=1`,
-      cancel_url: `${process.env.NEXT_PUBLIC_APP_URL}/courses/${course.id}?canceled=1`,
+      success_url: `${process.env.NEXT_PUBLIC_APP_URL}/watch-course/${course.id}?success=1`,
+      cancel_url: `${process.env.NEXT_PUBLIC_APP_URL}/watch-course/${course.id}?canceled=1`,
       metadata: {
         courseId: course.id,
         userId: user.id,

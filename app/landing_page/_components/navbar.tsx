@@ -7,6 +7,7 @@ import { Menu } from "lucide-react";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import { Button } from "@/components/ui/button";
 import logo from "@/public/logo.png";
+import { useLanguageStore } from "@/hooks/use-language-store";
 
 const poppins = Poppins({
     subsets: ["latin"],
@@ -15,6 +16,7 @@ const poppins = Poppins({
 
 export const Navbar = () => {
     const { userId } = useAuth();
+    const language = useLanguageStore();
 
     return (
         <header className="p-2 md:p-5 flex items-center justify-between shadow-md mb-5">
@@ -50,11 +52,11 @@ export const Navbar = () => {
 
             {!userId ? (
                 <div className="gap-2 hidden md:flex">
-                    <Link href="/sign-in">
-                        <Button variant="default">Entrar</Button>
+                    <Link href={`/${language.signInURL}`}>
+                        <Button variant="default">{language.signIn}</Button>
                     </Link>
-                    <Link href="/sign-up">
-                        <Button variant="secondary">Criar conta</Button>
+                    <Link href={`/${language.signUpURL}`}>
+                        <Button variant="secondary">{language.signUp}</Button>
                     </Link>
                 </div>
             ) : (
@@ -71,11 +73,11 @@ export const Navbar = () => {
                     side="right"
                     className="bg-white w-72 flex flex-col p-5"
                 >
-                    <Link href="/sign-in">
-                        <Button variant="default">Entrar</Button>
+                    <Link href={`/${language.signInURL}`}>
+                        <Button variant="default">{language.signIn}</Button>
                     </Link>
-                    <Link href="/sign-up">
-                        <Button variant="secondary">Criar conta</Button>
+                    <Link href={`/${language.signUpURL}`}>
+                        <Button variant="secondary">{language.signUp}</Button>
                     </Link>
                 </SheetContent>
             </Sheet>

@@ -5,6 +5,10 @@ import placeholder from "@/public/placeholder.webp";
 
 export const portugueseLanguage: ILanguage = {
     id: "portuguese",
+    signUpURL: "se-inscrever",
+    signUp: "Se Inscrever",
+    signInURL: "entrar",
+    signIn: "Entrar",
     title: "Escola de Programação",
     subtitle: "Construa algo incrível!",
     homepage: {
@@ -131,6 +135,7 @@ export const portugueseLanguage: ILanguage = {
                 "A ciência de dados é uma área interdisciplinar, que localiza-se entre a estatística e a ciência da computação e utiliza o método científico; processos, algoritmos e sistemas, para extrair conhecimento e tomar decisões a partir de dados dos diversos tipos, sendo eles ruidosos, nebulosos, estruturados ou não-estruturados.",
         },
         learnMore: "Aprenda Mais",
+        coursesURL: "cursos",
     },
     navbar: {
         goBackToCourses: "Voltar para Cursos",
@@ -346,6 +351,8 @@ export const portugueseLanguage: ILanguage = {
         enrollFor: "Compre o curso por",
     },
     course: {
+        watchCourseURL: "assistir-curso",
+        chaptersURL: "capitulos",
         readyToStartBuilding: "Pronto para começar a construir?",
         trackYourProgress:
             "Acompanhe seu progresso, assista com legendas, altere a qualidade & a velocidade do vídeo e muito mais.",
@@ -358,5 +365,27 @@ export const portugueseLanguage: ILanguage = {
         thisCourseIsOnlyAvailableOnYoutube:
             "Este curso está disponível apenas no YouTube por enquanto. Irei adicionar na plataforma assim que possível.",
         watchOnYoutube: "Assista no YouTube",
+    },
+    footer: {
+        about: {
+            title: "Sobre",
+            url: "sobre",
+        },
+        faqs: {
+            title: "Perguntas Frequentes",
+            url: "perguntas-frequentes",
+        },
+        contact: {
+            title: "Contato",
+            url: "contato",
+        },
+        termsOfUse: {
+            title: "Termos de Uso",
+            url: "termos-de-uso",
+        },
+        privacyPolicy: {
+            title: "Política de Privacidade",
+            url: "politica-de-privacidade",
+        },
     },
 };
