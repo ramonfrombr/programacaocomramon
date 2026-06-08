@@ -7,7 +7,12 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "postinstall": "prisma generate"
+    "postinstall": "prisma generate",
+    "test:e2e": "playwright test",
+    "test:e2e:ui": "playwright test --ui",
+    "test:e2e:debug": "playwright test --debug",
+    "test:e2e:report": "playwright show-report",
+    "db:e2e:reset": "prisma db push --force-reset && tsx scripts/e2e-seed.ts"
   },
   "dependencies": {
     "@clerk/localizations": "^1.26.15",
@@ -57,16 +62,19 @@
     "zustand": "^4.5.4"
   },
   "devDependencies": {
+    "@clerk/testing": "^1.4.0",
     "@playwright/test": "^1.46.1",
     "@types/node": "^20",
     "@types/react": "^18",
     "@types/react-dom": "^18",
     "autoprefixer": "^10.0.1",
+    "dotenv": "^16.4.7",
     "eslint": "^8",
     "eslint-config-next": "14.1.0",
     "postcss": "^8",
     "prisma": "^5.22.0",
     "tailwindcss": "^3.3.0",
+    "tsx": "^4.19.3",
     "typescript": "^5"
   }
 }
