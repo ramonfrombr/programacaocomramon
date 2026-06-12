@@ -11,9 +11,9 @@ export const E2E_FIXTURE_IMAGE_URL =
   "https://utfs.io/f/e2e-published-course-placeholder";
 
 export const E2E_CATEGORY_IDS = {
-  javascript: "e2e00000000000000000001",
-  typescript: "e2e00000000000000000002",
-  html: "e2e00000000000000000003",
+  javascript: "e2e000000000000000000001",
+  typescript: "e2e000000000000000000002",
+  html: "e2e000000000000000000003",
 } as const;
 
 export const E2E_CATEGORIES = [
@@ -23,7 +23,7 @@ export const E2E_CATEGORIES = [
 ] as const;
 
 export const E2E_PUBLISHED_COURSE = {
-  id: "e2e00000000000000000010",
+  id: "e2e000000000000000000010",
   slug: "e2e-published-course",
   title: "E2E Published Course",
   description: "Published course fixture for Playwright E2E tests.",
@@ -37,7 +37,7 @@ export const E2E_PUBLISHED_COURSE = {
 } as const;
 
 export const E2E_DRAFT_COURSE = {
-  id: "e2e00000000000000000011",
+  id: "e2e000000000000000000011",
   slug: "e2e-draft-course",
   title: "E2E Draft Course",
   description: "Unpublished course fixture — must not appear on the catalog.",
@@ -48,8 +48,8 @@ export const E2E_DRAFT_COURSE = {
 } as const;
 
 export const E2E_CHAPTER_IDS = {
-  free: "e2e00000000000000000020",
-  paid: "e2e00000000000000000021",
+  free: "e2e000000000000000000020",
+  paid: "e2e000000000000000000021",
 } as const;
 
 export const E2E_PUBLISHED_CHAPTERS = [

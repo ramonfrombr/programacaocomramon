@@ -1,11 +1,16 @@
 import { defineConfig, devices } from "@playwright/test";
-import dotenv from "dotenv";
 import path from "path";
+import { loadE2EEnv } from "./e2e/setup/env";
 
-dotenv.config({ path: path.resolve(__dirname, ".env.test") });
+loadE2EEnv();
 
 const baseURL = process.env.NEXT_PUBLIC_APP_URL ?? "http://localhost:3000";
 const isCI = !!process.env.CI;
+/** Only reuse :3000 when this repo's dev server is already running — avoids attaching to another app. */
+const reuseExistingServer =
+  !isCI && process.env.PW_REUSE_SERVER === "true";
+
+const SETUP_TIMEOUT_MS = 120_000;
 
 const AUTH_DIR = path.join(__dirname, "playwright", ".auth");
 const STUDENT_AUTH_FILE = path.join(AUTH_DIR, "student.json");
@@ -65,7 +70,7 @@ export default defineConfig({
   webServer: {
     command: "npm run build && npm run start",
     url: baseURL,
-    reuseExistingServer: !isCI,
+    reuseExistingServer,
     timeout: 180_000,
     env: webServerEnv(),
   },
@@ -73,16 +78,19 @@ export default defineConfig({
     {
       name: "setup",
       testMatch: /global\.setup\.ts/,
+      timeout: SETUP_TIMEOUT_MS,
     },
     {
       name: "auth-student",
       testMatch: /auth-student\.setup\.ts/,
       dependencies: ["setup"],
+      timeout: SETUP_TIMEOUT_MS,
     },
     {
       name: "auth-teacher",
       testMatch: /auth-teacher\.setup\.ts/,
       dependencies: ["setup"],
+      timeout: SETUP_TIMEOUT_MS,
     },
     {
       name: "guest",
