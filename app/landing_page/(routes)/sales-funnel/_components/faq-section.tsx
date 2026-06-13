@@ -9,7 +9,7 @@ import { MultiLineText } from "./multi-line-text";
 type FaqSectionProps = {
     faqs: ISalesFunnelFaq[];
     heading?: string;
-    id?: string;
+    headingId?: string;
 };
 
 function FaqAnswer({ faq }: { faq: ISalesFunnelFaq }) {
@@ -43,11 +43,15 @@ function FaqAnswer({ faq }: { faq: ISalesFunnelFaq }) {
     );
 }
 
-export function FaqSection({ faqs, heading = "FAQ", id = "faq" }: FaqSectionProps) {
+export function FaqSection({
+    faqs,
+    heading = "FAQ",
+    headingId = "faq-heading",
+}: FaqSectionProps) {
     return (
-        <section id={id} aria-labelledby={`${id}-heading`}>
+        <section aria-labelledby={headingId}>
             <h2
-                id={`${id}-heading`}
+                id={headingId}
                 className="text-2xl md:text-3xl font-bold text-center mb-5"
             >
                 {heading}

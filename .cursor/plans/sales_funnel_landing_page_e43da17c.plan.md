@@ -4,22 +4,22 @@ overview: "Step 1 (typed `salesFunnel` i18n in the language store) is complete. 
 todos:
   - id: rebrand-json
     content: Rebrand Sonny/PAPAFAM → Ramon/Escola de Programação in copy source + all 4 sales-funnel.json files; add heroYoutubeVideoURL to landing; verify tsc and array parity
-    status: pending
+    status: completed
   - id: scaffold-route
     content: Create /landing_page/sales-funnel route, page orchestrator, and shared primitives (multi-line-text, section-heading, tier-card, session-accordion, faq-section, hero-video)
-    status: pending
+    status: completed
   - id: landing-closing
     content: Build landing-section and closing-section (hero with heroYoutubeVideoURL above the fold, tiers, pricing recap, testimonials, FAQ, sign-up CTAs)
-    status: pending
+    status: completed
   - id: curriculum-section
     content: Build curriculum-section (modules + lesson previews)
-    status: pending
+    status: completed
   - id: sessions-sections
     content: Build mastermind-section and community-section with grouped/collapsed session accordions (62 + 31 items)
-    status: pending
+    status: completed
   - id: polish-verify
     content: Add metadata, responsive/accessibility pass, tsc, and visual evidence at key breakpoints
-    status: pending
+    status: completed
 isProject: false
 ---
 

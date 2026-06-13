@@ -65,11 +65,12 @@ function TestimonialCard({ testimonial }: TestimonialCardProps) {
 
     return (
         <article className="flex flex-col rounded-md border p-5 shadow-sm bg-white h-full">
-            <div className="flex mb-3">
+            <div className="flex mb-3" aria-hidden>
                 {Array.from({ length: 5 }).map((_, index) => (
                     <Star key={index} fill="orange" color="orange" size={18} />
                 ))}
             </div>
+            <span className="sr-only">5 out of 5 stars</span>
 
             {body ? (
                 <p className="text-sm md:text-base text-gray-700 flex-1">{body}</p>
@@ -89,9 +90,12 @@ export function ClosingSection({ closing }: ClosingSectionProps) {
     const { signUp, footer } = useLanguageStore();
 
     return (
-        <section id="closing" aria-label="closing">
+        <section id="closing" aria-labelledby="closing-ebooks-heading">
             <div className="mb-12 md:mb-16">
-                <SectionHeading title={closing.ebooks.heading} />
+                <SectionHeading
+                    id="closing-ebooks-heading"
+                    title={closing.ebooks.heading}
+                />
 
                 <div className="max-w-3xl mx-auto space-y-3 mb-6">
                     {closing.ebooks.intro.map((paragraph) => (
@@ -159,12 +163,8 @@ export function ClosingSection({ closing }: ClosingSectionProps) {
                 </div>
             </div>
 
-            <div className="mb-12 md:mb-16">
-                <FaqSection
-                    faqs={closing.faq}
-                    heading={footer.faqs.title}
-                    id="faq"
-                />
+            <div id="faq" className="mb-12 md:mb-16 scroll-mt-8">
+                <FaqSection faqs={closing.faq} heading={footer.faqs.title} />
             </div>
 
             <div className="text-center">

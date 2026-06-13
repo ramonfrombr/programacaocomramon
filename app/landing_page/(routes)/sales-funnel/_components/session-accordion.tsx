@@ -41,10 +41,14 @@ export function SessionAccordion({
                 return (
                     <section
                         key={`${start}-${end}`}
+                        aria-labelledby={`sessions-${start}-${end}-heading`}
                         className="sales-funnel-session-group"
                         style={{ contentVisibility: "auto" }}
                     >
-                        <h3 className="text-lg font-semibold mb-3">
+                        <h3
+                            id={`sessions-${start}-${end}-heading`}
+                            className="text-lg font-semibold mb-3"
+                        >
                             {groupHeading(start, end)}
                         </h3>
 

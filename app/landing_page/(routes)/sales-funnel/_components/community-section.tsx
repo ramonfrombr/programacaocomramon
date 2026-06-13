@@ -110,7 +110,7 @@ function DiamondMentoringBlock({ diamondMentoring }: DiamondMentoringBlockProps)
 
 export function CommunitySection({ community }: CommunitySectionProps) {
     return (
-        <section id="community" aria-label="community">
+        <section id="community" aria-labelledby="community-student-area-heading">
             <StudentAreaBlock studentArea={community.studentArea} />
             <DiamondMentoringBlock diamondMentoring={community.diamondMentoring} />
         </section>

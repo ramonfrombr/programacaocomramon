@@ -12,12 +12,15 @@ export default function SalesFunnelPage() {
         useLanguageStore().salesFunnel;
 
     return (
-        <div className="p-2 md:px-10 lg:px-14 pb-16 space-y-16 md:space-y-24">
+        <main
+            id="main-content"
+            className="px-5 md:px-10 lg:px-20 py-4 pb-16 space-y-16 md:space-y-24"
+        >
             <LandingSection landing={landing} />
             <CurriculumSection curriculum={curriculum} />
             <MastermindSection mastermind={mastermind} />
             <CommunitySection community={community} />
             <ClosingSection closing={closing} />
-        </div>
+        </main>
     );
 }
