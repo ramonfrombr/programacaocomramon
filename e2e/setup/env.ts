@@ -33,6 +33,24 @@ function applyEnvFile(filePath: string, mode: EnvApplyMode): void {
   }
 }
 
+function assertDatabaseUrlHasDbName(url: string): void {
+  try {
+    const dbName = new URL(url).pathname.replace(/^\//, "").trim();
+    if (!dbName) {
+      throw new Error(
+        "DATABASE_URL must include a database name in the path (e.g. ...mongodb.net/programacaocomramon-e2e?retryWrites=true&w=majority). Atlas rejects empty database names."
+      );
+    }
+  } catch (error) {
+    if (
+      error instanceof Error &&
+      error.message.startsWith("DATABASE_URL must include")
+    ) {
+      throw error;
+    }
+  }
+}
+
 /**
  * Load E2E env vars for Playwright workers.
  *
@@ -49,16 +67,16 @@ export function loadE2EEnv(): void {
       envTestPath,
       process.env.CI ? "fill-empty" : "override-nonempty"
     );
-    return;
+  } else if (!process.env.CI) {
+    throw new Error(
+      "Missing .env.test — copy .env.test.example to .env.test and fill in values."
+    );
   }
 
-  if (process.env.CI) {
-    return;
+  const databaseUrl = process.env.DATABASE_URL?.trim();
+  if (databaseUrl) {
+    assertDatabaseUrlHasDbName(databaseUrl);
   }
-
-  throw new Error(
-    "Missing .env.test — copy .env.test.example to .env.test and fill in values."
-  );
 }
 
 function requireEnv(name: string, hint: string): string {

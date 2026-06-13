@@ -145,7 +145,7 @@ Future work may add payment-button `data-testid`s (`enroll-stripe`, `enroll-merc
 Pull requests trigger [`.github/workflows/e2e.yml`](../.github/workflows/e2e.yml):
 
 - Node 20, `npm ci`, Chromium only
-- **Database:** ephemeral MongoDB 7 service on the runner (not Atlas) — avoids IP allowlist and TLS issues from GitHub-hosted runners
+- **Database:** ephemeral MongoDB 7 replica set on the runner (not Atlas) — Prisma `upsert`/transactions need a replica set; standalone `mongod` fails with `P2031`
 - **Secrets:** Clerk keys/credentials and `E2E_TEACHER_ID` (no `E2E_DATABASE_URL` needed in CI)
 - 2 retries, 1 worker, HTML report uploaded on failure
 
@@ -185,6 +185,7 @@ Each Playwright worker calls `clerkSetup()` independently — auth setup project
 | `prisma db push` timeout or connection refused (local) | IP not allowlisted on Atlas | Add your IP in Atlas Network Access |
 | `Server selection timeout` / TLS errors in CI | Was connecting to Atlas from GitHub runners | CI now uses a local MongoDB service; pull latest workflow |
 | Stale or missing fixtures | Seed not run or wrong DB | Run `npm run db:e2e:reset`; confirm `DATABASE_URL` points at the E2E DB, not dev/prod |
+| `P2031` / replica set error on seed or upsert | Standalone MongoDB (no replica set) | Use Atlas or a local replica set; CI workflow starts `mongod --replSet rs0` automatically |
 | Flaky progress/completion tests | Parallel workers mutating same user | CI uses `workers: 1`; locally run student specs with `--workers=1` if needed |
 
 The E2E database is **disposable**. Never point `DATABASE_URL` at production.
