@@ -1,0 +1,1724 @@
+{
+  "landing": {
+    "presenter": "Sonny Sangha presents...",
+    "headline": "Zero to Full Stack Hero 2.0 🔥",
+    "tagline": "This isn't just another COURSE.\nIt's the BEST DEVELOPER COMMUNITY in the world.",
+    "highlights": [
+      "✔ No programming experience required",
+      "✔ From learning Web Development Fundamentals to mastering Next.js!",
+      "✔ We teach exciting technologies like Next.js 15, React.js, Firebase, TypeScript, Tailwind CSS and SO MUCH MORE!",
+      "✔ Weekly live mentoring sessions with Sonny deliver dynamic content unlike any Udemy course!",
+      "✔ Access to 60+ Real Projects and 100 Coding Challenges to take your skills even further!",
+      "✔ Exclusive access to the PAPAFAM and Discord communities",
+      "✔ The DEFINITIVE community to succeed as a Full Stack developer, even after you land your job!",
+      "✔ AI Mastery Module: learn to use AI and AI tools to supercharge your career as a developer!",
+      "✔ Complete SaaS Module: everything you need to know about building, scaling, and marketing successful SaaS applications!"
+    ],
+    "techStackHeading": "Learn the technologies used by the biggest companies",
+    "ctaHeading": "What are you waiting for? Join Zero to Full Stack Hero 2.0 today!",
+    "tiers": {
+      "platinum": {
+        "name": "LIFETIME PLATINUM MEMBER",
+        "price": "£597",
+        "features": [
+          "Lifetime access to the Zero to Full Stack Hero 2.0 course",
+          "2 live mentoring calls per month with Sonny",
+          "Weekly sessions with the Success Coaches",
+          "Learn to master technical interviews and land your dream job",
+          "Guided roadmap to become a six-figure senior developer"
+        ],
+        "newFeaturesHeading": "NEW in Zero to Full Stack Hero 2.0 👇",
+        "newFeatures": [
+          "AI Module to master using AI and AI tools in your career",
+          "Complete SaaS module covering building, launching, and marketing your SaaS application"
+        ],
+        "exclusiveAccessHeading": "Special Access",
+        "exclusiveAccess": [
+          "Source code for 60+ real projects",
+          "Resume and portfolio starter kit",
+          "5 eBooks to master Next.js, JavaScript, and Tailwind CSS",
+          "Platinum Discord invite"
+        ]
+      },
+      "diamond": {
+        "name": "LIFETIME DIAMOND MEMBER",
+        "price": "£997",
+        "tagline": "🌟 Everything included in Platinum and much more...",
+        "features": [
+          "2 additional weekly live calls with Sonny (4 mentoring sessions per month)",
+          "170+ hours of exclusive mentoring content",
+          "Exclusive access to a network of top-tier developers and professional connections",
+          "Entrepreneur Kit: learn about building businesses, freelancing, people skills, and real strategies to generate income",
+          "Access to the exclusive Diamond community"
+        ],
+        "newFeaturesHeading": "NEW in Zero to Full Stack Hero 2.0 👇",
+        "newFeatures": [
+          "AI Module to master using AI and AI tools in your career",
+          "Complete SaaS module covering building, launching, and marketing your SaaS application"
+        ],
+        "exclusiveAccessHeading": "Exclusive Access",
+        "exclusiveAccess": [
+          "100 coding challenges with solutions to master technical interviews (worth £79)",
+          "Diamond Discord invite"
+        ]
+      }
+    },
+    "sections": {
+      "training": {
+        "heading": "Full Stack Training",
+        "body": "This course was designed to cover ALL elements of web development, including Frontend, Backend technologies, and everything in between."
+      },
+      "mentoring": {
+        "heading": "Weekly Mentoring Calls",
+        "body": "Every week, Sonny hosts a Full Stack Mastermind mentoring session that many describe as \"worth more than a university degree\".\nGet ready for a transformative experience."
+      },
+      "community": {
+        "heading": "Exclusive PAPAFAM Community",
+        "body": "Have you heard the phrase \"your network is your net worth\"?\nWith PAPAFAM we take that to a completely different level.\nAll of this inside the PAPAFAM community.",
+        "bullets": [
+          "Dedicated 24-hour support",
+          "Shared accountability",
+          "Constant motivation",
+          "High-level networking"
+        ]
+      },
+      "coaches": {
+        "heading": "Get Support from the PAPAFAM Success Coach Team",
+        "body": "The PAPAFAM Success Coaches are here to help you overcome challenges that Stack Overflow can't solve.\nGet personalized code reviews and practical guidance for your programming problems."
+      },
+      "discord": {
+        "heading": "Exclusive Discord Channels, Emojis, and More!",
+        "body": "This is more than a community.\nIt's the world's largest programming FAMILY.\nWe work hard together.\nWe have fun together."
+      },
+      "income": {
+        "heading": "Everything you need to go from ZERO to earning your first income with programming",
+        "body": "We teach how to turn your skill and passion for programming into a sustainable income source capable of changing your life."
+      }
+    }
+  },
+  "curriculum": {
+    "heading": "What's inside Zero to Full Stack Hero 2.0!?",
+    "subtitle": "Know EXACTLY what you'll get before you buy!",
+    "updateNote": "Additional content is released and updated weekly.",
+    "modules": [
+      {
+        "title": "REACT BASICS 101",
+        "description": "This is exactly what you've been asking for!\nLearn React fundamentals in a clear, practical way."
+      },
+      {
+        "title": "WEB DEVELOPMENT FUNDAMENTALS",
+        "description": "If you're starting from absolute ZERO, we've got you covered!\nWe'll cover:",
+        "bullets": [
+          "HTML",
+          "CSS",
+          "JavaScript",
+          "Various extra concepts that will boost your entry into the world of web development"
+        ]
+      },
+      {
+        "title": "CSS MASTERY",
+        "description": "Learn:\nAnd SO MUCH MORE to create modern, professional interfaces.",
+        "bullets": [
+          "Flexbox",
+          "CSS Grid",
+          "Bootstrap",
+          "Material UI"
+        ]
+      },
+      {
+        "title": "JAVASCRIPT MASTERY",
+        "description": "Master the language that redefined the web.\nFrom fundamental concepts to the most advanced topics, we cover it all."
+      },
+      {
+        "title": "SERVER SIDE RENDERING FOR BEGINNERS",
+        "description": "SSR simplified using the latest Next.js 15."
+      },
+      {
+        "title": "COMPLETE REACT GUIDE",
+        "description": "Everything about React.\nIncluding automated testing."
+      },
+      {
+        "title": "TYPESCRIPT FOR BEGINNERS",
+        "description": "Languages like:\nare strongly typed.\nNow JavaScript can be too.\nLearn TypeScript and drastically reduce bugs in your applications.",
+        "bullets": [
+          "Java",
+          "C#",
+          "Swift"
+        ]
+      },
+      {
+        "title": "COMPLETE FIREBASE GUIDE",
+        "description": "Think of the power of the Sun...\nYes, Firebase is that powerful.\nWe teach you how to use it correctly to get real results."
+      },
+      {
+        "title": "REDUX MADE EASY",
+        "description": "If there's one skill you NEED to land a Frontend role, it's Redux."
+      },
+      {
+        "title": "REACT NATIVE 101",
+        "description": "Want to build apps for:\nWe have everything you need.",
+        "bullets": [
+          "iOS",
+          "Android"
+        ]
+      },
+      {
+        "title": "NODE.JS AND EXPRESS FOR BEGINNERS",
+        "description": "The perfect duo for Backend development.\nWe teach everything from beginner to advanced."
+      },
+      {
+        "title": "PAYMENTS 101",
+        "description": "Simplify payment implementation using:\nand other modern solutions.",
+        "bullets": [
+          "Stripe",
+          "PayPal"
+        ]
+      },
+      {
+        "title": "GRAPHQL GUIDE",
+        "description": "Mastering GraphQL will let you access your data much more efficiently.\nAnd it will probably help increase your salary too."
+      },
+      {
+        "title": "MERN GUIDE",
+        "description": "The #1 Stack for a reason.\nLearn:\nin depth.",
+        "bullets": [
+          "MongoDB",
+          "Express",
+          "React",
+          "Node.js"
+        ]
+      },
+      {
+        "title": "SOLIDITY SERIES",
+        "description": "Learn Smart Contracts the smart way."
+      },
+      {
+        "title": "WEB 3.0 MASTERY",
+        "description": "Dive into the future of the internet.\nLearn:\nand much more.",
+        "bullets": [
+          "MetaMask",
+          "Cryptocurrencies",
+          "NFTs",
+          "Solidity",
+          "Web3"
+        ]
+      },
+      {
+        "title": "PROJECT MANAGEMENT 101",
+        "description": "Master modern work methodologies.\nLearn:\nIt's time to become a leader.",
+        "bullets": [
+          "Agile",
+          "Scrum",
+          "Team management",
+          "Client management",
+          "Software project management"
+        ]
+      },
+      {
+        "title": "BONUS CONTENT",
+        "description": "My mission is to deliver a DISPROPORTIONATE amount of value.\nThat's why you can expect more and more content in the future.\n2025 is the year of #PAPAFAM!"
+      },
+      {
+        "title": "AI MASTERY",
+        "description": "It's time to master using Artificial Intelligence and AI tools to supercharge your career and your applications.\nExclusive to Zero to Full Stack Hero 2.0."
+      },
+      {
+        "title": "COMPLETE SAAS GUIDE",
+        "description": "Comprehensive module covering:\nof SaaS applications.\nExclusive to Zero to Full Stack Hero 2.0.",
+        "bullets": [
+          "Building",
+          "Launching",
+          "Marketing"
+        ]
+      }
+    ],
+    "previewHeading": "Want a preview of what's inside?",
+    "previewIntro": "Check out some examples from the React Basics 101 module to know exactly what to expect.",
+    "lessonPreviews": [
+      {
+        "title": "The useEffect Hook",
+        "lesson": "Lesson 9"
+      },
+      {
+        "title": "Class vs Functional Components",
+        "lesson": "Lesson 5"
+      },
+      {
+        "title": "Understanding State and Props",
+        "lesson": "Lesson 6"
+      },
+      {
+        "title": "Styling Components",
+        "lesson": "Lesson 7"
+      },
+      {
+        "title": "Rules of Hooks",
+        "lesson": "Lesson 8"
+      }
+    ]
+  },
+  "mastermind": {
+    "heading": "Introducing Full Stack Mastermind Coaching!",
+    "description": [
+      "Exclusive bi-weekly mentoring sessions on Wednesdays, hosted by Sonny himself."
+    ],
+    "stats": {
+      "hours": "120+ hours of video content",
+      "value": "valued at over £4,500.",
+      "availability": "Available to ALL Zero to Full Stack Hero members.",
+      "recordingNote": "Each session is recorded and made available to the community right after it ends."
+    },
+    "sessions": [
+      {
+        "number": 1,
+        "duration": "3 hours and 48 minutes",
+        "topics": [
+          "Introduction to Wednesday meetups",
+          "Productivity techniques",
+          "Book recommendations",
+          "VS Code extensions",
+          "Props and State",
+          "Class Components and Functional Components"
+        ]
+      },
+      {
+        "number": 2,
+        "duration": "4 hours and 23 minutes",
+        "topics": [
+          "Drag and Drop (DND)",
+          "Introduction to TypeScript",
+          "Portfolio 101"
+        ]
+      },
+      {
+        "number": 3,
+        "duration": "3 hours and 35 minutes",
+        "topics": [
+          "Introduction to React Native and Expo",
+          "Testing strategies",
+          "Lifecycle in React Native",
+          "Interview tips",
+          "Performance optimization"
+        ]
+      },
+      {
+        "number": 4,
+        "duration": "3 hours and 11 minutes",
+        "topics": [
+          "Recoil Mastery",
+          "Atoms and Selectors",
+          "Recoil vs Redux",
+          "Q&A",
+          "Presentational Components",
+          "React Suspense",
+          "Asynchrony in Recoil",
+          "State Persistence"
+        ]
+      },
+      {
+        "number": 5,
+        "duration": "3 hours and 3 minutes",
+        "topics": [
+          "Charts in React with ApexCharts",
+          "react-firebase-hooks",
+          "Converting class components to functional",
+          "Node.js and Express",
+          "Conditional rendering"
+        ]
+      },
+      {
+        "number": 6,
+        "duration": "3 hours and 30 minutes",
+        "topics": [
+          "Building a weather app",
+          "APIs",
+          "String manipulation",
+          "useRef",
+          "Git",
+          "Moment.js",
+          "CSS Media Queries",
+          "ES6 Reduce",
+          "Glassmorphism"
+        ]
+      },
+      {
+        "number": 7,
+        "duration": "3 hours and 2 minutes",
+        "topics": [
+          "Google Sheets API + React",
+          "React Hook Form",
+          "Form validation",
+          "useRef vs useState",
+          "Axios and APIs",
+          "Data fetching"
+        ]
+      },
+      {
+        "number": 8,
+        "duration": "3 hours and 6 minutes",
+        "topics": [
+          "Introduction to Framer Motion",
+          "JavaScript animations",
+          "Portfolio ideas and inspiration",
+          "Firebase Cloud Functions"
+        ]
+      },
+      {
+        "number": 9,
+        "duration": "2 hours and 56 minutes",
+        "topics": [
+          "Firebase Cloud Functions",
+          "Express inside Cloud Functions",
+          "CORS",
+          "SQL vs NoSQL",
+          "Data modeling",
+          "Recoil overview"
+        ]
+      },
+      {
+        "number": 10,
+        "duration": "3 hours and 1 minute",
+        "topics": [
+          "Firebase Hosting",
+          "Image and video hosting",
+          "Media types",
+          "Progress indicators",
+          "Q&A"
+        ]
+      },
+      {
+        "number": 11,
+        "duration": "2 hours and 51 minutes",
+        "topics": [
+          "Translation app with Firebase Extensions",
+          "Next.js",
+          "Internationalization",
+          "SSR vs SSG",
+          "Deploy with Netlify and Vercel"
+        ]
+      },
+      {
+        "number": 12,
+        "duration": "3 hours and 1 minute",
+        "topics": [
+          "SSR vs SSG in practice with Next.js",
+          "APIs",
+          "useRouter",
+          "Deploying Next.js applications on Vercel",
+          "Q&A"
+        ]
+      },
+      {
+        "number": 13,
+        "duration": "3 hours and 15 minutes",
+        "topics": [
+          "Introduction to Tailwind CSS",
+          "Tailwind JIT",
+          "Dark Mode with Local Storage",
+          "Mobile First responsive design",
+          "Themes",
+          "Next.js"
+        ]
+      },
+      {
+        "number": 14,
+        "duration": "2 hours and 33 minutes",
+        "topics": [
+          "Introduction to Storybook",
+          "Image optimization in Next.js",
+          "Mobile First with Tailwind CSS",
+          "Saga and Thunk"
+        ]
+      },
+      {
+        "number": 15,
+        "duration": "2 hours and 48 minutes",
+        "topics": [
+          "TypeScript with Next.js",
+          "Building menus with Headless UI",
+          "Tailwind CSS"
+        ]
+      },
+      {
+        "number": 16,
+        "duration": "3 hours and 6 minutes",
+        "topics": [
+          "Productivity and life hacks",
+          "Time management",
+          "Beginner to entrepreneur roadmap",
+          "Career mentoring",
+          "Q&A"
+        ]
+      },
+      {
+        "number": 17,
+        "duration": "2 hours and 59 minutes",
+        "topics": [
+          "E-commerce with Redux",
+          "Cart implementation",
+          "Actions and Selectors",
+          "Reduce function",
+          "Next.js vs React Router",
+          "Q&A"
+        ]
+      },
+      {
+        "number": 18,
+        "duration": "2 hours and 57 minutes",
+        "topics": [
+          "Authentication in Next.js",
+          "NextAuth",
+          "Google and Facebook login",
+          "Pros and cons",
+          "Next.js Image",
+          "WebP",
+          "Lazy Loading"
+        ]
+      },
+      {
+        "number": 19,
+        "duration": "3 hours and 57 minutes",
+        "topics": [
+          "Stripe Checkout",
+          "Next.js Backend",
+          "NVM",
+          "Node version control",
+          "Productivity",
+          "React Hook Form"
+        ]
+      },
+      {
+        "number": 20,
+        "duration": "4 hours and 10 minutes",
+        "topics": [
+          "React Hooks fundamentals",
+          "React Hook Forms",
+          "CSS Modules",
+          "Dynamic search with Datalist",
+          "Investments",
+          "Client negotiation"
+        ]
+      },
+      {
+        "number": 21,
+        "duration": "2 hours and 58 minutes",
+        "topics": [
+          "Agile and Scrum in depth",
+          "Serverless architectures",
+          "Q&A"
+        ]
+      },
+      {
+        "number": 22,
+        "duration": "2 hours and 54 minutes",
+        "topics": [
+          "PayPal API integration",
+          "Higher Order Components",
+          "Q&A"
+        ]
+      },
+      {
+        "number": 23,
+        "duration": "3 hours and 39 minutes",
+        "topics": [
+          "SpaceX APIs",
+          "Client Side vs SSR",
+          "Leaflet Maps",
+          "Data transformation",
+          "Geographic libraries",
+          "Dynamic Imports",
+          "Marker Clustering"
+        ]
+      },
+      {
+        "number": 24,
+        "duration": "2 hours and 56 minutes",
+        "topics": [
+          "React Native with Expo and TypeScript",
+          "Navigation",
+          "Passing Props through Routes",
+          "Interfaces vs Types",
+          "useLayoutEffect"
+        ]
+      },
+      {
+        "number": 25,
+        "duration": "3 hours and 15 minutes",
+        "topics": [
+          "JavaScript fundamentals",
+          "Variables and Data Types",
+          "Objects and Arrays",
+          "Spread Operator",
+          "Reduce, Map, Filter and Find",
+          "Optional Chaining",
+          "Async/Await",
+          "Promises",
+          "Destructuring",
+          "Loops",
+          "Currying",
+          "Recursion",
+          "Advanced Reduce",
+          "ES6"
+        ]
+      },
+      {
+        "number": 26,
+        "duration": "2 hours and 31 minutes",
+        "topics": [
+          "Web Development Fundamentals",
+          "Data Structures",
+          "Class vs Functional Components",
+          "Refactoring",
+          "Q&A"
+        ]
+      },
+      {
+        "number": 27,
+        "duration": "2 hours and 25 minutes",
+        "topics": [
+          "Flexbox Froggy",
+          "Flexbox vs CSS Grid",
+          "Responsive Design",
+          "SSR vs Static in Next.js",
+          "Q&A"
+        ]
+      },
+      {
+        "number": 28,
+        "duration": "3 hours and 10 minutes",
+        "topics": [
+          "Headless CMS with Strapi",
+          "Images in Strapi",
+          "Static vs SSR",
+          "Scrum and Agile",
+          "Freelancing",
+          "Contracts"
+        ]
+      },
+      {
+        "number": 29,
+        "duration": "2 hours and 20 minutes",
+        "topics": [
+          "Tailwind UI",
+          "Firebase Authentication v9 vs v8",
+          "Password recovery",
+          "JWT",
+          "Q&A"
+        ]
+      },
+      {
+        "number": 30,
+        "duration": "2 hours and 46 minutes",
+        "topics": [
+          "Firebase v9",
+          "Remote Config",
+          "Cloud Functions with CORS",
+          "Firebase Admin",
+          "Cloudflare"
+        ]
+      },
+      {
+        "number": 31,
+        "duration": "2 hours and 25 minutes",
+        "topics": [
+          "Basic JavaScript",
+          "Data Types",
+          "Classes",
+          "Inheritance",
+          "Arrays",
+          "Loops",
+          "Objects",
+          "Functions",
+          "Async/Await",
+          "Promises",
+          "React demonstrations"
+        ]
+      },
+      {
+        "number": 32,
+        "duration": "2 hours and 1 minute",
+        "topics": [
+          "Next.js Commerce + Shopify",
+          "SSG vs SSR vs ISR",
+          "Firebase Security Rules",
+          "getStaticPaths",
+          "Q&A"
+        ]
+      },
+      {
+        "number": 33,
+        "duration": "2 hours and 32 minutes",
+        "topics": [
+          "Deep understanding of Next.js",
+          "getStaticPaths and getStaticProps",
+          "Static vs SSR vs ISR",
+          "Practical demonstrations",
+          "Q&A"
+        ]
+      },
+      {
+        "number": 34,
+        "duration": "2 hours and 34 minutes",
+        "topics": [
+          "Context API in depth",
+          "Custom useAuth implementation",
+          "Firebase v9",
+          "useMemo",
+          "Memoization",
+          "Git 101",
+          "Teamwork with Git",
+          "Merge Conflicts",
+          "Git Flow"
+        ]
+      },
+      {
+        "number": 35,
+        "duration": "2 hours and 30 minutes",
+        "topics": [
+          "React 18 Server Components",
+          "Concurrency Mode",
+          "SSR Streaming",
+          "Client Side vs Server Side Rendering",
+          "Shopify Hydrogen",
+          "CI/CD tips",
+          "Advanced Q&A"
+        ]
+      },
+      {
+        "number": 36,
+        "duration": "3 hours and 9 minutes",
+        "topics": [
+          "Web3 explained",
+          "NFTs",
+          "Blockchain",
+          "Introduction to Moralis",
+          "Decentralized authentication",
+          "MetaMask",
+          "WalletConnect",
+          "Real-time database"
+        ]
+      },
+      {
+        "number": 37,
+        "duration": "2 hours and 33 minutes",
+        "topics": [
+          "Web 3.0 concepts",
+          "Decentralized networks",
+          "Todo App with Moralis",
+          "Web3 authentication",
+          "MetaMask",
+          "Live Queries",
+          "WebSockets"
+        ]
+      },
+      {
+        "number": 38,
+        "duration": "3 hours and 7 minutes",
+        "topics": [
+          "Success strategies for developers",
+          "Professional roadmap",
+          "Agile and Scrum",
+          "Sprint Poker",
+          "Sprint Planning",
+          "Analytics resources",
+          "Testing",
+          "Salary negotiation",
+          "Project environments",
+          "JavaScript transformation exercises"
+        ]
+      },
+      {
+        "number": 39,
+        "duration": "2 hours and 4 minutes",
+        "topics": [
+          "Rendering types in Next.js",
+          "Caching",
+          "SSR vs SSG vs ISR",
+          "Real-time cache inspection",
+          "TypeScript"
+        ]
+      },
+      {
+        "number": 40,
+        "duration": "3 hours and 10 minutes",
+        "topics": [
+          "Integration vs Unit Testing",
+          "Cypress",
+          "Headless Testing",
+          "Debugging with VS Code",
+          "Component Testing",
+          "Debug strategies"
+        ]
+      },
+      {
+        "number": 41,
+        "duration": "1 hour and 41 minutes",
+        "topics": [
+          "NFT Marketplace",
+          "Thirdweb",
+          "Buying and selling NFTs",
+          "Test networks",
+          "Faucets",
+          "NFT integration with Next.js"
+        ]
+      },
+      {
+        "number": 42,
+        "duration": "2 hours and 15 minutes",
+        "topics": [
+          "Cryptocurrency site for e-commerce",
+          "React Firebase Hooks",
+          "Gas fees",
+          "Moralis",
+          "Firebase + Moralis",
+          "TypeScript"
+        ]
+      },
+      {
+        "number": 43,
+        "duration": "2 hours and 7 minutes",
+        "topics": [
+          "Advanced JavaScript Fundamentals",
+          "Recursion",
+          "Currying",
+          "Flexbox",
+          "CSS Grid",
+          "Tailwind CSS",
+          "Mantine library"
+        ]
+      },
+      {
+        "number": 44,
+        "duration": "1 hour and 42 minutes",
+        "topics": [
+          "Project pricing",
+          "Client negotiation",
+          "Agile and Scrum",
+          "Professional valuation",
+          "Contract management",
+          "Handling objections"
+        ]
+      },
+      {
+        "number": 45,
+        "duration": "2 hours and 31 minutes",
+        "topics": [
+          "React and Redux",
+          "Dispatch",
+          "Selectors",
+          "Thunks vs Sagas",
+          "React Router v6",
+          "Debugging production applications"
+        ]
+      },
+      {
+        "number": 46,
+        "duration": "1 hour and 37 minutes",
+        "topics": [
+          "Google Sheets API",
+          "Recharts",
+          "Data transformation",
+          "TypeScript exercises",
+          "Q&A"
+        ]
+      },
+      {
+        "number": 47,
+        "duration": "1 hour and 26 minutes",
+        "topics": [
+          "React Native",
+          "Expo",
+          "TypeScript",
+          "Navigation",
+          "Fetch API",
+          "Cryptocurrency investments"
+        ]
+      },
+      {
+        "number": 48,
+        "duration": "2 hours and 50 minutes",
+        "topics": [
+          "Navigating large codebases",
+          "Twitter-style project",
+          "Content modeling with Sanity",
+          "TypeScript",
+          "Mutations",
+          "GROQ",
+          "Frontend and Backend APIs with Next.js"
+        ]
+      },
+      {
+        "number": 49,
+        "duration": "2 hours and 28 minutes",
+        "topics": [
+          "Mantine library",
+          "Introduction to SQL",
+          "Supabase",
+          "StepZen",
+          "GraphQL",
+          "Apollo Client",
+          "Next.js"
+        ]
+      },
+      {
+        "number": 50,
+        "duration": "2 hours and 28 minutes",
+        "topics": [
+          "Blog with Next.js",
+          "GraphCMS",
+          "CSR vs SSR vs ISR",
+          "GraphQL",
+          "TypeScript",
+          "getStaticPaths",
+          "React Testing Library"
+        ]
+      },
+      {
+        "number": 51,
+        "duration": "2 hours and 30 minutes",
+        "topics": [
+          "E-commerce with GraphCMS",
+          "Next.js",
+          "TypeScript",
+          "Recoil",
+          "Apollo GraphQL",
+          "Stripe Checkout"
+        ]
+      },
+      {
+        "number": 52,
+        "duration": "1 hour and 31 minutes",
+        "topics": [
+          "Introduction to Solidity",
+          "Lottery DApp",
+          "Deploy with Thirdweb",
+          "Smart Contract integration with Next.js"
+        ]
+      },
+      {
+        "number": 53,
+        "duration": "1 hour and 55 minutes",
+        "topics": [
+          "JIRA",
+          "Agile Scrum",
+          "Workflow organization",
+          "Behance",
+          "Dribbble",
+          "Git Flow",
+          "Freelancing"
+        ]
+      },
+      {
+        "number": 54,
+        "duration": "2 hours and 49 minutes",
+        "topics": [
+          "Introduction to Next.js 13",
+          "Next.js 12 vs 13 comparison",
+          "Migration",
+          "Server Components",
+          "Client Components"
+        ]
+      },
+      {
+        "number": 55,
+        "duration": "2 hours and 28 minutes",
+        "topics": [
+          "SWR replacing Redux",
+          "Caching techniques",
+          "SWR Mutate",
+          "Redis with Upstash",
+          "APIs",
+          "Client and Server Components"
+        ]
+      },
+      {
+        "number": 56,
+        "duration": "2 hours and 28 minutes",
+        "topics": [
+          "NFT-gated application",
+          "Route control",
+          "SSR",
+          "Middleware",
+          "Thirdweb NFT Drop"
+        ]
+      },
+      {
+        "number": 57,
+        "duration": "2 hours and 8 minutes",
+        "topics": [
+          "ChatGPT clone",
+          "OpenAI API",
+          "Next.js 13",
+          "Server Components",
+          "Folder structure",
+          "APIs in Next.js"
+        ]
+      },
+      {
+        "number": 58,
+        "duration": "1 hour and 43 minutes",
+        "topics": [
+          "Next.js 12 to 13 migration",
+          "Detailed differences",
+          "Professional roadmap",
+          "From first line of code to first job"
+        ]
+      },
+      {
+        "number": 59,
+        "duration": "2 hours and 17 minutes",
+        "topics": [
+          "ChatGPT-4 with Next.js",
+          "Conversation history",
+          "App Directory routes",
+          "Layouts",
+          "Metadata",
+          "APIs",
+          "Client and Server Components"
+        ]
+      },
+      {
+        "number": 60,
+        "duration": "1 hour and 56 minutes",
+        "topics": [
+          "Drag & Drop with DND Kit",
+          "Trello-like experience",
+          "Next.js deploys outside Vercel",
+          "Q&A"
+        ]
+      },
+      {
+        "number": 61,
+        "duration": "2 hours and 12 minutes",
+        "topics": [
+          "What's new in Next.js 13.4",
+          "Getting started with Server Actions",
+          "Live debugging",
+          "Q&A"
+        ]
+      },
+      {
+        "number": 62,
+        "duration": "1 hour and 53 minutes",
+        "topics": [
+          "Introduction to SQL",
+          "SQL vs NoSQL",
+          "Freelancing negotiation",
+          "Project planning",
+          "Scalability",
+          "Building trust with clients"
+        ]
+      }
+    ],
+    "expansionCallout": {
+      "heading": "NEW MENTORING SESSIONS EVERY WEDNESDAY!",
+      "body": "But wait... there's MORE!\nWe're constantly pushing the boundaries of the community and we have no intention of slowing down.",
+      "cta": "Check out what else you get:"
+    },
+    "successCoaches": {
+      "heading": "🔴🏅 Success Coach Mentoring Sessions (Every Friday)",
+      "schedule": "These live sessions are hosted by our own Success Coaches for the entire community.",
+      "topics": [
+        "Building REST APIs with Express and MongoDB",
+        "Testing with Postman",
+        "Deploy with Heroku",
+        "Git and Linux Command Line",
+        "Data Structures",
+        "Big O Notation",
+        "Redux",
+        "React",
+        "Webpack",
+        "Babel",
+        "SQL",
+        "CSS",
+        "Tailwind CSS",
+        "Firebase",
+        "React Native",
+        "TypeScript",
+        "Freelancing",
+        "UI/UX",
+        "Figma",
+        "Algorithms",
+        "Artificial Intelligence",
+        "Neural Networks",
+        "Entrepreneurship",
+        "Online Business",
+        "SCRUM",
+        "APIs",
+        "Next.js",
+        "Node.js"
+      ],
+      "footer": "- SO MUCH MORE EVERY FRIDAY!"
+    }
+  },
+  "community": {
+    "studentArea": {
+      "heading": "👩‍🎓👨‍🎓 Student Area (Lessons, Resources, and More)",
+      "description": [
+        "We allow our members to voluntarily share their own projects with the PAPAFAM community.",
+        "The result is a huge collection of valuable content made available for free to all members."
+      ],
+      "itemsHeading": "Available Content",
+      "items": [
+        {
+          "title": "JavaScript",
+          "bullets": [
+            "Differences between const, var, and let",
+            "while and for loops",
+            "Arrays: push, pop, shift, and unshift",
+            "Connecting JavaScript functions to React components"
+          ],
+          "duration": "Ben Elferink (19 minutes)"
+        },
+        {
+          "title": "Video Favorites App with React",
+          "bullets": [
+            "useRef Hook",
+            "Spread Operator",
+            "Event Binding",
+            "Time formatting"
+          ],
+          "duration": "Asad Memon (5 minutes)"
+        },
+        {
+          "title": "React",
+          "bullets": [
+            "Async functions with try/catch",
+            "Data fetching",
+            "Rendering objects using map"
+          ],
+          "duration": "Ben Elferink (14 minutes)"
+        },
+        {
+          "title": "Introduction to the useRef Hook",
+          "bullets": [
+            "Document selectors in traditional JavaScript",
+            "Comparison with useRef"
+          ],
+          "duration": "Asad Memon (4 minutes)"
+        },
+        {
+          "title": "Responsive Navigation Bar in React",
+          "bullets": [
+            "React Router",
+            "NavLink",
+            "useState",
+            "CSS Media Queries",
+            "Font Awesome"
+          ],
+          "duration": "Tommy Kelly (46 minutes)"
+        },
+        {
+          "title": "JavaScript Interview Questions",
+          "bullets": [
+            "String Manipulation"
+          ],
+          "duration": "Sanjay Tholani and Ben Elferink (45 minutes)"
+        },
+        {
+          "title": "Breakout Game in React",
+          "bullets": [
+            "Phaser library",
+            "useState",
+            "useEffect",
+            "Deploy with Firebase"
+          ],
+          "duration": "Richard Lawlor (1 hour and 16 minutes)"
+        },
+        {
+          "title": "State Management in React",
+          "bullets": [
+            "Adding and editing items",
+            "Favorites",
+            "Filters",
+            "LocalStorage"
+          ],
+          "duration": "Ben Elferink and Aldo Echeverria (1 hour and 5 minutes)"
+        },
+        {
+          "title": "Creative Math with JavaScript",
+          "bullets": [
+            "Animations",
+            "Console Games",
+            "Creative thinking"
+          ],
+          "duration": "Ben Elferink (50 minutes)"
+        }
+      ],
+      "footer": "* SO MUCH MORE CONTENT SUBMITTED BY THE COMMUNITY"
+    },
+    "diamondMentoring": {
+      "heading": "💠 🔐 Exclusive Mentoring Sessions (Diamond Members Only)",
+      "description": [
+        "Available exclusively for Diamond members.",
+        "These intensive sessions happen bi-weekly on Wednesdays and cover advanced technologies and concepts essential for Full Stack developers."
+      ],
+      "sessions": [
+        {
+          "number": 1,
+          "duration": "3 hours and 25 minutes",
+          "topics": [
+            "Introduction to Mentoring",
+            "Developer success roadmap",
+            "Investment strategies",
+            "Recommended books",
+            "Proper form handling in React"
+          ]
+        },
+        {
+          "number": 2,
+          "duration": "3 hours and 2 minutes",
+          "topics": [
+            "Recoil.js in depth",
+            "Performance optimizations",
+            "Synchronous and asynchronous calls",
+            "React Suspense",
+            "Application security"
+          ]
+        },
+        {
+          "number": 3,
+          "duration": "3 hours and 19 minutes",
+          "topics": [
+            "Serverless",
+            "Microservices",
+            "Software Architecture",
+            "Firebase Cloud Functions",
+            "Debugging"
+          ]
+        },
+        {
+          "number": 4,
+          "duration": "3 hours and 15 minutes",
+          "topics": [
+            "Next.js in depth",
+            "Static Site Generation",
+            "Server Side Rendering",
+            "Lighthouse",
+            "TypeScript"
+          ]
+        },
+        {
+          "number": 5,
+          "duration": "3 hours and 15 minutes",
+          "topics": [
+            "Building a WhatsApp clone",
+            "Individual messages",
+            "Data modeling",
+            "Online status",
+            "Firebase Hooks"
+          ]
+        },
+        {
+          "number": 6,
+          "duration": "3 hours and 25 minutes",
+          "topics": [
+            "Tailwind CSS",
+            "HeroIcons",
+            "Responsive Design",
+            "Mobile First"
+          ]
+        },
+        {
+          "number": 7,
+          "duration": "3 hours and 27 minutes",
+          "topics": [
+            "GraphQL",
+            "Apollo Client",
+            "Apollo Server",
+            "SSR with GraphQL",
+            "Queries and Mutations"
+          ]
+        },
+        {
+          "number": 8,
+          "duration": "3 hours and 23 minutes",
+          "topics": [
+            "Next.js",
+            "GraphQL",
+            "TypeScript",
+            "Code review",
+            "Q&A"
+          ]
+        },
+        {
+          "number": 9,
+          "duration": "2 hours and 46 minutes",
+          "topics": [
+            "Mapping SpaceX launches",
+            "OpenStreetMap",
+            "Leaflet",
+            "APIs",
+            "Browser geolocation"
+          ]
+        },
+        {
+          "number": 10,
+          "duration": "2 hours and 30 minutes",
+          "topics": [
+            "Data transformation",
+            "Map",
+            "Reduce",
+            "Filter",
+            "Flat",
+            "Lodash",
+            "Debounce"
+          ]
+        },
+        {
+          "number": 11,
+          "duration": "2 hours and 52 minutes",
+          "topics": [
+            "Incremental Static Generation",
+            "getStaticPaths",
+            "getStaticProps",
+            "TypeScript"
+          ]
+        },
+        {
+          "number": 12,
+          "duration": "3 hours and 50 minutes",
+          "topics": [
+            "React Query",
+            "Cache vs Persistence",
+            "SSR",
+            "Hydration",
+            "Prefetching"
+          ]
+        },
+        {
+          "number": 13,
+          "duration": "2 hours and 57 minutes",
+          "topics": [
+            "React Native Maps",
+            "Expo",
+            "Tailwind CSS",
+            "TypeScript",
+            "GeoLib",
+            "Marker clustering"
+          ]
+        },
+        {
+          "number": 14,
+          "duration": "3 hours and 27 minutes",
+          "topics": [
+            "React Hook Form",
+            "Yup Validation",
+            "Dropzone",
+            "File upload",
+            "Routes in Next.js",
+            "Regular Expressions"
+          ]
+        },
+        {
+          "number": 15,
+          "duration": "2 hours and 59 minutes",
+          "topics": [
+            "Messaging app with Stream",
+            "JWT",
+            "Next.js API",
+            "Full Stack demonstration"
+          ]
+        },
+        {
+          "number": 16,
+          "duration": "2 hours and 36 minutes",
+          "topics": [
+            "Modals",
+            "File upload",
+            "Instagram Clone",
+            "NextAuth",
+            "Custom sessions",
+            "Firebase v9",
+            "Recoil"
+          ]
+        },
+        {
+          "number": 17,
+          "duration": "3 hours and 6 minutes",
+          "topics": [
+            "Chat with Socket.io",
+            "Next.js API",
+            "Ngrok",
+            "HTTPS Tunneling",
+            "Startup advice"
+          ]
+        },
+        {
+          "number": 18,
+          "duration": "2 hours and 10 minutes",
+          "topics": [
+            "Full Stack interview simulation",
+            "REST APIs",
+            "Web 3.0",
+            "Promises",
+            "Async Requests"
+          ]
+        },
+        {
+          "number": 19,
+          "duration": "2 hours and 50 minutes",
+          "topics": [
+            "Supabase",
+            "SQL vs NoSQL",
+            "Authentication",
+            "SQL database",
+            "Real-time data"
+          ]
+        },
+        {
+          "number": 20,
+          "duration": "1 hour and 43 minutes",
+          "topics": [
+            "Unit Testing",
+            "Integration Testing",
+            "Debugging Tools",
+            "Productivity",
+            "Stress Management"
+          ]
+        },
+        {
+          "number": 21,
+          "duration": "2 hours and 32 minutes",
+          "topics": [
+            "Entrepreneurship",
+            "Taxes",
+            "Investments",
+            "Freelancing",
+            "Client acquisition",
+            "Networking"
+          ]
+        },
+        {
+          "number": 22,
+          "duration": "2 hours and 22 minutes",
+          "topics": [
+            "Redux",
+            "Next.js",
+            "TypeScript",
+            "Redux Thunk",
+            "Todo App",
+            "Pair Programming"
+          ]
+        },
+        {
+          "number": 23,
+          "duration": "2 hours and 15 minutes",
+          "topics": [
+            "Creating contracts",
+            "International payments",
+            "YouTube channel",
+            "Screenflow",
+            "Interview preparation"
+          ]
+        },
+        {
+          "number": 24,
+          "duration": "2 hours and 25 minutes",
+          "topics": [
+            "Debugging real-world problems",
+            "GraphQL-Yoga",
+            "Apollo Client",
+            "Queries and Mutations"
+          ]
+        },
+        {
+          "number": 25,
+          "duration": "2 hours and 10 minutes",
+          "topics": [
+            "How to achieve salaries above £100k",
+            "Redis",
+            "Upstash",
+            "Career strategies"
+          ]
+        },
+        {
+          "number": 26,
+          "duration": "2 hours and 17 minutes",
+          "topics": [
+            "How to land your first developer job",
+            "TypeScript for beginners",
+            "Portfolio review",
+            "Q&A"
+          ]
+        },
+        {
+          "number": 27,
+          "duration": "2 hours and 38 minutes",
+          "topics": [
+            "Next.js 13",
+            "Server Components First architecture",
+            "Client Components",
+            "SSG",
+            "SSR",
+            "ISR"
+          ]
+        },
+        {
+          "number": 29,
+          "duration": "2 hours and 10 minutes",
+          "topics": [
+            "Complete professional growth roadmap",
+            "Freelancing",
+            "Career",
+            "How to generate value as a developer"
+          ]
+        },
+        {
+          "number": 30,
+          "duration": "2 hours and 32 minutes",
+          "topics": [
+            "Next.js 12 to 13 migration",
+            "SSG",
+            "SSR",
+            "ISR",
+            "Route Segment Config"
+          ]
+        },
+        {
+          "number": 31,
+          "duration": "2 hours and 14 minutes",
+          "topics": [
+            "Design and Development",
+            "Testing",
+            "Cypress",
+            "End-to-End Testing"
+          ]
+        },
+        {
+          "number": 32,
+          "duration": "1 hour and 33 minutes",
+          "topics": [
+            "JIRA",
+            "GitHub Flow",
+            "Agile",
+            "Scrum",
+            "Kanban",
+            "Automation",
+            "Sprint Poker"
+          ]
+        }
+      ],
+      "footer": "* NEW EXCLUSIVE MENTORING EVERY TWO WEEKS!"
+    }
+  },
+  "closing": {
+    "ebooks": {
+      "heading": "📚 Exclusive Bonuses: Premium eBooks",
+      "intro": [
+        "And we're not done yet...",
+        "We created 4 complete eBooks on JavaScript, Tailwind CSS, and Next.js.",
+        "They will serve as your definitive reference guide to accelerate your learning and daily consultation.",
+        "These materials were developed to bring together, in one place, everything you need to know to become a top-tier developer."
+      ],
+      "includesHeading": "Includes:",
+      "items": [
+        "Complete JavaScript eBook",
+        "Complete Next.js eBook",
+        "Complete Tailwind CSS eBook",
+        "Quick reference and productivity guides"
+      ]
+    },
+    "instructor": {
+      "heading": "👨‍🏫 Meet Your Instructor",
+      "name": "I'm Sonny 💯",
+      "alias": "PAPA React",
+      "intro": "I'll be your mentor and coach inside the PAPAFAM community.",
+      "bio": [
+        "I have over 15 years of programming experience.",
+        "As a Full Stack developer, I've worked at both startups and large companies, helping organizations build, scale, and optimize their products.",
+        "Along this journey, I discovered that my true passion was helping others grow professionally and achieve their goals as developers.",
+        "With that mission, I've already trained thousands of developers around the world.",
+        "Through live sessions on YouTube, I've accumulated millions of views demonstrating how to apply development skills to real projects and practical challenges.",
+        "My goal is to deliver REAL VALUE through REAL PROJECTS.",
+        "You'll learn in practice the skills demanded by today's market and gain experience applicable to the professional world.",
+        "And if that's still not enough...",
+        "I've recreated dozens of the world's most popular applications to teach advanced Full Stack development concepts."
+      ]
+    },
+    "results": {
+      "heading": "📈 Results? Yes, we have results.",
+      "subheading": "Real Results for Real People",
+      "testimonials": [
+        {
+          "name": "Frank Ramos",
+          "role": "Harvard graduate and senior developer with over 15 years of experience.",
+          "outcome": "Worked at some of the world's largest tech companies and recently landed a $170,000 contract with SONOS using knowledge gained from projects taught by Sonny."
+        },
+        {
+          "name": "Gabriel Graves",
+          "role": "PAPAFAM Platinum Member",
+          "outcome": "Landed a Software Engineer role at PayPal with a salary over $120,000 per year plus benefits."
+        },
+        {
+          "name": "Veloshan Pillay",
+          "quote": "I've bought various courses over the years, but I wanted to take my skills to the next level. When I joined this course, it was the best investment I've ever made. The knowledge I received is absolutely priceless.",
+          "role": "Diamond Member"
+        },
+        {
+          "name": "Luke Menton",
+          "role": "Diamond Member",
+          "outcome": "Landed a developer position with a salary over £40,000 per year."
+        },
+        {
+          "name": "Sylvestor Underhay",
+          "quote": "A typical course is just recorded content. Here I was welcomed by real people, added to groups, Discord, and other channels. That makes all the difference. It's another level.",
+          "role": "Platinum Member"
+        },
+        {
+          "name": "Alex Eklund",
+          "role": "Diamond Member",
+          "outcome": "Landed a remote Front-End Developer role in Thailand with compensation over $30,000."
+        },
+        {
+          "name": "Jastej Singh",
+          "role": "Platinum Member",
+          "outcome": "Landed a Senior React Developer role in Canada with compensation over 50 thousand Canadian dollars."
+        },
+        {
+          "name": "Ben Elferink",
+          "quote": "I wake up in the morning, see a programming meme, share it with the community, and we have fun together. It's not just studying programming. We're truly a community.",
+          "role": "Platinum Member"
+        },
+        {
+          "name": "Robert Parsons",
+          "quote": "Sonny has the experience and empathy needed to take anyone to the next level. Everything he touches gains value.",
+          "role": "Diamond Member"
+        },
+        {
+          "name": "Srikar Kusumanchi",
+          "role": "15 years old — Platinum Member",
+          "outcome": "Landed a web development role earning approximately 500 Canadian dollars per month."
+        },
+        {
+          "name": "Adam Curtis",
+          "quote": "Learning with Sonny has been incredible. He makes React extremely accessible and easy to understand.",
+          "role": "Platinum Member"
+        },
+        {
+          "name": "Francisco Raigoza",
+          "quote": "This course is ideal for both beginners and experienced professionals. Sonny is extremely passionate about what he does and genuinely wants to help his students grow.",
+          "role": "Platinum Member"
+        },
+        {
+          "name": "Michael Barrett",
+          "quote": "Be part of the PAPAFAM community, recognized by the best professionals in the industry.",
+          "role": "Stripe Checkout team developer"
+        },
+        {
+          "name": "Jorge Fouto",
+          "quote": "Sonny is excellent. His deep knowledge and mentorship had a huge impact on our team. I recommend him without hesitation.",
+          "role": "GM | CPO | CTO at Lively.tv"
+        }
+      ]
+    },
+    "pricing": {
+      "platinum": {
+        "name": "Lifetime Platinum Plan",
+        "price": "£597",
+        "includesHeading": "Includes:",
+        "features": [
+          "Lifetime access to the complete course",
+          "2 monthly mentoring sessions with Sonny",
+          "Weekly sessions with Success Coaches",
+          "Technical interview preparation",
+          "Roadmap to become a highly paid senior developer",
+          "AI Module",
+          "Complete SaaS module",
+          "60+ real projects",
+          "Resume and portfolio kit",
+          "5 exclusive eBooks",
+          "Platinum Discord access"
+        ]
+      },
+      "diamond": {
+        "name": "Lifetime Diamond Plan",
+        "price": "£997",
+        "tagline": "Everything in Platinum, plus:",
+        "features": [
+          "4 exclusive mentoring sessions per month with Sonny",
+          "170+ hours of additional content",
+          "Exclusive network of advanced developers",
+          "Entrepreneurship and freelancing training",
+          "Exclusive Diamond community",
+          "100 coding challenges with solutions",
+          "Diamond Discord"
+        ]
+      }
+    },
+    "faq": [
+      {
+        "question": "Is Zero to Full Stack Hero suitable for beginners?",
+        "answer": [
+          "Yes.",
+          "The program was designed to serve both absolute beginners and experienced developers who want to level up their skills."
+        ]
+      },
+      {
+        "question": "Can I pay in installments?",
+        "answer": [
+          "Yes.",
+          "There are 3-installment payment options for both Platinum and Diamond plans."
+        ]
+      },
+      {
+        "question": "Can I upgrade or downgrade my plan?",
+        "answer": "",
+        "subsections": [
+          {
+            "title": "Upgrade",
+            "body": "Yes.\nYou can upgrade by paying only the price difference between plans."
+          },
+          {
+            "title": "Downgrade",
+            "body": "No.\nYou cannot move to a lower plan and request a refund for the difference."
+          }
+        ]
+      },
+      {
+        "question": "Do you offer refunds?",
+        "answer": [
+          "Not at this time.",
+          "The community's purpose is to bring together people committed to execution and their results.",
+          "For this reason, there is no refund policy after purchase.",
+          "We recommend reviewing all content carefully before purchasing."
+        ]
+      },
+      {
+        "question": "Will I receive a certificate of completion?",
+        "answer": [
+          "Yes 🎉",
+          "Upon completing the course, you'll receive an Official Certificate of Completion.",
+          "You can use it on:",
+          "The certificate will serve as formal proof of the skills acquired during the program."
+        ],
+        "bullets": [
+          "LinkedIn",
+          "Resume",
+          "Portfolio",
+          "Job applications",
+          "Freelancing proposals"
+        ]
+      },
+      {
+        "question": "Do you accept cryptocurrencies?",
+        "answer": [
+          "Yes.",
+          "We accept some of the major cryptocurrencies, including:",
+          "Conditions:",
+          "1. Payment must be made in full.",
+          "2. Installments are not available for cryptocurrency payments.",
+          "3. After organizing your funds, contact the team to finalize your purchase."
+        ],
+        "bullets": [
+          "Bitcoin (BTC)",
+          "Ethereum (ETH)",
+          "XRP"
+        ]
+      }
+    ],
+    "finalCta": {
+      "heading": "🚀 What are you waiting for? Join Zero to Full Stack Hero 2.0 today!"
+    }
+  }
+}
