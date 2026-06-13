@@ -9,16 +9,22 @@ type SessionAccordionProps = {
     sessions: ISalesFunnelSession[];
     groupSize?: number;
     groupHeading?: (start: number, end: number) => string;
+    sessionLabel?: (number: number) => string;
 };
 
 function defaultGroupHeading(start: number, end: number) {
     return `Sessions ${start}–${end}`;
 }
 
+function defaultSessionLabel(number: number) {
+    return `Session ${number}`;
+}
+
 export function SessionAccordion({
     sessions,
     groupSize = 10,
     groupHeading = defaultGroupHeading,
+    sessionLabel = defaultSessionLabel,
 }: SessionAccordionProps) {
     const groups: ISalesFunnelSession[][] = [];
 
@@ -50,7 +56,7 @@ export function SessionAccordion({
                                 >
                                     <AccordionTrigger className="p-3 bg-gray-100 hover:bg-gray-200 hover:no-underline text-left">
                                         <span>
-                                            Session {session.number}
+                                            {sessionLabel(session.number)}
                                             <span className="text-gray-500 font-normal ml-2">
                                                 ({session.duration})
                                             </span>
