@@ -2,6 +2,7 @@ import fernando from "@/public/testimonials/fernando.jpg";
 import weverton from "@/public/testimonials/weverton.jpg";
 import jhonatan from "@/public/testimonials/jhonatan.jpg";
 import placeholder from "@/public/placeholder.webp";
+import salesFunnel from "./english/sales-funnel.json";
 
 export const englishLanguage: ILanguage = {
     id: "english",
@@ -380,4 +381,5 @@ export const englishLanguage: ILanguage = {
             url: "privacy-policy",
         },
     },
+    salesFunnel,
 };

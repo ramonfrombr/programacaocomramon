@@ -4,19 +4,19 @@ overview: Define an `ISalesFunnel` type on `ILanguage`, convert the six Portugue
 todos:
   - id: define-types
     content: Add ISalesFunnel and nested types to languages/language.d.ts; extend ILanguage with salesFunnel
-    status: pending
+    status: completed
   - id: convert-pt-json
     content: Convert copy/portuguese/sales_funnel/01-06.md into languages/portuguese/sales-funnel.json following section schema
-    status: pending
+    status: completed
   - id: translate-json
     content: Create languages/english, french, spanish sales-funnel.json with same structure and translated strings
-    status: pending
+    status: completed
   - id: wire-language-files
     content: Import sales-funnel.json in all four languages/*.tsx and assign salesFunnel property
-    status: pending
+    status: completed
   - id: verify-types
     content: Run tsc and spot-check structural parity across all four JSON files
-    status: pending
+    status: completed
 isProject: false
 ---
 
