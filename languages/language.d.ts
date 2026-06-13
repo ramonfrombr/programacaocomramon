@@ -19,6 +19,7 @@ type ILanguage = {
     videoPlayer: ILanguageVideoPlayer;
     course: ILanguageCourse;
     footer: ILanguageFooter;
+    salesFunnel: ISalesFunnel;
 };
 
 type IHomepage = {
@@ -360,5 +361,194 @@ type ILanguageFooter = {
     privacyPolicy: {
         title: string;
         url: string;
+    };
+};
+
+type ISalesFunnel = {
+    landing: ISalesFunnelLanding;
+    curriculum: ISalesFunnelCurriculum;
+    mastermind: ISalesFunnelMastermind;
+    community: ISalesFunnelCommunity;
+    closing: ISalesFunnelClosing;
+};
+
+type ISalesFunnelTier = {
+    name: string;
+    price: string;
+    tagline?: string;
+    features: string[];
+    newFeaturesHeading?: string;
+    newFeatures?: string[];
+    exclusiveAccessHeading?: string;
+    exclusiveAccess?: string[];
+};
+
+type ISalesFunnelSession = {
+    number: number;
+    duration: string;
+    topics: string[];
+};
+
+type ISalesFunnelModule = {
+    title: string;
+    description?: string;
+    bullets?: string[];
+};
+
+type ISalesFunnelTestimonial = {
+    name: string;
+    role?: string;
+    quote?: string;
+    outcome?: string;
+};
+
+type ISalesFunnelFaqSubsection = {
+    title: string;
+    body: string;
+};
+
+type ISalesFunnelFaq = {
+    question: string;
+    answer: string | string[];
+    bullets?: string[];
+    subsections?: ISalesFunnelFaqSubsection[];
+};
+
+type ISalesFunnelLandingSection = {
+    heading: string;
+    body?: string;
+    bullets?: string[];
+};
+
+type ISalesFunnelLanding = {
+    presenter: string;
+    headline: string;
+    tagline: string;
+    highlights: string[];
+    techStackHeading: string;
+    ctaHeading: string;
+    tiers: {
+        platinum: ISalesFunnelTier;
+        diamond: ISalesFunnelTier;
+    };
+    sections: {
+        training: ISalesFunnelLandingSection;
+        mentoring: ISalesFunnelLandingSection;
+        community: ISalesFunnelLandingSection;
+        coaches: ISalesFunnelLandingSection;
+        discord: ISalesFunnelLandingSection;
+        income: ISalesFunnelLandingSection;
+    };
+};
+
+type ISalesFunnelLessonPreview = {
+    title: string;
+    lesson: string;
+};
+
+type ISalesFunnelCurriculum = {
+    heading: string;
+    subtitle: string;
+    updateNote: string;
+    modules: ISalesFunnelModule[];
+    previewHeading: string;
+    previewIntro: string;
+    lessonPreviews: ISalesFunnelLessonPreview[];
+};
+
+type ISalesFunnelMastermindStats = {
+    hours: string;
+    value: string;
+    availability: string;
+    recordingNote: string;
+};
+
+type ISalesFunnelSuccessCoaches = {
+    heading: string;
+    schedule: string;
+    intro?: string;
+    topics: string[];
+    footer?: string;
+};
+
+type ISalesFunnelMastermind = {
+    heading: string;
+    description: string[];
+    stats: ISalesFunnelMastermindStats;
+    sessions: ISalesFunnelSession[];
+    expansionCallout?: {
+        heading: string;
+        body: string;
+        cta: string;
+    };
+    successCoaches: ISalesFunnelSuccessCoaches;
+};
+
+type ISalesFunnelCommunityItem = {
+    title: string;
+    bullets: string[];
+    duration: string;
+};
+
+type ISalesFunnelStudentArea = {
+    heading: string;
+    description: string[];
+    itemsHeading: string;
+    items: ISalesFunnelCommunityItem[];
+    footer: string;
+};
+
+type ISalesFunnelDiamondMentoring = {
+    heading: string;
+    description: string[];
+    sessions: ISalesFunnelSession[];
+    footer: string;
+};
+
+type ISalesFunnelCommunity = {
+    studentArea: ISalesFunnelStudentArea;
+    diamondMentoring: ISalesFunnelDiamondMentoring;
+};
+
+type ISalesFunnelEbooks = {
+    heading: string;
+    intro: string[];
+    includesHeading: string;
+    items: string[];
+};
+
+type ISalesFunnelInstructor = {
+    heading: string;
+    name: string;
+    alias: string;
+    intro: string;
+    bio: string[];
+};
+
+type ISalesFunnelResults = {
+    heading: string;
+    subheading: string;
+    testimonials: ISalesFunnelTestimonial[];
+};
+
+type ISalesFunnelPricingTier = {
+    name: string;
+    price: string;
+    tagline?: string;
+    includesHeading?: string;
+    features: string[];
+};
+
+type ISalesFunnelClosing = {
+    ebooks: ISalesFunnelEbooks;
+    instructor: ISalesFunnelInstructor;
+    results: ISalesFunnelResults;
+    pricing: {
+        platinum: ISalesFunnelPricingTier;
+        diamond: ISalesFunnelPricingTier;
+    };
+    faq: ISalesFunnelFaq[];
+    finalCta: {
+        heading: string;
     };
 };
