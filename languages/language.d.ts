@@ -424,6 +424,7 @@ type ISalesFunnelLanding = {
     presenter: string;
     headline: string;
     tagline: string;
+    heroYoutubeVideoURL: string;
     highlights: string[];
     techStackHeading: string;
     ctaHeading: string;

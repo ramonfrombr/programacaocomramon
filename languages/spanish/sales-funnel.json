@@ -1,15 +1,16 @@
 {
   "landing": {
-    "presenter": "Sonny Sangha presenta...",
+    "presenter": "Ramon Rodrigues presenta...",
     "headline": "Zero to Full Stack Hero 2.0 🔥",
     "tagline": "No es solo otro CURSO.\nEs la MEJOR COMUNIDAD DE DESARROLLADORES del mundo.",
+    "heroYoutubeVideoURL": "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
     "highlights": [
       "✔ No se necesita experiencia previa en programación",
       "✔ Desde los Fundamentos del Desarrollo Web hasta dominar Next.js",
       "✔ Enseñamos tecnologías emocionantes como Next.js 15, React.js, Firebase, TypeScript, Tailwind CSS y MUCHO MÁS",
-      "✔ Sesiones semanales de mentoría en vivo con Sonny con contenido dinámico, diferente a cualquier curso de Udemy",
+      "✔ Sesiones semanales de mentoría en vivo con Ramon con contenido dinámico, diferente a cualquier curso de Udemy",
       "✔ Acceso a más de 60 Proyectos Reales y 100 Desafíos de Programación para llevar tus habilidades aún más lejos",
-      "✔ Acceso exclusivo a las comunidades PAPAFAM y Discord",
+      "✔ Acceso exclusivo a las comunidades Programación con Ramon y Discord",
       "✔ La comunidad DEFINITIVA para triunfar como desarrollador Full Stack, incluso después de conseguir tu empleo",
       "✔ Módulo de Dominio de IA: aprende a utilizar IA y herramientas de IA para potenciar tu carrera como desarrollador",
       "✔ Módulo Completo de SaaS: todo lo que necesitas saber sobre creación, escalabilidad y marketing de aplicaciones SaaS exitosas"
@@ -22,7 +23,7 @@
         "price": "£597",
         "features": [
           "Acceso de por vida al curso Zero to Full Stack Hero 2.0",
-          "2 llamadas de mentoría en vivo al mes con Sonny",
+          "2 llamadas de mentoría en vivo al mes con Ramon",
           "Sesiones semanales con los Success Coaches",
           "Aprende a dominar entrevistas técnicas y conseguir el empleo de tus sueños",
           "Hoja de ruta guiada para convertirte en un desarrollador senior con salario de seis cifras"
@@ -45,7 +46,7 @@
         "price": "£997",
         "tagline": "🌟 Todo lo incluido en Platinum y mucho más...",
         "features": [
-          "2 llamadas semanales adicionales en vivo con Sonny (4 sesiones de mentoría al mes)",
+          "2 llamadas semanales adicionales en vivo con Ramon (4 sesiones de mentoría al mes)",
           "Más de 170 horas de contenido exclusivo de mentoría",
           "Acceso exclusivo a una red de desarrolladores de alto nivel y conexiones profesionales",
           "Kit del Emprendedor: aprende sobre creación de negocios, freelancing, habilidades interpersonales y estrategias reales para generar ingresos",
@@ -70,11 +71,11 @@
       },
       "mentoring": {
         "heading": "Llamadas Semanales de Mentoría",
-        "body": "Cada semana, Sonny dirige una sesión de mentoría Full Stack Mastermind que muchos describen como \"vale más que un título universitario\".\nPrepárate para una experiencia transformadora."
+        "body": "Cada semana, Ramon dirige una sesión de mentoría Full Stack Mastermind que muchos describen como \"vale más que un título universitario\".\nPrepárate para una experiencia transformadora."
       },
       "community": {
-        "heading": "Comunidad Exclusiva PAPAFAM",
-        "body": "¿Has oído la frase \"tu red de contactos es tu patrimonio\"?\nCon PAPAFAM llevamos esto a un nivel completamente diferente.\nTodo esto dentro de la comunidad PAPAFAM.",
+        "heading": "Comunidad Exclusiva Programación con Ramon",
+        "body": "¿Has oído la frase \"tu red de contactos es tu patrimonio\"?\nCon Programación con Ramon llevamos esto a un nivel completamente diferente.\nTodo esto dentro de la comunidad Programación con Ramon.",
         "bullets": [
           "Soporte dedicado las 24 horas",
           "Responsabilidad compartida",
@@ -83,8 +84,8 @@
         ]
       },
       "coaches": {
-        "heading": "Recibe Soporte del Equipo PAPAFAM Success Coach",
-        "body": "Los PAPAFAM Success Coaches están aquí para ayudarte a superar desafíos que Stack Overflow no puede resolver.\nRecibe revisiones personalizadas de código y orientación práctica para tus problemas de programación."
+        "heading": "Recibe Soporte del Equipo Success Coach de Programación con Ramon",
+        "body": "Los Success Coaches de Programación con Ramon están aquí para ayudarte a superar desafíos que Stack Overflow no puede resolver.\nRecibe revisiones personalizadas de código y orientación práctica para tus problemas de programación."
       },
       "discord": {
         "heading": "Canales Exclusivos en Discord, Emojis y Mucho Más",
@@ -216,7 +217,7 @@
       },
       {
         "title": "CONTENIDO BONUS",
-        "description": "Mi misión es entregar una cantidad DESPROPORCIONADA de valor.\nPor eso, puedes esperar cada vez más contenido en el futuro.\n¡2025 es el año de la #PAPAFAM!"
+        "description": "Mi misión es entregar una cantidad DESPROPORCIONADA de valor.\nPor eso, puedes esperar cada vez más contenido en el futuro.\n¡2025 es el año de la Programación con Ramon!"
       },
       {
         "title": "DOMINIO DE IA",
@@ -260,7 +261,7 @@
   "mastermind": {
     "heading": "¡Presentamos el Full Stack Mastermind Coaching!",
     "description": [
-      "Sesiones exclusivas de mentoría quincenales los miércoles, dirigidas por el propio Sonny."
+      "Sesiones exclusivas de mentoría quincenales los miércoles, dirigidas por el propio Ramon."
     ],
     "stats": {
       "hours": "Más de 120 horas de contenido en vídeo",
@@ -1055,7 +1056,7 @@
     "studentArea": {
       "heading": "👩‍🎓👨‍🎓 Área del Alumno (Clases, Recursos y Mucho Más)",
       "description": [
-        "Permitimos que nuestros miembros compartan voluntariamente sus propios proyectos con la comunidad PAPAFAM.",
+        "Permitimos que nuestros miembros compartan voluntariamente sus propios proyectos con la comunidad Programación con Ramon.",
         "El resultado es una enorme colección de contenido valioso puesto a disposición gratuitamente para todos los miembros."
       ],
       "itemsHeading": "Contenidos Disponibles",
@@ -1521,9 +1522,9 @@
     },
     "instructor": {
       "heading": "👨‍🏫 Conoce a tu Instructor",
-      "name": "Soy Sonny 💯",
-      "alias": "PAPA React",
-      "intro": "Seré tu mentor y entrenador dentro de la comunidad PAPAFAM.",
+      "name": "Soy Ramon Rodrigues 💯",
+      "alias": "Programación con Ramon",
+      "intro": "Seré tu mentor y entrenador dentro de la comunidad Programación con Ramon.",
       "bio": [
         "Tengo más de 15 años de experiencia en programación.",
         "Como desarrollador Full Stack, he trabajado tanto en startups como en grandes empresas, ayudando a organizaciones a crear, escalar y optimizar sus productos.",
@@ -1543,11 +1544,11 @@
         {
           "name": "Frank Ramos",
           "role": "Graduado en Harvard y desarrollador senior con más de 15 años de experiencia.",
-          "outcome": "Trabajó en algunas de las mayores empresas tecnológicas del mundo y recientemente consiguió un contrato de US$ 170.000 con SONOS utilizando conocimientos obtenidos en proyectos enseñados por Sonny."
+          "outcome": "Trabajó en algunas de las mayores empresas tecnológicas del mundo y recientemente consiguió un contrato de US$ 170.000 con SONOS utilizando conocimientos obtenidos en proyectos enseñados por Ramon."
         },
         {
           "name": "Gabriel Graves",
-          "role": "Miembro Platinum de PAPAFAM",
+          "role": "Miembro Platinum de Programación con Ramon",
           "outcome": "Consiguió un puesto de Software Engineer en PayPal con un salario superior a US$ 120.000 anuales y beneficios."
         },
         {
@@ -1582,7 +1583,7 @@
         },
         {
           "name": "Robert Parsons",
-          "quote": "Sonny tiene la experiencia y la empatía necesarias para llevar a cualquier persona al siguiente nivel. Todo lo que toca gana valor.",
+          "quote": "Ramon tiene la experiencia y la empatía necesarias para llevar a cualquier persona al siguiente nivel. Todo lo que toca gana valor.",
           "role": "Miembro Diamond"
         },
         {
@@ -1592,22 +1593,22 @@
         },
         {
           "name": "Adam Curtis",
-          "quote": "Aprender con Sonny ha sido increíble. Hace que React sea extremadamente accesible y fácil de entender.",
+          "quote": "Aprender con Ramon ha sido increíble. Hace que React sea extremadamente accesible y fácil de entender.",
           "role": "Miembro Platinum"
         },
         {
           "name": "Francisco Raigoza",
-          "quote": "Este curso es ideal tanto para principiantes como para profesionales experimentados. Sonny es extremadamente apasionado por lo que hace y realmente quiere ayudar a sus alumnos a crecer.",
+          "quote": "Este curso es ideal tanto para principiantes como para profesionales experimentados. Ramon es extremadamente apasionado por lo que hace y realmente quiere ayudar a sus alumnos a crecer.",
           "role": "Miembro Platinum"
         },
         {
           "name": "Michael Barrett",
-          "quote": "Forma parte de la comunidad PAPAFAM, reconocida por los mejores profesionales del mercado.",
+          "quote": "Forma parte de la comunidad Programación con Ramon, reconocida por los mejores profesionales del mercado.",
           "role": "Desarrollador del equipo Stripe Checkout"
         },
         {
           "name": "Jorge Fouto",
-          "quote": "Sonny es excelente. Su profundo conocimiento y su mentoría tuvieron un enorme impacto en nuestro equipo. Lo recomiendo sin dudarlo.",
+          "quote": "Ramon es excelente. Su profundo conocimiento y su mentoría tuvieron un enorme impacto en nuestro equipo. Lo recomiendo sin dudarlo.",
           "role": "GM | CPO | CTO de Lively.tv"
         }
       ]
@@ -1619,7 +1620,7 @@
         "includesHeading": "Incluye:",
         "features": [
           "Acceso de por vida al curso completo",
-          "2 mentorías mensuales con Sonny",
+          "2 mentorías mensuales con Ramon",
           "Sesiones semanales con Success Coaches",
           "Preparación para entrevistas técnicas",
           "Hoja de ruta para convertirte en un desarrollador senior muy bien remunerado",
@@ -1636,7 +1637,7 @@
         "price": "£997",
         "tagline": "Todo lo de Platinum, además de:",
         "features": [
-          "4 mentorías exclusivas al mes con Sonny",
+          "4 mentorías exclusivas al mes con Ramon",
           "Más de 170 horas de contenido adicional",
           "Red exclusiva de desarrolladores avanzados",
           "Formación para emprendimiento y freelancing",

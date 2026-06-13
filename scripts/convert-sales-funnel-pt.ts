@@ -4,6 +4,10 @@ import path from "node:path";
 const COPY_DIR = path.join(process.cwd(), "copy/portuguese/sales_funnel");
 const OUTPUT = path.join(process.cwd(), "languages/portuguese/sales-funnel.json");
 
+const HERO_YOUTUBE_VIDEO_URL = process.env.NEXT_PUBLIC_LANDING_PAGE_VIDEO_URL
+  ? `https://www.youtube.com/watch?v=${process.env.NEXT_PUBLIC_LANDING_PAGE_VIDEO_URL}`
+  : "https://www.youtube.com/watch?v=dQw4w9WgXcQ";
+
 function readMd(filename: string): string {
   return fs.readFileSync(path.join(COPY_DIR, filename), "utf-8");
 }
@@ -166,6 +170,7 @@ function parseLanding(content: string) {
     presenter,
     headline,
     tagline,
+    heroYoutubeVideoURL: HERO_YOUTUBE_VIDEO_URL,
     highlights,
     techStackHeading,
     ctaHeading,
@@ -438,8 +443,8 @@ function parseClosing(content: string) {
   const instructorHeading =
     instructorLines.find((l) => l.startsWith("# 👨"))?.replace(/^#\s*/, "").trim() ?? "";
   const name = instructorLines.find((l) => l.startsWith("## Eu sou"))?.replace(/^##\s*/, "").trim() ?? "";
-  const aliasLine = instructorLines.find((l) => l.includes("PAPA React")) ?? "";
-  const alias = aliasLine.match(/\*\*(.+?)\*\*/)?.[1] ?? "PAPA React";
+  const aliasLine = instructorLines.find((l) => l.includes("**")) ?? "";
+  const alias = aliasLine.match(/\*\*(.+?)\*\*/)?.[1] ?? "";
   const introIdx = instructorLines.findIndex((l) => l.startsWith("Serei seu mentor"));
   const bioStart = instructorLines.findIndex((l) => l.startsWith("Tenho mais de 15 anos"));
   const intro = instructorLines[introIdx]?.trim() ?? "";
