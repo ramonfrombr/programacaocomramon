@@ -12,6 +12,12 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 30
 
+    services:
+      mongodb:
+        image: mongo:7
+        ports:
+          - 27017:27017
+
     env:
       PLAYWRIGHT_BROWSERS_PATH: "0"
       NODE_ENV: test
@@ -30,6 +36,8 @@ jobs:
       STRIPE_WEBHOOK_SECRET: whsec_dummy
       MP_ACCESS_TOKEN: dummy
       NEXT_PUBLIC_LANDING_PAGE_VIDEO_URL: dQw4w9WgXcQ
+      # Ephemeral MongoDB on the runner — avoids Atlas IP allowlist / TLS issues in CI.
+      DATABASE_URL: mongodb://127.0.0.1:27017/programacaocomramon-e2e?directConnection=true
 
     steps:
       - name: Checkout
@@ -50,7 +58,6 @@ jobs:
       - name: Run E2E tests
         run: npm run test:e2e
         env:
-          DATABASE_URL: ${{ secrets.E2E_DATABASE_URL }}
           CLERK_SECRET_KEY: ${{ secrets.E2E_CLERK_SECRET_KEY }}
           NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY: ${{ secrets.E2E_CLERK_PUBLISHABLE_KEY }}
           E2E_CLERK_STUDENT_EMAIL: ${{ secrets.E2E_CLERK_STUDENT_EMAIL }}

@@ -1,14 +1,13 @@
 import { PrismaClient } from "@prisma/client";
-import dotenv from "dotenv";
-import path from "path";
 import {
   E2E_CATEGORIES,
   E2E_DRAFT_COURSE,
   E2E_PUBLISHED_CHAPTERS,
   E2E_PUBLISHED_COURSE,
 } from "../e2e/constants";
+import { loadE2EEnv } from "../e2e/setup/env";
 
-dotenv.config({ path: path.resolve(__dirname, "../.env.test") });
+loadE2EEnv();
 
 const database = new PrismaClient();
 

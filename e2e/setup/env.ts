@@ -38,14 +38,17 @@ function applyEnvFile(filePath: string, mode: EnvApplyMode): void {
  *
  * - `.env` / `.env.local` fill gaps for local dev (e.g. Clerk keys not yet copied into `.env.test`)
  * - Non-empty values in `.env.test` override dev env (e.g. dedicated Atlas test `DATABASE_URL`)
- * - In CI, vars can come from workflow secrets without a `.env.test` file
+ * - In CI, job env / secrets win — `.env.test` only fills gaps (never overrides)
  */
 export function loadE2EEnv(): void {
   applyEnvFile(path.join(repoRoot, ".env"), "fill-empty");
   applyEnvFile(path.join(repoRoot, ".env.local"), "fill-empty");
 
   if (fs.existsSync(envTestPath)) {
-    applyEnvFile(envTestPath, "override-nonempty");
+    applyEnvFile(
+      envTestPath,
+      process.env.CI ? "fill-empty" : "override-nonempty"
+    );
     return;
   }
 
