@@ -53,7 +53,10 @@ export const CourseCard = ({
 
     return (
         <Link href={`/${language.coursesURL}/${slug}`}>
-            <div className="group hover:shadow-sm transition overflow-hidden border rounded-lg h-full flex flex-col">
+            <div
+                className="group hover:shadow-sm transition overflow-hidden border rounded-lg h-full flex flex-col"
+                data-testid={`course-card-${slug}`}
+            >
                 <div className="relative w-full aspect-video rounded-t-md overflow-hidden">
                     <Image
                         fill

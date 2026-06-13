@@ -66,6 +66,7 @@ export const CourseProgressButton = ({
       type="button"
       variant={isCompleted ? "outline" : "success"}
       className="w-full md:w-auto"
+      data-testid="chapter-progress-toggle"
     >
       {isCompleted ? videoPlayerLanguage.markAsNotCompleted : videoPlayerLanguage.markAsCompleted}
       <Icon className="h-4 w-4 ml-2" />
