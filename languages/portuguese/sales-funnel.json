@@ -1,7 +1,7 @@
 {
   "landing": {
     "presenter": "Ramon Rodrigues apresenta...",
-    "headline": "Zero to Full Stack Hero 2.0 🔥",
+    "headline": "Do Zero ao Herói Full Stack 2.0 🔥",
     "tagline": "Não é apenas mais um CURSO.\nÉ a MELHOR COMUNIDADE DE DESENVOLVEDORES do mundo.",
     "heroYoutubeVideoURL": "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
     "highlights": [
@@ -20,7 +20,7 @@
     "tiers": {
       "platinum": {
         "name": "MEMBRO PLATINUM VITALÍCIO",
-        "price": "£597",
+        "price": "R$2990",
         "features": [
           "Acesso vitalício ao curso Zero to Full Stack Hero 2.0",
           "2 chamadas de mentoria ao vivo por mês com Ramon",
@@ -43,7 +43,7 @@
       },
       "diamond": {
         "name": "MEMBRO DIAMOND VITALÍCIO",
-        "price": "£997",
+        "price": "R$3990",
         "tagline": "🌟 Tudo incluído no Platinum e muito mais...",
         "features": [
           "2 chamadas semanais adicionais ao vivo com Ramon (4 sessões de mentoria por mês)",
