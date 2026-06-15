@@ -18,9 +18,17 @@
     "techStackHeading": "Apprenez les technologies utilisées par les plus grandes entreprises",
     "ctaHeading": "Qu'est-ce que tu attends ? Rejoignez Zero to Full Stack Hero 2.0 aujourd'hui !",
     "tiers": {
+      "silver": {
+        "name": "MEMBRE Silver À VIE",
+        "price": "£397",
+        "features": [
+          "Accès à vie au cours Zero to Full Stack Hero 2.0"
+        ]
+      },
       "platinum": {
         "name": "MEMBRE Platinum À VIE",
         "price": "£597",
+        "tagline": "🌟 Tout ce qui est inclus dans le Silver et plus encore...",
         "features": [
           "Accès à vie au cours Zero to Full Stack Hero 2.0",
           "2 appels de mentorat en direct par mois avec Ramon",
@@ -1705,9 +1713,18 @@
       ]
     },
     "pricing": {
+      "silver": {
+        "name": "Plan Silver à vie",
+        "price": "£397",
+        "includesHeading": "Comprend :",
+        "features": [
+          "Accès à vie au cours complet"
+        ]
+      },
       "platinum": {
         "name": "Plan Platinum à vie",
         "price": "£597",
+        "tagline": "Tout du Silver, plus :",
         "includesHeading": "Comprend :",
         "features": [
           "Accès à vie au cours complet",
@@ -1750,7 +1767,7 @@
         "question": "Puis-je payer en plusieurs fois ?",
         "answer": [
           "Oui.",
-          "Il existe des options de paiement en 3 fois pour les forfaits Platinum et Diamond."
+          "Il existe des options de paiement en 3 fois pour les forfaits Silver, Platinum et Diamond."
         ]
       },
       {

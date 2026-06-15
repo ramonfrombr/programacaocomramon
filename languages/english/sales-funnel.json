@@ -18,9 +18,17 @@
     "techStackHeading": "Learn the technologies used by the biggest companies",
     "ctaHeading": "What are you waiting for? Join Zero to Full Stack Hero 2.0 today!",
     "tiers": {
+      "silver": {
+        "name": "LIFETIME SILVER MEMBER",
+        "price": "£397",
+        "features": [
+          "Lifetime access to the Zero to Full Stack Hero 2.0 course"
+        ]
+      },
       "platinum": {
         "name": "LIFETIME PLATINUM MEMBER",
         "price": "£597",
+        "tagline": "🌟 Everything included in Silver and much more...",
         "features": [
           "Lifetime access to the Zero to Full Stack Hero 2.0 course",
           "2 live mentoring calls per month with Ramon",
@@ -1705,9 +1713,18 @@
       ]
     },
     "pricing": {
+      "silver": {
+        "name": "Lifetime Silver Plan",
+        "price": "£397",
+        "includesHeading": "Includes:",
+        "features": [
+          "Lifetime access to the complete course"
+        ]
+      },
       "platinum": {
         "name": "Lifetime Platinum Plan",
         "price": "£597",
+        "tagline": "Everything in Silver, plus:",
         "includesHeading": "Includes:",
         "features": [
           "Lifetime access to the complete course",
@@ -1750,7 +1767,7 @@
         "question": "Can I pay in installments?",
         "answer": [
           "Yes.",
-          "There are 3-installment payment options for both Platinum and Diamond plans."
+          "There are 3-installment payment options for Silver, Platinum, and Diamond plans."
         ]
       },
       {

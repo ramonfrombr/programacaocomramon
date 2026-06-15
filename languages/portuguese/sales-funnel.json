@@ -19,9 +19,17 @@
     "techStackHeading": "Aprenda as tecnologias utilizadas pelas maiores empresas",
     "ctaHeading": "O que você está esperando? Junte-se ao Zero to Full Stack Hero 2.0 hoje mesmo!",
     "tiers": {
+      "silver": {
+        "name": "MEMBRO SILVER VITALÍCIO",
+        "price": "R$1990",
+        "features": [
+          "Acesso vitalício ao curso Zero to Full Stack Hero 2.0"
+        ]
+      },
       "platinum": {
         "name": "MEMBRO PLATINUM VITALÍCIO",
         "price": "R$2990",
+        "tagline": "🌟 Tudo incluído no Silver e muito mais...",
         "features": [
           "Acesso vitalício ao curso Zero to Full Stack Hero 2.0",
           "2 chamadas de mentoria ao vivo por mês com Ramon",
@@ -1631,9 +1639,18 @@
       ]
     },
     "pricing": {
+      "silver": {
+        "name": "Plano Silver Vitalício",
+        "price": "R$1990",
+        "includesHeading": "Inclui:",
+        "features": [
+          "Acesso vitalício ao curso completo"
+        ]
+      },
       "platinum": {
         "name": "Plano Platinum Vitalício",
         "price": "R$2990",
+        "tagline": "Tudo do Silver, além de:",
         "includesHeading": "Inclui:",
         "features": [
           "Acesso vitalício ao curso completo",
@@ -1676,7 +1693,7 @@
         "question": "Posso pagar parcelado?",
         "answer": [
           "Sim.",
-          "Existem opções de pagamento parcelado em 12 vezes para os planos Platinum e Diamond."
+          "Existem opções de pagamento parcelado em 12 vezes para os planos Silver, Platinum e Diamond."
         ]
       },
       {

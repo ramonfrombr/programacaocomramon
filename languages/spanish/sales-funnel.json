@@ -18,9 +18,17 @@
     "techStackHeading": "Aprende las tecnologías utilizadas por las mayores empresas",
     "ctaHeading": "¿Qué estás esperando? Únete a Zero to Full Stack Hero 2.0 hoy mismo",
     "tiers": {
+      "silver": {
+        "name": "MIEMBRO SILVER DE POR VIDA",
+        "price": "£397",
+        "features": [
+          "Acceso de por vida al curso Zero to Full Stack Hero 2.0"
+        ]
+      },
       "platinum": {
         "name": "MIEMBRO PLATINUM DE POR VIDA",
         "price": "£597",
+        "tagline": "🌟 Todo lo incluido en Silver y mucho más...",
         "features": [
           "Acceso de por vida al curso Zero to Full Stack Hero 2.0",
           "2 llamadas de mentoría en vivo al mes con Ramon",
@@ -1705,9 +1713,18 @@
       ]
     },
     "pricing": {
+      "silver": {
+        "name": "Plan Silver de Por Vida",
+        "price": "£397",
+        "includesHeading": "Incluye:",
+        "features": [
+          "Acceso de por vida al curso completo"
+        ]
+      },
       "platinum": {
         "name": "Plan Platinum de Por Vida",
         "price": "£597",
+        "tagline": "Todo lo de Silver, además de:",
         "includesHeading": "Incluye:",
         "features": [
           "Acceso de por vida al curso completo",
@@ -1750,7 +1767,7 @@
         "question": "¿Puedo pagar a plazos?",
         "answer": [
           "Sí.",
-          "Existen opciones de pago a plazos en 3 cuotas para los planes Platinum y Diamond."
+          "Existen opciones de pago a plazos en 3 cuotas para los planes Silver, Platinum y Diamond."
         ]
       },
       {
