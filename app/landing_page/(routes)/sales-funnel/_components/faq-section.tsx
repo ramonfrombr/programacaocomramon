@@ -20,7 +20,7 @@ function FaqAnswer({ faq }: { faq: ISalesFunnelFaq }) {
           : [];
 
     return (
-        <div className="space-y-3">
+        <div className="space-y-3 text-base">
             {answerLines.map((line, index) => (
                 <MultiLineText key={`${index}-${line.slice(0, 24)}`} text={line} />
             ))}
@@ -60,7 +60,7 @@ export function FaqSection({
             <Accordion type="multiple" className="border rounded-md text-sm">
                 {faqs.map((faq, index) => (
                     <AccordionItem key={faq.question} value={`faq-${index + 1}`}>
-                        <AccordionTrigger className="p-3 bg-gray-100 hover:bg-gray-200 hover:no-underline text-left">
+                        <AccordionTrigger className="p-3 bg-gray-100 hover:bg-gray-200 hover:no-underline text-left text-lg">
                             {faq.question}
                         </AccordionTrigger>
                         <AccordionContent className="p-3">

@@ -1,9 +1,6 @@
-import {
-    Accordion,
-    AccordionContent,
-    AccordionItem,
-    AccordionTrigger,
-} from "@/components/ui/accordion";
+import Image from "next/image";
+import { useState } from "react";
+import { LessonPreviewsSection } from "./lesson-previews-section";
 import { MultiLineText } from "./multi-line-text";
 import { SectionHeading } from "./section-heading";
 
@@ -11,61 +8,103 @@ type CurriculumSectionProps = {
     curriculum: ISalesFunnelCurriculum;
 };
 
-type ModuleAccordionProps = {
-    modules: ISalesFunnelModule[];
+type ModuleCardProps = {
+    module: ISalesFunnelModule;
+    variant: ISalesFunnelCurriculumGroup;
 };
 
-function ModuleAccordion({ modules }: ModuleAccordionProps) {
+function ModuleCard({ module, variant }: ModuleCardProps) {
+    const isCourse = variant === "courses";
+
     return (
-        <Accordion type="multiple" className="border rounded-md text-sm md:text-base">
-            {modules.map((module, index) => (
-                <AccordionItem
-                    key={module.title}
-                    value={`module-${index}`}
-                    className="sales-funnel-module-item"
-                    style={{ contentVisibility: "auto" }}
-                >
-                    <AccordionTrigger className="p-3 md:p-4 bg-gray-100 hover:bg-gray-200 hover:no-underline text-left font-semibold">
-                        {module.title}
-                    </AccordionTrigger>
-                    <AccordionContent className="p-3 md:p-4">
-                        {module.description ? (
-                            <MultiLineText
-                                text={module.description}
-                                className="text-gray-700"
-                            />
-                        ) : null}
+        <article
+            className="flex flex-col h-full rounded-lg border bg-white p-6 md:p-8 shadow-md transition-shadow hover:shadow-lg"
+            style={{ contentVisibility: "auto" }}
+        >
+            <div className="flex justify-center mb-5">
+                <Image
+                    src={module.image}
+                    alt={module.title}
+                    width={isCourse ? 400 : 200}
+                    height={isCourse ? 225 : 200}
+                    className={
+                        isCourse
+                            ? "w-full aspect-video object-contain rounded-md"
+                            : "w-36 h-36 md:w-44 md:h-44 object-contain"
+                    }
+                />
+            </div>
 
-                        {module.bullets?.length ? (
-                            <ul className="list-disc pl-5 mt-3 space-y-1">
-                                {module.bullets.map((bullet) => (
-                                    <li key={bullet}>{bullet}</li>
-                                ))}
-                            </ul>
-                        ) : null}
-                    </AccordionContent>
-                </AccordionItem>
-            ))}
-        </Accordion>
-    );
-}
+            <h3 className="text-xl md:text-2xl font-semibold mb-3 text-center">
+                {module.title}
+            </h3>
 
-type LessonPreviewCardProps = {
-    preview: ISalesFunnelLessonPreview;
-};
+            {module.description ? (
+                <MultiLineText
+                    text={module.description}
+                    className="text-gray-700 text-base md:text-lg"
+                />
+            ) : null}
 
-function LessonPreviewCard({ preview }: LessonPreviewCardProps) {
-    return (
-        <article className="rounded-md border p-4 shadow-sm bg-white h-full">
-            <p className="text-xs uppercase tracking-wide text-blue-600 font-semibold mb-2">
-                {preview.lesson}
-            </p>
-            <h4 className="font-semibold text-sm md:text-base">{preview.title}</h4>
+            {module.bullets?.length ? (
+                <ul className="list-disc pl-5 mt-3 space-y-1 text-sm md:text-base">
+                    {module.bullets.map((bullet) => (
+                        <li key={bullet}>{bullet}</li>
+                    ))}
+                </ul>
+            ) : null}
         </article>
     );
 }
 
+type CurriculumGroupToggleProps = {
+    activeGroup: ISalesFunnelCurriculumGroup;
+    groupLabels: ISalesFunnelCurriculumGroupLabels;
+    onChange: (group: ISalesFunnelCurriculumGroup) => void;
+};
+
+function CurriculumGroupToggle({
+    activeGroup,
+    groupLabels,
+    onChange,
+}: CurriculumGroupToggleProps) {
+    const groups: ISalesFunnelCurriculumGroup[] = ["courses", "bundles"];
+
+    return (
+        <div
+            role="tablist"
+            aria-label="Curriculum groups"
+            className="flex flex-wrap justify-center gap-2 mb-8 md:mb-10"
+        >
+            {groups.map((group) => {
+                const isActive = activeGroup === group;
+
+                return (
+                    <button
+                        key={group}
+                        type="button"
+                        role="tab"
+                        aria-selected={isActive}
+                        onClick={() => onChange(group)}
+                        className={`rounded-full px-5 py-2.5 text-sm md:text-base font-semibold transition-colors ${
+                            isActive
+                                ? "bg-blue-600 text-white shadow-md"
+                                : "bg-white text-gray-700 border border-gray-300 hover:border-blue-400 hover:text-blue-700"
+                        }`}
+                    >
+                        {groupLabels[group]}
+                    </button>
+                );
+            })}
+        </div>
+    );
+}
+
 export function CurriculumSection({ curriculum }: CurriculumSectionProps) {
+    const [activeGroup, setActiveGroup] =
+        useState<ISalesFunnelCurriculumGroup>("courses");
+    const activeModules = curriculum[activeGroup];
+
     return (
         <section id="curriculum" aria-labelledby="curriculum-heading">
             <SectionHeading
@@ -80,27 +119,31 @@ export function CurriculumSection({ curriculum }: CurriculumSectionProps) {
                 </p>
             ) : null}
 
-            <ModuleAccordion modules={curriculum.modules} />
+            <CurriculumGroupToggle
+                activeGroup={activeGroup}
+                groupLabels={curriculum.groupLabels}
+                onChange={setActiveGroup}
+            />
 
-            <div className="mt-12 md:mt-16">
-                <h3 className="text-xl md:text-2xl font-bold text-center mb-3">
-                    {curriculum.previewHeading}
-                </h3>
-
-                <MultiLineText
-                    text={curriculum.previewIntro}
-                    className="text-gray-600 text-sm md:text-base text-center max-w-3xl mx-auto mb-6 md:mb-8"
-                />
-
-                <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-5">
-                    {curriculum.lessonPreviews.map((preview) => (
-                        <LessonPreviewCard
-                            key={`${preview.lesson}-${preview.title}`}
-                            preview={preview}
-                        />
-                    ))}
-                </div>
+            <div
+                role="tabpanel"
+                aria-label={curriculum.groupLabels[activeGroup]}
+                className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5 md:gap-8"
+            >
+                {activeModules.map((module) => (
+                    <ModuleCard
+                        key={`${activeGroup}-${module.title}`}
+                        module={module}
+                        variant={activeGroup}
+                    />
+                ))}
             </div>
+
+            {/*<LessonPreviewsSection
+                heading={curriculum.previewHeading}
+                intro={curriculum.previewIntro}
+                lessonPreviews={curriculum.lessonPreviews}
+            />*/}
         </section>
     );
 }

@@ -389,10 +389,52 @@ type ISalesFunnelSession = {
     topics: string[];
 };
 
+type ISalesFunnelCourseImageKey =
+    | "capa-design-web-html-css"
+    | "capa-desenvolvimento-web-iniciante"
+    | "capa-programacao-com-javascript"
+    | "capa-programacao-com-python"
+    | "capa-desenvolvimento-web-intermediario"
+    | "capa-desenvolvimento-frontend-reactjs"
+    | "capa-desenvolvimento-backend-nodejs"
+    | "capa-desenvolvimento-backend-expressjs"
+    | "capa-desenvolvimento-fullstack-mern";
+
+type ISalesFunnelBundleImageKey =
+    | "icon-react-basics"
+    | "icon-web-dev-essentials"
+    | "icon-css-mastery"
+    | "icon-javascript-mastery"
+    | "icon-server-side-nextjs"
+    | "icon-the-complete-react-guide"
+    | "icon-typescript-for-dummies"
+    | "icon-firebase-guide"
+    | "icon-redux-simplified"
+    | "icon-react-native"
+    | "icon-node-express-for-dummies"
+    | "icon-payments-101"
+    | "icon-graphql-guide"
+    | "icon-mern-guide"
+    | "icon-solidity-series"
+    | "icon-web-3.0-mastery"
+    | "icon-project-management-101"
+    | "icon-bonus-content"
+    | "icon-ai-mastery"
+    | "icon-saas-guide";
+
 type ISalesFunnelModule = {
+    image: StaticImageData;
     title: string;
     description?: string;
     bullets?: string[];
+};
+
+type ISalesFunnelCourseModule = ISalesFunnelModule & {
+    imageKey: ISalesFunnelCourseImageKey;
+};
+
+type ISalesFunnelBundleModule = ISalesFunnelModule & {
+    imageKey: ISalesFunnelBundleImageKey;
 };
 
 type ISalesFunnelTestimonial = {
@@ -415,6 +457,7 @@ type ISalesFunnelFaq = {
 };
 
 type ISalesFunnelLandingSection = {
+    image: StaticImageData;
     heading: string;
     body?: string;
     bullets?: string[];
@@ -447,11 +490,20 @@ type ISalesFunnelLessonPreview = {
     lesson: string;
 };
 
+type ISalesFunnelCurriculumGroup = "courses" | "bundles";
+
+type ISalesFunnelCurriculumGroupLabels = {
+    courses: string;
+    bundles: string;
+};
+
 type ISalesFunnelCurriculum = {
     heading: string;
     subtitle: string;
     updateNote: string;
-    modules: ISalesFunnelModule[];
+    groupLabels: ISalesFunnelCurriculumGroupLabels;
+    courses: ISalesFunnelCourseModule[];
+    bundles: ISalesFunnelBundleModule[];
     previewHeading: string;
     previewIntro: string;
     lessonPreviews: ISalesFunnelLessonPreview[];

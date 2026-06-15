@@ -1,10 +1,11 @@
 {
   "landing": {
-    "presenter": "Ramon Rodrigues apresenta...",
+    "presenter": "Escola de Programação apresenta...",
     "headline": "Do Zero ao Herói Full Stack 2.0 🔥",
     "tagline": "Não é apenas mais um CURSO.\nÉ a MELHOR COMUNIDADE DE DESENVOLVEDORES do mundo.",
     "heroYoutubeVideoURL": "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
     "highlights": [
+      "⭐️ Certificado oficial da Universidade de Harvard reconhecido mundialmente",
       "✔ Nenhuma experiência em programação é necessária",
       "✔ Do aprendizado dos Fundamentos do Desenvolvimento Web ao domínio do Next.js!",
       "✔ Ensinamos tecnologias empolgantes como Next.js 15, React.js, Firebase, TypeScript, Tailwind CSS e MUITO MAIS!",
@@ -101,138 +102,6 @@
     "heading": "O que existe dentro do Zero to Full Stack Hero 2.0!?",
     "subtitle": "Saiba EXATAMENTE o que você receberá antes de comprar!",
     "updateNote": "Conteúdo adicional é lançado e atualizado semanalmente.",
-    "modules": [
-      {
-        "title": "REACT BASICS 101",
-        "description": "É exatamente o que vocês estavam pedindo!\nAprenda os fundamentos do React de forma clara e prática."
-      },
-      {
-        "title": "FUNDAMENTOS DO DESENVOLVIMENTO WEB",
-        "description": "Se você está começando do absoluto ZERO, nós cuidamos disso!\nVamos abordar:",
-        "bullets": [
-          "HTML",
-          "CSS",
-          "JavaScript",
-          "Diversos conceitos extras que irão impulsionar sua entrada no mundo do desenvolvimento web"
-        ]
-      },
-      {
-        "title": "DOMÍNIO DE CSS",
-        "description": "Aprenda:\nE MUITO MAIS para criar interfaces modernas e profissionais.",
-        "bullets": [
-          "Flexbox",
-          "CSS Grid",
-          "Bootstrap",
-          "Material UI"
-        ]
-      },
-      {
-        "title": "DOMÍNIO DE JAVASCRIPT",
-        "description": "Domine a linguagem que redefiniu a web.\nDesde os conceitos fundamentais até os tópicos mais avançados, cobrimos tudo."
-      },
-      {
-        "title": "SERVER SIDE RENDERING PARA INICIANTES",
-        "description": "SSR simplificado utilizando o mais moderno Next.js 15."
-      },
-      {
-        "title": "GUIA COMPLETO DE REACT",
-        "description": "Tudo sobre React.\nInclusive testes automatizados."
-      },
-      {
-        "title": "TYPESCRIPT PARA INICIANTES",
-        "description": "Linguagens como:\nsão fortemente tipadas.\nAgora o JavaScript também pode ser.\nAprenda TypeScript e reduza drasticamente os bugs em suas aplicações.",
-        "bullets": [
-          "Java",
-          "C#",
-          "Swift"
-        ]
-      },
-      {
-        "title": "GUIA COMPLETO DE FIREBASE",
-        "description": "Pense no poder do Sol...\nSim, o Firebase é tão poderoso assim.\nNós ensinamos como utilizá-lo corretamente para obter resultados reais."
-      },
-      {
-        "title": "REDUX SIMPLIFICADO",
-        "description": "Se existe uma habilidade que você PRECISA para conquistar uma vaga Frontend, é Redux."
-      },
-      {
-        "title": "REACT NATIVE 101",
-        "description": "Quer criar aplicativos para:\nNós temos tudo o que você precisa.",
-        "bullets": [
-          "iOS",
-          "Android"
-        ]
-      },
-      {
-        "title": "NODE.JS E EXPRESS PARA INICIANTES",
-        "description": "A dupla perfeita para desenvolvimento Backend.\nEnsinamos tudo do início ao avançado."
-      },
-      {
-        "title": "PAGAMENTOS 101",
-        "description": "Simplifique a implementação de pagamentos utilizando:\ne outras soluções modernas.",
-        "bullets": [
-          "Stripe",
-          "PayPal"
-        ]
-      },
-      {
-        "title": "GUIA DE GRAPHQL",
-        "description": "Dominar GraphQL permitirá acessar seus dados de forma muito mais eficiente.\nE provavelmente também ajudará a aumentar seu salário."
-      },
-      {
-        "title": "GUIA MERN",
-        "description": "A Stack número 1 por um motivo.\nAprenda:\nem profundidade.",
-        "bullets": [
-          "MongoDB",
-          "Express",
-          "React",
-          "Node.js"
-        ]
-      },
-      {
-        "title": "SÉRIE SOLIDITY",
-        "description": "Aprenda Smart Contracts da forma inteligente."
-      },
-      {
-        "title": "DOMÍNIO DO WEB 3.0",
-        "description": "Mergulhe no futuro da internet.\nAprenda:\ne muito mais.",
-        "bullets": [
-          "MetaMask",
-          "Criptomoedas",
-          "NFTs",
-          "Solidity",
-          "Web3"
-        ]
-      },
-      {
-        "title": "GERENCIAMENTO DE PROJETOS 101",
-        "description": "Domine as metodologias modernas de trabalho.\nAprenda:\nÉ hora de se tornar um líder.",
-        "bullets": [
-          "Agile",
-          "Scrum",
-          "Gestão de equipes",
-          "Gestão de clientes",
-          "Gestão de projetos de software"
-        ]
-      },
-      {
-        "title": "CONTEÚDO BÔNUS",
-        "description": "Minha missão é entregar uma quantidade DESPROPORCIONAL de valor.\nPor isso, você pode esperar cada vez mais conteúdo no futuro.\n2025 é o ano da Escola de Programação!"
-      },
-      {
-        "title": "DOMÍNIO DE IA",
-        "description": "Chegou a hora de dominar o uso de Inteligência Artificial e ferramentas de IA para potencializar sua carreira e suas aplicações.\nExclusivo do Zero to Full Stack Hero 2.0."
-      },
-      {
-        "title": "GUIA COMPLETO DE SAAS",
-        "description": "Módulo abrangente cobrindo:\nde aplicações SaaS.\nExclusivo do Zero to Full Stack Hero 2.0.",
-        "bullets": [
-          "Construção",
-          "Lançamento",
-          "Marketing"
-        ]
-      }
-    ],
     "previewHeading": "Quer uma prévia do que existe dentro?",
     "previewIntro": "Confira alguns exemplos do módulo React Basics 101 para saber exatamente o que esperar.",
     "lessonPreviews": [
@@ -255,6 +124,154 @@
       {
         "title": "Regras dos Hooks",
         "lesson": "Lição 8"
+      }
+    ],
+    "bundles": [
+      {
+        "imageKey": "icon-server-side-nextjs",
+        "title": "SERVER SIDE RENDERING PARA INICIANTES",
+        "description": "SSR simplificado utilizando o mais moderno Next.js 15."
+      },
+      {
+        "imageKey": "icon-typescript-for-dummies",
+        "title": "TYPESCRIPT PARA INICIANTES",
+        "description": "Linguagens como:\nsão fortemente tipadas.\nAgora o JavaScript também pode ser.\nAprenda TypeScript e reduza drasticamente os bugs em suas aplicações.",
+        "bullets": [
+          "Java",
+          "C#",
+          "Swift"
+        ]
+      },
+      {
+        "imageKey": "icon-firebase-guide",
+        "title": "GUIA COMPLETO DE FIREBASE",
+        "description": "Pense no poder do Sol...\nSim, o Firebase é tão poderoso assim.\nNós ensinamos como utilizá-lo corretamente para obter resultados reais."
+      },
+      {
+        "imageKey": "icon-redux-simplified",
+        "title": "REDUX SIMPLIFICADO",
+        "description": "Se existe uma habilidade que você PRECISA para conquistar uma vaga Frontend, é Redux."
+      },
+      {
+        "imageKey": "icon-react-native",
+        "title": "REACT NATIVE 101",
+        "description": "Quer criar aplicativos para:\nNós temos tudo o que você precisa.",
+        "bullets": [
+          "iOS",
+          "Android"
+        ]
+      },
+      {
+        "imageKey": "icon-payments-101",
+        "title": "PAGAMENTOS 101",
+        "description": "Simplifique a implementação de pagamentos utilizando:\ne outras soluções modernas.",
+        "bullets": [
+          "Stripe",
+          "PayPal"
+        ]
+      },
+      {
+        "imageKey": "icon-graphql-guide",
+        "title": "GUIA DE GRAPHQL",
+        "description": "Dominar GraphQL permitirá acessar seus dados de forma muito mais eficiente.\nE provavelmente também ajudará a aumentar seu salário."
+      },
+      {
+        "imageKey": "icon-project-management-101",
+        "title": "GERENCIAMENTO DE PROJETOS 101",
+        "description": "Domine as metodologias modernas de trabalho.\nAprenda:\nÉ hora de se tornar um líder.",
+        "bullets": [
+          "Agile",
+          "Scrum",
+          "Gestão de equipes",
+          "Gestão de clientes",
+          "Gestão de projetos de software"
+        ]
+      },
+      {
+        "imageKey": "icon-ai-mastery",
+        "title": "DOMÍNIO DE IA",
+        "description": "Chegou a hora de dominar o uso de Inteligência Artificial e ferramentas de IA para potencializar sua carreira e suas aplicações.\nExclusivo do Zero to Full Stack Hero 2.0."
+      },
+      {
+        "imageKey": "icon-saas-guide",
+        "title": "GUIA COMPLETO DE SAAS",
+        "description": "Módulo abrangente cobrindo:\nde aplicações SaaS.\nExclusivo do Zero to Full Stack Hero 2.0.",
+        "bullets": [
+          "Construção",
+          "Lançamento",
+          "Marketing"
+        ]
+      }
+    ],
+    "groupLabels": {
+      "courses": "Cursos",
+      "bundles": "Seminários"
+    },
+    "courses": [
+      {
+        "imageKey": "capa-design-web-html-css",
+        "title": "DESIGN WEB COM HTML & CSS",
+        "description": "Aprenda a criar interfaces modernas desde o zero.\nMais de 20 horas de vídeo.",
+        "bullets": [
+          "HTML",
+          "CSS"
+        ]
+      },
+      {
+        "imageKey": "capa-programacao-com-javascript",
+        "title": "PROGRAMAÇÃO COM JAVASCRIPT",
+        "description": "Domine JavaScript de forma prática e profunda.\nMais de 20 horas de vídeo."
+      },
+      {
+        "imageKey": "capa-desenvolvimento-web-iniciante",
+        "title": "DESENVOLVIMENTO WEB COM JAVASCRIPT, HTML & CSS",
+        "description": "Nível Iniciante.\nO ponto de partida perfeito para quem quer entrar no desenvolvimento web.\nMais de 20 horas de vídeo.",
+        "bullets": [
+          "JavaScript",
+          "HTML",
+          "CSS"
+        ]
+      },
+      {
+        "imageKey": "capa-desenvolvimento-web-intermediario",
+        "title": "DESENVOLVIMENTO WEB — NÍVEL INTERMEDIÁRIO",
+        "description": "Leve suas habilidades de front-end para o próximo nível com JavaScript, HTML e CSS.\nMais de 20 horas de vídeo.",
+        "bullets": [
+          "JavaScript",
+          "HTML",
+          "CSS"
+        ]
+      },
+      {
+        "imageKey": "capa-desenvolvimento-frontend-reactjs",
+        "title": "DESENVOLVIMENTO FRONTEND COM REACT.JS",
+        "description": "Construa interfaces modernas com a biblioteca mais popular do mercado.\nMais de 20 horas de vídeo."
+      },
+      {
+        "imageKey": "capa-desenvolvimento-backend-nodejs",
+        "title": "DESENVOLVIMENTO BACKEND COM NODE.JS",
+        "description": "Aprenda a construir APIs e servidores robustos com Node.js.\nMais de 20 horas de vídeo."
+      },
+      {
+        "imageKey": "capa-desenvolvimento-backend-expressjs",
+        "title": "DESENVOLVIMENTO BACKEND COM EXPRESS.JS",
+        "description": "Crie servidores e APIs de forma rápida e eficiente com Express.js.\nMais de 20 horas de vídeo."
+      },
+      {
+        "imageKey": "capa-desenvolvimento-fullstack-mern",
+        "title": "DESENVOLVIMENTO FULLSTACK COM MERN",
+        "description": "Domine a stack completa do MongoDB ao Node.js.\nMais de 20 horas de vídeo.",
+        "bullets": [
+          "MongoDB",
+          "Express",
+          "React",
+          "Node.js"
+        ]
+      },
+      {
+        "imageKey": "capa-programacao-com-python",
+        "title": "PROGRAMAÇÃO COM PYTHON",
+        "description": "Aprenda uma das linguagens mais versáteis e demandadas do mercado.\nMais de 20 horas de vídeo."
       }
     ]
   },
@@ -1523,7 +1540,7 @@
     "instructor": {
       "heading": "👨‍🏫 Conheça seu Instrutor",
       "name": "Eu sou Ramon Rodrigues 💯",
-      "alias": "Programação com Ramon",
+      "alias": "Escola de Programação",
       "intro": "Serei seu mentor e treinador dentro da comunidade Escola de Programação.",
       "bio": [
         "Tenho mais de 15 anos de experiência em programação.",
@@ -1542,67 +1559,67 @@
       "subheading": "Resultados Reais para Pessoas Reais",
       "testimonials": [
         {
-          "name": "Frank Ramos",
+          "name": "Francisco Ramos",
           "role": "Graduado em Harvard e desenvolvedor sênior com mais de 15 anos de experiência.",
           "outcome": "Trabalhou em algumas das maiores empresas de tecnologia do mundo e recentemente conquistou um contrato de US$ 170.000 com a SONOS utilizando conhecimentos obtidos em projetos ensinados por Ramon."
         },
         {
-          "name": "Gabriel Graves",
+          "name": "Gabriel Oliveira",
           "role": "Membro Platinum da Escola de Programação",
           "outcome": "Conquistou uma vaga de Software Engineer na PayPal com salário superior a US$ 120.000 anuais e benefícios."
         },
         {
-          "name": "Veloshan Pillay",
+          "name": "Vítor Pereira",
           "quote": "Comprei diversos cursos ao longo dos anos, mas queria levar minhas habilidades para o próximo nível. Quando entrei neste curso, foi o melhor investimento que já fiz. O conhecimento que recebi é absolutamente inestimável.",
           "role": "Membro Diamond"
         },
         {
-          "name": "Luke Menton",
+          "name": "Lucas Mendonça",
           "role": "Membro Diamond",
           "outcome": "Conquistou uma posição de desenvolvedor com salário superior a £40.000 por ano."
         },
         {
-          "name": "Sylvestor Underhay",
+          "name": "Silvestre Fernandes",
           "quote": "Um curso comum é apenas conteúdo gravado. Aqui fui recebido por pessoas reais, adicionado a grupos, Discord e outros canais. Isso faz toda a diferença. É outro nível.",
           "role": "Membro Platinum"
         },
         {
-          "name": "Alex Eklund",
+          "name": "Alexandre Costa",
           "role": "Membro Diamond",
           "outcome": "Conquistou uma vaga remota como Front-End Developer na Tailândia com remuneração superior a US$ 30.000."
         },
         {
-          "name": "Jastej Singh",
+          "name": "Jonas Silva",
           "role": "Membro Platinum",
           "outcome": "Conquistou uma vaga de Senior React Developer no Canadá com remuneração superior a 50 mil dólares canadenses."
         },
         {
-          "name": "Ben Elferink",
+          "name": "Bruno Ferreira",
           "quote": "Acordo pela manhã, vejo um meme de programação, compartilho com a comunidade e nos divertimos juntos. Não é apenas estudar programação. Somos realmente uma comunidade.",
           "role": "Membro Platinum"
         },
         {
-          "name": "Robert Parsons",
+          "name": "Roberto Paranhos",
           "quote": "Ramon possui a experiência e a empatia necessárias para levar qualquer pessoa ao próximo nível. Tudo o que ele toca ganha valor.",
           "role": "Membro Diamond"
         },
         {
-          "name": "Srikar Kusumanchi",
+          "name": "Ricardo Campos",
           "role": "15 anos de idade — Membro Platinum",
           "outcome": "Conseguiu uma vaga de desenvolvimento web rendendo aproximadamente 500 dólares canadenses por mês."
         },
         {
-          "name": "Adam Curtis",
+          "name": "André Costa",
           "quote": "Aprender com Ramon foi incrível. Ele torna React extremamente acessível e fácil de entender.",
           "role": "Membro Platinum"
         },
         {
-          "name": "Francisco Raigoza",
+          "name": "Francisco Reis",
           "quote": "Este curso é ideal tanto para iniciantes quanto para profissionais experientes. Ramon é extremamente apaixonado pelo que faz e realmente quer ajudar seus alunos a crescer.",
           "role": "Membro Platinum"
         },
         {
-          "name": "Michael Barrett",
+          "name": "Miguel Barreto",
           "quote": "Faça parte da comunidade Escola de Programação, reconhecida pelos melhores profissionais do mercado.",
           "role": "Desenvolvedor da equipe Stripe Checkout"
         },
@@ -1616,7 +1633,7 @@
     "pricing": {
       "platinum": {
         "name": "Plano Platinum Vitalício",
-        "price": "£597",
+        "price": "R$2990",
         "includesHeading": "Inclui:",
         "features": [
           "Acesso vitalício ao curso completo",
@@ -1634,7 +1651,7 @@
       },
       "diamond": {
         "name": "Plano Diamond Vitalício",
-        "price": "£997",
+        "price": "R$3990",
         "tagline": "Tudo do Platinum, além de:",
         "features": [
           "4 mentorias exclusivas por mês com Ramon",
@@ -1649,7 +1666,7 @@
     },
     "faq": [
       {
-        "question": "O Zero to Full Stack Hero é adequado para iniciantes?",
+        "question": "Do Zero ao Herói Full Stack 2.0 é adequado para iniciantes?",
         "answer": [
           "Sim.",
           "O programa foi desenvolvido para atender tanto iniciantes absolutos quanto desenvolvedores experientes que desejam evoluir suas habilidades."
@@ -1659,7 +1676,7 @@
         "question": "Posso pagar parcelado?",
         "answer": [
           "Sim.",
-          "Existem opções de pagamento parcelado em 3 vezes para os planos Platinum e Diamond."
+          "Existem opções de pagamento parcelado em 12 vezes para os planos Platinum e Diamond."
         ]
       },
       {
@@ -1699,22 +1716,6 @@
           "Portfólio",
           "Processos seletivos",
           "Propostas de freelancing"
-        ]
-      },
-      {
-        "question": "Vocês aceitam criptomoedas?",
-        "answer": [
-          "Sim.",
-          "Aceitamos algumas das principais criptomoedas, incluindo:",
-          "Condições:",
-          "1. O pagamento deve ser integral.",
-          "2. Parcelamento não está disponível para pagamentos em criptomoedas.",
-          "3. Após organizar os fundos, entre em contato com a equipe para finalizar a compra."
-        ],
-        "bullets": [
-          "Bitcoin (BTC)",
-          "Ethereum (ETH)",
-          "XRP"
         ]
       }
     ],

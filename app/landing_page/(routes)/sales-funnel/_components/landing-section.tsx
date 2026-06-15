@@ -5,7 +5,9 @@ import { Button } from "@/components/ui/button";
 import { useLanguageStore } from "@/hooks/use-language-store";
 import { HeroVideo } from "./hero-video";
 import { MultiLineText } from "./multi-line-text";
-import { TierCard } from "./tier-card";
+import { CtaTiersSection } from "./cta-tiers-section";
+import { TechStackSection } from "./tech-stack-section";
+import Image from "next/image";
 
 type LandingSectionProps = {
     landing: ISalesFunnelLanding;
@@ -17,15 +19,25 @@ type ValuePropBlockProps = {
 
 function ValuePropBlock({ section }: ValuePropBlockProps) {
     return (
-        <article className="rounded-md border p-5 shadow-sm bg-white">
-            <h3 className="text-lg md:text-xl font-semibold mb-3">
+        <article className="flex flex-col h-full rounded-lg border bg-white p-6 md:p-8 shadow-md transition-shadow hover:shadow-lg">
+            <div className="flex justify-center mb-5">
+                <Image
+                    src={section.image}
+                    alt={section.heading}
+                    width={200}
+                    height={200}
+                    className="w-36 h-36 md:w-44 md:h-44 object-contain"
+                />
+            </div>
+
+            <h3 className="text-xl md:text-2xl font-semibold mb-3 text-center">
                 {section.heading}
             </h3>
 
             {section.body ? (
                 <MultiLineText
                     text={section.body}
-                    className="text-gray-700 text-sm md:text-base"
+                    className="text-gray-700 text-base md:text-lg"
                 />
             ) : null}
 
@@ -48,7 +60,7 @@ export function LandingSection({ landing }: LandingSectionProps) {
         <section id="landing" aria-labelledby="landing-heading">
             <div className="text-center md:text-left md:grid md:grid-cols-2 gap-8 md:gap-10 items-start mb-10 md:mb-14">
                 <div>
-                    <p className="text-sm md:text-base text-gray-600 mb-2">
+                    <p className="text-sm md:text-xl text-gray-600 mb-2">
                         {landing.presenter}
                     </p>
 
@@ -61,17 +73,17 @@ export function LandingSection({ landing }: LandingSectionProps) {
 
                     <MultiLineText
                         text={landing.tagline}
-                        className="text-gray-600 text-base md:text-lg mb-5"
+                        className="text-gray-600 text-base md:text-2xl mb-5"
                     />
 
-                    <ul className="text-left space-y-2 text-sm md:text-base mb-6">
+                    <ul className="text-left space-y-4 text-sm md:text-xl mb-6">
                         {landing.highlights.map((highlight) => (
                             <li key={highlight}>{highlight}</li>
                         ))}
                     </ul>
 
                     <Link href="/sign-up">
-                        <Button className="w-full sm:w-auto rounded-full px-8 py-6 text-lg bg-blue-600 hover:bg-blue-700">
+                        <Button className="w-full sm:w-auto rounded-full px-16 py-12 text-3xl bg-blue-600 hover:bg-blue-700">
                             {signUp}
                         </Button>
                     </Link>
@@ -80,34 +92,18 @@ export function LandingSection({ landing }: LandingSectionProps) {
                 <HeroVideo videoUrl={landing.heroYoutubeVideoURL} />
             </div>
 
-            <h2
-                id="tech-stack-heading"
-                className="text-xl md:text-2xl font-bold text-center mb-8"
-            >
-                {landing.techStackHeading}
-            </h2>
 
-            <div className="grid md:grid-cols-2 gap-5 md:gap-8 mb-12 md:mb-16">
-                <TierCard tier={landing.tiers.platinum} />
-                <TierCard tier={landing.tiers.diamond} highlighted />
-            </div>
+            <TechStackSection techStackHeading={landing.techStackHeading} />
+
+            <CtaTiersSection
+                ctaHeading={landing.ctaHeading}
+                tiers={landing.tiers}
+            />
 
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-5 mb-12 md:mb-16">
                 {valuePropSections.map((section) => (
                     <ValuePropBlock key={section.heading} section={section} />
                 ))}
-            </div>
-
-            <div className="text-center">
-                <h2 className="text-2xl md:text-3xl font-bold mb-5">
-                    {landing.ctaHeading}
-                </h2>
-
-                <Link href="/sign-up">
-                    <Button className="rounded-full px-10 py-6 text-lg bg-blue-600 hover:bg-blue-700">
-                        {signUp}
-                    </Button>
-                </Link>
             </div>
         </section>
     );

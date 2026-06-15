@@ -18,8 +18,9 @@ export default function SalesFunnelPage() {
         >
             <LandingSection landing={landing} />
             <CurriculumSection curriculum={curriculum} />
-            <MastermindSection mastermind={mastermind} />
-            <CommunitySection community={community} />
+            {/*<MastermindSection mastermind={mastermind} />*/}
+            {/*<CommunitySection community={community} />*/}        
+            
             <ClosingSection closing={closing} />
         </main>
     );

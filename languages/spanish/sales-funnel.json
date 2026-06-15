@@ -101,138 +101,6 @@
     "heading": "¿Qué hay dentro de Zero to Full Stack Hero 2.0?",
     "subtitle": "¡Descubre EXACTAMENTE lo que recibirás antes de comprar!",
     "updateNote": "Se lanza y actualiza contenido adicional semanalmente.",
-    "modules": [
-      {
-        "title": "REACT BASICS 101",
-        "description": "¡Es exactamente lo que estabais pidiendo!\nAprende los fundamentos de React de forma clara y práctica."
-      },
-      {
-        "title": "FUNDAMENTOS DEL DESARROLLO WEB",
-        "description": "Si empiezas desde el absoluto CERO, nosotros nos encargamos.\nCubriremos:",
-        "bullets": [
-          "HTML",
-          "CSS",
-          "JavaScript",
-          "Varios conceptos extra que impulsarán tu entrada en el mundo del desarrollo web"
-        ]
-      },
-      {
-        "title": "DOMINIO DE CSS",
-        "description": "Aprende:\nY MUCHO MÁS para crear interfaces modernas y profesionales.",
-        "bullets": [
-          "Flexbox",
-          "CSS Grid",
-          "Bootstrap",
-          "Material UI"
-        ]
-      },
-      {
-        "title": "DOMINIO DE JAVASCRIPT",
-        "description": "Domina el lenguaje que redefinió la web.\nDesde los conceptos fundamentales hasta los temas más avanzados, lo cubrimos todo."
-      },
-      {
-        "title": "SERVER SIDE RENDERING PARA PRINCIPIANTES",
-        "description": "SSR simplificado utilizando el más moderno Next.js 15."
-      },
-      {
-        "title": "GUÍA COMPLETA DE REACT",
-        "description": "Todo sobre React.\nIncluidas pruebas automatizadas."
-      },
-      {
-        "title": "TYPESCRIPT PARA PRINCIPIANTES",
-        "description": "Lenguajes como:\nson fuertemente tipados.\nAhora JavaScript también puede serlo.\nAprende TypeScript y reduce drásticamente los bugs en tus aplicaciones.",
-        "bullets": [
-          "Java",
-          "C#",
-          "Swift"
-        ]
-      },
-      {
-        "title": "GUÍA COMPLETA DE FIREBASE",
-        "description": "Piensa en el poder del Sol...\nSí, Firebase es tan potente.\nTe enseñamos cómo utilizarlo correctamente para obtener resultados reales."
-      },
-      {
-        "title": "REDUX SIMPLIFICADO",
-        "description": "Si hay una habilidad que NECESITAS para conseguir un puesto Frontend, es Redux."
-      },
-      {
-        "title": "REACT NATIVE 101",
-        "description": "¿Quieres crear aplicaciones para:\nTenemos todo lo que necesitas.",
-        "bullets": [
-          "iOS",
-          "Android"
-        ]
-      },
-      {
-        "title": "NODE.JS Y EXPRESS PARA PRINCIPIANTES",
-        "description": "La dupla perfecta para desarrollo Backend.\nEnseñamos todo desde lo básico hasta lo avanzado."
-      },
-      {
-        "title": "PAGOS 101",
-        "description": "Simplifica la implementación de pagos utilizando:\ny otras soluciones modernas.",
-        "bullets": [
-          "Stripe",
-          "PayPal"
-        ]
-      },
-      {
-        "title": "GUÍA DE GRAPHQL",
-        "description": "Dominar GraphQL te permitirá acceder a tus datos de forma mucho más eficiente.\nY probablemente también te ayude a aumentar tu salario."
-      },
-      {
-        "title": "GUÍA MERN",
-        "description": "La Stack número 1 por una razón.\nAprende:\nen profundidad.",
-        "bullets": [
-          "MongoDB",
-          "Express",
-          "React",
-          "Node.js"
-        ]
-      },
-      {
-        "title": "SERIE SOLIDITY",
-        "description": "Aprende Smart Contracts de forma inteligente."
-      },
-      {
-        "title": "DOMINIO DEL WEB 3.0",
-        "description": "Sumérgete en el futuro de internet.\nAprende:\ny mucho más.",
-        "bullets": [
-          "MetaMask",
-          "Criptomonedas",
-          "NFTs",
-          "Solidity",
-          "Web3"
-        ]
-      },
-      {
-        "title": "GESTIÓN DE PROYECTOS 101",
-        "description": "Domina las metodologías modernas de trabajo.\nAprende:\nEs hora de convertirte en un líder.",
-        "bullets": [
-          "Agile",
-          "Scrum",
-          "Gestión de equipos",
-          "Gestión de clientes",
-          "Gestión de proyectos de software"
-        ]
-      },
-      {
-        "title": "CONTENIDO BONUS",
-        "description": "Mi misión es entregar una cantidad DESPROPORCIONADA de valor.\nPor eso, puedes esperar cada vez más contenido en el futuro.\n¡2025 es el año de la Programación con Ramon!"
-      },
-      {
-        "title": "DOMINIO DE IA",
-        "description": "Ha llegado la hora de dominar el uso de Inteligencia Artificial y herramientas de IA para potenciar tu carrera y tus aplicaciones.\nExclusivo de Zero to Full Stack Hero 2.0."
-      },
-      {
-        "title": "GUÍA COMPLETA DE SAAS",
-        "description": "Módulo integral que cubre:\nde aplicaciones SaaS.\nExclusivo de Zero to Full Stack Hero 2.0.",
-        "bullets": [
-          "Construcción",
-          "Lanzamiento",
-          "Marketing"
-        ]
-      }
-    ],
     "previewHeading": "¿Quieres una vista previa de lo que hay dentro?",
     "previewIntro": "Echa un vistazo a algunos ejemplos del módulo React Basics 101 para saber exactamente qué esperar.",
     "lessonPreviews": [
@@ -255,6 +123,229 @@
       {
         "title": "Reglas de los Hooks",
         "lesson": "Lección 8"
+      }
+    ],
+    "bundles": [
+      {
+        "imageKey": "icon-react-basics",
+        "title": "REACT BASICS 101",
+        "description": "¡Es exactamente lo que estabais pidiendo!\nAprende los fundamentos de React de forma clara y práctica."
+      },
+      {
+        "imageKey": "icon-web-dev-essentials",
+        "title": "FUNDAMENTOS DEL DESARROLLO WEB",
+        "description": "Si empiezas desde el absoluto CERO, nosotros nos encargamos.\nCubriremos:",
+        "bullets": [
+          "HTML",
+          "CSS",
+          "JavaScript",
+          "Varios conceptos extra que impulsarán tu entrada en el mundo del desarrollo web"
+        ]
+      },
+      {
+        "imageKey": "icon-css-mastery",
+        "title": "DOMINIO DE CSS",
+        "description": "Aprende:\nY MUCHO MÁS para crear interfaces modernas y profesionales.",
+        "bullets": [
+          "Flexbox",
+          "CSS Grid",
+          "Bootstrap",
+          "Material UI"
+        ]
+      },
+      {
+        "imageKey": "icon-javascript-mastery",
+        "title": "DOMINIO DE JAVASCRIPT",
+        "description": "Domina el lenguaje que redefinió la web.\nDesde los conceptos fundamentales hasta los temas más avanzados, lo cubrimos todo."
+      },
+      {
+        "imageKey": "icon-server-side-nextjs",
+        "title": "SERVER SIDE RENDERING PARA PRINCIPIANTES",
+        "description": "SSR simplificado utilizando el más moderno Next.js 15."
+      },
+      {
+        "imageKey": "icon-the-complete-react-guide",
+        "title": "GUÍA COMPLETA DE REACT",
+        "description": "Todo sobre React.\nIncluidas pruebas automatizadas."
+      },
+      {
+        "imageKey": "icon-typescript-for-dummies",
+        "title": "TYPESCRIPT PARA PRINCIPIANTES",
+        "description": "Lenguajes como:\nson fuertemente tipados.\nAhora JavaScript también puede serlo.\nAprende TypeScript y reduce drásticamente los bugs en tus aplicaciones.",
+        "bullets": [
+          "Java",
+          "C#",
+          "Swift"
+        ]
+      },
+      {
+        "imageKey": "icon-firebase-guide",
+        "title": "GUÍA COMPLETA DE FIREBASE",
+        "description": "Piensa en el poder del Sol...\nSí, Firebase es tan potente.\nTe enseñamos cómo utilizarlo correctamente para obtener resultados reales."
+      },
+      {
+        "imageKey": "icon-redux-simplified",
+        "title": "REDUX SIMPLIFICADO",
+        "description": "Si hay una habilidad que NECESITAS para conseguir un puesto Frontend, es Redux."
+      },
+      {
+        "imageKey": "icon-react-native",
+        "title": "REACT NATIVE 101",
+        "description": "¿Quieres crear aplicaciones para:\nTenemos todo lo que necesitas.",
+        "bullets": [
+          "iOS",
+          "Android"
+        ]
+      },
+      {
+        "imageKey": "icon-node-express-for-dummies",
+        "title": "NODE.JS Y EXPRESS PARA PRINCIPIANTES",
+        "description": "La dupla perfecta para desarrollo Backend.\nEnseñamos todo desde lo básico hasta lo avanzado."
+      },
+      {
+        "imageKey": "icon-payments-101",
+        "title": "PAGOS 101",
+        "description": "Simplifica la implementación de pagos utilizando:\ny otras soluciones modernas.",
+        "bullets": [
+          "Stripe",
+          "PayPal"
+        ]
+      },
+      {
+        "imageKey": "icon-graphql-guide",
+        "title": "GUÍA DE GRAPHQL",
+        "description": "Dominar GraphQL te permitirá acceder a tus datos de forma mucho más eficiente.\nY probablemente también te ayude a aumentar tu salario."
+      },
+      {
+        "imageKey": "icon-mern-guide",
+        "title": "GUÍA MERN",
+        "description": "La Stack número 1 por una razón.\nAprende:\nen profundidad.",
+        "bullets": [
+          "MongoDB",
+          "Express",
+          "React",
+          "Node.js"
+        ]
+      },
+      {
+        "imageKey": "icon-solidity-series",
+        "title": "SERIE SOLIDITY",
+        "description": "Aprende Smart Contracts de forma inteligente."
+      },
+      {
+        "imageKey": "icon-web-3.0-mastery",
+        "title": "DOMINIO DEL WEB 3.0",
+        "description": "Sumérgete en el futuro de internet.\nAprende:\ny mucho más.",
+        "bullets": [
+          "MetaMask",
+          "Criptomonedas",
+          "NFTs",
+          "Solidity",
+          "Web3"
+        ]
+      },
+      {
+        "imageKey": "icon-project-management-101",
+        "title": "GESTIÓN DE PROYECTOS 101",
+        "description": "Domina las metodologías modernas de trabajo.\nAprende:\nEs hora de convertirte en un líder.",
+        "bullets": [
+          "Agile",
+          "Scrum",
+          "Gestión de equipos",
+          "Gestión de clientes",
+          "Gestión de proyectos de software"
+        ]
+      },
+      {
+        "imageKey": "icon-bonus-content",
+        "title": "CONTENIDO BONUS",
+        "description": "Mi misión es entregar una cantidad DESPROPORCIONADA de valor.\nPor eso, puedes esperar cada vez más contenido en el futuro.\n¡2025 es el año de la Programación con Ramon!"
+      },
+      {
+        "imageKey": "icon-ai-mastery",
+        "title": "DOMINIO DE IA",
+        "description": "Ha llegado la hora de dominar el uso de Inteligencia Artificial y herramientas de IA para potenciar tu carrera y tus aplicaciones.\nExclusivo de Zero to Full Stack Hero 2.0."
+      },
+      {
+        "imageKey": "icon-saas-guide",
+        "title": "GUÍA COMPLETA DE SAAS",
+        "description": "Módulo integral que cubre:\nde aplicaciones SaaS.\nExclusivo de Zero to Full Stack Hero 2.0.",
+        "bullets": [
+          "Construcción",
+          "Lanzamiento",
+          "Marketing"
+        ]
+      }
+    ],
+    "groupLabels": {
+      "courses": "Cursos",
+      "bundles": "Módulos del Bundle"
+    },
+    "courses": [
+      {
+        "imageKey": "capa-design-web-html-css",
+        "title": "DISEÑO WEB CON HTML & CSS",
+        "description": "Aprende a crear interfaces modernas desde cero.\nMás de 20 horas de video.",
+        "bullets": [
+          "HTML",
+          "CSS"
+        ]
+      },
+      {
+        "imageKey": "capa-desenvolvimento-web-iniciante",
+        "title": "DESARROLLO WEB CON JAVASCRIPT, HTML & CSS",
+        "description": "Nivel principiante.\nEl punto de partida perfecto para entrar al desarrollo web.\nMás de 20 horas de video.",
+        "bullets": [
+          "JavaScript",
+          "HTML",
+          "CSS"
+        ]
+      },
+      {
+        "imageKey": "capa-programacao-com-javascript",
+        "title": "PROGRAMACIÓN CON JAVASCRIPT",
+        "description": "Domina JavaScript de forma práctica y profunda.\nMás de 20 horas de video."
+      },
+      {
+        "imageKey": "capa-programacao-com-python",
+        "title": "PROGRAMACIÓN CON PYTHON",
+        "description": "Aprende uno de los lenguajes más versátiles y demandados del mercado.\nMás de 20 horas de video."
+      },
+      {
+        "imageKey": "capa-desenvolvimento-web-intermediario",
+        "title": "DESARROLLO WEB — NIVEL INTERMEDIO",
+        "description": "Lleva tus habilidades de front-end al siguiente nivel con JavaScript, HTML y CSS.\nMás de 20 horas de video.",
+        "bullets": [
+          "JavaScript",
+          "HTML",
+          "CSS"
+        ]
+      },
+      {
+        "imageKey": "capa-desenvolvimento-frontend-reactjs",
+        "title": "DESARROLLO FRONTEND CON REACT.JS",
+        "description": "Construye interfaces modernas con la biblioteca más popular del mercado.\nMás de 20 horas de video."
+      },
+      {
+        "imageKey": "capa-desenvolvimento-backend-nodejs",
+        "title": "DESARROLLO BACKEND CON NODE.JS",
+        "description": "Aprende a construir APIs y servidores robustos con Node.js.\nMás de 20 horas de video."
+      },
+      {
+        "imageKey": "capa-desenvolvimento-backend-expressjs",
+        "title": "DESARROLLO BACKEND CON EXPRESS.JS",
+        "description": "Crea servidores y APIs de forma rápida y eficiente con Express.js.\nMás de 20 horas de video."
+      },
+      {
+        "imageKey": "capa-desenvolvimento-fullstack-mern",
+        "title": "DESARROLLO FULLSTACK CON MERN",
+        "description": "Domina la stack completa desde MongoDB hasta Node.js.\nMás de 20 horas de video.",
+        "bullets": [
+          "MongoDB",
+          "Express",
+          "React",
+          "Node.js"
+        ]
       }
     ]
   },

@@ -3,6 +3,7 @@ import weverton from "@/public/testimonials/weverton.jpg";
 import jhonatan from "@/public/testimonials/jhonatan.jpg";
 import placeholder from "@/public/placeholder.webp";
 import salesFunnel from "./portuguese/sales-funnel.json";
+import { withSalesFunnelImages } from "./with-sales-funnel-images";
 
 export const portugueseLanguage: ILanguage = {
     id: "portuguese",
@@ -389,5 +390,5 @@ export const portugueseLanguage: ILanguage = {
             url: "politica-de-privacidade",
         },
     },
-    salesFunnel,
+    salesFunnel: withSalesFunnelImages(salesFunnel),
 };

@@ -3,6 +3,7 @@ import weverton from "@/public/testimonials/weverton.jpg";
 import jhonatan from "@/public/testimonials/jhonatan.jpg";
 import placeholder from "@/public/placeholder.webp";
 import salesFunnel from "./spanish/sales-funnel.json";
+import { withSalesFunnelImages } from "./with-sales-funnel-images";
 
 export const spanishLanguage: ILanguage = {
     id: "spanish",
@@ -388,5 +389,5 @@ export const spanishLanguage: ILanguage = {
             url: "",
         },
     },
-    salesFunnel,
+    salesFunnel: withSalesFunnelImages(salesFunnel),
 };
