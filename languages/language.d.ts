@@ -472,6 +472,7 @@ type ISalesFunnelLanding = {
     techStackHeading: string;
     ctaHeading: string;
     tiers: {
+        silver: ISalesFunnelTier;
         platinum: ISalesFunnelTier;
         diamond: ISalesFunnelTier;
     };
@@ -597,6 +598,7 @@ type ISalesFunnelClosing = {
     instructor: ISalesFunnelInstructor;
     results: ISalesFunnelResults;
     pricing: {
+        silver: ISalesFunnelPricingTier;
         platinum: ISalesFunnelPricingTier;
         diamond: ISalesFunnelPricingTier;
     };
