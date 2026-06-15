@@ -56,7 +56,8 @@ function PricingTierCard({ tier, highlighted = false }: PricingTierCardProps) {
 export function PricingSection({ pricing }: PricingSectionProps) {
     return (
         <div id="pricing" className="mb-12 md:mb-16 scroll-mt-8">
-            <div className="grid md:grid-cols-2 gap-5 md:gap-8">
+            <div className="grid md:grid-cols-3 gap-5 md:gap-8">
+                <PricingTierCard tier={pricing.silver} />
                 <PricingTierCard tier={pricing.platinum} />
                 <PricingTierCard tier={pricing.diamond} highlighted />
             </div>
