@@ -1637,49 +1637,6 @@
         }
       ]
     },
-    "pricing": {
-      "silver": {
-        "name": "Plano Prata Vitalício",
-        "price": "R$1990",
-        "includesHeading": "Inclui:",
-        "features": [
-          "Acesso vitalício à formação completa"
-        ]
-      },
-      "platinum": {
-        "name": "Plano Platina Vitalício",
-        "price": "R$2990",
-        "tagline": "Tudo do Silver, além de:",
-        "includesHeading": "Inclui:",
-        "features": [
-          "Acesso vitalício à formação completa",
-          "2 mentorias mensais com Ramon",
-          "Sessões semanais com Success Coaches",
-          "Preparação para entrevistas técnicas",
-          "Roadmap para se tornar um desenvolvedor sênior altamente remunerado",
-          "Módulo de IA",
-          "Módulo completo de SaaS",
-          "Mais de 60 projetos reais",
-          "Kit de currículo e portfólio",
-          "5 eBooks exclusivos",
-          "Acesso ao Discord Platinum"
-        ]
-      },
-      "diamond": {
-        "name": "Plano Diamante Vitalício",
-        "price": "R$3990",
-        "tagline": "Tudo do Platinum, além de:",
-        "features": [
-          "4 mentorias exclusivas por mês com Ramon",
-          "Mais de 170 horas de conteúdo adicional",
-          "Rede exclusiva de desenvolvedores avançados",
-          "Treinamento para empreendedorismo e freelancing",
-          "Comunidade Diamond exclusiva",
-          "100 desafios de programação com soluções",
-          "Discord Diamond"
-        ]
-      }
-    },
     "faq": [
       {
         "question": "Do Zero ao Herói Full Stack 2.0 é adequado para iniciantes?",

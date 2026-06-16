@@ -585,23 +585,10 @@ type ISalesFunnelResults = {
     testimonials: ISalesFunnelTestimonial[];
 };
 
-type ISalesFunnelPricingTier = {
-    name: string;
-    price: string;
-    tagline?: string;
-    includesHeading?: string;
-    features: string[];
-};
-
 type ISalesFunnelClosing = {
     ebooks: ISalesFunnelEbooks;
     instructor: ISalesFunnelInstructor;
     results: ISalesFunnelResults;
-    pricing: {
-        silver: ISalesFunnelPricingTier;
-        platinum: ISalesFunnelPricingTier;
-        diamond: ISalesFunnelPricingTier;
-    };
     faq: ISalesFunnelFaq[];
     finalCta: {
         heading: string;

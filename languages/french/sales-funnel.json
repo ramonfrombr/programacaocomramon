@@ -1712,49 +1712,6 @@
         }
       ]
     },
-    "pricing": {
-      "silver": {
-        "name": "Plan Silver à vie",
-        "price": "£397",
-        "includesHeading": "Comprend :",
-        "features": [
-          "Accès à vie au cours complet"
-        ]
-      },
-      "platinum": {
-        "name": "Plan Platinum à vie",
-        "price": "£597",
-        "tagline": "Tout du Silver, plus :",
-        "includesHeading": "Comprend :",
-        "features": [
-          "Accès à vie au cours complet",
-          "2 séances de mentorat mensuelles avec Ramon",
-          "Séances hebdomadaires avec Success Coaches",
-          "Préparation aux entretiens techniques",
-          "Feuille de route pour devenir un développeur senior hautement rémunéré",
-          "Module IA",
-          "Module complet SaaS",
-          "Plus de 60 projets réels",
-          "Kit CV et portfolio",
-          "5 eBooks exclusifs",
-          "Accès à Discord Platinum"
-        ]
-      },
-      "diamond": {
-        "name": "Plan Diamond à vie",
-        "price": "£997",
-        "tagline": "Tout du Platinum, plus :",
-        "features": [
-          "4 mentorats exclusifs par mois avec Ramon",
-          "Plus de 170 heures de contenu supplémentaire",
-          "Réseau exclusif de développeurs avancés",
-          "Formation à l'entrepreneuriat et au freelancing",
-          "Communauté exclusive Diamond",
-          "100 défis de programmation avec solutions",
-          "Discord Diamond"
-        ]
-      }
-    },
     "faq": [
       {
         "question": "Zero to Full Stack Hero est-il adapté aux débutants ?",

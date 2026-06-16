@@ -66,7 +66,7 @@ export function LandingSection({ landing }: LandingSectionProps) {
 
                     <h1
                         id="landing-heading"
-                        className="text-3xl md:text-4xl lg:text-5xl font-bold mb-3"
+                        className="text-2xl md:text-3xl lg:text-4xl font-bold mb-3"
                     >
                         {landing.headline}
                     </h1>
@@ -76,7 +76,7 @@ export function LandingSection({ landing }: LandingSectionProps) {
                         className="text-gray-600 text-base md:text-2xl mb-5"
                     />
 
-                    <ul className="text-left space-y-4 text-sm md:text-xl mb-6">
+                    <ul className="text-left space-y-2 text-sm md:text-lg mb-6">
                         {landing.highlights.map((highlight) => (
                             <li key={highlight}>{highlight}</li>
                         ))}

@@ -1712,49 +1712,6 @@
         }
       ]
     },
-    "pricing": {
-      "silver": {
-        "name": "Lifetime Silver Plan",
-        "price": "£397",
-        "includesHeading": "Includes:",
-        "features": [
-          "Lifetime access to the complete course"
-        ]
-      },
-      "platinum": {
-        "name": "Lifetime Platinum Plan",
-        "price": "£597",
-        "tagline": "Everything in Silver, plus:",
-        "includesHeading": "Includes:",
-        "features": [
-          "Lifetime access to the complete course",
-          "2 monthly mentoring sessions with Ramon",
-          "Weekly sessions with Success Coaches",
-          "Technical interview preparation",
-          "Roadmap to become a highly paid senior developer",
-          "AI Module",
-          "Complete SaaS module",
-          "60+ real projects",
-          "Resume and portfolio kit",
-          "5 exclusive eBooks",
-          "Platinum Discord access"
-        ]
-      },
-      "diamond": {
-        "name": "Lifetime Diamond Plan",
-        "price": "£997",
-        "tagline": "Everything in Platinum, plus:",
-        "features": [
-          "4 exclusive mentoring sessions per month with Ramon",
-          "170+ hours of additional content",
-          "Exclusive network of advanced developers",
-          "Entrepreneurship and freelancing training",
-          "Exclusive Diamond community",
-          "100 coding challenges with solutions",
-          "Diamond Discord"
-        ]
-      }
-    },
     "faq": [
       {
         "question": "Is Zero to Full Stack Hero suitable for beginners?",
