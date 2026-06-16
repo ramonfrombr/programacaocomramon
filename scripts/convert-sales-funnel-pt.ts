@@ -140,6 +140,7 @@ function parseLanding(content: string) {
     };
   }
 
+  const silverBlock = sections.find((s) => s.includes("MEMBRO SILVER")) ?? "";
   const platinumBlock = sections.find((s) => s.includes("MEMBRO PLATINUM")) ?? "";
   const diamondBlock = sections.find((s) => s.includes("MEMBRO DIAMOND")) ?? "";
 
@@ -175,6 +176,7 @@ function parseLanding(content: string) {
     techStackHeading,
     ctaHeading,
     tiers: {
+      silver: parseTier(silverBlock),
       platinum: parseTier(platinumBlock),
       diamond: parseTier(diamondBlock),
     },
@@ -532,7 +534,7 @@ function parseClosing(content: string) {
     const lines = block.split("\n").filter((l) => l.trim());
     const name = lines.find((l) => l.startsWith("## "))?.replace(/^##\s*/, "").trim() ?? "";
     const price = lines.find((l) => l.startsWith("### £") || l.startsWith("£"))?.replace(/^###\s*/, "").trim() ?? "";
-    const tagline = lines.find((l) => l.startsWith("Tudo do Platinum"))?.trim();
+    const tagline = lines.find((l) => l.startsWith("Tudo do"))?.trim();
     const includesHeading = lines.find((l) => l.startsWith("Inclui"))?.replace(/:$/, "").trim();
     const features = lines.filter((l) => isBullet(l)).map(stripBullet);
 
@@ -545,8 +547,15 @@ function parseClosing(content: string) {
     };
   }
 
-  const platinumPricingBlock = pricingContent.split("## Plano Diamond")[0] ?? "";
-  const diamondPricingBlock = "## Plano Diamond" + (pricingContent.split("## Plano Diamond")[1]?.split("# ❓")[0] ?? "");
+  const silverPricingBlock =
+    "## Plano Silver Vitalício" +
+    (pricingContent.split("## Plano Silver Vitalício")[1]?.split("## Plano Platinum Vitalício")[0] ?? "");
+  const platinumPricingBlock =
+    "## Plano Platinum Vitalício" +
+    (pricingContent.split("## Plano Platinum Vitalício")[1]?.split("## Plano Diamond Vitalício")[0] ?? "");
+  const diamondPricingBlock =
+    "## Plano Diamond Vitalício" +
+    (pricingContent.split("## Plano Diamond Vitalício")[1]?.split("# ❓")[0] ?? "");
 
   const faq: {
     question: string;
@@ -634,6 +643,7 @@ function parseClosing(content: string) {
       testimonials,
     },
     pricing: {
+      silver: parsePricingTier(silverPricingBlock),
       platinum: parsePricingTier(platinumPricingBlock),
       diamond: parsePricingTier(diamondPricingBlock),
     },
