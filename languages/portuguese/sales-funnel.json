@@ -8,7 +8,7 @@
       "⭐️ Certificado oficial da Universidade de Harvard reconhecido mundialmente",
       "✔ Nenhuma experiência em programação é necessária",
       "✔ Do aprendizado dos Fundamentos do Desenvolvimento Web ao domínio do Next.js!",
-      "✔ Ensinamos tecnologias empolgantes como Next.js 15, React.js, Firebase, TypeScript, Tailwind CSS e MUITO MAIS!",
+      "✔ Ensinamos tecnologias empolgantes como Next.js 16, React.js, Firebase, TypeScript, Tailwind CSS e MUITO MAIS!",
       "✔ Sessões semanais de mentoria ao vivo com Ramon oferecem conteúdo dinâmico, diferente de qualquer curso da Udemy!",
       "✔ Acesso a mais de 60 Projetos Reais e 100 Desafios de Programação para elevar ainda mais suas habilidades!",
       "✔ Acesso exclusivo às comunidades Escola de Programação e Discord",
@@ -17,30 +17,29 @@
       "✔ Módulo Completo de SaaS: tudo o que você precisa saber sobre criação, escalabilidade e marketing de aplicações SaaS de sucesso!"
     ],
     "techStackHeading": "Aprenda as tecnologias utilizadas pelas maiores empresas",
-    "ctaHeading": "O que você está esperando? Junte-se ao Zero to Full Stack Hero 2.0 hoje mesmo!",
+    "ctaHeading": "O que você está esperando? Junte-se ao Zero ao Herói Full Stack 2.0 hoje mesmo!",
     "tiers": {
       "silver": {
-        "name": "MEMBRO SILVER VITALÍCIO",
+        "name": "MEMBRO PRATA VITALÍCIO",
         "price": "R$1990",
         "features": [
-          "Acesso vitalício ao curso Zero to Full Stack Hero 2.0"
+          "Acesso vitalício a todos os cursos da formação Zero ao Herói Full Stack 2.0",
+          "Acesso aos nossos e-books exclusivos da plataforma (HTML, CSS, JavaScript, TypeScript, Next.js, React.js, etc.)"
         ]
       },
       "platinum": {
-        "name": "MEMBRO PLATINUM VITALÍCIO",
+        "name": "MEMBRO PLATINA VITALÍCIO",
         "price": "R$2990",
         "tagline": "🌟 Tudo incluído no Silver e muito mais...",
         "features": [
-          "Acesso vitalício ao curso Zero to Full Stack Hero 2.0",
+          "Acesso vitalício à formação Zero ao Herói Full Stack 2.0",
+          "Entenda o passo a passo para atingir seus objetivos e se tornar um desenvolvedor Full Stack de sucesso com os nossos guias",
+          "Aprenda ferramentas e tópicos diversos com nossos seminários",
+          "Aulas ao vivo no curso CS50x da Universidade de Harvard (com certificado)",
           "2 chamadas de mentoria ao vivo por mês com Ramon",
-          "Sessões semanais com os Success Coaches",
+          "Sessões semanais com os Coaches de Sucesso da Escola de Programação",
           "Aprenda a dominar entrevistas técnicas e conquistar o emprego dos seus sonhos",
-          "Roteiro guiado para se tornar um desenvolvedor sênior com salário de seis dígitos"
-        ],
-        "newFeaturesHeading": "NOVO no Zero to Full Stack Hero 2.0 👇",
-        "newFeatures": [
-          "Módulo de IA para dominar o uso de IA e ferramentas de IA na sua carreira",
-          "Módulo completo de SaaS cobrindo criação, lançamento e marketing de sua aplicação SaaS"
+          "Planejamento guiado para se tornar um desenvolvedor sênior com salário de seis dígitos"
         ],
         "exclusiveAccessHeading": "Acesso Especial",
         "exclusiveAccess": [
@@ -51,7 +50,7 @@
         ]
       },
       "diamond": {
-        "name": "MEMBRO DIAMOND VITALÍCIO",
+        "name": "MEMBRO DIAMANTE VITALÍCIO",
         "price": "R$3990",
         "tagline": "🌟 Tudo incluído no Platinum e muito mais...",
         "features": [
@@ -61,14 +60,14 @@
           "Kit do Empreendedor: aprenda sobre criação de negócios, freelancing, habilidades interpessoais e estratégias reais para gerar renda",
           "Acesso à comunidade exclusiva Diamond"
         ],
-        "newFeaturesHeading": "NOVO no Zero to Full Stack Hero 2.0 👇",
+        "newFeaturesHeading": "NOVO no Zero ao Herói Full Stack 2.0 👇",
         "newFeatures": [
           "Módulo de IA para dominar o uso de IA e ferramentas de IA na sua carreira",
           "Módulo completo de SaaS cobrindo criação, lançamento e marketing de sua aplicação SaaS"
         ],
         "exclusiveAccessHeading": "Acesso Exclusivo",
         "exclusiveAccess": [
-          "100 desafios de programação com soluções para dominar entrevistas técnicas (valor de £79)",
+          "100 desafios de programação com soluções para dominar entrevistas técnicas (valor de R$ 1490)",
           "Convite para o Discord Diamond"
         ]
       }
@@ -107,7 +106,7 @@
     }
   },
   "curriculum": {
-    "heading": "O que existe dentro do Zero to Full Stack Hero 2.0!?",
+    "heading": "O que existe dentro do Zero ao Herói Full Stack 2.0!?",
     "subtitle": "Saiba EXATAMENTE o que você receberá antes de comprar!",
     "updateNote": "Conteúdo adicional é lançado e atualizado semanalmente.",
     "previewHeading": "Quer uma prévia do que existe dentro?",
@@ -138,7 +137,7 @@
       {
         "imageKey": "icon-server-side-nextjs",
         "title": "SERVER SIDE RENDERING PARA INICIANTES",
-        "description": "SSR simplificado utilizando o mais moderno Next.js 15."
+        "description": "SSR simplificado utilizando o mais moderno Next.js 16."
       },
       {
         "imageKey": "icon-typescript-for-dummies",
@@ -198,12 +197,12 @@
       {
         "imageKey": "icon-ai-mastery",
         "title": "DOMÍNIO DE IA",
-        "description": "Chegou a hora de dominar o uso de Inteligência Artificial e ferramentas de IA para potencializar sua carreira e suas aplicações.\nExclusivo do Zero to Full Stack Hero 2.0."
+        "description": "Chegou a hora de dominar o uso de Inteligência Artificial e ferramentas de IA para potencializar sua carreira e suas aplicações.\nExclusivo do Zero ao Herói Full Stack 2.0."
       },
       {
         "imageKey": "icon-saas-guide",
         "title": "GUIA COMPLETO DE SAAS",
-        "description": "Módulo abrangente cobrindo:\nde aplicações SaaS.\nExclusivo do Zero to Full Stack Hero 2.0.",
+        "description": "Módulo abrangente cobrindo:\nde aplicações SaaS.\nExclusivo do Zero ao Herói Full Stack 2.0.",
         "bullets": [
           "Construção",
           "Lançamento",
@@ -291,7 +290,7 @@
     "stats": {
       "hours": "Mais de 120 horas de conteúdo em vídeo",
       "value": "avaliadas em mais de £4.500.",
-      "availability": "Disponível para TODOS os membros do Zero to Full Stack Hero.",
+      "availability": "Disponível para TODOS os membros do Zero ao Herói Full Stack.",
       "recordingNote": "Cada sessão é gravada e disponibilizada para a comunidade logo após sua conclusão."
     },
     "sessions": [
@@ -1640,20 +1639,20 @@
     },
     "pricing": {
       "silver": {
-        "name": "Plano Silver Vitalício",
+        "name": "Plano Prata Vitalício",
         "price": "R$1990",
         "includesHeading": "Inclui:",
         "features": [
-          "Acesso vitalício ao curso completo"
+          "Acesso vitalício à formação completa"
         ]
       },
       "platinum": {
-        "name": "Plano Platinum Vitalício",
+        "name": "Plano Platina Vitalício",
         "price": "R$2990",
         "tagline": "Tudo do Silver, além de:",
         "includesHeading": "Inclui:",
         "features": [
-          "Acesso vitalício ao curso completo",
+          "Acesso vitalício à formação completa",
           "2 mentorias mensais com Ramon",
           "Sessões semanais com Success Coaches",
           "Preparação para entrevistas técnicas",
@@ -1667,7 +1666,7 @@
         ]
       },
       "diamond": {
-        "name": "Plano Diamond Vitalício",
+        "name": "Plano Diamante Vitalício",
         "price": "R$3990",
         "tagline": "Tudo do Platinum, além de:",
         "features": [
@@ -1737,7 +1736,7 @@
       }
     ],
     "finalCta": {
-      "heading": "🚀 O que você está esperando? Junte-se ao Zero to Full Stack Hero 2.0 hoje mesmo!"
+      "heading": "🚀 O que você está esperando? Junte-se ao Zero ao Herói Full Stack 2.0 hoje mesmo!"
     }
   }
 }

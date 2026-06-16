@@ -21,14 +21,14 @@ export function TierCard({ tier, highlighted = false }: TierCardProps) {
         >
             <h3 className="font-semibold text-lg md:text-xl mb-2">{tier.name}</h3>
 
+            <div className="text-2xl md:text-3xl font-bold mb-4">{tier.price}</div>
+
             {tier.tagline ? (
                 <MultiLineText
                     text={tier.tagline}
                     className="text-lg text-gray-600 mb-3"
                 />
             ) : null}
-
-            <div className="text-2xl md:text-3xl font-bold mb-4">{tier.price}</div>
 
             <ul className="text-left list-disc pl-5 mb-5 text-lg space-y-1 flex-1">
                 {tier.features.map((feature) => (
