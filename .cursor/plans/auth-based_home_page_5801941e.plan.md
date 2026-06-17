@@ -7,7 +7,7 @@ todos:
     status: completed
   - id: conditional-home
     content: Update app/(root)/page.tsx with auth branch + generateMetadata
-    status: pending
+    status: completed
   - id: layout-switch
     content: Add MarketingLayout + RootLayoutSwitch; wire into (root)/layout.tsx
     status: pending
