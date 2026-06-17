@@ -1,27 +1,3 @@
-"use client";
+import { SalesFunnelPage } from "./_components/sales-funnel-page";
 
-import { useLanguageStore } from "@/hooks/use-language-store";
-import { LandingSection } from "./_components/landing-section";
-import { CurriculumSection } from "./_components/curriculum-section";
-import { MastermindSection } from "./_components/mastermind-section";
-import { CommunitySection } from "./_components/community-section";
-import { ClosingSection } from "./_components/closing-section";
-
-export default function SalesFunnelPage() {
-    const { landing, curriculum, mastermind, community, closing } =
-        useLanguageStore().salesFunnel;
-
-    return (
-        <main
-            id="main-content"
-            className="px-5 md:px-10 lg:px-20 py-4 pb-16 space-y-16 md:space-y-24"
-        >
-            <LandingSection landing={landing} />
-            <CurriculumSection curriculum={curriculum} />
-            {/*<MastermindSection mastermind={mastermind} />*/}
-            {/*<CommunitySection community={community} />*/}        
-            
-            <ClosingSection closing={closing} />
-        </main>
-    );
-}
+export default SalesFunnelPage;

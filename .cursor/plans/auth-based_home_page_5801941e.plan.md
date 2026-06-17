@@ -4,7 +4,7 @@ overview: Show the sales funnel at `/` for unauthenticated users and the existin
 todos:
   - id: extract-components
     content: Extract SearchPage and SalesFunnelPage into reusable components
-    status: pending
+    status: completed
   - id: conditional-home
     content: Update app/(root)/page.tsx with auth branch + generateMetadata
     status: pending
