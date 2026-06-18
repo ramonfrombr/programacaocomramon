@@ -16,7 +16,7 @@ todos:
     status: completed
   - id: update-e2e
     content: Update guest e2e expectations (sales funnel on `/`, redirect from `/courses/...`); optionally add authenticated draft-not-listed coverage
-    status: pending
+    status: completed
   - id: gate-root-routes
     content: Redirect unauthenticated users from other (root) routes (e.g. `/courses/[courseSlug]`) back to `/`
     status: pending

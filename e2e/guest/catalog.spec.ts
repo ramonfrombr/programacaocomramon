@@ -1,22 +1,22 @@
 import { expect, test } from "@playwright/test";
 import {
-  E2E_DRAFT_COURSE,
+  courseCatalogPath,
   E2E_PUBLISHED_COURSE,
 } from "../constants";
 
 test.describe("guest catalog", () => {
-  test("home page shows the published E2E course", async ({ page }) => {
+  test("home page shows the sales funnel", async ({ page }) => {
     await page.goto("/");
 
-    await expect(
-      page.getByRole("link", { name: E2E_PUBLISHED_COURSE.title })
-    ).toBeVisible();
+    await expect(page.locator("#main-content")).toBeVisible();
+    await expect(page.locator("#landing-heading")).toBeVisible();
   });
 
-  test("unpublished course is not listed on the catalog", async ({ page }) => {
-    await page.goto("/");
+  test("course catalog page redirects guests to home", async ({ page }) => {
+    await page.goto(courseCatalogPath(E2E_PUBLISHED_COURSE.slug));
 
-    await expect(page.getByText(E2E_DRAFT_COURSE.title)).toHaveCount(0);
+    await expect(page).toHaveURL("/");
+    await expect(page.locator("#main-content")).toBeVisible();
   });
 
   test("dashboard redirects unauthenticated users away", async ({ page }) => {
