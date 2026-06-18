@@ -10,7 +10,7 @@ todos:
     status: completed
   - id: layout-switch
     content: Add MarketingLayout + RootLayoutSwitch; wire into (root)/layout.tsx
-    status: pending
+    status: completed
   - id: remove-old-route
     content: Delete sales-funnel/page.tsx and layout.tsx (404 old URL)
     status: pending
