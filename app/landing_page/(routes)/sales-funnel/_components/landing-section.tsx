@@ -66,7 +66,7 @@ export function LandingSection({ landing }: LandingSectionProps) {
 
                     <h1
                         id="landing-heading"
-                        className="text-2xl md:text-3xl lg:text-4xl font-bold mb-3"
+                        className="text-2xl md:text-3xl lg:text-5xl font-bold mb-3"
                     >
                         {landing.headline}
                     </h1>
@@ -83,7 +83,7 @@ export function LandingSection({ landing }: LandingSectionProps) {
                     </ul>
 
                     <Link href="/sign-up">
-                        <Button className="w-full sm:w-auto rounded-full px-16 py-12 text-3xl bg-blue-600 hover:bg-blue-700">
+                        <Button className="w-full sm:w-auto rounded-full px-10 py-8 sm:px-16 sm:py-12 text-2xl sm:text-3xl bg-blue-600 hover:bg-blue-700 mb-5">
                             {signUp}
                         </Button>
                     </Link>

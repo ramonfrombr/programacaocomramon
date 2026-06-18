@@ -17,6 +17,10 @@ const CourseSlugPage = async ({
 }) => {
     const { userId } = auth();
 
+    if (!userId) {
+        return redirect("/");
+    }
+
     const course = await db.course.findFirst({
         where: {
             slug: params.courseSlug,
@@ -34,11 +38,11 @@ const CourseSlugPage = async ({
         },
     });
 
-    const progress = userId ? await getProgress(userId!, course?.id!) : 0;
-
     if (!course) {
         return redirect("/");
     }
+
+    const progress = await getProgress(userId, course.id);
 
     return (
         <div className="p-7 flex flex-col lg:flex-row gap-7">

@@ -3,7 +3,7 @@
     "presenter": "Escola de Programação apresenta...",
     "headline": "Do Zero ao Herói Full Stack 2.0 🔥",
     "tagline": "Não é apenas mais um CURSO.\nÉ a MELHOR COMUNIDADE DE DESENVOLVEDORES do mundo.",
-    "heroYoutubeVideoURL": "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
+    "heroYoutubeVideoURL": "https://www.youtube.com/watch?v=zhs-WeH1qXc",
     "highlights": [
       "⭐️ Certificado oficial da Universidade de Harvard reconhecido mundialmente",
       "✔ Nenhuma experiência em programação é necessária",
@@ -289,7 +289,7 @@
     ],
     "stats": {
       "hours": "Mais de 120 horas de conteúdo em vídeo",
-      "value": "avaliadas em mais de £4.500.",
+      "value": "avaliadas em mais de R$4.500.",
       "availability": "Disponível para TODOS os membros do Zero ao Herói Full Stack.",
       "recordingNote": "Cada sessão é gravada e disponibilizada para a comunidade logo após sua conclusão."
     },
@@ -1451,7 +1451,7 @@
           "number": 25,
           "duration": "2 horas e 10 minutos",
           "topics": [
-            "Como alcançar salários acima de £100k",
+            "Como alcançar salários acima de R$100k",
             "Redis",
             "Upstash",
             "Estratégias de carreira"
@@ -1583,7 +1583,7 @@
         {
           "name": "Lucas Mendonça",
           "role": "Membro Diamond",
-          "outcome": "Conquistou uma posição de desenvolvedor com salário superior a £40.000 por ano."
+          "outcome": "Conquistou uma posição de desenvolvedor com salário superior a R$40.000 por ano."
         },
         {
           "name": "Silvestre Fernandes",

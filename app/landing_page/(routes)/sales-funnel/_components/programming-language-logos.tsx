@@ -61,7 +61,7 @@ export function ProgrammingLanguageLogos() {
                         title={language.name}
                         width={320}
                         height={128}
-                        className="h-28 md:h-32 w-auto object-contain"
+                        className="h-12 md:h-20 w-auto object-contain"
                     />
                     <span
                         role="tooltip"

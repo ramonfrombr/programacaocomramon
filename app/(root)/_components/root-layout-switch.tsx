@@ -1,22 +1,17 @@
 "use client";
 
 import { usePathname } from "next/navigation";
+import { DashboardLayout } from "@/app/(root)/_components/dashboard-layout";
+import { MarketingLayout } from "@/app/landing_page/_components/marketing-layout";
 
 type RootLayoutSwitchProps = {
     children: React.ReactNode;
     userLoggedIn: boolean;
-    marketingLayout: React.ComponentType<{ children: React.ReactNode }>;
-    dashboardLayout: React.ComponentType<{
-        children: React.ReactNode;
-        userLoggedIn: boolean;
-    }>;
 };
 
 export const RootLayoutSwitch = ({
     children,
     userLoggedIn,
-    marketingLayout: MarketingLayout,
-    dashboardLayout: DashboardLayout,
 }: RootLayoutSwitchProps) => {
     const pathname = usePathname();
     const showMarketing = !userLoggedIn && pathname === "/";

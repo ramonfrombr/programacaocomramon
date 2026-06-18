@@ -19,7 +19,7 @@ todos:
     status: completed
   - id: gate-root-routes
     content: Redirect unauthenticated users from other (root) routes (e.g. `/courses/[courseSlug]`) back to `/`
-    status: pending
+    status: completed
 isProject: false
 ---
 

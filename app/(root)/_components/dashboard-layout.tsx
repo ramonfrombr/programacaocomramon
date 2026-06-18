@@ -1,3 +1,5 @@
+"use client";
+
 import { Sidebar } from "@/app/(root)/_components/sidebar";
 import { Navbar } from "@/app/(root)/_components/Navbar";
 import { Footer } from "@/components/footer";

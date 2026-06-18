@@ -1,3 +1,5 @@
+"use client";
+
 import { Navbar } from "@/app/landing_page/_components/navbar";
 import { Footer } from "@/components/footer";
 import { Nunito_Sans } from "next/font/google";
