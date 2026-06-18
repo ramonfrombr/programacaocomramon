@@ -13,7 +13,7 @@ todos:
     status: completed
   - id: remove-old-route
     content: Delete sales-funnel/page.tsx and layout.tsx (404 old URL)
-    status: pending
+    status: completed
   - id: update-e2e
     content: Update guest e2e expectations (sales funnel on `/`, redirect from `/courses/...`); optionally add authenticated draft-not-listed coverage
     status: pending
