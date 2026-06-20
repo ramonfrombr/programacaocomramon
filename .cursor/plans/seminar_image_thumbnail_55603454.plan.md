@@ -13,7 +13,7 @@ todos:
     status: completed
   - id: catalog-ui
     content: Add thumbnail to SeminarCard and pass imageUrl from SeminarsList
-    status: pending
+    status: completed
   - id: i18n
     content: Add seminarImageField to language.d.ts and all 4 language files
     status: pending

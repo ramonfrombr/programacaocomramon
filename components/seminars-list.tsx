@@ -20,6 +20,7 @@ export const SeminarsList = ({ items }: SeminarsListProps) => {
             id={item.id}
             title={item.title}
             description={item.description}
+            imageUrl={item.imageUrl}
           />
         ))}
       </div>
