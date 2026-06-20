@@ -1,7 +1,7 @@
 /**
  * Deterministic E2E fixture identifiers.
  *
- * Fixed MongoDB ObjectIds and slugs let tests reference courses/chapters without
+ * Fixed MongoDB ObjectIds and slugs let tests reference courses/chapters/seminars without
  * scraping the DOM. Keep IDs stable across seed runs so Playwright specs stay
  * in sync with scripts/e2e-seed.ts.
  */
@@ -76,10 +76,38 @@ export const E2E_COURSE_SLUGS = {
   draft: E2E_DRAFT_COURSE.slug,
 } as const;
 
+export const E2E_SEMINAR_IDS = {
+  published: "e2e000000000000000000030",
+  draft: "e2e000000000000000000031",
+} as const;
+
+export const E2E_PUBLISHED_SEMINAR = {
+  id: E2E_SEMINAR_IDS.published,
+  title: "E2E Published Seminar",
+  description: "Published seminar fixture for Playwright E2E tests.",
+  imageUrl: E2E_FIXTURE_IMAGE_URL,
+} as const;
+
+export const E2E_DRAFT_SEMINAR = {
+  id: E2E_SEMINAR_IDS.draft,
+  title: "E2E Draft Seminar",
+  description:
+    "Unpublished seminar fixture with image — must not appear on the catalog.",
+  imageUrl: E2E_FIXTURE_IMAGE_URL,
+} as const;
+
 export function courseCatalogPath(slug: string): string {
   return `/courses/${slug}`;
 }
 
 export function watchChapterPath(courseId: string, chapterId: string): string {
   return `/watch-course/${courseId}/chapters/${chapterId}`;
+}
+
+export function watchSeminarPath(seminarId: string): string {
+  return `/watch-seminar/${seminarId}`;
+}
+
+export function teacherSeminarSetupPath(seminarId: string): string {
+  return `/teacher/seminars/${seminarId}`;
 }

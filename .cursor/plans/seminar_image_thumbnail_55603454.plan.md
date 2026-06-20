@@ -16,13 +16,13 @@ todos:
     status: completed
   - id: i18n
     content: Add seminarImageField to language.d.ts and all 4 language files
-    status: pending
+    status: completed
   - id: e2e-seed
     content: Add seminar fixtures with imageUrl to e2e/constants.ts and scripts/e2e-seed.ts
-    status: pending
+    status: completed
   - id: verify
     content: Run build/typecheck and manual teacher + catalog smoke test
-    status: pending
+    status: completed
 isProject: false
 ---
 

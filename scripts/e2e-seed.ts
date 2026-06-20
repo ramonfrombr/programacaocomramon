@@ -2,6 +2,7 @@ import { PrismaClient } from "@prisma/client";
 import {
   E2E_CATEGORIES,
   E2E_DRAFT_COURSE,
+  E2E_DRAFT_SEMINAR,
   E2E_PUBLISHED_CHAPTERS,
   E2E_PUBLISHED_COURSE,
 } from "../e2e/constants";
@@ -108,6 +109,27 @@ async function seedDraftCourse(teacherId: string) {
   });
 }
 
+async function seedSeminar(teacherId: string) {
+  await database.seminar.upsert({
+    where: { id: E2E_DRAFT_SEMINAR.id },
+    create: {
+      id: E2E_DRAFT_SEMINAR.id,
+      userId: teacherId,
+      title: E2E_DRAFT_SEMINAR.title,
+      description: E2E_DRAFT_SEMINAR.description,
+      imageUrl: E2E_DRAFT_SEMINAR.imageUrl,
+      isPublished: false,
+    },
+    update: {
+      userId: teacherId,
+      title: E2E_DRAFT_SEMINAR.title,
+      description: E2E_DRAFT_SEMINAR.description,
+      imageUrl: E2E_DRAFT_SEMINAR.imageUrl,
+      isPublished: false,
+    },
+  });
+}
+
 async function main() {
   const teacherId = process.env.NEXT_PUBLIC_TEACHER_ID;
 
@@ -124,12 +146,14 @@ async function main() {
   await seedCategories();
   await seedPublishedCourse(teacherId);
   await seedDraftCourse(teacherId);
+  await seedSeminar(teacherId);
 
   console.log("E2E seed complete:", {
     categories: E2E_CATEGORIES.length,
     publishedCourse: E2E_PUBLISHED_COURSE.slug,
     draftCourse: E2E_DRAFT_COURSE.slug,
     chapters: E2E_PUBLISHED_CHAPTERS.length,
+    draftSeminar: E2E_DRAFT_SEMINAR.title,
   });
 }
 
