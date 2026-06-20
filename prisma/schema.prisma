@@ -115,6 +115,7 @@ model Seminar {
   userId      String
   title       String
   description String?  @db.String
+  imageUrl    String?
   videoUrl    String?  @db.String
   isPublished Boolean  @default(false)
   muxData     MuxData?
