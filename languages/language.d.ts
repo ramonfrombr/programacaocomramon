@@ -19,6 +19,7 @@ type ILanguage = {
     videoPlayer: ILanguageVideoPlayer;
     course: ILanguageCourse;
     footer: ILanguageFooter;
+    salesFunnel: ISalesFunnel;
 };
 
 type IHomepage = {
@@ -360,5 +361,236 @@ type ILanguageFooter = {
     privacyPolicy: {
         title: string;
         url: string;
+    };
+};
+
+type ISalesFunnel = {
+    landing: ISalesFunnelLanding;
+    curriculum: ISalesFunnelCurriculum;
+    mastermind: ISalesFunnelMastermind;
+    community: ISalesFunnelCommunity;
+    closing: ISalesFunnelClosing;
+};
+
+type ISalesFunnelTier = {
+    name: string;
+    price: string;
+    tagline?: string;
+    features: string[];
+    newFeaturesHeading?: string;
+    newFeatures?: string[];
+    exclusiveAccessHeading?: string;
+    exclusiveAccess?: string[];
+};
+
+type ISalesFunnelSession = {
+    number: number;
+    duration: string;
+    topics: string[];
+};
+
+type ISalesFunnelCourseImageKey =
+    | "capa-design-web-html-css"
+    | "capa-desenvolvimento-web-iniciante"
+    | "capa-programacao-com-javascript"
+    | "capa-programacao-com-python"
+    | "capa-desenvolvimento-web-intermediario"
+    | "capa-desenvolvimento-frontend-reactjs"
+    | "capa-desenvolvimento-backend-nodejs"
+    | "capa-desenvolvimento-backend-expressjs"
+    | "capa-desenvolvimento-fullstack-mern";
+
+type ISalesFunnelBundleImageKey =
+    | "icon-react-basics"
+    | "icon-web-dev-essentials"
+    | "icon-css-mastery"
+    | "icon-javascript-mastery"
+    | "icon-server-side-nextjs"
+    | "icon-the-complete-react-guide"
+    | "icon-typescript-for-dummies"
+    | "icon-firebase-guide"
+    | "icon-redux-simplified"
+    | "icon-react-native"
+    | "icon-node-express-for-dummies"
+    | "icon-payments-101"
+    | "icon-graphql-guide"
+    | "icon-mern-guide"
+    | "icon-solidity-series"
+    | "icon-web-3.0-mastery"
+    | "icon-project-management-101"
+    | "icon-bonus-content"
+    | "icon-ai-mastery"
+    | "icon-saas-guide";
+
+type ISalesFunnelModule = {
+    image: StaticImageData;
+    title: string;
+    description?: string;
+    bullets?: string[];
+};
+
+type ISalesFunnelCourseModule = ISalesFunnelModule & {
+    imageKey: ISalesFunnelCourseImageKey;
+};
+
+type ISalesFunnelBundleModule = ISalesFunnelModule & {
+    imageKey: ISalesFunnelBundleImageKey;
+};
+
+type ISalesFunnelTestimonial = {
+    name: string;
+    role?: string;
+    quote?: string;
+    outcome?: string;
+};
+
+type ISalesFunnelFaqSubsection = {
+    title: string;
+    body: string;
+};
+
+type ISalesFunnelFaq = {
+    question: string;
+    answer: string | string[];
+    bullets?: string[];
+    subsections?: ISalesFunnelFaqSubsection[];
+};
+
+type ISalesFunnelLandingSection = {
+    image: StaticImageData;
+    heading: string;
+    body?: string;
+    bullets?: string[];
+};
+
+type ISalesFunnelLanding = {
+    presenter: string;
+    headline: string;
+    tagline: string;
+    heroYoutubeVideoURL: string;
+    highlights: string[];
+    techStackHeading: string;
+    ctaHeading: string;
+    tiers: {
+        silver: ISalesFunnelTier;
+        gold: ISalesFunnelTier;
+        diamond: ISalesFunnelTier;
+    };
+    sections: {
+        training: ISalesFunnelLandingSection;
+        mentoring: ISalesFunnelLandingSection;
+        community: ISalesFunnelLandingSection;
+        coaches: ISalesFunnelLandingSection;
+        discord: ISalesFunnelLandingSection;
+        income: ISalesFunnelLandingSection;
+    };
+};
+
+type ISalesFunnelLessonPreview = {
+    title: string;
+    lesson: string;
+};
+
+type ISalesFunnelCurriculumGroup = "courses" | "bundles";
+
+type ISalesFunnelCurriculumGroupLabels = {
+    courses: string;
+    bundles: string;
+};
+
+type ISalesFunnelCurriculum = {
+    heading: string;
+    subtitle: string;
+    updateNote: string;
+    groupLabels: ISalesFunnelCurriculumGroupLabels;
+    courses: ISalesFunnelCourseModule[];
+    bundles: ISalesFunnelBundleModule[];
+    previewHeading: string;
+    previewIntro: string;
+    lessonPreviews: ISalesFunnelLessonPreview[];
+};
+
+type ISalesFunnelMastermindStats = {
+    hours: string;
+    value: string;
+    availability: string;
+    recordingNote: string;
+};
+
+type ISalesFunnelSuccessCoaches = {
+    heading: string;
+    schedule: string;
+    intro?: string;
+    topics: string[];
+    footer?: string;
+};
+
+type ISalesFunnelMastermind = {
+    heading: string;
+    description: string[];
+    stats: ISalesFunnelMastermindStats;
+    sessions: ISalesFunnelSession[];
+    expansionCallout?: {
+        heading: string;
+        body: string;
+        cta: string;
+    };
+    successCoaches: ISalesFunnelSuccessCoaches;
+};
+
+type ISalesFunnelCommunityItem = {
+    title: string;
+    bullets: string[];
+    duration: string;
+};
+
+type ISalesFunnelStudentArea = {
+    heading: string;
+    description: string[];
+    itemsHeading: string;
+    items: ISalesFunnelCommunityItem[];
+    footer: string;
+};
+
+type ISalesFunnelDiamondMentoring = {
+    heading: string;
+    description: string[];
+    sessions: ISalesFunnelSession[];
+    footer: string;
+};
+
+type ISalesFunnelCommunity = {
+    studentArea: ISalesFunnelStudentArea;
+    diamondMentoring: ISalesFunnelDiamondMentoring;
+};
+
+type ISalesFunnelEbooks = {
+    heading: string;
+    intro: string[];
+    includesHeading: string;
+    items: string[];
+};
+
+type ISalesFunnelInstructor = {
+    heading: string;
+    name: string;
+    alias: string;
+    intro: string;
+    bio: string[];
+};
+
+type ISalesFunnelResults = {
+    heading: string;
+    subheading: string;
+    testimonials: ISalesFunnelTestimonial[];
+};
+
+type ISalesFunnelClosing = {
+    ebooks: ISalesFunnelEbooks;
+    instructor: ISalesFunnelInstructor;
+    results: ISalesFunnelResults;
+    faq: ISalesFunnelFaq[];
+    finalCta: {
+        heading: string;
     };
 };

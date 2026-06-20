@@ -2,6 +2,8 @@ import fernando from "@/public/testimonials/fernando.jpg";
 import weverton from "@/public/testimonials/weverton.jpg";
 import jhonatan from "@/public/testimonials/jhonatan.jpg";
 import placeholder from "@/public/placeholder.webp";
+import salesFunnel from "./french/sales-funnel.json";
+import { withSalesFunnelImages } from "./with-sales-funnel-images";
 
 export const frenchLanguage: ILanguage = {
     id: "french",
@@ -385,4 +387,5 @@ export const frenchLanguage: ILanguage = {
             url: "",
         },
     },
+    salesFunnel: withSalesFunnelImages(salesFunnel),
 };

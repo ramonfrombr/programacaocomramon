@@ -1,3 +1,5 @@
+"use client";
+
 import { Logo } from "@/app/(root)/_components/Logo";
 import { SidebarRoutes } from "@/app/(root)/_components/sidebar-routes";
 

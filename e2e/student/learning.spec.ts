@@ -2,6 +2,7 @@ import { expect, test } from "@playwright/test";
 import {
   courseCatalogPath,
   E2E_CHAPTER_IDS,
+  E2E_DRAFT_COURSE,
   E2E_PUBLISHED_CHAPTERS,
   E2E_PUBLISHED_COURSE,
   watchChapterPath,
@@ -16,6 +17,15 @@ test.describe("student learning", () => {
     await expect(page).toHaveURL(/\/dashboard/);
     await expect(page.getByText("In Progress")).toBeVisible();
     await expect(page.getByText(E2E_PUBLISHED_COURSE.title)).toBeVisible();
+  });
+
+  test("unpublished course is not listed on the catalog", async ({ page }) => {
+    await page.goto("/");
+
+    await expect(
+      page.getByRole("link", { name: E2E_PUBLISHED_COURSE.title })
+    ).toBeVisible();
+    await expect(page.getByText(E2E_DRAFT_COURSE.title)).toHaveCount(0);
   });
 
   test("course page shows a progress bar", async ({ page }) => {

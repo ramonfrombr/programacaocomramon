@@ -1,42 +1,41 @@
-import { db } from "@/lib/db";
+import type { Metadata } from "next";
 import { auth } from "@clerk/nextjs/server";
-import { getCourses } from "@/actions/get-courses";
-import { SearchInput } from "@/components/search-input";
-import { CoursesList } from "@/components/courses-list";
-import { Categories } from "@/app/(root)/_components/categories";
+import { SearchPage } from "@/app/(root)/_components/search-page";
+import { SalesFunnelPage } from "@/app/landing_page/(routes)/sales-funnel/_components/sales-funnel-page";
+import { language } from "@/lib/serverSideLanguage";
 
-interface SearchPageProps {
+interface PageProps {
     searchParams: {
         title: string;
         categoryId: string;
     };
 }
 
-const SearchPage = async ({ searchParams }: SearchPageProps) => {
+export async function generateMetadata(): Promise<Metadata> {
     const { userId } = auth();
 
-    const categories = await db.category.findMany({
-        orderBy: {
-            name: "asc",
-        },
-    });
+    if (!userId) {
+        const { landing } = language.salesFunnel;
+        const description =
+            landing.tagline.replace(/\n+/g, " ").trim() ||
+            landing.highlights[0]?.replace(/^✔\s*/, "") ||
+            landing.headline;
 
-    const courses = await getCourses({
-        userId,
-        ...searchParams,
-    });
+        return {
+            title: landing.headline,
+            description,
+        };
+    }
 
-    return (
-        <>
-            <div className="px-6 pt-6 md:hidden md:mb-0 block">
-                <SearchInput />
-            </div>
-            <div className="p-6 space-y-4">
-                <Categories items={categories} />
-                <CoursesList items={courses} />
-            </div>
-        </>
-    );
-};
+    return {};
+}
 
-export default SearchPage;
+export default function Page({ searchParams }: PageProps) {
+    const { userId } = auth();
+
+    if (!userId) {
+        return <SalesFunnelPage />;
+    }
+
+    return <SearchPage searchParams={searchParams} />;
+}
