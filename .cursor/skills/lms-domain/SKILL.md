@@ -1,6 +1,6 @@
 ---
 name: lms-domain
-description: Describes the Escola de Programação LMS domain model, routes, and data patterns. Use when working on courses, chapters, careers, categories, purchases, teacher dashboard, watch-course flow, progress tracking, or Prisma schema changes.
+description: Describes the Escola de Programação LMS domain model, routes, and data patterns. Use when working on courses, chapters, seminars, careers, categories, purchases, teacher dashboard, watch-course flow, watch-seminar flow, progress tracking, or Prisma schema changes.
 ---
 
 # LMS Domain
@@ -23,14 +23,18 @@ Quick reference for the **programacaocomramon** LMS — grounded in `prisma/sche
 Source of truth: `prisma/schema.prisma`.
 
 ```
-Course ──┬── Chapter ── MuxData (1:1, optional)
+Course ──┬── Chapter ── MuxData (1:1, optional; chapterId)
          ├── Attachment[]
          ├── Purchase[]
          ├── Category[]  (many-to-many via categoryIDs ObjectId[])
          └── Career[]    (many-to-many via careerIDs ObjectId[])
 
+Seminar ── MuxData (1:1, optional; seminarId)
+
 Chapter ── UserProgress[] (per userId + chapterId, unique)
 ```
+
+`MuxData` links to **either** a chapter or a seminar (never both). `chapterId` and `seminarId` are both optional but mutually exclusive — enforced in API code.
 
 ### Key models
 
@@ -38,7 +42,8 @@ Chapter ── UserProgress[] (per userId + chapterId, unique)
 |-------|---------|----------------|
 | `Course` | Top-level sellable content | `userId` (owner/teacher), `slug`, `price`, `isPublished`, `level` (`BEGINNER`…`SPECIALIST`), `position`, `youtube` / `youtubeLink` / `githubLink` |
 | `Chapter` | Ordered lesson within a course | `position`, `isPublished`, `isFree`, `videoUrl`, optional `muxData` |
-| `MuxData` | Mux asset linked to a chapter | `assetId`, `playbackId`, `chapterId` (unique) |
+| `Seminar` | Single-video content, free for logged-in users (v1) | `userId` (owner/teacher), `title`, `description`, `videoUrl`, `isPublished`, optional `muxData` |
+| `MuxData` | Mux asset linked to a chapter or seminar | `assetId`, `playbackId`, `chapterId?` (unique), `seminarId?` (unique) |
 | `Attachment` | Downloadable file on a course | `name`, `url`, `courseId` |
 | `Purchase` | Enrollment record | `userId` + `courseId` (unique composite), `price` |
 | `UserProgress` | Chapter completion | `userId` + `chapterId` (unique), `isCompleted` |
@@ -59,6 +64,15 @@ MongoDB uses `@db.ObjectId` and `@map("_id")` on all models.
 
 Central access logic lives in `actions/get-chapter.ts`: checks purchase, `isFree`, and `isTeacher()` before returning `muxData`, `attachments`, and `nextChapter`.
 
+### Seminar access (v1)
+
+- **No purchase model** — seminars are free for any logged-in user.
+- **Catalog:** `get-seminars.ts` returns only `isPublished: true` seminars.
+- **Watch:** `get-seminar.ts` grants access when `(seminar.isPublished && userId) || isTeacher(userId)`.
+- **Unpublished:** teachers can preview via `isTeacher()`; students cannot.
+- **Unauthenticated:** catalog and watch pages redirect to `/` (same as course detail).
+- **Publish gate:** requires `title`, `description`, `videoUrl`, and a `MuxData` row (mirrors chapter publish).
+
 ## Route groups
 
 Route groups under `app/` (parentheses are not URL segments):
@@ -66,7 +80,7 @@ Route groups under `app/` (parentheses are not URL segments):
 | Group | URL prefix | Purpose |
 |-------|------------|---------|
 | `(root)` | `/`, `/dashboard`, `/courses/…`, `/teacher/…` | Main app: course catalog, student dashboard, teacher CMS |
-| `(course)` | `/watch-course/[courseId]/…` | Enrolled student video player and chapter navigation |
+| `(course)` | `/watch-course/[courseId]/…`, `/watch-seminar/[seminarId]` | Student video player (course chapters or single seminar) |
 | `(auth)` | `/sign-in`, `/sign-up` | Clerk authentication pages |
 | `landing_page/` | `/landing_page/…` | Marketing site (careers, subscription, technology pages) |
 | `api/` | `/api/…` | REST handlers (courses, chapters, attachments, webhooks, checkout) |
@@ -78,6 +92,8 @@ Route groups under `app/` (parentheses are not URL segments):
 - `/courses/[courseSlug]` — course detail / enrollment entry
 - `/watch-course/[courseId]` — course sidebar; redirects to first chapter
 - `/watch-course/[courseId]/chapters/[chapterId]` — video player + progress
+- `/seminars` — published seminar catalog (auth required)
+- `/watch-seminar/[seminarId]` — single-video seminar player (no chapter sidebar, no progress)
 
 ### Teacher area (`/teacher/…`)
 
@@ -86,6 +102,9 @@ Route groups under `app/` (parentheses are not URL segments):
 - `/teacher/courses/[courseId]` — course setup (title, price, image, categories, careers, chapters)
 - `/teacher/courses/[courseId]/chapters/[chapterId]` — chapter setup (title, description, video, free/publish toggles)
 - `/teacher/analytics` — revenue / enrollment analytics (`actions/get-analytics.ts`)
+- `/teacher/seminars` — seminar list (data table)
+- `/teacher/seminars/create` — new seminar (title only → redirect to setup)
+- `/teacher/seminars/[seminarId]` — seminar setup (title, description, video, publish/delete)
 
 Teacher routes use `(root)/(routes)/teacher/` and are gated by `isTeacher()`.
 
@@ -105,6 +124,8 @@ Teacher routes use `(root)/(routes)/teacher/` and are gated by `isTeacher()`.
 | `get-progress.ts` | Percentage of published chapters marked complete |
 | `get-dashboard-courses.ts` | Purchased courses split into in-progress vs completed |
 | `get-analytics.ts` | Teacher analytics aggregates |
+| `get-seminars.ts` | Published seminars for catalog; optional `title` filter |
+| `get-seminar.ts` | Single seminar + `muxData` with access checks (published + logged-in, or teacher) |
 
 Prefer these for read paths in Server Components. Match existing error handling (try/catch, log tag, return null/empty on failure).
 
@@ -131,6 +152,10 @@ Mutations and client-triggered operations:
 | `/api/purchase/[courseId]` | GET | Check if current user purchased |
 | `/api/categories/[categoryName]` | GET | Courses by category |
 | `/api/careers/[careerSlug]` | GET | Courses by career |
+| `/api/seminars` | POST | Create seminar |
+| `/api/seminars/[seminarId]` | PATCH, DELETE | Update / delete seminar (+ Mux cleanup on delete) |
+| `/api/seminars/[seminarId]/publish` | PATCH | Publish seminar |
+| `/api/seminars/[seminarId]/unpublish` | PATCH | Unpublish seminar |
 | `/api/uploadthing` | — | UploadThing file router |
 | `/api/webhook` | POST | Stripe webhook |
 | `/api/webhook/mercado_pago` | POST | Mercado Pago webhook |
@@ -139,18 +164,21 @@ Auth pattern: `auth()` or `currentUser()` from `@clerk/nextjs/server`. Teacher m
 
 ### Uploads (UploadThing)
 
-`app/api/uploadthing/core.ts` defines three routes, all teacher-only:
+`app/api/uploadthing/core.ts` defines four routes, all teacher-only:
 
 - `courseImage` — course thumbnail
 - `courseAttachment` — course attachments
 - `chapterVideo` — chapter video (feeds Mux processing in chapter update flow)
+- `seminarVideo` — seminar video (feeds Mux processing in seminar update flow)
 
 ### Video (Mux)
 
-- Teacher uploads via UploadThing `chapterVideo`.
-- Chapter PATCH route creates/updates `MuxData` with `assetId` and `playbackId`.
-- Student player: `app/(course)/watch-course/.../video-player.tsx` uses `@mux/mux-player-react` with `playbackId`.
-- Chapter DELETE removes Mux asset and `MuxData` row.
+- Teacher uploads via UploadThing `chapterVideo` or `seminarVideo`.
+- Chapter/seminar PATCH routes create/update `MuxData` with `assetId` and `playbackId` (linked via `chapterId` or `seminarId`).
+- Student players use `@mux/mux-player-react` with `playbackId`:
+  - Course: `app/(course)/watch-course/.../video-player.tsx` (progress + next chapter)
+  - Seminar: `app/(course)/watch-seminar/.../video-player.tsx` (no progress)
+- Chapter/seminar DELETE removes Mux asset and `MuxData` row.
 
 ## Payments
 
@@ -191,6 +219,18 @@ Stripe client: `lib/stripe.ts` (dev vs prod key via `NODE_ENV`).
 
 Do not hardcode UI copy in new components; follow existing language file patterns.
 
+Seminar-related language keys (in `languages/language.d.ts`):
+
+| Key | Purpose |
+|-----|---------|
+| `sidebar.seminars` | Sidebar link label (student + teacher) |
+| `teacherSeminars` | Teacher list table (`filterSeminars`, `newSeminar`; reuse `teacher.*` for columns) |
+| `teacherSeminarCreate` | Create page form copy |
+| `teacherSeminarSetup` | Setup page, forms, publish/delete toasts |
+| `seminars` | Student catalog (`noSeminarsFound`, `watch`, `watchSeminarURL` for localized watch links) |
+
+PT URL rewrites in `next.config.mjs`: `/seminarios` → `/seminars`, `/assistir-seminario/:id` → `/watch-seminar/:id`.
+
 ## Conventions for changes
 
 - **Schema changes:** edit `prisma/schema.prisma`, then `npx prisma generate` (also runs on `postinstall`). Use `npx prisma db push` to sync MongoDB.
@@ -198,6 +238,7 @@ Do not hardcode UI copy in new components; follow existing language file pattern
 - **New mutations:** follow existing API route patterns under `app/api/courses/…` with Clerk auth + teacher ownership checks.
 - **Teacher-only features:** gate with `isTeacher(userId)` from `lib/teacher.ts`.
 - **Student access:** always check `Purchase`, `Chapter.isFree`, or teacher status — do not expose `muxData` / `attachments` without these checks.
+- **Seminar access:** check `isPublished` + logged-in user, or `isTeacher()` — no purchase check in v1.
 
 ## Key files index
 
@@ -209,7 +250,12 @@ Do not hardcode UI copy in new components; follow existing language file pattern
 | Stripe | `lib/stripe.ts`, `app/api/webhook/route.ts` |
 | Mercado Pago | `app/api/webhook/mercado_pago/route.ts`, `app/api/courses/[courseId]/mercado_pago_checkout/route.ts` |
 | Chapter access | `actions/get-chapter.ts` |
+| Seminar access | `actions/get-seminar.ts` |
 | Watch flow | `app/(course)/watch-course/[courseId]/` |
+| Seminar watch | `app/(course)/watch-seminar/[seminarId]/` |
+| Seminar catalog | `app/(root)/(routes)/seminars/` |
 | Teacher CMS | `app/(root)/(routes)/teacher/` |
+| Teacher seminars | `app/(root)/(routes)/teacher/seminars/` |
+| Seminar API | `app/api/seminars/` |
 | Uploads | `app/api/uploadthing/core.ts` |
 | Middleware | `middleware.ts` |

@@ -16,7 +16,7 @@ todos:
     status: completed
   - id: i18n-docs
     content: Add seminar strings to all language files + language.d.ts; update lms-domain SKILL.md
-    status: pending
+    status: completed
   - id: verify
     content: "Manual verification: teacher CRUD + Mux lifecycle + student watch + chapter regression"
     status: pending
