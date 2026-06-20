@@ -29,6 +29,7 @@ const SeminarIdPage = async ({
     const requiredFields = [
         seminar.title,
         seminar.description,
+        seminar.imageUrl,
         seminar.videoUrl,
         seminar.muxData,
     ];

@@ -32,6 +32,7 @@ export async function PATCH(
             !muxData ||
             !seminar.title ||
             !seminar.description ||
+            !seminar.imageUrl ||
             !seminar.videoUrl
         ) {
             return new NextResponse("Missing required fields", { status: 400 });

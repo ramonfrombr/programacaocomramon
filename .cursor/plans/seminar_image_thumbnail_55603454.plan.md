@@ -10,7 +10,7 @@ todos:
     status: completed
   - id: publish-gate
     content: Require imageUrl in setup requiredFields and publish route
-    status: pending
+    status: completed
   - id: catalog-ui
     content: Add thumbnail to SeminarCard and pass imageUrl from SeminarsList
     status: pending
