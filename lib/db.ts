@@ -11,13 +11,13 @@ function createPrismaClient() {
 }
 
 function getPrismaClient() {
-    if (
-        process.env.NODE_ENV !== "production" &&
-        globalThis.prisma &&
-        !("seminar" in globalThis.prisma)
-    ) {
-        void globalThis.prisma.$disconnect();
-        globalThis.prisma = undefined;
+    const cached = globalThis.prisma;
+    if (process.env.NODE_ENV !== "production" && cached) {
+        const stale = cached as unknown as Record<string, unknown>;
+        if (!("seminar" in stale)) {
+            void cached.$disconnect();
+            globalThis.prisma = undefined;
+        }
     }
 
     if (!globalThis.prisma) {
