@@ -224,6 +224,11 @@ export const englishLanguage: ILanguage = {
         seminarUnpublished: "Seminar unpublished",
         seminarDeleted: "Seminar deleted",
     },
+    seminars: {
+        noSeminarsFound: "No seminars found",
+        watch: "Watch",
+        watchSeminarURL: "watch-seminar",
+    },
     teacherCreate: {
         nameYourCourse: "Name Your Course",
         nameYourCourseDescription:

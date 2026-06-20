@@ -229,6 +229,11 @@ export const portugueseLanguage: ILanguage = {
         seminarUnpublished: "Seminário não publicado",
         seminarDeleted: "Seminário excluído",
     },
+    seminars: {
+        noSeminarsFound: "Nenhum seminário encontrado",
+        watch: "Assistir",
+        watchSeminarURL: "assistir-seminario",
+    },
     teacherCreate: {
         nameYourCourse: "Nome do curso",
         nameYourCourseDescription:

@@ -13,7 +13,7 @@ todos:
     status: completed
   - id: student-catalog-watch
     content: Add get-seminars/get-seminar actions, /seminars catalog, /watch-seminar/[seminarId] player, enable student sidebar link
-    status: pending
+    status: completed
   - id: i18n-docs
     content: Add seminar strings to all language files + language.d.ts; update lms-domain SKILL.md
     status: pending

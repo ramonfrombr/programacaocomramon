@@ -15,6 +15,7 @@ type ILanguage = {
     teacherSeminars: ILanguageTeacherSeminars;
     teacherSeminarCreate: ILanguageTeacherSeminarCreate;
     teacherSeminarSetup: ILanguageTeacherSeminarSetup;
+    seminars: ILanguageSeminars;
     teacherCreate: ILanguageTeacherCreate;
     teacherCourseSetup: ILanguageTeacherCourseSetup;
     teacherCourseChapterSetup: ILanguageTeacherCourseChapterSetup;
@@ -192,6 +193,12 @@ type ILanguageTeacherSeminarSetupVideo = {
     uploadThisSeminarsVideo: string;
     editVideo: string;
     videosCanTakeAFewMinutesToProcess: string;
+};
+
+type ILanguageSeminars = {
+    noSeminarsFound: string;
+    watch: string;
+    watchSeminarURL: string;
 };
 
 type ILanguageTeacherCreate = {

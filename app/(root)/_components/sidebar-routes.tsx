@@ -44,8 +44,13 @@ export const SidebarRoutes = ({ userLoggedIn, onNavigate }: SidebarRoutesProps) 
             href: "/dashboard",
             locked: false,
         },
+        {
+            icon: School,
+            label: language.seminars,
+            href: "/seminars",
+            locked: false,
+        },
         /*
-        { icon: School, label: "Seminários", href: "/seminars", locked: true },
         {
             icon: Puzzle,
             label: "Desafios de Programação",
