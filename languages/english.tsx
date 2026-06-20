@@ -209,6 +209,14 @@ export const englishLanguage: ILanguage = {
             editDescription: "Edit description",
             noDescription: "No description",
         },
+        seminarImageField: {
+            seminarImage: "Seminar image",
+            addAnImage: "Add an image",
+            editImage: "Edit image",
+            aspectRatioRecommended:
+                "An image with a 16:9 aspect ratio is recommended",
+            imageIsNecessary: "Image is necessary.",
+        },
         addAVideo: "Add a video",
         seminarVideoField: {
             seminarVideo: "Seminar video",

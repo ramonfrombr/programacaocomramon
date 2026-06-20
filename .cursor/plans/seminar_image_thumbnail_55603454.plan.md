@@ -7,7 +7,7 @@ todos:
     status: completed
   - id: image-form
     content: Create seminar-image-form.tsx and wire into seminar-setup-content.tsx
-    status: pending
+    status: completed
   - id: publish-gate
     content: Require imageUrl in setup requiredFields and publish route
     status: pending

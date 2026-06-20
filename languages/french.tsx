@@ -214,6 +214,14 @@ export const frenchLanguage: ILanguage = {
             editDescription: "Modifier la description",
             noDescription: "Aucune description",
         },
+        seminarImageField: {
+            seminarImage: "Image du séminaire",
+            addAnImage: "Ajouter une image",
+            editImage: "Modifier l'image",
+            aspectRatioRecommended:
+                "Une image avec un ratio 16:9 est recommandée",
+            imageIsNecessary: "Une image est nécessaire.",
+        },
         addAVideo: "Ajouter une vidéo",
         seminarVideoField: {
             seminarVideo: "Vidéo du séminaire",

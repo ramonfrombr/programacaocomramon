@@ -6,6 +6,7 @@ import { useLanguageStore } from "@/hooks/use-language-store";
 import { IconBadge } from "@/components/icon-badge";
 import { SeminarTitleForm } from "@/app/(root)/(routes)/teacher/seminars/[seminarId]/_components/seminar-title-form";
 import { SeminarDescriptionForm } from "@/app/(root)/(routes)/teacher/seminars/[seminarId]/_components/seminar-description-form";
+import { SeminarImageForm } from "@/app/(root)/(routes)/teacher/seminars/[seminarId]/_components/seminar-image-form";
 import { SeminarVideoForm } from "@/app/(root)/(routes)/teacher/seminars/[seminarId]/_components/seminar-video-form";
 
 interface SeminarSetupContentProps {
@@ -34,6 +35,10 @@ export const SeminarSetupContent = ({
                         seminarId={seminarId}
                     />
                     <SeminarDescriptionForm
+                        initialData={seminar}
+                        seminarId={seminarId}
+                    />
+                    <SeminarImageForm
                         initialData={seminar}
                         seminarId={seminarId}
                     />

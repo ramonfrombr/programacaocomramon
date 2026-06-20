@@ -166,6 +166,7 @@ type ILanguageTeacherSeminarSetup = {
     customizeYourSeminar: string;
     seminarTitleField: ILanguageTeacherSeminarSetupTitle;
     seminarDescriptionField: ILanguageTeacherSeminarSetupDescription;
+    seminarImageField: ILanguageTeacherSeminarSetupImage;
     addAVideo: string;
     seminarVideoField: ILanguageTeacherSeminarSetupVideo;
     seminarUpdated: string;
@@ -186,6 +187,14 @@ type ILanguageTeacherSeminarSetupDescription = {
     seminarDescription: string;
     editDescription: string;
     noDescription: string;
+};
+
+type ILanguageTeacherSeminarSetupImage = {
+    seminarImage: string;
+    addAnImage: string;
+    editImage: string;
+    aspectRatioRecommended: string;
+    imageIsNecessary: string;
 };
 
 type ILanguageTeacherSeminarSetupVideo = {
