@@ -12,6 +12,8 @@ type ILanguage = {
     sidebar: ILanguageSidebar;
     dashboard: ILanguageDashboard;
     teacher: ILanguageTeacher;
+    teacherSeminars: ILanguageTeacherSeminars;
+    teacherSeminarCreate: ILanguageTeacherSeminarCreate;
     teacherCreate: ILanguageTeacherCreate;
     teacherCourseSetup: ILanguageTeacherCourseSetup;
     teacherCourseChapterSetup: ILanguageTeacherCourseChapterSetup;
@@ -101,6 +103,7 @@ type ILanguageSidebar = {
     dashboard: string;
     browse: string;
     courses: string;
+    seminars: string;
     analytics: string;
 };
 
@@ -127,6 +130,24 @@ type ILanguageTeacher = {
     draft: string;
     previous: string;
     next: string;
+};
+
+type ILanguageTeacherSeminars = {
+    filterSeminars: string;
+    newSeminar: string;
+};
+
+type ILanguageTeacherSeminarCreate = {
+    nameYourSeminar: string;
+    nameYourSeminarDescription: string;
+    seminarTitle: string;
+    seminarTitleInputPlaceholder: string;
+    seminarTitleInputDescription: string;
+    cancel: string;
+    continue: string;
+    seminarCreated: string;
+    somethingWentWrong: string;
+    titleIsRequired: string;
 };
 
 type ILanguageTeacherCreate = {

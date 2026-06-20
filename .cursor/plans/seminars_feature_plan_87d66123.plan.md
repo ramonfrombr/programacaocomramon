@@ -7,7 +7,7 @@ todos:
     status: completed
   - id: teacher-nav-list-create
     content: Add /teacher/seminars sidebar tab, list page (data-table + columns), create page, POST /api/seminars
-    status: pending
+    status: completed
   - id: teacher-setup-api
     content: Build /teacher/seminars/[seminarId] setup forms + PATCH/DELETE/publish/unpublish API + seminarVideo UploadThing + Mux pipeline
     status: pending

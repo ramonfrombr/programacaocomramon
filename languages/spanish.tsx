@@ -148,6 +148,7 @@ export const spanishLanguage: ILanguage = {
         dashboard: "Tablero",
         browse: "Cursos",
         courses: "Mis cursos",
+        seminars: "Seminarios",
         analytics: "Analytics",
     },
     dashboard: {
@@ -172,6 +173,23 @@ export const spanishLanguage: ILanguage = {
         openMenu: "Abrir menú",
         previous: "Anterior",
         next: "Siguiente",
+    },
+    teacherSeminars: {
+        filterSeminars: "Filtrar seminarios...",
+        newSeminar: "Nuevo seminario",
+    },
+    teacherSeminarCreate: {
+        nameYourSeminar: "Nombre de tu seminario",
+        nameYourSeminarDescription:
+            "¿Cómo te gustaría llamar a tu seminario? No te preocupes, puedes cambiarlo más tarde.",
+        seminarTitle: "Título del seminario",
+        seminarTitleInputPlaceholder: "ej. 'Introducción a React Hooks'",
+        seminarTitleInputDescription: "¿Qué abordarás en este seminario?",
+        cancel: "Cancelar",
+        continue: "Continuar",
+        seminarCreated: "Seminario creado",
+        somethingWentWrong: "Algo salió mal",
+        titleIsRequired: "Se requiere el título",
     },
     teacherCreate: {
         nameYourCourse: "Nombre de tu curso",

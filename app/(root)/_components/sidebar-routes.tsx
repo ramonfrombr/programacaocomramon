@@ -77,6 +77,12 @@ export const SidebarRoutes = ({ userLoggedIn, onNavigate }: SidebarRoutesProps) 
             locked: false,
         },
         {
+            icon: School,
+            label: language.seminars,
+            href: "/teacher/seminars",
+            locked: false,
+        },
+        {
             icon: BarChart,
             label: language.analytics,
             href: "/teacher/analytics",
