@@ -191,6 +191,44 @@ export const spanishLanguage: ILanguage = {
         somethingWentWrong: "Algo salió mal",
         titleIsRequired: "Se requiere el título",
     },
+    teacherSeminarSetup: {
+        thisSeminarIsUnpublished:
+            "Este seminario no está publicado. No será visible para los estudiantes.",
+        backToSeminars: "Volver a seminarios",
+        seminarSetup: "Configuración del seminario",
+        completeAllFields: "Completa todos los campos",
+        publish: "Publicar",
+        unpublish: "Despublicar",
+        areYouSure: "¿Estás seguro?",
+        thisActionsCannotBeUndone: "Esta acción no se puede deshacer",
+        cancel: "Cancelar",
+        continue: "Continuar",
+        customizeYourSeminar: "Personaliza tu seminario",
+        seminarTitleField: {
+            seminarTitle: "Título del seminario",
+            editTitle: "Editar título",
+            seminarTitleInputPlaceholder: "ej. 'Introducción a React Hooks'",
+        },
+        seminarDescriptionField: {
+            seminarDescription: "Descripción del seminario",
+            editDescription: "Editar descripción",
+            noDescription: "Sin descripción",
+        },
+        addAVideo: "Agregar un video",
+        seminarVideoField: {
+            seminarVideo: "Video del seminario",
+            uploadThisSeminarsVideo: "Sube el video de este seminario",
+            editVideo: "Editar video",
+            videosCanTakeAFewMinutesToProcess:
+                "Los videos pueden tardar unos minutos en procesarse. Actualiza la página si el video no aparece.",
+        },
+        seminarUpdated: "Seminario actualizado",
+        somethingWentWrong: "Algo salió mal",
+        save: "Guardar",
+        seminarPublished: "Seminario publicado",
+        seminarUnpublished: "Seminario despublicado",
+        seminarDeleted: "Seminario eliminado",
+    },
     teacherCreate: {
         nameYourCourse: "Nombre de tu curso",
         nameYourCourseDescription:

@@ -14,6 +14,7 @@ type ILanguage = {
     teacher: ILanguageTeacher;
     teacherSeminars: ILanguageTeacherSeminars;
     teacherSeminarCreate: ILanguageTeacherSeminarCreate;
+    teacherSeminarSetup: ILanguageTeacherSeminarSetup;
     teacherCreate: ILanguageTeacherCreate;
     teacherCourseSetup: ILanguageTeacherCourseSetup;
     teacherCourseChapterSetup: ILanguageTeacherCourseChapterSetup;
@@ -148,6 +149,49 @@ type ILanguageTeacherSeminarCreate = {
     seminarCreated: string;
     somethingWentWrong: string;
     titleIsRequired: string;
+};
+
+type ILanguageTeacherSeminarSetup = {
+    thisSeminarIsUnpublished: string;
+    backToSeminars: string;
+    seminarSetup: string;
+    completeAllFields: string;
+    publish: string;
+    unpublish: string;
+    areYouSure: string;
+    thisActionsCannotBeUndone: string;
+    cancel: string;
+    continue: string;
+    customizeYourSeminar: string;
+    seminarTitleField: ILanguageTeacherSeminarSetupTitle;
+    seminarDescriptionField: ILanguageTeacherSeminarSetupDescription;
+    addAVideo: string;
+    seminarVideoField: ILanguageTeacherSeminarSetupVideo;
+    seminarUpdated: string;
+    somethingWentWrong: string;
+    save: string;
+    seminarPublished: string;
+    seminarUnpublished: string;
+    seminarDeleted: string;
+};
+
+type ILanguageTeacherSeminarSetupTitle = {
+    seminarTitle: string;
+    editTitle: string;
+    seminarTitleInputPlaceholder: string;
+};
+
+type ILanguageTeacherSeminarSetupDescription = {
+    seminarDescription: string;
+    editDescription: string;
+    noDescription: string;
+};
+
+type ILanguageTeacherSeminarSetupVideo = {
+    seminarVideo: string;
+    uploadThisSeminarsVideo: string;
+    editVideo: string;
+    videosCanTakeAFewMinutesToProcess: string;
 };
 
 type ILanguageTeacherCreate = {

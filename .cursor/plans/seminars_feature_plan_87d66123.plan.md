@@ -10,7 +10,7 @@ todos:
     status: completed
   - id: teacher-setup-api
     content: Build /teacher/seminars/[seminarId] setup forms + PATCH/DELETE/publish/unpublish API + seminarVideo UploadThing + Mux pipeline
-    status: pending
+    status: completed
   - id: student-catalog-watch
     content: Add get-seminars/get-seminar actions, /seminars catalog, /watch-seminar/[seminarId] player, enable student sidebar link
     status: pending
