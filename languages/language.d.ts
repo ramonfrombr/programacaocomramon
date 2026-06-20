@@ -473,7 +473,7 @@ type ISalesFunnelLanding = {
     ctaHeading: string;
     tiers: {
         silver: ISalesFunnelTier;
-        platinum: ISalesFunnelTier;
+        gold: ISalesFunnelTier;
         diamond: ISalesFunnelTier;
     };
     sections: {

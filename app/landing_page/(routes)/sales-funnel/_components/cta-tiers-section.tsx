@@ -17,7 +17,7 @@ export function CtaTiersSection({ ctaHeading, tiers }: CtaTiersSectionProps) {
             </div>
             <div className="grid md:grid-cols-3 gap-5 md:gap-8 mb-12 md:mb-16">
                 <TierCard tier={tiers.silver} />
-                <TierCard tier={tiers.platinum} />
+                <TierCard tier={tiers.gold} />
                 <TierCard tier={tiers.diamond} highlighted />
             </div>
         </>

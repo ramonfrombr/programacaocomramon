@@ -141,7 +141,7 @@ function parseLanding(content: string) {
   }
 
   const silverBlock = sections.find((s) => s.includes("MEMBRO SILVER")) ?? "";
-  const platinumBlock = sections.find((s) => s.includes("MEMBRO PLATINUM")) ?? "";
+  const goldBlock = sections.find((s) => s.includes("MEMBRO GOLD")) ?? "";
   const diamondBlock = sections.find((s) => s.includes("MEMBRO DIAMOND")) ?? "";
 
   const sectionBlocks = sections.slice(sections.findIndex((s) => s.includes("Treinamento Full Stack")));
@@ -177,7 +177,7 @@ function parseLanding(content: string) {
     ctaHeading,
     tiers: {
       silver: parseTier(silverBlock),
-      platinum: parseTier(platinumBlock),
+      gold: parseTier(goldBlock),
       diamond: parseTier(diamondBlock),
     },
     sections: {
@@ -550,7 +550,7 @@ function parseClosing(content: string) {
   const silverPricingBlock =
     "## Plano Silver Vitalício" +
     (pricingContent.split("## Plano Silver Vitalício")[1]?.split("## Plano Platinum Vitalício")[0] ?? "");
-  const platinumPricingBlock =
+  const goldPricingBlock =
     "## Plano Platinum Vitalício" +
     (pricingContent.split("## Plano Platinum Vitalício")[1]?.split("## Plano Diamond Vitalício")[0] ?? "");
   const diamondPricingBlock =
@@ -644,7 +644,7 @@ function parseClosing(content: string) {
     },
     pricing: {
       silver: parsePricingTier(silverPricingBlock),
-      platinum: parsePricingTier(platinumPricingBlock),
+      gold: parsePricingTier(goldPricingBlock),
       diamond: parsePricingTier(diamondPricingBlock),
     },
     faq,

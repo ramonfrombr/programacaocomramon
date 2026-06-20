@@ -27,10 +27,10 @@
           "Acesso aos nossos e-books exclusivos da plataforma (HTML, CSS, JavaScript, TypeScript, Next.js, React.js, etc.)"
         ]
       },
-      "platinum": {
-        "name": "MEMBRO PLATINA VITALÍCIO",
+      "gold": {
+        "name": "MEMBRO OURO VITALÍCIO",
         "price": "R$2990",
-        "tagline": "🌟 Tudo incluído no Silver e muito mais...",
+        "tagline": "🌟 Tudo incluído no Prata e muito mais...",
         "features": [
           "Acesso vitalício à formação Zero ao Herói Full Stack 2.0",
           "Entenda o passo a passo para atingir seus objetivos e se tornar um desenvolvedor Full Stack de sucesso com os nossos guias",
@@ -52,7 +52,7 @@
       "diamond": {
         "name": "MEMBRO DIAMANTE VITALÍCIO",
         "price": "R$3990",
-        "tagline": "🌟 Tudo incluído no Platinum e muito mais...",
+        "tagline": "🌟 Tudo incluído no Ouro e muito mais...",
         "features": [
           "2 chamadas semanais adicionais ao vivo com Ramon (4 sessões de mentoria por mês)",
           "Mais de 170 horas de conteúdo exclusivo de mentoria",
@@ -1649,7 +1649,7 @@
         "question": "Posso pagar parcelado?",
         "answer": [
           "Sim.",
-          "Existem opções de pagamento parcelado em 12 vezes para os planos Silver, Platinum e Diamond."
+          "Existem opções de pagamento parcelado em 12 vezes para os planos Prata, Ouro e Diamante."
         ]
       },
       {
