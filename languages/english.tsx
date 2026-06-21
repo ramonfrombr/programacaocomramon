@@ -136,6 +136,7 @@ export const englishLanguage: ILanguage = {
     },
     navbar: {
         goBackToCourses: "Go Back to Courses",
+        goBackToSeminars: "Go Back to Seminars",
         teacherMode: "Teacher Mode",
         searchForACourse: "Search for a course",
     },

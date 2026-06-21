@@ -97,6 +97,7 @@ type ITestimonial = {
 
 type ILanguageNavbar = {
     goBackToCourses: string;
+    goBackToSeminars: string;
     teacherMode: string;
     searchForACourse: string;
 };

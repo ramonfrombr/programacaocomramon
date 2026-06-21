@@ -16,6 +16,9 @@ export const NavbarRoutes = () => {
     const isCoursePage = pathname?.includes(
         `/${language.course.watchCourseURL}/`,
     );
+    const isSeminarPage = pathname?.includes(
+        `/${language.seminars.watchSeminarURL}/`,
+    );
     const isSearchPage = pathname === "/";
 
     return (
@@ -31,6 +34,13 @@ export const NavbarRoutes = () => {
                         <Button size="sm" variant="ghost">
                             <LogOut className="w-4 h-4 mr-2" />{" "}
                             {language.navbar.goBackToCourses}
+                        </Button>
+                    </Link>
+                ) : isSeminarPage ? (
+                    <Link href="/seminars">
+                        <Button size="sm" variant="ghost">
+                            <LogOut className="w-4 h-4 mr-2" />{" "}
+                            {language.navbar.goBackToSeminars}
                         </Button>
                     </Link>
                 ) : isTeacher(userId) ? (

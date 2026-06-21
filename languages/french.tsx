@@ -140,6 +140,7 @@ export const frenchLanguage: ILanguage = {
     },
     navbar: {
         goBackToCourses: "Retour aux cours",
+        goBackToSeminars: "Retour aux séminaires",
         teacherMode: "Mode enseignant",
         searchForACourse: "Rechercher un cours",
     },

@@ -141,6 +141,7 @@ export const spanishLanguage: ILanguage = {
     },
     navbar: {
         goBackToCourses: "Volver a los cursos",
+        goBackToSeminars: "Volver a seminarios",
         teacherMode: "Modo profesor",
         searchForACourse: "Buscar un curso",
     },
