@@ -13,13 +13,13 @@ todos:
     status: completed
   - id: i18n
     content: Add navbar.goBackToSeminars to language.d.ts and all 4 language files
-    status: pending
+    status: completed
   - id: page-tweak
     content: Adjust seminar watch page wrapper to match chapter page spacing inside main
-    status: pending
+    status: completed
   - id: verify
     content: Manual responsive/locale check + lint/build
-    status: pending
+    status: completed
 isProject: false
 ---
 

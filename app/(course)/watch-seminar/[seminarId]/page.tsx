@@ -12,12 +12,8 @@ const WatchSeminarPage = async ({
 }) => {
   const { userId } = auth();
 
-  if (!userId) {
-    return redirect("/");
-  }
-
   const { seminar, muxData } = await getSeminar({
-    userId,
+    userId: userId!,
     seminarId: params.seminarId,
   });
 
@@ -26,14 +22,18 @@ const WatchSeminarPage = async ({
   }
 
   return (
-    <div className="flex flex-col max-w-4xl mx-auto pb-20 p-4">
-      <SeminarVideoPlayer
-        playbackId={muxData.playbackId}
-        title={seminar.title}
-      />
-      <div className="mt-4">
-        <h1 className="text-2xl font-semibold mb-2">{seminar.title}</h1>
-        <Separator className="my-4" />
+    <div className="flex flex-col max-w-4xl mx-auto pb-20">
+      <div className="p-4">
+        <SeminarVideoPlayer
+          playbackId={muxData.playbackId}
+          title={seminar.title}
+        />
+      </div>
+      <div>
+        <div className="p-4">
+          <h1 className="text-2xl font-semibold mb-2">{seminar.title}</h1>
+        </div>
+        <Separator />
         {seminar.description ? <Preview value={seminar.description} /> : null}
       </div>
     </div>
