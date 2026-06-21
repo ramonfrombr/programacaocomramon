@@ -19,6 +19,12 @@ test.describe("guest catalog", () => {
     await expect(page.locator("#main-content")).toBeVisible();
   });
 
+  test("seminars page redirects unauthenticated users away", async ({ page }) => {
+    await page.goto("/seminars");
+
+    await expect(page).toHaveURL("/");
+  });
+
   test("dashboard redirects unauthenticated users away", async ({ page }) => {
     await page.goto("/dashboard");
 

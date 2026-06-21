@@ -10,7 +10,7 @@ todos:
     status: completed
   - id: guest-redirect
     content: Add /seminars redirect test to e2e/guest/catalog.spec.ts
-    status: pending
+    status: completed
   - id: student-spec
     content: Create e2e/student/seminars.spec.ts with catalog + watch title tests
     status: pending
