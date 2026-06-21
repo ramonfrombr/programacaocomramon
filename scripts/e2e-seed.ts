@@ -3,8 +3,11 @@ import {
   E2E_CATEGORIES,
   E2E_DRAFT_COURSE,
   E2E_DRAFT_SEMINAR,
+  E2E_MUX_IDS,
   E2E_PUBLISHED_CHAPTERS,
   E2E_PUBLISHED_COURSE,
+  E2E_PUBLISHED_SEMINAR,
+  E2E_PUBLISHED_SEMINAR_MUX,
 } from "../e2e/constants";
 import { loadE2EEnv } from "../e2e/setup/env";
 
@@ -109,7 +112,7 @@ async function seedDraftCourse(teacherId: string) {
   });
 }
 
-async function seedSeminar(teacherId: string) {
+async function seedDraftSeminar(teacherId: string) {
   await database.seminar.upsert({
     where: { id: E2E_DRAFT_SEMINAR.id },
     create: {
@@ -130,6 +133,44 @@ async function seedSeminar(teacherId: string) {
   });
 }
 
+async function seedPublishedSeminar(teacherId: string) {
+  await database.seminar.upsert({
+    where: { id: E2E_PUBLISHED_SEMINAR.id },
+    create: {
+      id: E2E_PUBLISHED_SEMINAR.id,
+      userId: teacherId,
+      title: E2E_PUBLISHED_SEMINAR.title,
+      description: E2E_PUBLISHED_SEMINAR.description,
+      imageUrl: E2E_PUBLISHED_SEMINAR.imageUrl,
+      videoUrl: E2E_PUBLISHED_SEMINAR.videoUrl,
+      isPublished: true,
+    },
+    update: {
+      userId: teacherId,
+      title: E2E_PUBLISHED_SEMINAR.title,
+      description: E2E_PUBLISHED_SEMINAR.description,
+      imageUrl: E2E_PUBLISHED_SEMINAR.imageUrl,
+      videoUrl: E2E_PUBLISHED_SEMINAR.videoUrl,
+      isPublished: true,
+    },
+  });
+
+  await database.muxData.upsert({
+    where: { id: E2E_MUX_IDS.publishedSeminar },
+    create: {
+      id: E2E_MUX_IDS.publishedSeminar,
+      seminarId: E2E_PUBLISHED_SEMINAR.id,
+      assetId: E2E_PUBLISHED_SEMINAR_MUX.assetId,
+      playbackId: E2E_PUBLISHED_SEMINAR_MUX.playbackId,
+    },
+    update: {
+      seminarId: E2E_PUBLISHED_SEMINAR.id,
+      assetId: E2E_PUBLISHED_SEMINAR_MUX.assetId,
+      playbackId: E2E_PUBLISHED_SEMINAR_MUX.playbackId,
+    },
+  });
+}
+
 async function main() {
   const teacherId = process.env.NEXT_PUBLIC_TEACHER_ID;
 
@@ -146,13 +187,15 @@ async function main() {
   await seedCategories();
   await seedPublishedCourse(teacherId);
   await seedDraftCourse(teacherId);
-  await seedSeminar(teacherId);
+  await seedPublishedSeminar(teacherId);
+  await seedDraftSeminar(teacherId);
 
   console.log("E2E seed complete:", {
     categories: E2E_CATEGORIES.length,
     publishedCourse: E2E_PUBLISHED_COURSE.slug,
     draftCourse: E2E_DRAFT_COURSE.slug,
     chapters: E2E_PUBLISHED_CHAPTERS.length,
+    publishedSeminar: E2E_PUBLISHED_SEMINAR.title,
     draftSeminar: E2E_DRAFT_SEMINAR.title,
   });
 }
