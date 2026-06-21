@@ -13,7 +13,7 @@ todos:
     status: completed
   - id: student-spec
     content: Create e2e/student/seminars.spec.ts with catalog + watch title tests
-    status: pending
+    status: completed
   - id: teacher-spec
     content: Create e2e/teacher/seminars.spec.ts with list, create, and setup form tests
     status: pending
