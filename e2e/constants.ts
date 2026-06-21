@@ -81,11 +81,21 @@ export const E2E_SEMINAR_IDS = {
   draft: "e2e000000000000000000031",
 } as const;
 
+export const E2E_MUX_IDS = {
+  publishedSeminar: "e2e000000000000000000040",
+} as const;
+
 export const E2E_PUBLISHED_SEMINAR = {
   id: E2E_SEMINAR_IDS.published,
   title: "E2E Published Seminar",
   description: "Published seminar fixture for Playwright E2E tests.",
   imageUrl: E2E_FIXTURE_IMAGE_URL,
+  videoUrl: "https://example.com/e2e-seminar-video.mp4",
+} as const;
+
+export const E2E_PUBLISHED_SEMINAR_MUX = {
+  assetId: "e2e-seminar-mux-asset",
+  playbackId: "e2e-seminar-playback",
 } as const;
 
 export const E2E_DRAFT_SEMINAR = {
