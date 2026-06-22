@@ -53,6 +53,9 @@ function webServerEnv(): Record<string, string> {
 
 const chromium = {
   ...devices["Desktop Chrome"],
+  // Bundled Chromium old headless crashes on recent macOS (SIGABRT at launch).
+  // CI keeps the Playwright-managed browser; locally use system Chrome when available.
+  ...(isCI ? {} : { channel: "chrome" as const }),
 };
 
 export default defineConfig({
@@ -60,7 +63,7 @@ export default defineConfig({
   fullyParallel: true,
   forbidOnly: isCI,
   retries: isCI ? 2 : 0,
-  workers: isCI ? 1 : undefined,
+  workers: 1,
   reporter: isCI ? [["html"], ["github"]] : [["html"]],
   use: {
     baseURL,

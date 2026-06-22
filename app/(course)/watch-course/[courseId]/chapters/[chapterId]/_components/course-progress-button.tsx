@@ -40,16 +40,21 @@ export const CourseProgressButton = ({
         }
       );
 
-      if (!isCompleted && !nextChapterId) {
+      const markingComplete = !isCompleted;
+
+      if (markingComplete && !nextChapterId) {
         confetti.onOpen();
       }
 
-      if (!isCompleted && nextChapterId) {
-        router.push(`/${courseLanguage.watchCourseURL}/${courseId}/${courseLanguage.chaptersURL}/${nextChapterId}`);
-      }
-
       toast.success(videoPlayerLanguage.progressUpdated);
-      router.refresh();
+
+      if (markingComplete && nextChapterId) {
+        router.push(`/${courseLanguage.watchCourseURL}/${courseId}/${courseLanguage.chaptersURL}/${nextChapterId}`);
+        // Defer refresh so push commits first; refreshes the shared course layout progress.
+        setTimeout(() => router.refresh(), 0);
+      } else {
+        router.refresh();
+      }
     } catch (error) {
       toast.error(videoPlayerLanguage.somethingWentWrong);
     } finally {

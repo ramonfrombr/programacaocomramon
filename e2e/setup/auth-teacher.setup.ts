@@ -1,5 +1,5 @@
 import { clerk } from "@clerk/testing/playwright";
-import { expect, test as setup } from "@playwright/test";
+import { expect, test as setup } from "../fixtures";
 import fs from "node:fs";
 import path from "node:path";
 import { loadE2EEnv, setupClerkTesting } from "./env";

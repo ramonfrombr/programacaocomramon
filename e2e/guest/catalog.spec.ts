@@ -1,4 +1,4 @@
-import { expect, test } from "@playwright/test";
+import { expect, test } from "../fixtures";
 import {
   courseCatalogPath,
   E2E_PUBLISHED_COURSE,
@@ -17,6 +17,12 @@ test.describe("guest catalog", () => {
 
     await expect(page).toHaveURL("/");
     await expect(page.locator("#main-content")).toBeVisible();
+  });
+
+  test("seminars page redirects unauthenticated users away", async ({ page }) => {
+    await page.goto("/seminars");
+
+    await expect(page).toHaveURL("/");
   });
 
   test("dashboard redirects unauthenticated users away", async ({ page }) => {

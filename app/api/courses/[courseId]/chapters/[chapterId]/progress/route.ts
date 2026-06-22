@@ -1,5 +1,6 @@
 import { db } from "@/lib/db";
 import { auth } from "@clerk/nextjs/server";
+import { revalidatePath } from "next/cache";
 import { NextResponse } from "next/server";
 
 export async function PUT(
@@ -34,6 +35,9 @@ export async function PUT(
         isCompleted,
       },
     });
+
+    revalidatePath(`/watch-course/${params.courseId}`, "layout");
+    revalidatePath("/dashboard");
 
     return NextResponse.json(userProgress);
   } catch (error) {

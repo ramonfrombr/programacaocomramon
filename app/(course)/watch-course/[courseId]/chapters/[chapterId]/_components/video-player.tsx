@@ -48,15 +48,14 @@ export const VideoPlayer = ({
 
                 if (!nextChapterId) {
                     confetti.onOpen();
-                }
-
-                toast.success(videoPlayerLanguage.progressUpdated);
-                router.refresh();
-
-                if (nextChapterId) {
+                    toast.success(videoPlayerLanguage.progressUpdated);
+                    router.refresh();
+                } else {
+                    toast.success(videoPlayerLanguage.progressUpdated);
                     router.push(
                         `/${courseLanguage.watchCourseURL}/${courseId}/${courseLanguage.chaptersURL}/${nextChapterId}`
                     );
+                    setTimeout(() => router.refresh(), 0);
                 }
             }
         } catch {

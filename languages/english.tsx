@@ -136,13 +136,16 @@ export const englishLanguage: ILanguage = {
     },
     navbar: {
         goBackToCourses: "Go Back to Courses",
+        goBackToSeminars: "Go Back to Seminars",
         teacherMode: "Teacher Mode",
         searchForACourse: "Search for a course",
+        searchForASeminar: "Search for a seminar",
     },
     sidebar: {
         dashboard: "Dashboard",
         browse: "Courses",
         courses: "My Courses",
+        seminars: "Seminars",
         analytics: "Analytics",
     },
     dashboard: {
@@ -167,6 +170,74 @@ export const englishLanguage: ILanguage = {
         openMenu: "Open menu",
         previous: "Previous",
         next: "Next",
+    },
+    teacherSeminars: {
+        filterSeminars: "Filter seminars...",
+        newSeminar: "New Seminar",
+    },
+    teacherSeminarCreate: {
+        nameYourSeminar: "Name Your Seminar",
+        nameYourSeminarDescription:
+            "What would you like to name your seminar? Don't worry, you can change this later",
+        seminarTitle: "Seminar Title",
+        seminarTitleInputPlaceholder: "e.g. 'Introduction to React Hooks'",
+        seminarTitleInputDescription: "What will you cover in this seminar?",
+        cancel: "Cancel",
+        continue: "Continue",
+        seminarCreated: "Seminar created",
+        somethingWentWrong: "Something went wrong",
+        titleIsRequired: "Title is required",
+    },
+    teacherSeminarSetup: {
+        thisSeminarIsUnpublished:
+            "This seminar is unpublished. It will not be visible to students.",
+        backToSeminars: "Back to seminars",
+        seminarSetup: "Seminar Setup",
+        completeAllFields: "Complete all fields",
+        publish: "Publish",
+        unpublish: "Unpublish",
+        areYouSure: "Are you sure?",
+        thisActionsCannotBeUndone: "This action cannot be undone",
+        cancel: "Cancel",
+        continue: "Continue",
+        customizeYourSeminar: "Customize your seminar",
+        seminarTitleField: {
+            seminarTitle: "Seminar title",
+            editTitle: "Edit title",
+            seminarTitleInputPlaceholder: "e.g. 'Introduction to React Hooks'",
+        },
+        seminarDescriptionField: {
+            seminarDescription: "Seminar description",
+            editDescription: "Edit description",
+            noDescription: "No description",
+        },
+        seminarImageField: {
+            seminarImage: "Seminar image",
+            addAnImage: "Add an image",
+            editImage: "Edit image",
+            aspectRatioRecommended:
+                "An image with a 16:9 aspect ratio is recommended",
+            imageIsNecessary: "Image is necessary.",
+        },
+        addAVideo: "Add a video",
+        seminarVideoField: {
+            seminarVideo: "Seminar video",
+            uploadThisSeminarsVideo: "Upload this seminar's video",
+            editVideo: "Edit video",
+            videosCanTakeAFewMinutesToProcess:
+                "Videos can take a few minutes to process. Refresh the page if video does not appear.",
+        },
+        seminarUpdated: "Seminar updated",
+        somethingWentWrong: "Something went wrong",
+        save: "Save",
+        seminarPublished: "Seminar published",
+        seminarUnpublished: "Seminar unpublished",
+        seminarDeleted: "Seminar deleted",
+    },
+    seminars: {
+        noSeminarsFound: "No seminars found",
+        watch: "Watch",
+        watchSeminarURL: "watch-seminar",
     },
     teacherCreate: {
         nameYourCourse: "Name Your Course",

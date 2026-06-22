@@ -12,6 +12,10 @@ type ILanguage = {
     sidebar: ILanguageSidebar;
     dashboard: ILanguageDashboard;
     teacher: ILanguageTeacher;
+    teacherSeminars: ILanguageTeacherSeminars;
+    teacherSeminarCreate: ILanguageTeacherSeminarCreate;
+    teacherSeminarSetup: ILanguageTeacherSeminarSetup;
+    seminars: ILanguageSeminars;
     teacherCreate: ILanguageTeacherCreate;
     teacherCourseSetup: ILanguageTeacherCourseSetup;
     teacherCourseChapterSetup: ILanguageTeacherCourseChapterSetup;
@@ -93,14 +97,17 @@ type ITestimonial = {
 
 type ILanguageNavbar = {
     goBackToCourses: string;
+    goBackToSeminars: string;
     teacherMode: string;
     searchForACourse: string;
+    searchForASeminar: string;
 };
 
 type ILanguageSidebar = {
     dashboard: string;
     browse: string;
     courses: string;
+    seminars: string;
     analytics: string;
 };
 
@@ -127,6 +134,82 @@ type ILanguageTeacher = {
     draft: string;
     previous: string;
     next: string;
+};
+
+type ILanguageTeacherSeminars = {
+    filterSeminars: string;
+    newSeminar: string;
+};
+
+type ILanguageTeacherSeminarCreate = {
+    nameYourSeminar: string;
+    nameYourSeminarDescription: string;
+    seminarTitle: string;
+    seminarTitleInputPlaceholder: string;
+    seminarTitleInputDescription: string;
+    cancel: string;
+    continue: string;
+    seminarCreated: string;
+    somethingWentWrong: string;
+    titleIsRequired: string;
+};
+
+type ILanguageTeacherSeminarSetup = {
+    thisSeminarIsUnpublished: string;
+    backToSeminars: string;
+    seminarSetup: string;
+    completeAllFields: string;
+    publish: string;
+    unpublish: string;
+    areYouSure: string;
+    thisActionsCannotBeUndone: string;
+    cancel: string;
+    continue: string;
+    customizeYourSeminar: string;
+    seminarTitleField: ILanguageTeacherSeminarSetupTitle;
+    seminarDescriptionField: ILanguageTeacherSeminarSetupDescription;
+    seminarImageField: ILanguageTeacherSeminarSetupImage;
+    addAVideo: string;
+    seminarVideoField: ILanguageTeacherSeminarSetupVideo;
+    seminarUpdated: string;
+    somethingWentWrong: string;
+    save: string;
+    seminarPublished: string;
+    seminarUnpublished: string;
+    seminarDeleted: string;
+};
+
+type ILanguageTeacherSeminarSetupTitle = {
+    seminarTitle: string;
+    editTitle: string;
+    seminarTitleInputPlaceholder: string;
+};
+
+type ILanguageTeacherSeminarSetupDescription = {
+    seminarDescription: string;
+    editDescription: string;
+    noDescription: string;
+};
+
+type ILanguageTeacherSeminarSetupImage = {
+    seminarImage: string;
+    addAnImage: string;
+    editImage: string;
+    aspectRatioRecommended: string;
+    imageIsNecessary: string;
+};
+
+type ILanguageTeacherSeminarSetupVideo = {
+    seminarVideo: string;
+    uploadThisSeminarsVideo: string;
+    editVideo: string;
+    videosCanTakeAFewMinutesToProcess: string;
+};
+
+type ILanguageSeminars = {
+    noSeminarsFound: string;
+    watch: string;
+    watchSeminarURL: string;
 };
 
 type ILanguageTeacherCreate = {

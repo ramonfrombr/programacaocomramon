@@ -1,11 +1,30 @@
 import { PrismaClient } from "@prisma/client";
 
-// This is to prevent error from hot reload in development. globalThis is not affected from hot reload
+// globalThis survives Next.js hot reload; drop stale clients after schema changes.
 
 declare global {
     var prisma: PrismaClient | undefined;
 }
 
-export const db = globalThis.prisma || new PrismaClient();
+function createPrismaClient() {
+    return new PrismaClient();
+}
 
-if (process.env.NODE_ENV !== "production") globalThis.prisma = db;
+function getPrismaClient() {
+    const cached = globalThis.prisma;
+    if (process.env.NODE_ENV !== "production" && cached) {
+        const stale = cached as unknown as Record<string, unknown>;
+        if (!("seminar" in stale)) {
+            void cached.$disconnect();
+            globalThis.prisma = undefined;
+        }
+    }
+
+    if (!globalThis.prisma) {
+        globalThis.prisma = createPrismaClient();
+    }
+
+    return globalThis.prisma;
+}
+
+export const db = getPrismaClient();

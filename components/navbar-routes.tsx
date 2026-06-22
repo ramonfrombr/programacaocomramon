@@ -16,13 +16,23 @@ export const NavbarRoutes = () => {
     const isCoursePage = pathname?.includes(
         `/${language.course.watchCourseURL}/`,
     );
-    const isSearchPage = pathname === "/";
+    const isSeminarPage = pathname?.includes(
+        `/${language.seminars.watchSeminarURL}/`,
+    );
+    const showDesktopSearch =
+        pathname === "/" || pathname === "/seminars";
 
     return (
         <>
-            {isSearchPage && (
+            {showDesktopSearch && (
                 <div className="hidden md:block">
-                    <SearchInput />
+                    <SearchInput
+                        placeholder={
+                            pathname === "/seminars"
+                                ? language.navbar.searchForASeminar
+                                : undefined
+                        }
+                    />
                 </div>
             )}
             <div className="flex gap-x-2 ml-auto">
@@ -31,6 +41,13 @@ export const NavbarRoutes = () => {
                         <Button size="sm" variant="ghost">
                             <LogOut className="w-4 h-4 mr-2" />{" "}
                             {language.navbar.goBackToCourses}
+                        </Button>
+                    </Link>
+                ) : isSeminarPage ? (
+                    <Link href="/seminars">
+                        <Button size="sm" variant="ghost">
+                            <LogOut className="w-4 h-4 mr-2" />{" "}
+                            {language.navbar.goBackToSeminars}
                         </Button>
                     </Link>
                 ) : isTeacher(userId) ? (
