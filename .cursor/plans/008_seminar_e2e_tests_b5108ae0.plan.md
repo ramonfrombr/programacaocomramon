@@ -19,10 +19,10 @@ todos:
     status: completed
   - id: readme
     content: Update e2e/README.md with seminar coverage and seed notes
-    status: pending
+    status: completed
   - id: verify
     content: Run db:e2e:reset and targeted Playwright projects to confirm green
-    status: pending
+    status: completed
 isProject: false
 ---
 

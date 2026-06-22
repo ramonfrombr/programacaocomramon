@@ -93,7 +93,9 @@ e2e/
     auth-teacher.setup.ts
   guest/catalog.spec.ts
   student/learning.spec.ts
+  student/seminars.spec.ts
   teacher/access.spec.ts
+  teacher/seminars.spec.ts
 scripts/e2e-seed.ts     # Deterministic fixtures
 playwright.config.ts
 ```
@@ -102,12 +104,15 @@ Fixture identifiers live in [`constants.ts`](./constants.ts). Tests reference sl
 
 **Purchase seeding:** the student auth setup upserts a `Purchase` for the signed-in Clerk `userId` after login, so the seed script does not hardcode Clerk user IDs.
 
+**Seminar seeding:** `scripts/e2e-seed.ts` upserts a published seminar (with `videoUrl` and `isPublished: true`) and a draft seminar (image only, unpublished). The published seminar also gets a fake `MuxData` row (`assetId` / `playbackId` from `E2E_PUBLISHED_SEMINAR_MUX` in `constants.ts`) so `/watch-seminar/:id` passes the playback gate — no real Mux API calls, same approach as course fixtures.
+
 ## Current test coverage (P0)
 
 ### Guest — `e2e/guest/catalog.spec.ts`
 
 - Home page lists the published E2E course
 - Draft course is hidden from the catalog
+- `/seminars` redirects unauthenticated users
 - `/dashboard` redirects unauthenticated users
 - `/teacher/courses` redirects non-teachers
 
@@ -119,10 +124,22 @@ Fixture identifiers live in [`constants.ts`](./constants.ts). Tests reference sl
 - Paid chapter accessible after purchase seeded in setup
 - Mark chapter complete → refresh → progress updates on dashboard
 
+### Student — `e2e/student/seminars.spec.ts`
+
+- Published seminar appears on `/seminars` catalog
+- Draft seminar is hidden from the catalog
+- Watch page shows seminar title (no Mux playback assertion)
+
 ### Teacher — `e2e/teacher/access.spec.ts`
 
 - `/teacher/courses` lists seeded courses (published + draft)
 - `/teacher/create` form renders
+
+### Teacher — `e2e/teacher/seminars.spec.ts`
+
+- `/teacher/seminars` lists seeded seminars (published + draft)
+- `/teacher/seminars/create` form renders
+- Draft seminar setup page shows title and unpublished banner
 
 Guest specs cover the non-teacher redirect; teacher specs assume a valid `NEXT_PUBLIC_TEACHER_ID`.
 
@@ -133,7 +150,7 @@ These areas are **intentionally out of scope** for the initial E2E suite. Dummy 
 | Area | Why deferred |
 |------|----------------|
 | Stripe / Mercado Pago checkout UI and webhooks | Requires real payment sandboxes and flaky browser flows |
-| Mux video playback | Needs real video assets; access-control boundaries are tested instead |
+| Mux video playback (courses and seminars) | Needs real video assets; access-control boundaries and page titles are tested instead |
 | UploadThing file uploads | Teacher media uploads need live storage credentials |
 | Drag-and-drop chapter reorder | Complex interaction; low ROI for initial gate |
 | Landing page marketing routes | Low ROI vs. core LMS flows (`/`, `/dashboard`, `/courses`, `/teacher`) |
