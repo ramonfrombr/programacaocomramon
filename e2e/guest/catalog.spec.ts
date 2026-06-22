@@ -25,6 +25,12 @@ test.describe("guest catalog", () => {
     await expect(page).toHaveURL("/");
   });
 
+  test("interviews page redirects unauthenticated users away", async ({ page }) => {
+    await page.goto("/interviews");
+
+    await expect(page).toHaveURL("/");
+  });
+
   test("dashboard redirects unauthenticated users away", async ({ page }) => {
     await page.goto("/dashboard");
 

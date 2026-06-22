@@ -19,10 +19,10 @@ todos:
     status: completed
   - id: config-i18n
     content: UploadThing interviewVideo, language keys, next.config PT rewrites, sidebar/nav updates
-    status: pending
+    status: completed
   - id: seed-e2e
     content: E2E fixtures + dev seed samples + interviews.spec.ts mirroring seminars
-    status: pending
+    status: completed
 isProject: false
 ---
 
