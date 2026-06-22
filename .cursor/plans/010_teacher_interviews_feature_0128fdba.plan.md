@@ -7,7 +7,7 @@ todos:
     status: completed
   - id: api
     content: Create /api/interviews CRUD + publish/unpublish and POST /api/categories for INTERVIEW kind
-    status: pending
+    status: completed
   - id: actions
     content: Add get-interviews.ts and get-interview.ts server actions
     status: pending
