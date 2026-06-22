@@ -7,7 +7,7 @@ todos:
     status: completed
   - id: seminar-placeholder
     content: "Optional: add searchForASeminar i18n key and placeholder prop to SearchInput"
-    status: pending
+    status: completed
   - id: e2e-search-test
     content: Add catalog search filter test to e2e/student/seminars.spec.ts
     status: pending

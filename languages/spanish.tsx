@@ -144,6 +144,7 @@ export const spanishLanguage: ILanguage = {
         goBackToSeminars: "Volver a seminarios",
         teacherMode: "Modo profesor",
         searchForACourse: "Buscar un curso",
+        searchForASeminar: "Buscar un seminario",
     },
     sidebar: {
         dashboard: "Tablero",

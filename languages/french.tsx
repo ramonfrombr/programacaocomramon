@@ -143,6 +143,7 @@ export const frenchLanguage: ILanguage = {
         goBackToSeminars: "Retour aux séminaires",
         teacherMode: "Mode enseignant",
         searchForACourse: "Rechercher un cours",
+        searchForASeminar: "Rechercher un séminaire",
     },
     sidebar: {
         dashboard: "Tableau de bord",

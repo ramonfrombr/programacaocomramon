@@ -139,6 +139,7 @@ export const englishLanguage: ILanguage = {
         goBackToSeminars: "Go Back to Seminars",
         teacherMode: "Teacher Mode",
         searchForACourse: "Search for a course",
+        searchForASeminar: "Search for a seminar",
     },
     sidebar: {
         dashboard: "Dashboard",

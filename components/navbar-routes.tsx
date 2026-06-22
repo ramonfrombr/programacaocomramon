@@ -26,7 +26,13 @@ export const NavbarRoutes = () => {
         <>
             {showDesktopSearch && (
                 <div className="hidden md:block">
-                    <SearchInput />
+                    <SearchInput
+                        placeholder={
+                            pathname === "/seminars"
+                                ? language.navbar.searchForASeminar
+                                : undefined
+                        }
+                    />
                 </div>
             )}
             <div className="flex gap-x-2 ml-auto">

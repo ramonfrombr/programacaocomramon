@@ -100,6 +100,7 @@ type ILanguageNavbar = {
     goBackToSeminars: string;
     teacherMode: string;
     searchForACourse: string;
+    searchForASeminar: string;
 };
 
 type ILanguageSidebar = {
