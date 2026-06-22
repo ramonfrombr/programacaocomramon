@@ -14,6 +14,8 @@ const translations = {
         chapters: "capitulos",
         seminars: "seminarios",
         "watch-seminar": "assistir-seminario",
+        interviews: "entrevistas",
+        "watch-interview": "assistir-entrevista",
     },
     english: {
         "sign-up": "sign-up",
@@ -28,12 +30,19 @@ const translations = {
         chapters: "chapters",
         seminars: "seminars",
         "watch-seminar": "watch-seminar",
+        interviews: "interviews",
+        "watch-interview": "watch-interview",
     },
 };
 
 const locale = process.env.NEXT_PUBLIC_LANGUAGE || "english";
 
-const routesWithDynamicSlug = ["courses", "watch-course", "watch-seminar"];
+const routesWithDynamicSlug = [
+    "courses",
+    "watch-course",
+    "watch-seminar",
+    "watch-interview",
+];
 
 const nextConfig = {
     images: {

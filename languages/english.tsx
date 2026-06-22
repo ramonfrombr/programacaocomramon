@@ -137,9 +137,11 @@ export const englishLanguage: ILanguage = {
     navbar: {
         goBackToCourses: "Go Back to Courses",
         goBackToSeminars: "Go Back to Seminars",
+        goBackToInterviews: "Back to interviews",
         teacherMode: "Teacher Mode",
         searchForACourse: "Search for a course",
         searchForASeminar: "Search for a seminar",
+        searchForAnInterview: "Search for an interview",
     },
     sidebar: {
         dashboard: "Dashboard",
@@ -239,6 +241,11 @@ export const englishLanguage: ILanguage = {
         noSeminarsFound: "No seminars found",
         watch: "Watch",
         watchSeminarURL: "watch-seminar",
+    },
+    interviews: {
+        noInterviewsFound: "No interviews found",
+        watch: "Watch",
+        watchInterviewURL: "watch-interview",
     },
     teacherInterviews: {
         filterInterviews: "Filter interviews...",

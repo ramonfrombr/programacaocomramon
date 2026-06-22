@@ -142,9 +142,11 @@ export const spanishLanguage: ILanguage = {
     navbar: {
         goBackToCourses: "Volver a los cursos",
         goBackToSeminars: "Volver a seminarios",
+        goBackToInterviews: "Volver a entrevistas",
         teacherMode: "Modo profesor",
         searchForACourse: "Buscar un curso",
         searchForASeminar: "Buscar un seminario",
+        searchForAnInterview: "Buscar una entrevista",
     },
     sidebar: {
         dashboard: "Tablero",
@@ -244,6 +246,11 @@ export const spanishLanguage: ILanguage = {
         noSeminarsFound: "No se encontraron seminarios",
         watch: "Ver",
         watchSeminarURL: "ver-seminario",
+    },
+    interviews: {
+        noInterviewsFound: "No se encontraron entrevistas",
+        watch: "Ver",
+        watchInterviewURL: "ver-entrevista",
     },
     teacherInterviews: {
         filterInterviews: "Filtrar entrevistas...",

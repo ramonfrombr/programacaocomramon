@@ -50,17 +50,17 @@ export const SidebarRoutes = ({ userLoggedIn, onNavigate }: SidebarRoutesProps) 
             href: "/seminars",
             locked: false,
         },
+        {
+            icon: MessagesSquare,
+            label: language.interviews,
+            href: "/interviews",
+            locked: false,
+        },
         /*
         {
             icon: Puzzle,
             label: "Desafios de Programação",
             href: "/challenges",
-            locked: true,
-        },
-        {
-            icon: MessagesSquare,
-            label: "Entrevistas",
-            href: "/interview",
             locked: true,
         },
         {

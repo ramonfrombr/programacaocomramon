@@ -16,7 +16,7 @@ todos:
     status: completed
   - id: student-ui
     content: Build /interviews catalog + /watch-interview player layout with guest header and sidebar
-    status: pending
+    status: completed
   - id: config-i18n
     content: UploadThing interviewVideo, language keys, next.config PT rewrites, sidebar/nav updates
     status: pending

@@ -141,9 +141,11 @@ export const frenchLanguage: ILanguage = {
     navbar: {
         goBackToCourses: "Retour aux cours",
         goBackToSeminars: "Retour aux séminaires",
+        goBackToInterviews: "Retour aux entretiens",
         teacherMode: "Mode enseignant",
         searchForACourse: "Rechercher un cours",
         searchForASeminar: "Rechercher un séminaire",
+        searchForAnInterview: "Rechercher un entretien",
     },
     sidebar: {
         dashboard: "Tableau de bord",
@@ -244,6 +246,11 @@ export const frenchLanguage: ILanguage = {
         noSeminarsFound: "Aucun séminaire trouvé",
         watch: "Regarder",
         watchSeminarURL: "regarder-seminaire",
+    },
+    interviews: {
+        noInterviewsFound: "Aucun entretien trouvé",
+        watch: "Regarder",
+        watchInterviewURL: "regarder-entretien",
     },
     teacherInterviews: {
         filterInterviews: "Filtrer les entretiens...",

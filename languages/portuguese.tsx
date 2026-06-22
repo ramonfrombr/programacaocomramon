@@ -142,9 +142,11 @@ export const portugueseLanguage: ILanguage = {
     navbar: {
         goBackToCourses: "Voltar para Cursos",
         goBackToSeminars: "Voltar para Seminários",
+        goBackToInterviews: "Voltar para Entrevistas",
         teacherMode: "Modo Professor",
         searchForACourse: "Pesquise um curso",
         searchForASeminar: "Pesquise um seminário",
+        searchForAnInterview: "Pesquise uma entrevista",
     },
     sidebar: {
         dashboard: "Painel",
@@ -244,6 +246,11 @@ export const portugueseLanguage: ILanguage = {
         noSeminarsFound: "Nenhum seminário encontrado",
         watch: "Assistir",
         watchSeminarURL: "assistir-seminario",
+    },
+    interviews: {
+        noInterviewsFound: "Nenhuma entrevista encontrada",
+        watch: "Assistir",
+        watchInterviewURL: "assistir-entrevista",
     },
     teacherInterviews: {
         filterInterviews: "Filtrar entrevistas...",
