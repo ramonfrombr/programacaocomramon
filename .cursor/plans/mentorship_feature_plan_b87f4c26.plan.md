@@ -13,7 +13,7 @@ todos:
     status: completed
   - id: teacher-ui
     content: Copy/adapt teacher/seminars → teacher/mentorships + MentorshipCategoriesForm from interviews
-    status: pending
+    status: completed
   - id: student-ui
     content: Build /mentorships catalog + /watch-mentorship full shell with category chips on watch page
     status: pending

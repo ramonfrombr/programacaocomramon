@@ -242,6 +242,84 @@ export const frenchLanguage: ILanguage = {
         seminarUnpublished: "Séminaire dépublié",
         seminarDeleted: "Séminaire supprimé",
     },
+    teacherMentorships: {
+        filterMentorships: "Filtrer les mentorats...",
+        newMentorship: "Nouveau mentorat",
+    },
+    teacherMentorshipCreate: {
+        nameYourMentorship: "Nommer votre mentorat",
+        nameYourMentorshipDescription:
+            "Comment souhaitez-vous nommer votre mentorat ? Vous pourrez le modifier plus tard.",
+        mentorshipTitle: "Titre du mentorat",
+        mentorshipTitleInputPlaceholder:
+            "ex. 'Évolution de carrière avec un mentor senior'",
+        mentorshipTitleInputDescription:
+            "Que couvrira ce mentorat ?",
+        cancel: "Annuler",
+        continue: "Continuer",
+        mentorshipCreated: "Mentorat créé",
+        somethingWentWrong: "Quelque chose s'est mal passé",
+        titleIsRequired: "Le titre est requis",
+    },
+    teacherMentorshipSetup: {
+        thisMentorshipIsUnpublished:
+            "Ce mentorat n'est pas publié. Il ne sera pas visible pour les étudiants.",
+        backToMentorships: "Retour aux mentorats",
+        mentorshipSetup: "Configuration du mentorat",
+        completeAllFields: "Complétez tous les champs",
+        publish: "Publier",
+        unpublish: "Dépublier",
+        areYouSure: "Êtes-vous sûr ?",
+        thisActionsCannotBeUndone: "Cette action ne peut pas être annulée",
+        cancel: "Annuler",
+        continue: "Continuer",
+        customizeYourMentorship: "Personnalisez votre mentorat",
+        mentorshipTitleField: {
+            mentorshipTitle: "Titre du mentorat",
+            editTitle: "Modifier le titre",
+            mentorshipTitleInputPlaceholder:
+                "ex. 'Évolution de carrière avec un mentor senior'",
+        },
+        mentorshipDescriptionField: {
+            mentorshipDescription: "Description du mentorat",
+            editDescription: "Modifier la description",
+            noDescription: "Aucune description",
+        },
+        mentorshipImageField: {
+            mentorshipImage: "Image du mentorat",
+            addAnImage: "Ajouter une image",
+            editImage: "Modifier l'image",
+            aspectRatioRecommended:
+                "Une image au format 16:9 est recommandée",
+            imageIsNecessary: "L'image est nécessaire.",
+        },
+        mentorshipCategoryField: {
+            mentorshipCategory: "Catégories du mentorat",
+            editCategory: "Modifier les catégories",
+            noCategory: "Aucune catégorie",
+            youHaveToSelectAtLeastOneItem:
+                "Vous devez sélectionner au moins un élément.",
+            addCategory: "Ajouter une catégorie",
+            categoryName: "Nom de la catégorie",
+            categoryNamePlaceholder: "ex. Planification de carrière",
+            categoryCreated: "Catégorie créée",
+            categoryAlreadyExists: "La catégorie existe déjà",
+        },
+        addAVideo: "Ajouter une vidéo",
+        mentorshipVideoField: {
+            mentorshipVideo: "Vidéo du mentorat",
+            uploadThisMentorshipsVideo: "Téléversez la vidéo de ce mentorat",
+            editVideo: "Modifier la vidéo",
+            videosCanTakeAFewMinutesToProcess:
+                "Les vidéos peuvent prendre quelques minutes à traiter. Actualisez la page si la vidéo n'apparaît pas.",
+        },
+        mentorshipUpdated: "Mentorat mis à jour",
+        somethingWentWrong: "Quelque chose s'est mal passé",
+        save: "Enregistrer",
+        mentorshipPublished: "Mentorat publié",
+        mentorshipUnpublished: "Mentorat dépublié",
+        mentorshipDeleted: "Mentorat supprimé",
+    },
     seminars: {
         noSeminarsFound: "Aucun séminaire trouvé",
         watch: "Regarder",

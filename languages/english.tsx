@@ -237,6 +237,82 @@ export const englishLanguage: ILanguage = {
         seminarUnpublished: "Seminar unpublished",
         seminarDeleted: "Seminar deleted",
     },
+    teacherMentorships: {
+        filterMentorships: "Filter mentorships...",
+        newMentorship: "New Mentorship",
+    },
+    teacherMentorshipCreate: {
+        nameYourMentorship: "Name Your Mentorship",
+        nameYourMentorshipDescription:
+            "What would you like to name your mentorship? Don't worry, you can change this later",
+        mentorshipTitle: "Mentorship Title",
+        mentorshipTitleInputPlaceholder: "e.g. 'Career growth with a senior mentor'",
+        mentorshipTitleInputDescription: "What will this mentorship cover?",
+        cancel: "Cancel",
+        continue: "Continue",
+        mentorshipCreated: "Mentorship created",
+        somethingWentWrong: "Something went wrong",
+        titleIsRequired: "Title is required",
+    },
+    teacherMentorshipSetup: {
+        thisMentorshipIsUnpublished:
+            "This mentorship is unpublished. It will not be visible to students.",
+        backToMentorships: "Back to mentorships",
+        mentorshipSetup: "Mentorship Setup",
+        completeAllFields: "Complete all fields",
+        publish: "Publish",
+        unpublish: "Unpublish",
+        areYouSure: "Are you sure?",
+        thisActionsCannotBeUndone: "This action cannot be undone",
+        cancel: "Cancel",
+        continue: "Continue",
+        customizeYourMentorship: "Customize your mentorship",
+        mentorshipTitleField: {
+            mentorshipTitle: "Mentorship title",
+            editTitle: "Edit title",
+            mentorshipTitleInputPlaceholder:
+                "e.g. 'Career growth with a senior mentor'",
+        },
+        mentorshipDescriptionField: {
+            mentorshipDescription: "Mentorship description",
+            editDescription: "Edit description",
+            noDescription: "No description",
+        },
+        mentorshipImageField: {
+            mentorshipImage: "Mentorship image",
+            addAnImage: "Add an image",
+            editImage: "Edit image",
+            aspectRatioRecommended:
+                "An image with a 16:9 aspect ratio is recommended",
+            imageIsNecessary: "Image is necessary.",
+        },
+        mentorshipCategoryField: {
+            mentorshipCategory: "Mentorship categories",
+            editCategory: "Edit categories",
+            noCategory: "No categories",
+            youHaveToSelectAtLeastOneItem:
+                "You have to select at least one item.",
+            addCategory: "Add category",
+            categoryName: "Category name",
+            categoryNamePlaceholder: "e.g. Career planning",
+            categoryCreated: "Category created",
+            categoryAlreadyExists: "Category already exists",
+        },
+        addAVideo: "Add a video",
+        mentorshipVideoField: {
+            mentorshipVideo: "Mentorship video",
+            uploadThisMentorshipsVideo: "Upload this mentorship's video",
+            editVideo: "Edit video",
+            videosCanTakeAFewMinutesToProcess:
+                "Videos can take a few minutes to process. Refresh the page if video does not appear.",
+        },
+        mentorshipUpdated: "Mentorship updated",
+        somethingWentWrong: "Something went wrong",
+        save: "Save",
+        mentorshipPublished: "Mentorship published",
+        mentorshipUnpublished: "Mentorship unpublished",
+        mentorshipDeleted: "Mentorship deleted",
+    },
     seminars: {
         noSeminarsFound: "No seminars found",
         watch: "Watch",
