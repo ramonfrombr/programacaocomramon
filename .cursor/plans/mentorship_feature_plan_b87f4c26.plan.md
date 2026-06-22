@@ -10,7 +10,7 @@ todos:
     status: completed
   - id: actions
     content: Add get-mentorships.ts and get-mentorship.ts (interview-style access, no teacher bypass)
-    status: pending
+    status: completed
   - id: teacher-ui
     content: Copy/adapt teacher/seminars → teacher/mentorships + MentorshipCategoriesForm from interviews
     status: pending
