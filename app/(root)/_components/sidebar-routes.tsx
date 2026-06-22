@@ -88,6 +88,12 @@ export const SidebarRoutes = ({ userLoggedIn, onNavigate }: SidebarRoutesProps) 
             locked: false,
         },
         {
+            icon: MessagesSquare,
+            label: language.interviews,
+            href: "/teacher/interviews",
+            locked: false,
+        },
+        {
             icon: BarChart,
             label: language.analytics,
             href: "/teacher/analytics",

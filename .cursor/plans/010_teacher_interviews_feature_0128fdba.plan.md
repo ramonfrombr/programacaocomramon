@@ -13,7 +13,7 @@ todos:
     status: completed
   - id: teacher-ui
     content: Copy/adapt teacher/seminars → teacher/interviews (list, create, setup forms including categories)
-    status: pending
+    status: completed
   - id: student-ui
     content: Build /interviews catalog + /watch-interview player layout with guest header and sidebar
     status: pending

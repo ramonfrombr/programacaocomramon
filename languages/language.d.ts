@@ -15,6 +15,9 @@ type ILanguage = {
     teacherSeminars: ILanguageTeacherSeminars;
     teacherSeminarCreate: ILanguageTeacherSeminarCreate;
     teacherSeminarSetup: ILanguageTeacherSeminarSetup;
+    teacherInterviews: ILanguageTeacherInterviews;
+    teacherInterviewCreate: ILanguageTeacherInterviewCreate;
+    teacherInterviewSetup: ILanguageTeacherInterviewSetup;
     seminars: ILanguageSeminars;
     teacherCreate: ILanguageTeacherCreate;
     teacherCourseSetup: ILanguageTeacherCourseSetup;
@@ -108,6 +111,7 @@ type ILanguageSidebar = {
     browse: string;
     courses: string;
     seminars: string;
+    interviews: string;
     analytics: string;
 };
 
@@ -202,6 +206,119 @@ type ILanguageTeacherSeminarSetupImage = {
 type ILanguageTeacherSeminarSetupVideo = {
     seminarVideo: string;
     uploadThisSeminarsVideo: string;
+    editVideo: string;
+    videosCanTakeAFewMinutesToProcess: string;
+};
+
+type ILanguageTeacherInterviews = {
+    filterInterviews: string;
+    newInterview: string;
+    guest: string;
+    company: string;
+    difficulty: string;
+};
+
+type ILanguageTeacherInterviewCreate = {
+    nameYourInterview: string;
+    nameYourInterviewDescription: string;
+    interviewTitle: string;
+    interviewTitleInputPlaceholder: string;
+    interviewTitleInputDescription: string;
+    cancel: string;
+    continue: string;
+    interviewCreated: string;
+    somethingWentWrong: string;
+    titleIsRequired: string;
+};
+
+type ILanguageTeacherInterviewSetup = {
+    thisInterviewIsUnpublished: string;
+    backToInterviews: string;
+    interviewSetup: string;
+    completeAllFields: string;
+    publish: string;
+    unpublish: string;
+    areYouSure: string;
+    thisActionsCannotBeUndone: string;
+    cancel: string;
+    continue: string;
+    customizeYourInterview: string;
+    interviewTitleField: ILanguageTeacherInterviewSetupTitle;
+    interviewDescriptionField: ILanguageTeacherInterviewSetupDescription;
+    interviewImageField: ILanguageTeacherInterviewSetupImage;
+    interviewGuestField: ILanguageTeacherInterviewSetupGuest;
+    interviewDifficultyField: ILanguageTeacherInterviewSetupDifficulty;
+    interviewCategoryField: ILanguageTeacherInterviewSetupCategory;
+    difficultyLabels: ILanguageInterviewDifficultyLabels;
+    addAVideo: string;
+    interviewVideoField: ILanguageTeacherInterviewSetupVideo;
+    interviewUpdated: string;
+    somethingWentWrong: string;
+    save: string;
+    interviewPublished: string;
+    interviewUnpublished: string;
+    interviewDeleted: string;
+};
+
+type ILanguageTeacherInterviewSetupTitle = {
+    interviewTitle: string;
+    editTitle: string;
+    interviewTitleInputPlaceholder: string;
+};
+
+type ILanguageTeacherInterviewSetupDescription = {
+    interviewDescription: string;
+    editDescription: string;
+    noDescription: string;
+};
+
+type ILanguageTeacherInterviewSetupImage = {
+    interviewImage: string;
+    addAnImage: string;
+    editImage: string;
+    aspectRatioRecommended: string;
+    imageIsNecessary: string;
+};
+
+type ILanguageTeacherInterviewSetupGuest = {
+    interviewGuest: string;
+    editGuest: string;
+    guestName: string;
+    guestCompany: string;
+    guestRole: string;
+    guestNamePlaceholder: string;
+    guestCompanyPlaceholder: string;
+    guestRolePlaceholder: string;
+    noGuest: string;
+};
+
+type ILanguageTeacherInterviewSetupDifficulty = {
+    interviewDifficulty: string;
+    editDifficulty: string;
+};
+
+type ILanguageTeacherInterviewSetupCategory = {
+    interviewCategory: string;
+    editCategory: string;
+    noCategory: string;
+    youHaveToSelectAtLeastOneItem: string;
+    addCategory: string;
+    categoryName: string;
+    categoryNamePlaceholder: string;
+    categoryCreated: string;
+    categoryAlreadyExists: string;
+};
+
+type ILanguageInterviewDifficultyLabels = {
+    JUNIOR: string;
+    MID: string;
+    SENIOR: string;
+    STAFF: string;
+};
+
+type ILanguageTeacherInterviewSetupVideo = {
+    interviewVideo: string;
+    uploadThisInterviewsVideo: string;
     editVideo: string;
     videosCanTakeAFewMinutesToProcess: string;
 };
