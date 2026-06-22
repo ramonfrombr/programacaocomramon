@@ -13,14 +13,17 @@ export async function POST(req: Request) {
             return new NextResponse("Unauthorized", { status: 401 });
         }
 
-        if (!name || kind !== CategoryKind.INTERVIEW) {
+        if (
+            !name ||
+            ![CategoryKind.INTERVIEW, CategoryKind.MENTORSHIP].includes(kind)
+        ) {
             return new NextResponse("Bad Request", { status: 400 });
         }
 
         const existingCategory = await db.category.findFirst({
             where: {
                 name,
-                kind: CategoryKind.INTERVIEW,
+                kind,
             },
         });
 
@@ -31,7 +34,7 @@ export async function POST(req: Request) {
         const category = await db.category.create({
             data: {
                 name,
-                kind: CategoryKind.INTERVIEW,
+                kind,
             },
         });
 

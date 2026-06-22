@@ -1,7 +1,7 @@
 /**
  * Deterministic E2E fixture identifiers.
  *
- * Fixed MongoDB ObjectIds and slugs let tests reference courses/chapters/seminars/interviews without
+ * Fixed MongoDB ObjectIds and slugs let tests reference courses/chapters/seminars/interviews/mentorships without
  * scraping the DOM. Keep IDs stable across seed runs so Playwright specs stay
  * in sync with scripts/e2e-seed.ts.
  */
@@ -99,14 +99,50 @@ export const E2E_INTERVIEW_IDS = {
   draft: "e2e000000000000000000061",
 } as const;
 
+export const E2E_MENTORSHIP_CATEGORY_IDS = {
+  career: "e2e000000000000000000090",
+  leadership: "e2e000000000000000000091",
+} as const;
+
+export const E2E_MENTORSHIP_CATEGORIES = [
+  { id: E2E_MENTORSHIP_CATEGORY_IDS.career, name: "E2E Mentorship Career" },
+  {
+    id: E2E_MENTORSHIP_CATEGORY_IDS.leadership,
+    name: "E2E Mentorship Leadership",
+  },
+] as const;
+
+export const E2E_MENTORSHIP_IDS = {
+  published: "e2e000000000000000000100",
+  draft: "e2e000000000000000000101",
+} as const;
+
 export const E2E_MUX_SENTINEL_CHAPTER_IDS = {
   publishedSeminar: "e2e000000000000000000080",
   publishedInterview: "e2e000000000000000000081",
+  publishedMentorship: "e2e000000000000000000082",
+} as const;
+
+/** Non-null placeholders — MongoDB unique indexes allow only one null per optional FK. */
+export const E2E_MUX_SENTINEL_SEMINAR_IDS = {
+  publishedInterview: "e2e000000000000000000094",
+  publishedMentorship: "e2e000000000000000000099",
+} as const;
+
+export const E2E_MUX_SENTINEL_INTERVIEW_IDS = {
+  publishedSeminar: "e2e000000000000000000095",
+  publishedMentorship: "e2e000000000000000000098",
+} as const;
+
+export const E2E_MUX_SENTINEL_MENTORSHIP_IDS = {
+  publishedSeminar: "e2e000000000000000000096",
+  publishedInterview: "e2e000000000000000000097",
 } as const;
 
 export const E2E_MUX_IDS = {
   publishedSeminar: "e2e000000000000000000040",
   publishedInterview: "e2e000000000000000000070",
+  publishedMentorship: "e2e000000000000000000092",
 } as const;
 
 export const E2E_PUBLISHED_SEMINAR = {
@@ -163,6 +199,31 @@ export const E2E_DRAFT_INTERVIEW = {
   difficulty: "JUNIOR" as const,
 } as const;
 
+export const E2E_PUBLISHED_MENTORSHIP = {
+  id: E2E_MENTORSHIP_IDS.published,
+  title: "E2E Published Mentorship",
+  description: "Published mentorship fixture for Playwright E2E tests.",
+  imageUrl: E2E_FIXTURE_IMAGE_URL,
+  videoUrl: "https://example.com/e2e-mentorship-video.mp4",
+  categoryIds: [
+    E2E_MENTORSHIP_CATEGORY_IDS.career,
+    E2E_MENTORSHIP_CATEGORY_IDS.leadership,
+  ] as const,
+} as const;
+
+export const E2E_PUBLISHED_MENTORSHIP_MUX = {
+  assetId: "e2e-mentorship-mux-asset",
+  playbackId: "e2e-mentorship-playback",
+} as const;
+
+export const E2E_DRAFT_MENTORSHIP = {
+  id: E2E_MENTORSHIP_IDS.draft,
+  title: "E2E Draft Mentorship",
+  description:
+    "Unpublished mentorship fixture with image — must not appear on the catalog.",
+  imageUrl: E2E_FIXTURE_IMAGE_URL,
+} as const;
+
 export function courseCatalogPath(slug: string): string {
   return `/courses/${slug}`;
 }
@@ -185,4 +246,12 @@ export function watchInterviewPath(interviewId: string): string {
 
 export function teacherInterviewSetupPath(interviewId: string): string {
   return `/teacher/interviews/${interviewId}`;
+}
+
+export function watchMentorshipPath(mentorshipId: string): string {
+  return `/watch-mentorship/${mentorshipId}`;
+}
+
+export function teacherMentorshipSetupPath(mentorshipId: string): string {
+  return `/teacher/mentorships/${mentorshipId}`;
 }

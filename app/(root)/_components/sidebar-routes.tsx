@@ -13,6 +13,7 @@ import {
     Users,
     Trophy,
     Pencil,
+    GraduationCap,
 } from "lucide-react";
 import { useLanguageStore } from "@/hooks/use-language-store";
 import { SidebarItem } from "@/app/(root)/_components/sidebar-item";
@@ -51,6 +52,12 @@ export const SidebarRoutes = ({ userLoggedIn, onNavigate }: SidebarRoutesProps) 
             locked: false,
         },
         {
+            icon: GraduationCap,
+            label: language.mentorships,
+            href: "/mentorships",
+            locked: false,
+        },
+        {
             icon: MessagesSquare,
             label: language.interviews,
             href: "/interviews",
@@ -85,6 +92,12 @@ export const SidebarRoutes = ({ userLoggedIn, onNavigate }: SidebarRoutesProps) 
             icon: School,
             label: language.seminars,
             href: "/teacher/seminars",
+            locked: false,
+        },
+        {
+            icon: GraduationCap,
+            label: language.mentorships,
+            href: "/teacher/mentorships",
             locked: false,
         },
         {

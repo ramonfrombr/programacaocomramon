@@ -14,6 +14,8 @@ const translations = {
         chapters: "capitulos",
         seminars: "seminarios",
         "watch-seminar": "assistir-seminario",
+        mentorships: "mentorias",
+        "watch-mentorship": "assistir-mentoria",
         interviews: "entrevistas",
         "watch-interview": "assistir-entrevista",
     },
@@ -30,6 +32,8 @@ const translations = {
         chapters: "chapters",
         seminars: "seminars",
         "watch-seminar": "watch-seminar",
+        mentorships: "mentorships",
+        "watch-mentorship": "watch-mentorship",
         interviews: "interviews",
         "watch-interview": "watch-interview",
     },
@@ -41,6 +45,7 @@ const routesWithDynamicSlug = [
     "courses",
     "watch-course",
     "watch-seminar",
+    "watch-mentorship",
     "watch-interview",
 ];
 

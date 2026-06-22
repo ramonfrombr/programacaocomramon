@@ -142,10 +142,12 @@ export const portugueseLanguage: ILanguage = {
     navbar: {
         goBackToCourses: "Voltar para Cursos",
         goBackToSeminars: "Voltar para Seminários",
+        goBackToMentorships: "Voltar para Mentorias",
         goBackToInterviews: "Voltar para Entrevistas",
         teacherMode: "Modo Professor",
         searchForACourse: "Pesquise um curso",
         searchForASeminar: "Pesquise um seminário",
+        searchForAMentorship: "Pesquise uma mentoria",
         searchForAnInterview: "Pesquise uma entrevista",
     },
     sidebar: {
@@ -153,6 +155,7 @@ export const portugueseLanguage: ILanguage = {
         browse: "Cursos",
         courses: "Meus Cursos",
         seminars: "Seminários",
+        mentorships: "Mentorias",
         interviews: "Entrevistas",
         analytics: "Vendas",
     },
@@ -242,10 +245,92 @@ export const portugueseLanguage: ILanguage = {
         seminarUnpublished: "Seminário não publicado",
         seminarDeleted: "Seminário excluído",
     },
+    teacherMentorships: {
+        filterMentorships: "Filtrar mentorias...",
+        newMentorship: "Nova Mentoria",
+    },
+    teacherMentorshipCreate: {
+        nameYourMentorship: "Nome da mentoria",
+        nameYourMentorshipDescription:
+            "Como você gostaria de nomear sua mentoria? Não se preocupe, você pode alterar isso depois",
+        mentorshipTitle: "Título da mentoria",
+        mentorshipTitleInputPlaceholder:
+            "ex.: 'Crescimento de carreira com um mentor sênior'",
+        mentorshipTitleInputDescription: "O que esta mentoria vai abordar?",
+        cancel: "Cancelar",
+        continue: "Continuar",
+        mentorshipCreated: "Mentoria criada",
+        somethingWentWrong: "Algo deu errado",
+        titleIsRequired: "O título é obrigatório",
+    },
+    teacherMentorshipSetup: {
+        thisMentorshipIsUnpublished:
+            "Esta mentoria não está publicada. Ela não estará visível para os alunos.",
+        backToMentorships: "Voltar para mentorias",
+        mentorshipSetup: "Configuração da Mentoria",
+        completeAllFields: "Complete todos os campos",
+        publish: "Publicar",
+        unpublish: "Não publicar",
+        areYouSure: "Você tem certeza?",
+        thisActionsCannotBeUndone: "Esta ação não pode ser desfeita.",
+        cancel: "Cancelar",
+        continue: "Continuar",
+        customizeYourMentorship: "Personalizar a mentoria",
+        mentorshipTitleField: {
+            mentorshipTitle: "Título da mentoria",
+            editTitle: "Editar título",
+            mentorshipTitleInputPlaceholder:
+                "ex.: 'Crescimento de carreira com um mentor sênior'",
+        },
+        mentorshipDescriptionField: {
+            mentorshipDescription: "Descrição da mentoria",
+            editDescription: "Editar descrição",
+            noDescription: "Sem descrição",
+        },
+        mentorshipImageField: {
+            mentorshipImage: "Imagem da mentoria",
+            addAnImage: "Adicionar uma imagem",
+            editImage: "Editar imagem",
+            aspectRatioRecommended:
+                "Uma imagem com proporção 16:9 é recomendada",
+            imageIsNecessary: "A imagem é necessária.",
+        },
+        mentorshipCategoryField: {
+            mentorshipCategory: "Categorias da mentoria",
+            editCategory: "Editar categorias",
+            noCategory: "Sem categorias",
+            youHaveToSelectAtLeastOneItem:
+                "Você precisa selecionar pelo menos um item.",
+            addCategory: "Adicionar categoria",
+            categoryName: "Nome da categoria",
+            categoryNamePlaceholder: "ex.: Planejamento de carreira",
+            categoryCreated: "Categoria criada",
+            categoryAlreadyExists: "Categoria já existe",
+        },
+        addAVideo: "Adicionar um vídeo",
+        mentorshipVideoField: {
+            mentorshipVideo: "Vídeo da mentoria",
+            uploadThisMentorshipsVideo: "Envie o vídeo desta mentoria",
+            editVideo: "Editar vídeo",
+            videosCanTakeAFewMinutesToProcess:
+                "Os vídeos podem levar alguns minutos para processar. Atualize a página se o vídeo não aparecer.",
+        },
+        mentorshipUpdated: "Mentoria atualizada",
+        somethingWentWrong: "Algo deu errado",
+        save: "Salvar",
+        mentorshipPublished: "Mentoria publicada",
+        mentorshipUnpublished: "Mentoria despublicada",
+        mentorshipDeleted: "Mentoria excluída",
+    },
     seminars: {
         noSeminarsFound: "Nenhum seminário encontrado",
         watch: "Assistir",
         watchSeminarURL: "assistir-seminario",
+    },
+    mentorships: {
+        noMentorshipsFound: "Nenhuma mentoria encontrada",
+        watch: "Assistir",
+        watchMentorshipURL: "assistir-mentoria",
     },
     interviews: {
         noInterviewsFound: "Nenhuma entrevista encontrada",

@@ -15,10 +15,14 @@ type ILanguage = {
     teacherSeminars: ILanguageTeacherSeminars;
     teacherSeminarCreate: ILanguageTeacherSeminarCreate;
     teacherSeminarSetup: ILanguageTeacherSeminarSetup;
+    teacherMentorships: ILanguageTeacherMentorships;
+    teacherMentorshipCreate: ILanguageTeacherMentorshipCreate;
+    teacherMentorshipSetup: ILanguageTeacherMentorshipSetup;
     teacherInterviews: ILanguageTeacherInterviews;
     teacherInterviewCreate: ILanguageTeacherInterviewCreate;
     teacherInterviewSetup: ILanguageTeacherInterviewSetup;
     seminars: ILanguageSeminars;
+    mentorships: ILanguageMentorships;
     interviews: ILanguageInterviews;
     teacherCreate: ILanguageTeacherCreate;
     teacherCourseSetup: ILanguageTeacherCourseSetup;
@@ -102,10 +106,12 @@ type ITestimonial = {
 type ILanguageNavbar = {
     goBackToCourses: string;
     goBackToSeminars: string;
+    goBackToMentorships: string;
     goBackToInterviews: string;
     teacherMode: string;
     searchForACourse: string;
     searchForASeminar: string;
+    searchForAMentorship: string;
     searchForAnInterview: string;
 };
 
@@ -114,6 +120,7 @@ type ILanguageSidebar = {
     browse: string;
     courses: string;
     seminars: string;
+    mentorships: string;
     interviews: string;
     analytics: string;
 };
@@ -209,6 +216,89 @@ type ILanguageTeacherSeminarSetupImage = {
 type ILanguageTeacherSeminarSetupVideo = {
     seminarVideo: string;
     uploadThisSeminarsVideo: string;
+    editVideo: string;
+    videosCanTakeAFewMinutesToProcess: string;
+};
+
+type ILanguageTeacherMentorships = {
+    filterMentorships: string;
+    newMentorship: string;
+};
+
+type ILanguageTeacherMentorshipCreate = {
+    nameYourMentorship: string;
+    nameYourMentorshipDescription: string;
+    mentorshipTitle: string;
+    mentorshipTitleInputPlaceholder: string;
+    mentorshipTitleInputDescription: string;
+    cancel: string;
+    continue: string;
+    mentorshipCreated: string;
+    somethingWentWrong: string;
+    titleIsRequired: string;
+};
+
+type ILanguageTeacherMentorshipSetup = {
+    thisMentorshipIsUnpublished: string;
+    backToMentorships: string;
+    mentorshipSetup: string;
+    completeAllFields: string;
+    publish: string;
+    unpublish: string;
+    areYouSure: string;
+    thisActionsCannotBeUndone: string;
+    cancel: string;
+    continue: string;
+    customizeYourMentorship: string;
+    mentorshipTitleField: ILanguageTeacherMentorshipSetupTitle;
+    mentorshipDescriptionField: ILanguageTeacherMentorshipSetupDescription;
+    mentorshipImageField: ILanguageTeacherMentorshipSetupImage;
+    mentorshipCategoryField: ILanguageTeacherMentorshipSetupCategory;
+    addAVideo: string;
+    mentorshipVideoField: ILanguageTeacherMentorshipSetupVideo;
+    mentorshipUpdated: string;
+    somethingWentWrong: string;
+    save: string;
+    mentorshipPublished: string;
+    mentorshipUnpublished: string;
+    mentorshipDeleted: string;
+};
+
+type ILanguageTeacherMentorshipSetupTitle = {
+    mentorshipTitle: string;
+    editTitle: string;
+    mentorshipTitleInputPlaceholder: string;
+};
+
+type ILanguageTeacherMentorshipSetupDescription = {
+    mentorshipDescription: string;
+    editDescription: string;
+    noDescription: string;
+};
+
+type ILanguageTeacherMentorshipSetupImage = {
+    mentorshipImage: string;
+    addAnImage: string;
+    editImage: string;
+    aspectRatioRecommended: string;
+    imageIsNecessary: string;
+};
+
+type ILanguageTeacherMentorshipSetupCategory = {
+    mentorshipCategory: string;
+    editCategory: string;
+    noCategory: string;
+    youHaveToSelectAtLeastOneItem: string;
+    addCategory: string;
+    categoryName: string;
+    categoryNamePlaceholder: string;
+    categoryCreated: string;
+    categoryAlreadyExists: string;
+};
+
+type ILanguageTeacherMentorshipSetupVideo = {
+    mentorshipVideo: string;
+    uploadThisMentorshipsVideo: string;
     editVideo: string;
     videosCanTakeAFewMinutesToProcess: string;
 };
@@ -330,6 +420,12 @@ type ILanguageSeminars = {
     noSeminarsFound: string;
     watch: string;
     watchSeminarURL: string;
+};
+
+type ILanguageMentorships = {
+    noMentorshipsFound: string;
+    watch: string;
+    watchMentorshipURL: string;
 };
 
 type ILanguageInterviews = {
