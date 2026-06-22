@@ -10,7 +10,7 @@ todos:
     status: completed
   - id: actions
     content: Add get-interviews.ts and get-interview.ts server actions
-    status: pending
+    status: completed
   - id: teacher-ui
     content: Copy/adapt teacher/seminars → teacher/interviews (list, create, setup forms including categories)
     status: pending
