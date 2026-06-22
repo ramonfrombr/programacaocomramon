@@ -7,7 +7,7 @@ todos:
     status: completed
   - id: api
     content: Create /api/mentorships CRUD + publish/unpublish; extend POST /api/categories for MENTORSHIP kind
-    status: pending
+    status: completed
   - id: actions
     content: Add get-mentorships.ts and get-mentorship.ts (interview-style access, no teacher bypass)
     status: pending
