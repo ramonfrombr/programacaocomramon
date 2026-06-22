@@ -19,8 +19,13 @@ export const NavbarRoutes = () => {
     const isSeminarPage = pathname?.includes(
         `/${language.seminars.watchSeminarURL}/`,
     );
+    const isInterviewPage = pathname?.includes(
+        `/${language.interviews.watchInterviewURL}/`,
+    );
     const showDesktopSearch =
-        pathname === "/" || pathname === "/seminars";
+        pathname === "/" ||
+        pathname === "/seminars" ||
+        pathname === "/interviews";
 
     return (
         <>
@@ -30,7 +35,9 @@ export const NavbarRoutes = () => {
                         placeholder={
                             pathname === "/seminars"
                                 ? language.navbar.searchForASeminar
-                                : undefined
+                                : pathname === "/interviews"
+                                  ? language.navbar.searchForAnInterview
+                                  : undefined
                         }
                     />
                 </div>
@@ -48,6 +55,13 @@ export const NavbarRoutes = () => {
                         <Button size="sm" variant="ghost">
                             <LogOut className="w-4 h-4 mr-2" />{" "}
                             {language.navbar.goBackToSeminars}
+                        </Button>
+                    </Link>
+                ) : isInterviewPage ? (
+                    <Link href="/interviews">
+                        <Button size="sm" variant="ghost">
+                            <LogOut className="w-4 h-4 mr-2" />{" "}
+                            {language.navbar.goBackToInterviews}
                         </Button>
                     </Link>
                 ) : isTeacher(userId) ? (

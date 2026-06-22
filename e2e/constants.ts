@@ -1,7 +1,7 @@
 /**
  * Deterministic E2E fixture identifiers.
  *
- * Fixed MongoDB ObjectIds and slugs let tests reference courses/chapters/seminars without
+ * Fixed MongoDB ObjectIds and slugs let tests reference courses/chapters/seminars/interviews without
  * scraping the DOM. Keep IDs stable across seed runs so Playwright specs stay
  * in sync with scripts/e2e-seed.ts.
  */
@@ -81,8 +81,32 @@ export const E2E_SEMINAR_IDS = {
   draft: "e2e000000000000000000031",
 } as const;
 
+export const E2E_INTERVIEW_CATEGORY_IDS = {
+  career: "e2e000000000000000000050",
+  systemDesign: "e2e000000000000000000051",
+} as const;
+
+export const E2E_INTERVIEW_CATEGORIES = [
+  { id: E2E_INTERVIEW_CATEGORY_IDS.career, name: "E2E Interview Career" },
+  {
+    id: E2E_INTERVIEW_CATEGORY_IDS.systemDesign,
+    name: "E2E Interview System Design",
+  },
+] as const;
+
+export const E2E_INTERVIEW_IDS = {
+  published: "e2e000000000000000000060",
+  draft: "e2e000000000000000000061",
+} as const;
+
+export const E2E_MUX_SENTINEL_CHAPTER_IDS = {
+  publishedSeminar: "e2e000000000000000000080",
+  publishedInterview: "e2e000000000000000000081",
+} as const;
+
 export const E2E_MUX_IDS = {
   publishedSeminar: "e2e000000000000000000040",
+  publishedInterview: "e2e000000000000000000070",
 } as const;
 
 export const E2E_PUBLISHED_SEMINAR = {
@@ -106,6 +130,39 @@ export const E2E_DRAFT_SEMINAR = {
   imageUrl: E2E_FIXTURE_IMAGE_URL,
 } as const;
 
+export const E2E_PUBLISHED_INTERVIEW = {
+  id: E2E_INTERVIEW_IDS.published,
+  title: "E2E Published Interview",
+  description: "Published interview fixture for Playwright E2E tests.",
+  imageUrl: E2E_FIXTURE_IMAGE_URL,
+  videoUrl: "https://example.com/e2e-interview-video.mp4",
+  guestName: "E2E Guest Name",
+  guestCompany: "E2E Guest Company",
+  guestRole: "Staff Engineer",
+  difficulty: "STAFF" as const,
+  categoryIds: [
+    E2E_INTERVIEW_CATEGORY_IDS.career,
+    E2E_INTERVIEW_CATEGORY_IDS.systemDesign,
+  ] as const,
+} as const;
+
+export const E2E_PUBLISHED_INTERVIEW_MUX = {
+  assetId: "e2e-interview-mux-asset",
+  playbackId: "e2e-interview-playback",
+} as const;
+
+export const E2E_DRAFT_INTERVIEW = {
+  id: E2E_INTERVIEW_IDS.draft,
+  title: "E2E Draft Interview",
+  description:
+    "Unpublished interview fixture with image — must not appear on the catalog.",
+  imageUrl: E2E_FIXTURE_IMAGE_URL,
+  guestName: "E2E Draft Guest",
+  guestCompany: "E2E Draft Company",
+  guestRole: "Software Engineer",
+  difficulty: "JUNIOR" as const,
+} as const;
+
 export function courseCatalogPath(slug: string): string {
   return `/courses/${slug}`;
 }
@@ -120,4 +177,12 @@ export function watchSeminarPath(seminarId: string): string {
 
 export function teacherSeminarSetupPath(seminarId: string): string {
   return `/teacher/seminars/${seminarId}`;
+}
+
+export function watchInterviewPath(interviewId: string): string {
+  return `/watch-interview/${interviewId}`;
+}
+
+export function teacherInterviewSetupPath(interviewId: string): string {
+  return `/teacher/interviews/${interviewId}`;
 }
