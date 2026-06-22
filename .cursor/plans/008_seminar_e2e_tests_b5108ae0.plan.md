@@ -16,7 +16,7 @@ todos:
     status: completed
   - id: teacher-spec
     content: Create e2e/teacher/seminars.spec.ts with list, create, and setup form tests
-    status: pending
+    status: completed
   - id: readme
     content: Update e2e/README.md with seminar coverage and seed notes
     status: pending
