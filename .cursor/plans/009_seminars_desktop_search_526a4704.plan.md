@@ -10,10 +10,10 @@ todos:
     status: completed
   - id: e2e-search-test
     content: Add catalog search filter test to e2e/student/seminars.spec.ts
-    status: pending
+    status: completed
   - id: verify
     content: Manual desktop check + run targeted Playwright student project
-    status: pending
+    status: completed
 isProject: false
 ---
 

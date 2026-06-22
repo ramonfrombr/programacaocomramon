@@ -20,6 +20,19 @@ test.describe("student seminars", () => {
     await expect(page.getByText(E2E_DRAFT_SEMINAR.title)).toHaveCount(0);
   });
 
+  test("catalog search filters seminars by title", async ({ page }) => {
+    await page.goto("/seminars");
+
+    await page
+      .locator(".border-b")
+      .getByRole("textbox", { name: /search for a seminar/i })
+      .fill("Published");
+    await expect(page).toHaveURL(/title=Published/);
+    await expect(
+      page.getByRole("link", { name: E2E_PUBLISHED_SEMINAR.title })
+    ).toBeVisible();
+  });
+
   test("watch page shows the seminar title", async ({ page }) => {
     await page.goto(watchSeminarPath(E2E_PUBLISHED_SEMINAR.id));
 
