@@ -50,9 +50,11 @@ export const SearchInput = ({ placeholder }: SearchInputProps) => {
                     placeholder ??
                     (pathname === "/seminars"
                         ? language.searchForASeminar
-                        : pathname === "/interviews"
-                          ? language.searchForAnInterview
-                          : language.searchForACourse)
+                        : pathname === "/mentorships"
+                          ? language.searchForAMentorship
+                          : pathname === "/interviews"
+                            ? language.searchForAnInterview
+                            : language.searchForACourse)
                 }
             />
         </div>

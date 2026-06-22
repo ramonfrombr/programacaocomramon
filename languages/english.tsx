@@ -137,10 +137,12 @@ export const englishLanguage: ILanguage = {
     navbar: {
         goBackToCourses: "Go Back to Courses",
         goBackToSeminars: "Go Back to Seminars",
+        goBackToMentorships: "Back to mentorships",
         goBackToInterviews: "Back to interviews",
         teacherMode: "Teacher Mode",
         searchForACourse: "Search for a course",
         searchForASeminar: "Search for a seminar",
+        searchForAMentorship: "Search for a mentorship",
         searchForAnInterview: "Search for an interview",
     },
     sidebar: {
@@ -148,6 +150,7 @@ export const englishLanguage: ILanguage = {
         browse: "Courses",
         courses: "My Courses",
         seminars: "Seminars",
+        mentorships: "Mentorships",
         interviews: "Interviews",
         analytics: "Analytics",
     },
@@ -317,6 +320,11 @@ export const englishLanguage: ILanguage = {
         noSeminarsFound: "No seminars found",
         watch: "Watch",
         watchSeminarURL: "watch-seminar",
+    },
+    mentorships: {
+        noMentorshipsFound: "No mentorships found",
+        watch: "Watch",
+        watchMentorshipURL: "watch-mentorship",
     },
     interviews: {
         noInterviewsFound: "No interviews found",

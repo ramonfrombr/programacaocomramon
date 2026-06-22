@@ -142,10 +142,12 @@ export const spanishLanguage: ILanguage = {
     navbar: {
         goBackToCourses: "Volver a los cursos",
         goBackToSeminars: "Volver a seminarios",
+        goBackToMentorships: "Volver a mentorías",
         goBackToInterviews: "Volver a entrevistas",
         teacherMode: "Modo profesor",
         searchForACourse: "Buscar un curso",
         searchForASeminar: "Buscar un seminario",
+        searchForAMentorship: "Buscar una mentoría",
         searchForAnInterview: "Buscar una entrevista",
     },
     sidebar: {
@@ -153,6 +155,7 @@ export const spanishLanguage: ILanguage = {
         browse: "Cursos",
         courses: "Mis cursos",
         seminars: "Seminarios",
+        mentorships: "Mentorías",
         interviews: "Entrevistas",
         analytics: "Analytics",
     },
@@ -323,6 +326,11 @@ export const spanishLanguage: ILanguage = {
         noSeminarsFound: "No se encontraron seminarios",
         watch: "Ver",
         watchSeminarURL: "ver-seminario",
+    },
+    mentorships: {
+        noMentorshipsFound: "No se encontraron mentorías",
+        watch: "Ver",
+        watchMentorshipURL: "ver-mentoria",
     },
     interviews: {
         noInterviewsFound: "No se encontraron entrevistas",

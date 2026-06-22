@@ -19,12 +19,16 @@ export const NavbarRoutes = () => {
     const isSeminarPage = pathname?.includes(
         `/${language.seminars.watchSeminarURL}/`,
     );
+    const isMentorshipPage = pathname?.includes(
+        `/${language.mentorships.watchMentorshipURL}/`,
+    );
     const isInterviewPage = pathname?.includes(
         `/${language.interviews.watchInterviewURL}/`,
     );
     const showDesktopSearch =
         pathname === "/" ||
         pathname === "/seminars" ||
+        pathname === "/mentorships" ||
         pathname === "/interviews";
 
     return (
@@ -35,9 +39,11 @@ export const NavbarRoutes = () => {
                         placeholder={
                             pathname === "/seminars"
                                 ? language.navbar.searchForASeminar
-                                : pathname === "/interviews"
-                                  ? language.navbar.searchForAnInterview
-                                  : undefined
+                                : pathname === "/mentorships"
+                                  ? language.navbar.searchForAMentorship
+                                  : pathname === "/interviews"
+                                    ? language.navbar.searchForAnInterview
+                                    : undefined
                         }
                     />
                 </div>
@@ -55,6 +61,13 @@ export const NavbarRoutes = () => {
                         <Button size="sm" variant="ghost">
                             <LogOut className="w-4 h-4 mr-2" />{" "}
                             {language.navbar.goBackToSeminars}
+                        </Button>
+                    </Link>
+                ) : isMentorshipPage ? (
+                    <Link href="/mentorships">
+                        <Button size="sm" variant="ghost">
+                            <LogOut className="w-4 h-4 mr-2" />{" "}
+                            {language.navbar.goBackToMentorships}
                         </Button>
                     </Link>
                 ) : isInterviewPage ? (

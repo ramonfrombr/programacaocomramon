@@ -141,10 +141,12 @@ export const frenchLanguage: ILanguage = {
     navbar: {
         goBackToCourses: "Retour aux cours",
         goBackToSeminars: "Retour aux séminaires",
+        goBackToMentorships: "Retour aux mentorats",
         goBackToInterviews: "Retour aux entretiens",
         teacherMode: "Mode enseignant",
         searchForACourse: "Rechercher un cours",
         searchForASeminar: "Rechercher un séminaire",
+        searchForAMentorship: "Rechercher un mentorat",
         searchForAnInterview: "Rechercher un entretien",
     },
     sidebar: {
@@ -152,6 +154,7 @@ export const frenchLanguage: ILanguage = {
         browse: "Cours",
         courses: "Mes cours",
         seminars: "Séminaires",
+        mentorships: "Mentorats",
         interviews: "Entretiens",
         analytics: "Analytics",
     },
@@ -324,6 +327,11 @@ export const frenchLanguage: ILanguage = {
         noSeminarsFound: "Aucun séminaire trouvé",
         watch: "Regarder",
         watchSeminarURL: "regarder-seminaire",
+    },
+    mentorships: {
+        noMentorshipsFound: "Aucun mentorat trouvé",
+        watch: "Regarder",
+        watchMentorshipURL: "regarder-mentorat",
     },
     interviews: {
         noInterviewsFound: "Aucun entretien trouvé",

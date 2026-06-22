@@ -16,7 +16,7 @@ todos:
     status: completed
   - id: student-ui
     content: Build /mentorships catalog + /watch-mentorship full shell with category chips on watch page
-    status: pending
+    status: completed
   - id: config-i18n
     content: UploadThing mentorshipVideo, language keys, next.config PT rewrites, sidebar/nav updates
     status: pending
