@@ -19,11 +19,12 @@ export const NavbarRoutes = () => {
     const isSeminarPage = pathname?.includes(
         `/${language.seminars.watchSeminarURL}/`,
     );
-    const isSearchPage = pathname === "/";
+    const showDesktopSearch =
+        pathname === "/" || pathname === "/seminars";
 
     return (
         <>
-            {isSearchPage && (
+            {showDesktopSearch && (
                 <div className="hidden md:block">
                     <SearchInput />
                 </div>
