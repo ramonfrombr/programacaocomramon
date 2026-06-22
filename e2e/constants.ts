@@ -6,9 +6,9 @@
  * in sync with scripts/e2e-seed.ts.
  */
 
-/** Placeholder image on an allowlisted domain (see next.config.mjs). */
+/** Local public asset — avoids flaky utfs.io fetches during Next.js image optimization. */
 export const E2E_FIXTURE_IMAGE_URL =
-  "https://utfs.io/f/e2e-published-course-placeholder";
+  "/courses/capa-desenvolvimento-web-iniciante.jpeg";
 
 export const E2E_CATEGORY_IDS = {
   javascript: "e2e000000000000000000001",

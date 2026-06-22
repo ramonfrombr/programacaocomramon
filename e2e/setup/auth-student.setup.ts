@@ -1,6 +1,6 @@
 import { clerk } from "@clerk/testing/playwright";
 import { PrismaClient } from "@prisma/client";
-import { expect, test as setup } from "@playwright/test";
+import { expect, test as setup } from "../fixtures";
 import fs from "node:fs";
 import path from "node:path";
 import { E2E_PUBLISHED_COURSE } from "../constants";
