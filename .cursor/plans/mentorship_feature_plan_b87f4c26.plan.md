@@ -22,7 +22,7 @@ todos:
     status: completed
   - id: seed-e2e
     content: E2E fixtures + dev seed samples + mentorships.spec.ts mirroring interviews
-    status: pending
+    status: completed
 isProject: false
 ---
 
