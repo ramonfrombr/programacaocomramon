@@ -143,11 +143,13 @@ export const frenchLanguage: ILanguage = {
         goBackToSeminars: "Retour aux séminaires",
         goBackToMentorships: "Retour aux mentorats",
         goBackToInterviews: "Retour aux entretiens",
+        goBackToChallenges: "Retour aux défis",
         teacherMode: "Mode enseignant",
         searchForACourse: "Rechercher un cours",
         searchForASeminar: "Rechercher un séminaire",
         searchForAMentorship: "Rechercher un mentorat",
         searchForAnInterview: "Rechercher un entretien",
+        searchForAChallenge: "Rechercher un défi",
     },
     sidebar: {
         dashboard: "Tableau de bord",
@@ -156,6 +158,7 @@ export const frenchLanguage: ILanguage = {
         seminars: "Séminaires",
         mentorships: "Mentorats",
         interviews: "Entretiens",
+        challenges: "Défis",
         analytics: "Analytics",
     },
     dashboard: {
@@ -337,6 +340,11 @@ export const frenchLanguage: ILanguage = {
         noInterviewsFound: "Aucun entretien trouvé",
         watch: "Regarder",
         watchInterviewURL: "regarder-entretien",
+    },
+    challenges: {
+        noChallengesFound: "Aucun défi trouvé",
+        watch: "Regarder",
+        watchChallengeURL: "regarder-defi",
     },
     teacherInterviews: {
         filterInterviews: "Filtrer les entretiens...",

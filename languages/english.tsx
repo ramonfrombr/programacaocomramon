@@ -139,11 +139,13 @@ export const englishLanguage: ILanguage = {
         goBackToSeminars: "Go Back to Seminars",
         goBackToMentorships: "Back to mentorships",
         goBackToInterviews: "Back to interviews",
+        goBackToChallenges: "Back to challenges",
         teacherMode: "Teacher Mode",
         searchForACourse: "Search for a course",
         searchForASeminar: "Search for a seminar",
         searchForAMentorship: "Search for a mentorship",
         searchForAnInterview: "Search for an interview",
+        searchForAChallenge: "Search for a challenge",
     },
     sidebar: {
         dashboard: "Dashboard",
@@ -152,6 +154,7 @@ export const englishLanguage: ILanguage = {
         seminars: "Seminars",
         mentorships: "Mentorships",
         interviews: "Interviews",
+        challenges: "Challenges",
         analytics: "Analytics",
     },
     dashboard: {
@@ -330,6 +333,11 @@ export const englishLanguage: ILanguage = {
         noInterviewsFound: "No interviews found",
         watch: "Watch",
         watchInterviewURL: "watch-interview",
+    },
+    challenges: {
+        noChallengesFound: "No challenges found",
+        watch: "Watch",
+        watchChallengeURL: "watch-challenge",
     },
     teacherInterviews: {
         filterInterviews: "Filter interviews...",

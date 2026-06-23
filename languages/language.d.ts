@@ -27,6 +27,7 @@ type ILanguage = {
     seminars: ILanguageSeminars;
     mentorships: ILanguageMentorships;
     interviews: ILanguageInterviews;
+    challenges: ILanguageChallenges;
     teacherCreate: ILanguageTeacherCreate;
     teacherCourseSetup: ILanguageTeacherCourseSetup;
     teacherCourseChapterSetup: ILanguageTeacherCourseChapterSetup;
@@ -111,11 +112,13 @@ type ILanguageNavbar = {
     goBackToSeminars: string;
     goBackToMentorships: string;
     goBackToInterviews: string;
+    goBackToChallenges: string;
     teacherMode: string;
     searchForACourse: string;
     searchForASeminar: string;
     searchForAMentorship: string;
     searchForAnInterview: string;
+    searchForAChallenge: string;
 };
 
 type ILanguageSidebar = {
@@ -125,6 +128,7 @@ type ILanguageSidebar = {
     seminars: string;
     mentorships: string;
     interviews: string;
+    challenges: string;
     analytics: string;
 };
 
@@ -531,6 +535,12 @@ type ILanguageInterviews = {
     noInterviewsFound: string;
     watch: string;
     watchInterviewURL: string;
+};
+
+type ILanguageChallenges = {
+    noChallengesFound: string;
+    watch: string;
+    watchChallengeURL: string;
 };
 
 type ILanguageTeacherCreate = {

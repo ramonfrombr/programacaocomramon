@@ -16,7 +16,7 @@ todos:
     status: completed
   - id: student-ui
     content: Build /challenges catalog + /watch-challenge full shell; challenge-card/list; watch page with difficulty + category badges
-    status: pending
+    status: completed
   - id: config-i18n
     content: UploadThing challengeVideo, language keys (4 locales + language.d.ts), next.config PT rewrites, sidebar/nav/search updates
     status: pending

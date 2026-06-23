@@ -144,11 +144,13 @@ export const portugueseLanguage: ILanguage = {
         goBackToSeminars: "Voltar para Seminários",
         goBackToMentorships: "Voltar para Mentorias",
         goBackToInterviews: "Voltar para Entrevistas",
+        goBackToChallenges: "Voltar para Desafios",
         teacherMode: "Modo Professor",
         searchForACourse: "Pesquise um curso",
         searchForASeminar: "Pesquise um seminário",
         searchForAMentorship: "Pesquise uma mentoria",
         searchForAnInterview: "Pesquise uma entrevista",
+        searchForAChallenge: "Pesquise um desafio",
     },
     sidebar: {
         dashboard: "Painel",
@@ -157,6 +159,7 @@ export const portugueseLanguage: ILanguage = {
         seminars: "Seminários",
         mentorships: "Mentorias",
         interviews: "Entrevistas",
+        challenges: "Desafios",
         analytics: "Vendas",
     },
     dashboard: {
@@ -336,6 +339,11 @@ export const portugueseLanguage: ILanguage = {
         noInterviewsFound: "Nenhuma entrevista encontrada",
         watch: "Assistir",
         watchInterviewURL: "assistir-entrevista",
+    },
+    challenges: {
+        noChallengesFound: "Nenhum desafio encontrado",
+        watch: "Assistir",
+        watchChallengeURL: "assistir-desafio",
     },
     teacherInterviews: {
         filterInterviews: "Filtrar entrevistas...",
