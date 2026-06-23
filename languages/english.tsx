@@ -431,6 +431,90 @@ export const englishLanguage: ILanguage = {
         interviewUnpublished: "Interview unpublished",
         interviewDeleted: "Interview deleted",
     },
+    teacherChallenges: {
+        filterChallenges: "Filter challenges...",
+        newChallenge: "New Challenge",
+    },
+    teacherChallengeCreate: {
+        nameYourChallenge: "Name Your Challenge",
+        nameYourChallengeDescription:
+            "What would you like to name your challenge? Don't worry, you can change this later",
+        challengeTitle: "Challenge Title",
+        challengeTitleInputPlaceholder: "e.g. 'Build a REST API with Node.js'",
+        challengeTitleInputDescription: "What will students solve in this challenge?",
+        cancel: "Cancel",
+        continue: "Continue",
+        challengeCreated: "Challenge created",
+        somethingWentWrong: "Something went wrong",
+        titleIsRequired: "Title is required",
+    },
+    teacherChallengeSetup: {
+        thisChallengeIsUnpublished:
+            "This challenge is unpublished. It will not be visible to students.",
+        backToChallenges: "Back to challenges",
+        challengeSetup: "Challenge Setup",
+        completeAllFields: "Complete all fields",
+        publish: "Publish",
+        unpublish: "Unpublish",
+        areYouSure: "Are you sure?",
+        thisActionsCannotBeUndone: "This action cannot be undone",
+        cancel: "Cancel",
+        continue: "Continue",
+        customizeYourChallenge: "Customize your challenge",
+        challengeTitleField: {
+            challengeTitle: "Challenge title",
+            editTitle: "Edit title",
+            challengeTitleInputPlaceholder:
+                "e.g. 'Build a REST API with Node.js'",
+        },
+        challengeDescriptionField: {
+            challengeDescription: "Challenge description",
+            editDescription: "Edit description",
+            noDescription: "No description",
+        },
+        challengeImageField: {
+            challengeImage: "Challenge image",
+            addAnImage: "Add an image",
+            editImage: "Edit image",
+            aspectRatioRecommended:
+                "An image with a 16:9 aspect ratio is recommended",
+            imageIsNecessary: "Image is necessary.",
+        },
+        challengeDifficultyField: {
+            challengeDifficulty: "Difficulty level",
+            editDifficulty: "Edit difficulty",
+            noDifficulty: "No difficulty",
+        },
+        challengeCategoryField: {
+            challengeCategory: "Challenge categories",
+            editCategory: "Edit categories",
+            noCategory: "No categories",
+            addCategory: "Add category",
+            categoryName: "Category name",
+            categoryNamePlaceholder: "e.g. Algorithms",
+            categoryCreated: "Category created",
+            categoryAlreadyExists: "Category already exists",
+        },
+        difficultyLabels: {
+            EASY: "Easy",
+            MEDIUM: "Medium",
+            HARD: "Hard",
+        },
+        addAVideo: "Add a video",
+        challengeVideoField: {
+            challengeVideo: "Challenge video",
+            uploadThisChallengesVideo: "Upload this challenge's video",
+            editVideo: "Edit video",
+            videosCanTakeAFewMinutesToProcess:
+                "Videos can take a few minutes to process. Refresh the page if video does not appear.",
+        },
+        challengeUpdated: "Challenge updated",
+        somethingWentWrong: "Something went wrong",
+        save: "Save",
+        challengePublished: "Challenge published",
+        challengeUnpublished: "Challenge unpublished",
+        challengeDeleted: "Challenge deleted",
+    },
     teacherCreate: {
         nameYourCourse: "Name Your Course",
         nameYourCourseDescription:

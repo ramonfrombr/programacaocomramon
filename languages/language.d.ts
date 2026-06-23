@@ -21,6 +21,9 @@ type ILanguage = {
     teacherInterviews: ILanguageTeacherInterviews;
     teacherInterviewCreate: ILanguageTeacherInterviewCreate;
     teacherInterviewSetup: ILanguageTeacherInterviewSetup;
+    teacherChallenges: ILanguageTeacherChallenges;
+    teacherChallengeCreate: ILanguageTeacherChallengeCreate;
+    teacherChallengeSetup: ILanguageTeacherChallengeSetup;
     seminars: ILanguageSeminars;
     mentorships: ILanguageMentorships;
     interviews: ILanguageInterviews;
@@ -412,6 +415,102 @@ type ILanguageInterviewDifficultyLabels = {
 type ILanguageTeacherInterviewSetupVideo = {
     interviewVideo: string;
     uploadThisInterviewsVideo: string;
+    editVideo: string;
+    videosCanTakeAFewMinutesToProcess: string;
+};
+
+type ILanguageTeacherChallenges = {
+    filterChallenges: string;
+    newChallenge: string;
+};
+
+type ILanguageTeacherChallengeCreate = {
+    nameYourChallenge: string;
+    nameYourChallengeDescription: string;
+    challengeTitle: string;
+    challengeTitleInputPlaceholder: string;
+    challengeTitleInputDescription: string;
+    cancel: string;
+    continue: string;
+    challengeCreated: string;
+    somethingWentWrong: string;
+    titleIsRequired: string;
+};
+
+type ILanguageTeacherChallengeSetup = {
+    thisChallengeIsUnpublished: string;
+    backToChallenges: string;
+    challengeSetup: string;
+    completeAllFields: string;
+    publish: string;
+    unpublish: string;
+    areYouSure: string;
+    thisActionsCannotBeUndone: string;
+    cancel: string;
+    continue: string;
+    customizeYourChallenge: string;
+    challengeTitleField: ILanguageTeacherChallengeSetupTitle;
+    challengeDescriptionField: ILanguageTeacherChallengeSetupDescription;
+    challengeImageField: ILanguageTeacherChallengeSetupImage;
+    challengeDifficultyField: ILanguageTeacherChallengeSetupDifficulty;
+    challengeCategoryField: ILanguageTeacherChallengeSetupCategory;
+    difficultyLabels: ILanguageChallengeDifficultyLabels;
+    addAVideo: string;
+    challengeVideoField: ILanguageTeacherChallengeSetupVideo;
+    challengeUpdated: string;
+    somethingWentWrong: string;
+    save: string;
+    challengePublished: string;
+    challengeUnpublished: string;
+    challengeDeleted: string;
+};
+
+type ILanguageTeacherChallengeSetupTitle = {
+    challengeTitle: string;
+    editTitle: string;
+    challengeTitleInputPlaceholder: string;
+};
+
+type ILanguageTeacherChallengeSetupDescription = {
+    challengeDescription: string;
+    editDescription: string;
+    noDescription: string;
+};
+
+type ILanguageTeacherChallengeSetupImage = {
+    challengeImage: string;
+    addAnImage: string;
+    editImage: string;
+    aspectRatioRecommended: string;
+    imageIsNecessary: string;
+};
+
+type ILanguageTeacherChallengeSetupDifficulty = {
+    challengeDifficulty: string;
+    editDifficulty: string;
+    noDifficulty: string;
+};
+
+type ILanguageTeacherChallengeSetupCategory = {
+    challengeCategory: string;
+    editCategory: string;
+    noCategory: string;
+    addCategory: string;
+    categoryName: string;
+    categoryNamePlaceholder: string;
+    categoryCreated: string;
+    categoryAlreadyExists: string;
+};
+
+type ILanguageChallengeDifficultyLabels = {
+    EASY: string;
+    MEDIUM: string;
+    HARD: string;
+};
+
+type ILanguageTeacherChallengeSetupVideo = {
+    challengeVideo: string;
+    uploadThisChallengesVideo: string;
     editVideo: string;
     videosCanTakeAFewMinutesToProcess: string;
 };

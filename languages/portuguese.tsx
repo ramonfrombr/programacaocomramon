@@ -438,6 +438,92 @@ export const portugueseLanguage: ILanguage = {
         interviewUnpublished: "Entrevista não publicada",
         interviewDeleted: "Entrevista excluída",
     },
+    teacherChallenges: {
+        filterChallenges: "Filtrar desafios...",
+        newChallenge: "Novo Desafio",
+    },
+    teacherChallengeCreate: {
+        nameYourChallenge: "Nome do desafio",
+        nameYourChallengeDescription:
+            "Como você gostaria de nomear seu desafio? Não se preocupe, você pode alterar isso depois",
+        challengeTitle: "Título do desafio",
+        challengeTitleInputPlaceholder:
+            "ex.: 'Construir uma API REST com Node.js'",
+        challengeTitleInputDescription:
+            "O que os alunos vão resolver neste desafio?",
+        cancel: "Cancelar",
+        continue: "Continuar",
+        challengeCreated: "Desafio criado",
+        somethingWentWrong: "Algo deu errado",
+        titleIsRequired: "O título é obrigatório",
+    },
+    teacherChallengeSetup: {
+        thisChallengeIsUnpublished:
+            "Este desafio não está publicado. Ele não estará visível para os alunos.",
+        backToChallenges: "Voltar para desafios",
+        challengeSetup: "Configuração do Desafio",
+        completeAllFields: "Complete todos os campos",
+        publish: "Publicar",
+        unpublish: "Não publicar",
+        areYouSure: "Você tem certeza?",
+        thisActionsCannotBeUndone: "Esta ação não pode ser desfeita.",
+        cancel: "Cancelar",
+        continue: "Continuar",
+        customizeYourChallenge: "Personalizar o desafio",
+        challengeTitleField: {
+            challengeTitle: "Título do desafio",
+            editTitle: "Editar título",
+            challengeTitleInputPlaceholder:
+                "ex.: 'Construir uma API REST com Node.js'",
+        },
+        challengeDescriptionField: {
+            challengeDescription: "Descrição do desafio",
+            editDescription: "Editar descrição",
+            noDescription: "Sem descrição",
+        },
+        challengeImageField: {
+            challengeImage: "Imagem do desafio",
+            addAnImage: "Adicionar uma imagem",
+            editImage: "Editar imagem",
+            aspectRatioRecommended:
+                "É recomendado uma imagem com dimensões 16:9",
+            imageIsNecessary: "Uma imagem é necessária.",
+        },
+        challengeDifficultyField: {
+            challengeDifficulty: "Nível de dificuldade",
+            editDifficulty: "Editar dificuldade",
+            noDifficulty: "Sem dificuldade",
+        },
+        challengeCategoryField: {
+            challengeCategory: "Categorias do desafio",
+            editCategory: "Editar categorias",
+            noCategory: "Sem categorias",
+            addCategory: "Adicionar categoria",
+            categoryName: "Nome da categoria",
+            categoryNamePlaceholder: "ex.: Algoritmos",
+            categoryCreated: "Categoria criada",
+            categoryAlreadyExists: "Categoria já existe",
+        },
+        difficultyLabels: {
+            EASY: "Fácil",
+            MEDIUM: "Médio",
+            HARD: "Difícil",
+        },
+        addAVideo: "Adicionar um vídeo",
+        challengeVideoField: {
+            challengeVideo: "Vídeo do desafio",
+            uploadThisChallengesVideo: "Carregue o vídeo deste desafio",
+            editVideo: "Editar vídeo",
+            videosCanTakeAFewMinutesToProcess:
+                "Os vídeos podem levar alguns minutos para processar. Atualize a página se o vídeo não aparecer.",
+        },
+        challengeUpdated: "Desafio atualizado",
+        somethingWentWrong: "Algo deu errado",
+        save: "Salvar",
+        challengePublished: "Desafio publicado",
+        challengeUnpublished: "Desafio não publicado",
+        challengeDeleted: "Desafio excluído",
+    },
     teacherCreate: {
         nameYourCourse: "Nome do curso",
         nameYourCourseDescription:

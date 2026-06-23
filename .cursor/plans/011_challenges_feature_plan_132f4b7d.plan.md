@@ -13,7 +13,7 @@ todos:
     status: completed
   - id: teacher-ui
     content: Copy/adapt teacher/seminars → teacher/challenges + difficulty form + categories form from interviews
-    status: pending
+    status: completed
   - id: student-ui
     content: Build /challenges catalog + /watch-challenge full shell; challenge-card/list; watch page with difficulty + category badges
     status: pending
