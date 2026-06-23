@@ -7,7 +7,7 @@ todos:
     status: completed
   - id: api
     content: Create /api/challenges CRUD + publish/unpublish; extend POST /api/categories for CHALLENGE kind; Mux pipeline on videoUrl PATCH
-    status: pending
+    status: completed
   - id: actions
     content: Add get-challenges.ts and get-challenge.ts (interview-style access, no teacher bypass; include categories)
     status: pending
