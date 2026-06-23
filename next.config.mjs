@@ -18,6 +18,8 @@ const translations = {
         "watch-mentorship": "assistir-mentoria",
         interviews: "entrevistas",
         "watch-interview": "assistir-entrevista",
+        challenges: "desafios",
+        "watch-challenge": "assistir-desafio",
     },
     english: {
         "sign-up": "sign-up",
@@ -36,6 +38,8 @@ const translations = {
         "watch-mentorship": "watch-mentorship",
         interviews: "interviews",
         "watch-interview": "watch-interview",
+        challenges: "challenges",
+        "watch-challenge": "watch-challenge",
     },
 };
 
@@ -47,6 +51,7 @@ const routesWithDynamicSlug = [
     "watch-seminar",
     "watch-mentorship",
     "watch-interview",
+    "watch-challenge",
 ];
 
 const nextConfig = {

@@ -19,7 +19,7 @@ todos:
     status: completed
   - id: config-i18n
     content: UploadThing challengeVideo, language keys (4 locales + language.d.ts), next.config PT rewrites, sidebar/nav/search updates
-    status: pending
+    status: completed
   - id: seed-e2e
     content: E2E fixtures + dev seed samples + guest/student/teacher challenges.spec.ts + README
     status: pending
