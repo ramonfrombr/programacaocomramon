@@ -10,7 +10,7 @@ todos:
     status: completed
   - id: actions
     content: Add get-challenges.ts and get-challenge.ts (interview-style access, no teacher bypass; include categories)
-    status: pending
+    status: completed
   - id: teacher-ui
     content: Copy/adapt teacher/seminars → teacher/challenges + difficulty form + categories form from interviews
     status: pending
