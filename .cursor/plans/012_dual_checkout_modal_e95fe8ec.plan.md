@@ -7,7 +7,7 @@ todos:
     status: completed
   - id: wire-chapter-page
     content: "Update chapter page.tsx: Portuguese → modal, other locales → Stripe button"
-    status: pending
+    status: completed
   - id: delete-mp-button
     content: Remove course-enroll-button-mercado-pago.tsx after migration
     status: pending
