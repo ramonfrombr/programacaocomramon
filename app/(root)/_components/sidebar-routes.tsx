@@ -63,22 +63,12 @@ export const SidebarRoutes = ({ userLoggedIn, onNavigate }: SidebarRoutesProps) 
             href: "/interviews",
             locked: false,
         },
-        /*
         {
             icon: Puzzle,
-            label: "Desafios de Programação",
+            label: language.challenges,
             href: "/challenges",
-            locked: true,
+            locked: false,
         },
-        {
-            icon: Newspaper,
-            label: "Newsletter",
-            href: "/newsletter",
-            locked: true,
-        },
-        { icon: Pencil, label: "Blog", href: "/blog", locked: true },
-        { icon: Users, label: "Comunidade", href: "/community", locked: true },
-        */
     ];
 
     const teacherRoutes = [
@@ -104,6 +94,12 @@ export const SidebarRoutes = ({ userLoggedIn, onNavigate }: SidebarRoutesProps) 
             icon: MessagesSquare,
             label: language.interviews,
             href: "/teacher/interviews",
+            locked: false,
+        },
+        {
+            icon: Puzzle,
+            label: language.challenges,
+            href: "/teacher/challenges",
             locked: false,
         },
         {

@@ -143,11 +143,13 @@ export const frenchLanguage: ILanguage = {
         goBackToSeminars: "Retour aux séminaires",
         goBackToMentorships: "Retour aux mentorats",
         goBackToInterviews: "Retour aux entretiens",
+        goBackToChallenges: "Retour aux défis",
         teacherMode: "Mode enseignant",
         searchForACourse: "Rechercher un cours",
         searchForASeminar: "Rechercher un séminaire",
         searchForAMentorship: "Rechercher un mentorat",
         searchForAnInterview: "Rechercher un entretien",
+        searchForAChallenge: "Rechercher un défi",
     },
     sidebar: {
         dashboard: "Tableau de bord",
@@ -156,6 +158,7 @@ export const frenchLanguage: ILanguage = {
         seminars: "Séminaires",
         mentorships: "Mentorats",
         interviews: "Entretiens",
+        challenges: "Défis",
         analytics: "Analytics",
     },
     dashboard: {
@@ -338,6 +341,11 @@ export const frenchLanguage: ILanguage = {
         watch: "Regarder",
         watchInterviewURL: "regarder-entretien",
     },
+    challenges: {
+        noChallengesFound: "Aucun défi trouvé",
+        watch: "Regarder",
+        watchChallengeURL: "regarder-defi",
+    },
     teacherInterviews: {
         filterInterviews: "Filtrer les entretiens...",
         newInterview: "Nouvel Entretien",
@@ -438,6 +446,92 @@ export const frenchLanguage: ILanguage = {
         interviewPublished: "Entretien publié",
         interviewUnpublished: "Entretien dépublié",
         interviewDeleted: "Entretien supprimé",
+    },
+    teacherChallenges: {
+        filterChallenges: "Filtrer les défis...",
+        newChallenge: "Nouveau Défi",
+    },
+    teacherChallengeCreate: {
+        nameYourChallenge: "Nommez votre défi",
+        nameYourChallengeDescription:
+            "Comment souhaitez-vous nommer votre défi ? Ne vous inquiétez pas, vous pourrez le modifier plus tard",
+        challengeTitle: "Titre du défi",
+        challengeTitleInputPlaceholder:
+            "ex. : 'Construire une API REST avec Node.js'",
+        challengeTitleInputDescription:
+            "Que vont résoudre les étudiants dans ce défi ?",
+        cancel: "Annuler",
+        continue: "Continuer",
+        challengeCreated: "Défi créé",
+        somethingWentWrong: "Une erreur s'est produite",
+        titleIsRequired: "Le titre est obligatoire",
+    },
+    teacherChallengeSetup: {
+        thisChallengeIsUnpublished:
+            "Ce défi n'est pas publié. Il ne sera pas visible par les étudiants.",
+        backToChallenges: "Retour aux défis",
+        challengeSetup: "Configuration du Défi",
+        completeAllFields: "Complétez tous les champs",
+        publish: "Publier",
+        unpublish: "Dépublier",
+        areYouSure: "Êtes-vous sûr ?",
+        thisActionsCannotBeUndone: "Cette action est irréversible",
+        cancel: "Annuler",
+        continue: "Continuer",
+        customizeYourChallenge: "Personnalisez votre défi",
+        challengeTitleField: {
+            challengeTitle: "Titre du défi",
+            editTitle: "Modifier le titre",
+            challengeTitleInputPlaceholder:
+                "ex. : 'Construire une API REST avec Node.js'",
+        },
+        challengeDescriptionField: {
+            challengeDescription: "Description du défi",
+            editDescription: "Modifier la description",
+            noDescription: "Aucune description",
+        },
+        challengeImageField: {
+            challengeImage: "Image du défi",
+            addAnImage: "Ajouter une image",
+            editImage: "Modifier l'image",
+            aspectRatioRecommended:
+                "Une image au format 16:9 est recommandée",
+            imageIsNecessary: "L'image est obligatoire.",
+        },
+        challengeDifficultyField: {
+            challengeDifficulty: "Niveau de difficulté",
+            editDifficulty: "Modifier la difficulté",
+            noDifficulty: "Aucune difficulté",
+        },
+        challengeCategoryField: {
+            challengeCategory: "Catégories du défi",
+            editCategory: "Modifier les catégories",
+            noCategory: "Aucune catégorie",
+            addCategory: "Ajouter une catégorie",
+            categoryName: "Nom de la catégorie",
+            categoryNamePlaceholder: "ex. : Algorithmes",
+            categoryCreated: "Catégorie créée",
+            categoryAlreadyExists: "La catégorie existe déjà",
+        },
+        difficultyLabels: {
+            EASY: "Facile",
+            MEDIUM: "Moyen",
+            HARD: "Difficile",
+        },
+        addAVideo: "Ajouter une vidéo",
+        challengeVideoField: {
+            challengeVideo: "Vidéo du défi",
+            uploadThisChallengesVideo: "Téléversez la vidéo de ce défi",
+            editVideo: "Modifier la vidéo",
+            videosCanTakeAFewMinutesToProcess:
+                "Les vidéos peuvent prendre quelques minutes à être traitées. Actualisez la page si la vidéo n'apparaît pas.",
+        },
+        challengeUpdated: "Défi mis à jour",
+        somethingWentWrong: "Une erreur s'est produite",
+        save: "Enregistrer",
+        challengePublished: "Défi publié",
+        challengeUnpublished: "Défi dépublié",
+        challengeDeleted: "Défi supprimé",
     },
     teacherCreate: {
         nameYourCourse: "Nommer votre cours",

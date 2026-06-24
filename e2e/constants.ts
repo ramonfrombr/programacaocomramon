@@ -1,7 +1,7 @@
 /**
  * Deterministic E2E fixture identifiers.
  *
- * Fixed MongoDB ObjectIds and slugs let tests reference courses/chapters/seminars/interviews/mentorships without
+ * Fixed MongoDB ObjectIds and slugs let tests reference courses/chapters/seminars/interviews/mentorships/challenges without
  * scraping the DOM. Keep IDs stable across seed runs so Playwright specs stay
  * in sync with scripts/e2e-seed.ts.
  */
@@ -117,32 +117,61 @@ export const E2E_MENTORSHIP_IDS = {
   draft: "e2e000000000000000000101",
 } as const;
 
+export const E2E_CHALLENGE_CATEGORY_IDS = {
+  algorithms: "e2e000000000000000000102",
+  dataStructures: "e2e000000000000000000103",
+} as const;
+
+export const E2E_CHALLENGE_CATEGORIES = [
+  { id: E2E_CHALLENGE_CATEGORY_IDS.algorithms, name: "E2E Challenge Algorithms" },
+  {
+    id: E2E_CHALLENGE_CATEGORY_IDS.dataStructures,
+    name: "E2E Challenge Data Structures",
+  },
+] as const;
+
+export const E2E_CHALLENGE_IDS = {
+  published: "e2e000000000000000000110",
+  draft: "e2e000000000000000000111",
+} as const;
+
 export const E2E_MUX_SENTINEL_CHAPTER_IDS = {
   publishedSeminar: "e2e000000000000000000080",
   publishedInterview: "e2e000000000000000000081",
   publishedMentorship: "e2e000000000000000000082",
+  publishedChallenge: "e2e000000000000000000083",
 } as const;
 
 /** Non-null placeholders — MongoDB unique indexes allow only one null per optional FK. */
 export const E2E_MUX_SENTINEL_SEMINAR_IDS = {
   publishedInterview: "e2e000000000000000000094",
   publishedMentorship: "e2e000000000000000000099",
+  publishedChallenge: "e2e000000000000000000093",
 } as const;
 
 export const E2E_MUX_SENTINEL_INTERVIEW_IDS = {
   publishedSeminar: "e2e000000000000000000095",
   publishedMentorship: "e2e000000000000000000098",
+  publishedChallenge: "e2e000000000000000000104",
 } as const;
 
 export const E2E_MUX_SENTINEL_MENTORSHIP_IDS = {
   publishedSeminar: "e2e000000000000000000096",
   publishedInterview: "e2e000000000000000000097",
+  publishedChallenge: "e2e000000000000000000105",
+} as const;
+
+export const E2E_MUX_SENTINEL_CHALLENGE_IDS = {
+  publishedSeminar: "e2e000000000000000000106",
+  publishedInterview: "e2e000000000000000000107",
+  publishedMentorship: "e2e000000000000000000108",
 } as const;
 
 export const E2E_MUX_IDS = {
   publishedSeminar: "e2e000000000000000000040",
   publishedInterview: "e2e000000000000000000070",
   publishedMentorship: "e2e000000000000000000092",
+  publishedChallenge: "e2e000000000000000000112",
 } as const;
 
 export const E2E_PUBLISHED_SEMINAR = {
@@ -224,6 +253,32 @@ export const E2E_DRAFT_MENTORSHIP = {
   imageUrl: E2E_FIXTURE_IMAGE_URL,
 } as const;
 
+export const E2E_PUBLISHED_CHALLENGE = {
+  id: E2E_CHALLENGE_IDS.published,
+  title: "E2E Published Challenge",
+  description: "Published challenge fixture for Playwright E2E tests.",
+  imageUrl: E2E_FIXTURE_IMAGE_URL,
+  videoUrl: "https://example.com/e2e-challenge-video.mp4",
+  difficulty: "MEDIUM" as const,
+  categoryIds: [
+    E2E_CHALLENGE_CATEGORY_IDS.algorithms,
+    E2E_CHALLENGE_CATEGORY_IDS.dataStructures,
+  ] as const,
+} as const;
+
+export const E2E_PUBLISHED_CHALLENGE_MUX = {
+  assetId: "e2e-challenge-mux-asset",
+  playbackId: "e2e-challenge-playback",
+} as const;
+
+export const E2E_DRAFT_CHALLENGE = {
+  id: E2E_CHALLENGE_IDS.draft,
+  title: "E2E Draft Challenge",
+  description:
+    "Unpublished challenge fixture with image — must not appear on the catalog.",
+  imageUrl: E2E_FIXTURE_IMAGE_URL,
+} as const;
+
 export function courseCatalogPath(slug: string): string {
   return `/courses/${slug}`;
 }
@@ -254,4 +309,12 @@ export function watchMentorshipPath(mentorshipId: string): string {
 
 export function teacherMentorshipSetupPath(mentorshipId: string): string {
   return `/teacher/mentorships/${mentorshipId}`;
+}
+
+export function watchChallengePath(challengeId: string): string {
+  return `/watch-challenge/${challengeId}`;
+}
+
+export function teacherChallengeSetupPath(challengeId: string): string {
+  return `/teacher/challenges/${challengeId}`;
 }

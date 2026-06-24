@@ -94,8 +94,11 @@ e2e/
   guest/catalog.spec.ts
   student/learning.spec.ts
   student/seminars.spec.ts
+  student/interviews.spec.ts
+  student/challenges.spec.ts
   teacher/access.spec.ts
   teacher/seminars.spec.ts
+  teacher/challenges.spec.ts
 scripts/e2e-seed.ts     # Deterministic fixtures
 playwright.config.ts
 ```
@@ -106,6 +109,8 @@ Fixture identifiers live in [`constants.ts`](./constants.ts). Tests reference sl
 
 **Seminar seeding:** `scripts/e2e-seed.ts` upserts a published seminar (with `videoUrl` and `isPublished: true`) and a draft seminar (image only, unpublished). The published seminar also gets a fake `MuxData` row (`assetId` / `playbackId` from `E2E_PUBLISHED_SEMINAR_MUX` in `constants.ts`) so `/watch-seminar/:id` passes the playback gate — no real Mux API calls, same approach as course fixtures.
 
+**Challenge seeding:** same pattern as seminars — published challenge with `videoUrl`, optional `difficulty` and `CHALLENGE`-kind categories, fake `MuxData` from `E2E_PUBLISHED_CHALLENGE_MUX`, plus a draft challenge for teacher setup tests. `scripts/seed.ts` also seeds local dev sample challenges when `NEXT_PUBLIC_TEACHER_ID` is set.
+
 ## Current test coverage (P0)
 
 ### Guest — `e2e/guest/catalog.spec.ts`
@@ -113,6 +118,8 @@ Fixture identifiers live in [`constants.ts`](./constants.ts). Tests reference sl
 - Home page lists the published E2E course
 - Draft course is hidden from the catalog
 - `/seminars` redirects unauthenticated users
+- `/interviews` redirects unauthenticated users
+- `/challenges` redirects unauthenticated users
 - `/dashboard` redirects unauthenticated users
 - `/teacher/courses` redirects non-teachers
 
@@ -130,6 +137,13 @@ Fixture identifiers live in [`constants.ts`](./constants.ts). Tests reference sl
 - Draft seminar is hidden from the catalog
 - Watch page shows seminar title (no Mux playback assertion)
 
+### Student — `e2e/student/challenges.spec.ts`
+
+- Published challenge appears on `/challenges` catalog
+- Draft challenge is hidden from the catalog
+- Catalog title search filters challenges
+- Watch page shows challenge title, difficulty badge, and category chips (no Mux playback assertion)
+
 ### Teacher — `e2e/teacher/access.spec.ts`
 
 - `/teacher/courses` lists seeded courses (published + draft)
@@ -140,6 +154,12 @@ Fixture identifiers live in [`constants.ts`](./constants.ts). Tests reference sl
 - `/teacher/seminars` lists seeded seminars (published + draft)
 - `/teacher/seminars/create` form renders
 - Draft seminar setup page shows title and unpublished banner
+
+### Teacher — `e2e/teacher/challenges.spec.ts`
+
+- `/teacher/challenges` lists seeded challenges (published + draft)
+- `/teacher/challenges/create` form renders
+- Draft challenge setup page shows title and unpublished banner
 
 Guest specs cover the non-teacher redirect; teacher specs assume a valid `NEXT_PUBLIC_TEACHER_ID`.
 

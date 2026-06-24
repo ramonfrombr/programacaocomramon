@@ -15,7 +15,11 @@ export async function POST(req: Request) {
 
         if (
             !name ||
-            ![CategoryKind.INTERVIEW, CategoryKind.MENTORSHIP].includes(kind)
+            ![
+                CategoryKind.INTERVIEW,
+                CategoryKind.MENTORSHIP,
+                CategoryKind.CHALLENGE,
+            ].includes(kind)
         ) {
             return new NextResponse("Bad Request", { status: 400 });
         }
