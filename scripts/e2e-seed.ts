@@ -1,6 +1,8 @@
 import { PrismaClient } from "@prisma/client";
 import {
   E2E_CATEGORIES,
+  E2E_CHALLENGE_CATEGORIES,
+  E2E_DRAFT_CHALLENGE,
   E2E_DRAFT_COURSE,
   E2E_DRAFT_INTERVIEW,
   E2E_DRAFT_MENTORSHIP,
@@ -8,11 +10,14 @@ import {
   E2E_INTERVIEW_CATEGORIES,
   E2E_MENTORSHIP_CATEGORIES,
   E2E_MUX_IDS,
+  E2E_MUX_SENTINEL_CHALLENGE_IDS,
   E2E_MUX_SENTINEL_CHAPTER_IDS,
   E2E_MUX_SENTINEL_SEMINAR_IDS,
   E2E_MUX_SENTINEL_INTERVIEW_IDS,
   E2E_MUX_SENTINEL_MENTORSHIP_IDS,
   E2E_PUBLISHED_CHAPTERS,
+  E2E_PUBLISHED_CHALLENGE,
+  E2E_PUBLISHED_CHALLENGE_MUX,
   E2E_PUBLISHED_COURSE,
   E2E_PUBLISHED_INTERVIEW,
   E2E_PUBLISHED_INTERVIEW_MUX,
@@ -38,10 +43,32 @@ async function seedCategories() {
         courseIDs: [],
         interviewIDs: [],
         mentorshipIDs: [],
+        challengeIDs: [],
       },
       update: {
         name: category.name,
         kind: "COURSE",
+      },
+    });
+  }
+}
+
+async function seedChallengeCategories() {
+  for (const category of E2E_CHALLENGE_CATEGORIES) {
+    await database.category.upsert({
+      where: { id: category.id },
+      create: {
+        id: category.id,
+        name: category.name,
+        kind: "CHALLENGE",
+        courseIDs: [],
+        interviewIDs: [],
+        mentorshipIDs: [],
+        challengeIDs: [],
+      },
+      update: {
+        name: category.name,
+        kind: "CHALLENGE",
       },
     });
   }
@@ -58,6 +85,7 @@ async function seedInterviewCategories() {
         courseIDs: [],
         interviewIDs: [],
         mentorshipIDs: [],
+        challengeIDs: [],
       },
       update: {
         name: category.name,
@@ -78,6 +106,7 @@ async function seedMentorshipCategories() {
         courseIDs: [],
         interviewIDs: [],
         mentorshipIDs: [],
+        challengeIDs: [],
       },
       update: {
         name: category.name,
@@ -219,6 +248,7 @@ async function seedPublishedSeminar(teacherId: string) {
       seminarId: E2E_PUBLISHED_SEMINAR.id,
       interviewId: E2E_MUX_SENTINEL_INTERVIEW_IDS.publishedSeminar,
       mentorshipId: E2E_MUX_SENTINEL_MENTORSHIP_IDS.publishedSeminar,
+      challengeId: E2E_MUX_SENTINEL_CHALLENGE_IDS.publishedSeminar,
       assetId: E2E_PUBLISHED_SEMINAR_MUX.assetId,
       playbackId: E2E_PUBLISHED_SEMINAR_MUX.playbackId,
     },
@@ -227,6 +257,7 @@ async function seedPublishedSeminar(teacherId: string) {
       seminarId: E2E_PUBLISHED_SEMINAR.id,
       interviewId: E2E_MUX_SENTINEL_INTERVIEW_IDS.publishedSeminar,
       mentorshipId: E2E_MUX_SENTINEL_MENTORSHIP_IDS.publishedSeminar,
+      challengeId: E2E_MUX_SENTINEL_CHALLENGE_IDS.publishedSeminar,
       assetId: E2E_PUBLISHED_SEMINAR_MUX.assetId,
       playbackId: E2E_PUBLISHED_SEMINAR_MUX.playbackId,
     },
@@ -303,6 +334,7 @@ async function seedPublishedInterview(teacherId: string) {
       seminarId: E2E_MUX_SENTINEL_SEMINAR_IDS.publishedInterview,
       interviewId: E2E_PUBLISHED_INTERVIEW.id,
       mentorshipId: E2E_MUX_SENTINEL_MENTORSHIP_IDS.publishedInterview,
+      challengeId: E2E_MUX_SENTINEL_CHALLENGE_IDS.publishedInterview,
       assetId: E2E_PUBLISHED_INTERVIEW_MUX.assetId,
       playbackId: E2E_PUBLISHED_INTERVIEW_MUX.playbackId,
     },
@@ -311,6 +343,7 @@ async function seedPublishedInterview(teacherId: string) {
       seminarId: E2E_MUX_SENTINEL_SEMINAR_IDS.publishedInterview,
       interviewId: E2E_PUBLISHED_INTERVIEW.id,
       mentorshipId: E2E_MUX_SENTINEL_MENTORSHIP_IDS.publishedInterview,
+      challengeId: E2E_MUX_SENTINEL_CHALLENGE_IDS.publishedInterview,
       assetId: E2E_PUBLISHED_INTERVIEW_MUX.assetId,
       playbackId: E2E_PUBLISHED_INTERVIEW_MUX.playbackId,
     },
@@ -371,6 +404,7 @@ async function seedPublishedMentorship(teacherId: string) {
       seminarId: E2E_MUX_SENTINEL_SEMINAR_IDS.publishedMentorship,
       interviewId: E2E_MUX_SENTINEL_INTERVIEW_IDS.publishedMentorship,
       mentorshipId: E2E_PUBLISHED_MENTORSHIP.id,
+      challengeId: E2E_MUX_SENTINEL_CHALLENGE_IDS.publishedMentorship,
       assetId: E2E_PUBLISHED_MENTORSHIP_MUX.assetId,
       playbackId: E2E_PUBLISHED_MENTORSHIP_MUX.playbackId,
     },
@@ -379,8 +413,81 @@ async function seedPublishedMentorship(teacherId: string) {
       seminarId: E2E_MUX_SENTINEL_SEMINAR_IDS.publishedMentorship,
       interviewId: E2E_MUX_SENTINEL_INTERVIEW_IDS.publishedMentorship,
       mentorshipId: E2E_PUBLISHED_MENTORSHIP.id,
+      challengeId: E2E_MUX_SENTINEL_CHALLENGE_IDS.publishedMentorship,
       assetId: E2E_PUBLISHED_MENTORSHIP_MUX.assetId,
       playbackId: E2E_PUBLISHED_MENTORSHIP_MUX.playbackId,
+    },
+  });
+}
+
+async function seedDraftChallenge(teacherId: string) {
+  await database.challenge.upsert({
+    where: { id: E2E_DRAFT_CHALLENGE.id },
+    create: {
+      id: E2E_DRAFT_CHALLENGE.id,
+      userId: teacherId,
+      title: E2E_DRAFT_CHALLENGE.title,
+      description: E2E_DRAFT_CHALLENGE.description,
+      imageUrl: E2E_DRAFT_CHALLENGE.imageUrl,
+      categoryIDs: [],
+      isPublished: false,
+    },
+    update: {
+      userId: teacherId,
+      title: E2E_DRAFT_CHALLENGE.title,
+      description: E2E_DRAFT_CHALLENGE.description,
+      imageUrl: E2E_DRAFT_CHALLENGE.imageUrl,
+      isPublished: false,
+    },
+  });
+}
+
+async function seedPublishedChallenge(teacherId: string) {
+  await database.challenge.upsert({
+    where: { id: E2E_PUBLISHED_CHALLENGE.id },
+    create: {
+      id: E2E_PUBLISHED_CHALLENGE.id,
+      userId: teacherId,
+      title: E2E_PUBLISHED_CHALLENGE.title,
+      description: E2E_PUBLISHED_CHALLENGE.description,
+      imageUrl: E2E_PUBLISHED_CHALLENGE.imageUrl,
+      videoUrl: E2E_PUBLISHED_CHALLENGE.videoUrl,
+      difficulty: E2E_PUBLISHED_CHALLENGE.difficulty,
+      categoryIDs: [...E2E_PUBLISHED_CHALLENGE.categoryIds],
+      isPublished: true,
+    },
+    update: {
+      userId: teacherId,
+      title: E2E_PUBLISHED_CHALLENGE.title,
+      description: E2E_PUBLISHED_CHALLENGE.description,
+      imageUrl: E2E_PUBLISHED_CHALLENGE.imageUrl,
+      videoUrl: E2E_PUBLISHED_CHALLENGE.videoUrl,
+      difficulty: E2E_PUBLISHED_CHALLENGE.difficulty,
+      categoryIDs: [...E2E_PUBLISHED_CHALLENGE.categoryIds],
+      isPublished: true,
+    },
+  });
+
+  await database.muxData.upsert({
+    where: { id: E2E_MUX_IDS.publishedChallenge },
+    create: {
+      id: E2E_MUX_IDS.publishedChallenge,
+      chapterId: E2E_MUX_SENTINEL_CHAPTER_IDS.publishedChallenge,
+      seminarId: E2E_MUX_SENTINEL_SEMINAR_IDS.publishedChallenge,
+      interviewId: E2E_MUX_SENTINEL_INTERVIEW_IDS.publishedChallenge,
+      mentorshipId: E2E_MUX_SENTINEL_MENTORSHIP_IDS.publishedChallenge,
+      challengeId: E2E_PUBLISHED_CHALLENGE.id,
+      assetId: E2E_PUBLISHED_CHALLENGE_MUX.assetId,
+      playbackId: E2E_PUBLISHED_CHALLENGE_MUX.playbackId,
+    },
+    update: {
+      chapterId: E2E_MUX_SENTINEL_CHAPTER_IDS.publishedChallenge,
+      seminarId: E2E_MUX_SENTINEL_SEMINAR_IDS.publishedChallenge,
+      interviewId: E2E_MUX_SENTINEL_INTERVIEW_IDS.publishedChallenge,
+      mentorshipId: E2E_MUX_SENTINEL_MENTORSHIP_IDS.publishedChallenge,
+      challengeId: E2E_PUBLISHED_CHALLENGE.id,
+      assetId: E2E_PUBLISHED_CHALLENGE_MUX.assetId,
+      playbackId: E2E_PUBLISHED_CHALLENGE_MUX.playbackId,
     },
   });
 }
@@ -401,6 +508,7 @@ async function main() {
   await seedCategories();
   await seedInterviewCategories();
   await seedMentorshipCategories();
+  await seedChallengeCategories();
   await seedPublishedCourse(teacherId);
   await seedDraftCourse(teacherId);
   await seedPublishedSeminar(teacherId);
@@ -409,11 +517,14 @@ async function main() {
   await seedDraftInterview(teacherId);
   await seedPublishedMentorship(teacherId);
   await seedDraftMentorship(teacherId);
+  await seedPublishedChallenge(teacherId);
+  await seedDraftChallenge(teacherId);
 
   console.log("E2E seed complete:", {
     categories: E2E_CATEGORIES.length,
     interviewCategories: E2E_INTERVIEW_CATEGORIES.length,
     mentorshipCategories: E2E_MENTORSHIP_CATEGORIES.length,
+    challengeCategories: E2E_CHALLENGE_CATEGORIES.length,
     publishedCourse: E2E_PUBLISHED_COURSE.slug,
     draftCourse: E2E_DRAFT_COURSE.slug,
     chapters: E2E_PUBLISHED_CHAPTERS.length,
@@ -423,6 +534,8 @@ async function main() {
     draftInterview: E2E_DRAFT_INTERVIEW.title,
     publishedMentorship: E2E_PUBLISHED_MENTORSHIP.title,
     draftMentorship: E2E_DRAFT_MENTORSHIP.title,
+    publishedChallenge: E2E_PUBLISHED_CHALLENGE.title,
+    draftChallenge: E2E_DRAFT_CHALLENGE.title,
   });
 }
 

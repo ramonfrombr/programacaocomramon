@@ -22,7 +22,7 @@ todos:
     status: completed
   - id: seed-e2e
     content: E2E fixtures + dev seed samples + guest/student/teacher challenges.spec.ts + README
-    status: pending
+    status: completed
   - id: docs-verify
     content: Update lms-domain SKILL.md; manual verification against checklist
     status: pending
