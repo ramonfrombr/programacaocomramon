@@ -24,6 +24,8 @@ import { Checkbox } from "@/components/ui/checkbox";
 
 const CreatePage = () => {
   const language = useLanguageStore().teacherCreate;
+  const sidebar = useLanguageStore().sidebar;
+  const coursesHref = `/${sidebar.teacherURL}/${sidebar.coursesURL}`;
 
   const router = useRouter();
 
@@ -55,7 +57,7 @@ const CreatePage = () => {
         ...values,
       };
       const response = await axios.post("/api/courses", valuesWithSlug);
-      router.push(`/teacher/courses/${response.data.id}`);
+      router.push(`${coursesHref}/${response.data.id}`);
       toast.success(language.courseCreated);
     } catch {
       toast.error(language.somethingWentWrong);
