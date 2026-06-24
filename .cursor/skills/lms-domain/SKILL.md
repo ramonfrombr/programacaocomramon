@@ -1,6 +1,6 @@
 ---
 name: lms-domain
-description: Describes the Escola de Programação LMS domain model, routes, and data patterns. Use when working on courses, chapters, seminars, careers, categories, purchases, teacher dashboard, watch-course flow, watch-seminar flow, progress tracking, or Prisma schema changes.
+description: Describes the Escola de Programação LMS domain model, routes, and data patterns. Use when working on courses, chapters, seminars, challenges, careers, categories, purchases, teacher dashboard, watch-course flow, watch-seminar flow, watch-challenge flow, progress tracking, or Prisma schema changes.
 ---
 
 # LMS Domain
@@ -31,10 +31,13 @@ Course ──┬── Chapter ── MuxData (1:1, optional; chapterId)
 
 Seminar ── MuxData (1:1, optional; seminarId)
 
+Challenge ── MuxData (1:1, optional; challengeId)
+         └── Category[]  (many-to-many via categoryIDs ObjectId[]; kind=CHALLENGE)
+
 Chapter ── UserProgress[] (per userId + chapterId, unique)
 ```
 
-`MuxData` links to **either** a chapter or a seminar (never both). `chapterId` and `seminarId` are both optional but mutually exclusive — enforced in API code.
+`MuxData` links to **one** content entity: chapter, seminar, interview, mentorship, or challenge. The FK columns (`chapterId`, `seminarId`, `interviewId`, `mentorshipId`, `challengeId`) are optional but mutually exclusive — enforced in API code.
 
 ### Key models
 
@@ -42,12 +45,13 @@ Chapter ── UserProgress[] (per userId + chapterId, unique)
 |-------|---------|----------------|
 | `Course` | Top-level sellable content | `userId` (owner/teacher), `slug`, `price`, `isPublished`, `level` (`BEGINNER`…`SPECIALIST`), `position`, `youtube` / `youtubeLink` / `githubLink` |
 | `Chapter` | Ordered lesson within a course | `position`, `isPublished`, `isFree`, `videoUrl`, optional `muxData` |
-| `Seminar` | Single-video content, free for logged-in users (v1) | `userId` (owner/teacher), `title`, `description`, `videoUrl`, `isPublished`, optional `muxData` |
-| `MuxData` | Mux asset linked to a chapter or seminar | `assetId`, `playbackId`, `chapterId?` (unique), `seminarId?` (unique) |
+| `Seminar` | Single-video content, free for logged-in users (v1) | `userId` (owner/teacher), `title`, `description`, `imageUrl`, `videoUrl`, `isPublished`, optional `muxData` |
+| `Challenge` | Single-video coding challenge, free for logged-in users (v1) | `userId`, `title`, `description`, `imageUrl`, `videoUrl`, `difficulty?` (`ChallengeDifficulty`: `EASY` / `MEDIUM` / `HARD`), `categoryIDs[]`, `isPublished`, optional `muxData` |
+| `MuxData` | Mux asset linked to a chapter, seminar, interview, mentorship, or challenge | `assetId`, `playbackId`, optional unique FK: `chapterId`, `seminarId`, `interviewId`, `mentorshipId`, `challengeId` |
 | `Attachment` | Downloadable file on a course | `name`, `url`, `courseId` |
 | `Purchase` | Enrollment record | `userId` + `courseId` (unique composite), `price` |
 | `UserProgress` | Chapter completion | `userId` + `chapterId` (unique), `isCompleted` |
-| `Category` | Course grouping | `name` (unique), `courseIDs[]` |
+| `Category` | Content grouping by kind | `name` + `kind` (`CategoryKind`: `COURSE`, `INTERVIEW`, `MENTORSHIP`, `CHALLENGE`), typed ID arrays (`courseIDs[]`, `interviewIDs[]`, etc.) |
 | `Career` | Career track grouping | `name`, `slug` (unique), `courseIDs[]` |
 | `StripeCustomer` | Maps Clerk user → Stripe customer | `userId`, `stripeCustomerId` |
 
@@ -71,7 +75,17 @@ Central access logic lives in `actions/get-chapter.ts`: checks purchase, `isFree
 - **Watch:** `get-seminar.ts` grants access when `(seminar.isPublished && userId) || isTeacher(userId)`.
 - **Unpublished:** teachers can preview via `isTeacher()`; students cannot.
 - **Unauthenticated:** catalog and watch pages redirect to `/` (same as course detail).
-- **Publish gate:** requires `title`, `description`, `videoUrl`, and a `MuxData` row (mirrors chapter publish).
+- **Publish gate:** requires `title`, `description`, `imageUrl`, `videoUrl`, and a `MuxData` row (5/5).
+
+### Challenge access (v1)
+
+- **No purchase model** — challenges are free for any logged-in user.
+- **No teacher bypass on watch** — unlike seminars, teachers cannot preview unpublished challenges on the watch page (Interview/Mentorship style). Mux preview is available only on the teacher setup page.
+- **Catalog:** `get-challenges.ts` returns only `isPublished: true` challenges; optional `title` contains filter (`?title=`).
+- **Watch:** `get-challenge.ts` grants access when `challenge.isPublished && userId` only.
+- **Unpublished / unauthenticated:** watch page redirects to `/challenges`; catalog redirects guests to `/`.
+- **Publish gate:** requires `title`, `description`, `imageUrl`, `videoUrl`, and a `MuxData` row (5/5). **Does not** require `difficulty` or `categoryIDs`.
+- **Optional metadata:** `difficulty` and categories can be empty at publish; badges render on catalog card and watch page when set later.
 
 ## Route groups
 
@@ -80,7 +94,7 @@ Route groups under `app/` (parentheses are not URL segments):
 | Group | URL prefix | Purpose |
 |-------|------------|---------|
 | `(root)` | `/`, `/dashboard`, `/courses/…`, `/teacher/…` | Main app: course catalog, student dashboard, teacher CMS |
-| `(course)` | `/watch-course/[courseId]/…`, `/watch-seminar/[seminarId]` | Student video player (course chapters or single seminar) |
+| `(course)` | `/watch-course/[courseId]/…`, `/watch-seminar/[seminarId]`, `/watch-challenge/[challengeId]` | Student video player (course chapters, seminar, or challenge) |
 | `(auth)` | `/sign-in`, `/sign-up` | Clerk authentication pages |
 | `landing_page/` | `/landing_page/…` | Marketing site (careers, subscription, technology pages) |
 | `api/` | `/api/…` | REST handlers (courses, chapters, attachments, webhooks, checkout) |
@@ -94,6 +108,8 @@ Route groups under `app/` (parentheses are not URL segments):
 - `/watch-course/[courseId]/chapters/[chapterId]` — video player + progress
 - `/seminars` — published seminar catalog (auth required)
 - `/watch-seminar/[seminarId]` — single-video seminar player (no chapter sidebar, no progress)
+- `/challenges` — published challenge catalog (auth required; title search only in v1)
+- `/watch-challenge/[challengeId]` — single-video challenge player with difficulty badge and category chips when set (no progress, no teacher draft preview)
 
 ### Teacher area (`/teacher/…`)
 
@@ -104,9 +120,12 @@ Route groups under `app/` (parentheses are not URL segments):
 - `/teacher/analytics` — revenue / enrollment analytics (`actions/get-analytics.ts`)
 - `/teacher/seminars` — seminar list (data table)
 - `/teacher/seminars/create` — new seminar (title only → redirect to setup)
-- `/teacher/seminars/[seminarId]` — seminar setup (title, description, video, publish/delete)
+- `/teacher/seminars/[seminarId]` — seminar setup (title, description, image, video, publish/delete)
+- `/teacher/challenges` — challenge list (data table)
+- `/teacher/challenges/create` — new challenge (title only → redirect to setup)
+- `/teacher/challenges/[challengeId]` — challenge setup (title, description, image, difficulty, categories, video, publish/delete)
 
-Teacher routes use `(root)/(routes)/teacher/` and are gated by `isTeacher()`.
+Teacher routes use `(root)/(routes)/teacher/` and are gated by `isTeacher()`. Sidebar: student `/challenges` and teacher `/teacher/challenges` use the `Puzzle` icon (after Interviews; teacher tab before Analytics).
 
 ## Data access patterns
 
@@ -126,6 +145,8 @@ Teacher routes use `(root)/(routes)/teacher/` and are gated by `isTeacher()`.
 | `get-analytics.ts` | Teacher analytics aggregates |
 | `get-seminars.ts` | Published seminars for catalog; optional `title` filter |
 | `get-seminar.ts` | Single seminar + `muxData` with access checks (published + logged-in, or teacher) |
+| `get-challenges.ts` | Published challenges for catalog; optional `title` filter; includes `categories` |
+| `get-challenge.ts` | Single challenge + `muxData` with access checks (published + logged-in only; no teacher bypass) |
 
 Prefer these for read paths in Server Components. Match existing error handling (try/catch, log tag, return null/empty on failure).
 
@@ -156,6 +177,11 @@ Mutations and client-triggered operations:
 | `/api/seminars/[seminarId]` | PATCH, DELETE | Update / delete seminar (+ Mux cleanup on delete) |
 | `/api/seminars/[seminarId]/publish` | PATCH | Publish seminar |
 | `/api/seminars/[seminarId]/unpublish` | PATCH | Unpublish seminar |
+| `/api/challenges` | POST | Create challenge |
+| `/api/challenges/[challengeId]` | PATCH, DELETE | Update / delete challenge (+ Mux lifecycle on `videoUrl`) |
+| `/api/challenges/[challengeId]/publish` | PATCH | Publish challenge (5-field gate; categories/difficulty optional) |
+| `/api/challenges/[challengeId]/unpublish` | PATCH | Unpublish challenge |
+| `/api/categories` | POST | Create category (`CategoryKind.CHALLENGE` supported) |
 | `/api/uploadthing` | — | UploadThing file router |
 | `/api/webhook` | POST | Stripe webhook |
 | `/api/webhook/mercado_pago` | POST | Mercado Pago webhook |
@@ -164,21 +190,25 @@ Auth pattern: `auth()` or `currentUser()` from `@clerk/nextjs/server`. Teacher m
 
 ### Uploads (UploadThing)
 
-`app/api/uploadthing/core.ts` defines four routes, all teacher-only:
+`app/api/uploadthing/core.ts` defines upload routes, all teacher-only:
 
 - `courseImage` — course thumbnail
 - `courseAttachment` — course attachments
 - `chapterVideo` — chapter video (feeds Mux processing in chapter update flow)
 - `seminarVideo` — seminar video (feeds Mux processing in seminar update flow)
+- `interviewVideo` — interview video
+- `mentorshipVideo` — mentorship video
+- `challengeVideo` — challenge video (feeds Mux processing in challenge update flow)
 
 ### Video (Mux)
 
-- Teacher uploads via UploadThing `chapterVideo` or `seminarVideo`.
-- Chapter/seminar PATCH routes create/update `MuxData` with `assetId` and `playbackId` (linked via `chapterId` or `seminarId`).
+- Teacher uploads via UploadThing (`chapterVideo`, `seminarVideo`, `interviewVideo`, `mentorshipVideo`, `challengeVideo`).
+- Content PATCH routes create/update `MuxData` with `assetId` and `playbackId` when `videoUrl` changes. Re-upload deletes the previous Mux asset first (same pattern for seminars and challenges).
 - Student players use `@mux/mux-player-react` with `playbackId`:
   - Course: `app/(course)/watch-course/.../video-player.tsx` (progress + next chapter)
   - Seminar: `app/(course)/watch-seminar/.../video-player.tsx` (no progress)
-- Chapter/seminar DELETE removes Mux asset and `MuxData` row.
+  - Challenge: `app/(course)/watch-challenge/.../video-player.tsx` (no progress)
+- Content DELETE removes Mux asset and `MuxData` row.
 
 ## Payments
 
@@ -229,7 +259,18 @@ Seminar-related language keys (in `languages/language.d.ts`):
 | `teacherSeminarSetup` | Setup page, forms, publish/delete toasts |
 | `seminars` | Student catalog (`noSeminarsFound`, `watch`, `watchSeminarURL` for localized watch links) |
 
-PT URL rewrites in `next.config.mjs`: `/seminarios` → `/seminars`, `/assistir-seminario/:id` → `/watch-seminar/:id`.
+PT URL rewrites in `next.config.mjs`: `/seminarios` → `/seminars`, `/assistir-seminario/:id` → `/watch-seminar/:id`, `/desafios` → `/challenges`, `/assistir-desafio/:id` → `/watch-challenge/:id`. `watch-challenge` is included in `routesWithDynamicSlug` for locale-aware rewrites.
+
+Challenge-related language keys (in `languages/language.d.ts`):
+
+| Key | Purpose |
+|-----|---------|
+| `sidebar.challenges` | Sidebar link label (student + teacher) |
+| `challenges` | Student catalog (`noChallengesFound`, `watch`, `watchChallengeURL` for localized watch links) |
+| `teacherChallenges` | Teacher list table (`filterChallenges`, `newChallenge`) |
+| `teacherChallengeCreate` | Create page form copy |
+| `teacherChallengeSetup` | Setup page, forms, publish/delete toasts, `difficultyLabels` (`EASY` / `MEDIUM` / `HARD`) |
+| `navbar.goBackToChallenges` | Back link on watch-challenge routes |
 
 ## Conventions for changes
 
@@ -239,6 +280,7 @@ PT URL rewrites in `next.config.mjs`: `/seminarios` → `/seminars`, `/assistir-
 - **Teacher-only features:** gate with `isTeacher(userId)` from `lib/teacher.ts`.
 - **Student access:** always check `Purchase`, `Chapter.isFree`, or teacher status — do not expose `muxData` / `attachments` without these checks.
 - **Seminar access:** check `isPublished` + logged-in user, or `isTeacher()` — no purchase check in v1.
+- **Challenge access:** check `isPublished` + logged-in user only — no purchase check, **no teacher bypass on watch** in v1.
 
 ## Key files index
 
@@ -251,11 +293,22 @@ PT URL rewrites in `next.config.mjs`: `/seminarios` → `/seminars`, `/assistir-
 | Mercado Pago | `app/api/webhook/mercado_pago/route.ts`, `app/api/courses/[courseId]/mercado_pago_checkout/route.ts` |
 | Chapter access | `actions/get-chapter.ts` |
 | Seminar access | `actions/get-seminar.ts` |
+| Challenge access | `actions/get-challenge.ts` |
 | Watch flow | `app/(course)/watch-course/[courseId]/` |
 | Seminar watch | `app/(course)/watch-seminar/[seminarId]/` |
+| Challenge watch | `app/(course)/watch-challenge/[challengeId]/` |
 | Seminar catalog | `app/(root)/(routes)/seminars/` |
+| Challenge catalog | `app/(root)/(routes)/challenges/` |
+| Challenge components | `components/challenges-list.tsx`, `components/challenge-card.tsx` |
 | Teacher CMS | `app/(root)/(routes)/teacher/` |
 | Teacher seminars | `app/(root)/(routes)/teacher/seminars/` |
+| Teacher challenges | `app/(root)/(routes)/teacher/challenges/` |
 | Seminar API | `app/api/seminars/` |
+| Challenge API | `app/api/challenges/` |
+| Sidebar nav | `app/(root)/_components/sidebar-routes.tsx` |
+| Navbar / search | `components/navbar-routes.tsx`, `components/search-input.tsx` |
 | Uploads | `app/api/uploadthing/core.ts` |
+| PT rewrites | `next.config.mjs` |
+| E2E fixtures | `e2e/constants.ts`, `scripts/e2e-seed.ts` |
+| E2E specs | `e2e/guest/catalog.spec.ts`, `e2e/student/challenges.spec.ts`, `e2e/teacher/challenges.spec.ts` |
 | Middleware | `middleware.ts` |

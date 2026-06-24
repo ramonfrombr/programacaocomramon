@@ -25,7 +25,7 @@ todos:
     status: completed
   - id: docs-verify
     content: Update lms-domain SKILL.md; manual verification against checklist
-    status: pending
+    status: completed
 isProject: false
 ---
 
