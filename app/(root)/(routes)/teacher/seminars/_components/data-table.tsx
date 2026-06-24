@@ -40,6 +40,8 @@ export function DataTable<TData, TValue>({
 }: DataTableProps<TData, TValue>) {
   const teacherSeminars = useLanguageStore().teacherSeminars;
   const teacher = useLanguageStore().teacher;
+  const sidebar = useLanguageStore().sidebar;
+  const createSeminarHref = `/${sidebar.teacherURL}/${sidebar.seminarsURL}/create`;
 
   const [sorting, setSorting] = React.useState<SortingState>([]);
   const [columnFilters, setColumnFilters] = React.useState<ColumnFiltersState>(
@@ -72,7 +74,7 @@ export function DataTable<TData, TValue>({
           }
           className="max-w-sm"
         />
-        <Link href="/teacher/seminars/create">
+        <Link href={createSeminarHref}>
           <Button>
             <PlusCircle className="h-4 w-4 mr-2" />
             {teacherSeminars.newSeminar}
