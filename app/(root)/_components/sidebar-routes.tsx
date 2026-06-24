@@ -42,31 +42,31 @@ export const SidebarRoutes = ({ userLoggedIn, onNavigate }: SidebarRoutesProps) 
         {
             icon: Layout,
             label: language.dashboard,
-            href: "/dashboard",
+            href: `/${language.dashboardURL}`,
             locked: false,
         },
         {
             icon: School,
             label: language.seminars,
-            href: "/seminars",
+            href: `/${language.seminarsURL}`,
             locked: false,
         },
         {
             icon: GraduationCap,
             label: language.mentorships,
-            href: "/mentorships",
+            href: `/${language.mentorshipsURL}`,
             locked: false,
         },
         {
             icon: MessagesSquare,
             label: language.interviews,
-            href: "/interviews",
+            href: `/${language.interviewsURL}`,
             locked: false,
         },
         {
             icon: Puzzle,
             label: language.challenges,
-            href: "/challenges",
+            href: `/${language.challengesURL}`,
             locked: false,
         },
     ];

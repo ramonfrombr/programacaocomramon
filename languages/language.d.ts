@@ -123,12 +123,17 @@ type ILanguageNavbar = {
 
 type ILanguageSidebar = {
     dashboard: string;
+    dashboardURL: string;
     browse: string;
     courses: string;
     seminars: string;
+    seminarsURL: string;
     mentorships: string;
+    mentorshipsURL: string;
     interviews: string;
+    interviewsURL: string;
     challenges: string;
+    challengesURL: string;
     analytics: string;
 };
 

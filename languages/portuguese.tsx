@@ -154,12 +154,17 @@ export const portugueseLanguage: ILanguage = {
     },
     sidebar: {
         dashboard: "Painel",
+        dashboardURL: "painel",
         browse: "Cursos",
         courses: "Meus Cursos",
         seminars: "Seminários",
+        seminarsURL: "seminarios",
         mentorships: "Mentorias",
+        mentorshipsURL: "mentorias",
         interviews: "Entrevistas",
+        interviewsURL: "entrevistas",
         challenges: "Desafios",
+        challengesURL: "desafios",
         analytics: "Vendas",
     },
     dashboard: {

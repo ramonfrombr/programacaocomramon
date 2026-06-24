@@ -153,12 +153,17 @@ export const frenchLanguage: ILanguage = {
     },
     sidebar: {
         dashboard: "Tableau de bord",
+        dashboardURL: "dashboard",
         browse: "Cours",
         courses: "Mes cours",
         seminars: "Séminaires",
+        seminarsURL: "seminaires",
         mentorships: "Mentorats",
+        mentorshipsURL: "mentorats",
         interviews: "Entretiens",
+        interviewsURL: "entretiens",
         challenges: "Défis",
+        challengesURL: "defis",
         analytics: "Analytics",
     },
     dashboard: {

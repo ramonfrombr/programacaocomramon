@@ -149,12 +149,17 @@ export const englishLanguage: ILanguage = {
     },
     sidebar: {
         dashboard: "Dashboard",
+        dashboardURL: "dashboard",
         browse: "Courses",
         courses: "My Courses",
         seminars: "Seminars",
+        seminarsURL: "seminars",
         mentorships: "Mentorships",
+        mentorshipsURL: "mentorships",
         interviews: "Interviews",
+        interviewsURL: "interviews",
         challenges: "Challenges",
+        challengesURL: "challenges",
         analytics: "Analytics",
     },
     dashboard: {
