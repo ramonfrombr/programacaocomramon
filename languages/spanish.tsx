@@ -718,6 +718,22 @@ export const spanishLanguage: ILanguage = {
         thisChapterIsLocked: "",
         enrollFor: "",
     },
+    courseCheckout: {
+        unlockFullAccess: "Desbloquea el acceso completo al curso",
+        payWithPix: "Pix",
+        payWithCard: "Tarjeta de crédito",
+        generatingPix: "Generando código Pix...",
+        scanQrCode: "Para pagar con Pix, escanea el código QR:",
+        orCopyCode: "O copia el código:",
+        copy: "Copiar",
+        checkPaymentNow: "Verificar pago ahora",
+        awaitingConfirmation: "Esperando confirmación del pago...",
+        paymentApproved:
+            "✅ ¡Pago aprobado! Tu acceso ha sido desbloqueado.",
+        paymentRejected: "❌ Pago rechazado. Inténtalo de nuevo.",
+        pixCopied: "¡Código Pix copiado!",
+        copyFailed: "Error al copiar el código. Inténtalo de nuevo.",
+    },
     course: {
         watchCourseURL: "",
         chaptersURL: "",
