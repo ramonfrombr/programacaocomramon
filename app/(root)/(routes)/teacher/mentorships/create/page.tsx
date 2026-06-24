@@ -23,6 +23,8 @@ import { useLanguageStore } from "@/hooks/use-language-store";
 
 const CreateMentorshipPage = () => {
     const language = useLanguageStore().teacherMentorshipCreate;
+    const sidebar = useLanguageStore().sidebar;
+    const mentorshipsHref = `/${sidebar.teacherURL}/${sidebar.mentorshipsURL}`;
 
     const router = useRouter();
 
@@ -93,7 +95,7 @@ const CreateMentorshipPage = () => {
                         />
 
                         <div className="flex items-center gap-x-2">
-                            <Link href="/teacher/mentorships">
+                            <Link href={mentorshipsHref}>
                                 <Button variant="ghost" type="button">
                                     {language.cancel}
                                 </Button>

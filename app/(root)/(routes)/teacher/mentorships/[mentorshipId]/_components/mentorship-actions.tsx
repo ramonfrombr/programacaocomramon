@@ -21,6 +21,8 @@ export const MentorshipActions = ({
     isPublished,
 }: MentorshipActionsProps) => {
     const language = useLanguageStore().teacherMentorshipSetup;
+    const sidebar = useLanguageStore().sidebar;
+    const mentorshipsHref = `/${sidebar.teacherURL}/${sidebar.mentorshipsURL}`;
 
     const router = useRouter();
     const [isLoading, setIsLoading] = useState(false);
@@ -52,7 +54,7 @@ export const MentorshipActions = ({
             setIsLoading(true);
             await axios.delete(`/api/mentorships/${mentorshipId}`);
             toast.success(language.mentorshipDeleted);
-            router.push("/teacher/mentorships");
+            router.push(mentorshipsHref);
             router.refresh();
         } catch {
             toast.error(language.somethingWentWrong);

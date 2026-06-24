@@ -21,6 +21,8 @@ export const MentorshipSetupHeader = ({
     isComplete,
 }: MentorshipSetupHeaderProps) => {
     const language = useLanguageStore().teacherMentorshipSetup;
+    const sidebar = useLanguageStore().sidebar;
+    const mentorshipsHref = `/${sidebar.teacherURL}/${sidebar.mentorshipsURL}`;
 
     return (
         <>
@@ -33,7 +35,7 @@ export const MentorshipSetupHeader = ({
             <div className="flex items-center justify-between p-6">
                 <div className="w-full">
                     <Link
-                        href="/teacher/mentorships"
+                        href={mentorshipsHref}
                         className="flex items-center text-sm hover:opacity-75 transition mb-6"
                     >
                         <ArrowLeft className="h-4 w-4 mr-2" />
