@@ -21,6 +21,8 @@ export const ChallengeSetupHeader = ({
     isComplete,
 }: ChallengeSetupHeaderProps) => {
     const language = useLanguageStore().teacherChallengeSetup;
+    const sidebar = useLanguageStore().sidebar;
+    const challengesHref = `/${sidebar.teacherURL}/${sidebar.challengesURL}`;
 
     return (
         <>
@@ -33,7 +35,7 @@ export const ChallengeSetupHeader = ({
             <div className="flex items-center justify-between p-6">
                 <div className="w-full">
                     <Link
-                        href="/teacher/challenges"
+                        href={challengesHref}
                         className="flex items-center text-sm hover:opacity-75 transition mb-6"
                     >
                         <ArrowLeft className="h-4 w-4 mr-2" />
