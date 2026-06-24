@@ -10,7 +10,7 @@ todos:
     status: completed
   - id: delete-mp-button
     content: Remove course-enroll-button-mercado-pago.tsx after migration
-    status: pending
+    status: completed
   - id: fix-mp-webhook
     content: Fix mercado_pago webhook to read userId/courseId (with snake_case fallback)
     status: pending
