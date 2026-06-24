@@ -33,6 +33,7 @@ type ILanguage = {
     teacherCourseChapterSetup: ILanguageTeacherCourseChapterSetup;
     teacherAnalytics: ILanguageTeacherAnalytics;
     videoPlayer: ILanguageVideoPlayer;
+    courseCheckout: ILanguageCourseCheckout;
     course: ILanguageCourse;
     footer: ILanguageFooter;
     salesFunnel: ISalesFunnel;
@@ -747,6 +748,22 @@ type ILanguageVideoPlayer = {
     somethingWentWrong: string;
     thisChapterIsLocked: string;
     enrollFor: string;
+};
+
+type ILanguageCourseCheckout = {
+    unlockFullAccess: string;
+    payWithPix: string;
+    payWithCard: string;
+    generatingPix: string;
+    scanQrCode: string;
+    orCopyCode: string;
+    copy: string;
+    checkPaymentNow: string;
+    awaitingConfirmation: string;
+    paymentApproved: string;
+    paymentRejected: string;
+    pixCopied: string;
+    copyFailed: string;
 };
 
 type ILanguageCourse = {

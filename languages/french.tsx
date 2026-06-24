@@ -719,6 +719,22 @@ export const frenchLanguage: ILanguage = {
         thisChapterIsLocked: "",
         enrollFor: "",
     },
+    courseCheckout: {
+        unlockFullAccess: "Débloquez l'accès complet au cours",
+        payWithPix: "Pix",
+        payWithCard: "Carte de crédit",
+        generatingPix: "Génération du code Pix...",
+        scanQrCode: "Pour payer avec Pix, scannez le code QR :",
+        orCopyCode: "Ou copiez le code :",
+        copy: "Copier",
+        checkPaymentNow: "Vérifier le paiement maintenant",
+        awaitingConfirmation: "En attente de confirmation du paiement...",
+        paymentApproved:
+            "✅ Paiement approuvé ! Votre accès a été débloqué.",
+        paymentRejected: "❌ Paiement refusé. Veuillez réessayer.",
+        pixCopied: "Code Pix copié !",
+        copyFailed: "Échec de la copie du code. Veuillez réessayer.",
+    },
     course: {
         watchCourseURL: "",
         chaptersURL: "",

@@ -5,8 +5,8 @@ import { getChapter } from "@/actions/get-chapter";
 import { Preview } from "@/components/preview";
 import { Separator } from "@/components/ui/separator";
 import { VideoPlayer } from "@/app/(course)/watch-course/[courseId]/chapters/[chapterId]/_components/video-player";
+import { CourseCheckoutModal } from "@/app/(course)/watch-course/[courseId]/chapters/[chapterId]/_components/course-checkout-modal";
 import { StripeCheckoutButton } from "@/app/(course)/watch-course/[courseId]/chapters/[chapterId]/_components/course-enroll-button-stripe";
-import { MercadoPagoCheckoutButton } from "@/app/(course)/watch-course/[courseId]/chapters/[chapterId]/_components/course-enroll-button-mercado-pago";
 import { CourseProgressButton } from "@/app/(course)/watch-course/[courseId]/chapters/[chapterId]/_components/course-progress-button";
 import { ChapterBanners } from "@/app/(course)/watch-course/[courseId]/chapters/[chapterId]/_components/chapter-banners";
 import { isTeacher } from "@/lib/teacher";
@@ -47,25 +47,8 @@ const ChapterIdPage = async ({
         courseId: params.courseId,
     });
 
-    const MergadoPagoCheckoutButtonWithProps = () => (
-        <MercadoPagoCheckoutButton
-            courseId={params.courseId}
-            price={course.price!}
-            course={courseFull}
-        />
-    );
-
-    const StripeCheckoutButtonWithProps = () => (
-        <StripeCheckoutButton
-            courseId={params.courseId}
-            price={course.price!}
-        />
-    );
-
-    const SelectedCheckoutButton =
-        process.env.NEXT_PUBLIC_LANGUAGE == "portuguese"
-            ? MergadoPagoCheckoutButtonWithProps
-            : StripeCheckoutButtonWithProps;
+    const isPortuguese =
+        process.env.NEXT_PUBLIC_LANGUAGE === "portuguese";
 
     return (
         <div>
@@ -75,7 +58,18 @@ const ChapterIdPage = async ({
             />
 
             <div className="flex flex-col max-w-4xl mx-auto pb-20">
-                {userId && showPurchaseButton && <SelectedCheckoutButton />}
+                {userId && showPurchaseButton && isPortuguese ? (
+                    <CourseCheckoutModal
+                        courseId={params.courseId}
+                        price={course.price!}
+                        course={courseFull}
+                    />
+                ) : userId && showPurchaseButton ? (
+                    <StripeCheckoutButton
+                        courseId={params.courseId}
+                        price={course.price!}
+                    />
+                ) : null}
 
                 <div className="p-4">
                     <VideoPlayer
