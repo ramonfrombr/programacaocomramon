@@ -156,6 +156,7 @@ export const frenchLanguage: ILanguage = {
         dashboardURL: "dashboard",
         browse: "Cours",
         courses: "Mes cours",
+        coursesURL: "cours",
         seminars: "Séminaires",
         seminarsURL: "seminaires",
         mentorships: "Mentorats",
@@ -165,6 +166,8 @@ export const frenchLanguage: ILanguage = {
         challenges: "Défis",
         challengesURL: "defis",
         analytics: "Analytics",
+        analyticsURL: "analytics",
+        teacherURL: "teacher",
     },
     dashboard: {
         inProgress: "En cours",

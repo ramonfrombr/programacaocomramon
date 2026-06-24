@@ -21,6 +21,15 @@ const translations = {
         "watch-interview": "assistir-entrevista",
         challenges: "desafios",
         "watch-challenge": "assistir-desafio",
+        teacher: {
+            prefix: "professor",
+            courses: "cursos",
+            seminars: "seminarios",
+            mentorships: "mentorias",
+            interviews: "entrevistas",
+            challenges: "desafios",
+            analytics: "analytics",
+        },
     },
     english: {
         "sign-up": "sign-up",
@@ -42,6 +51,15 @@ const translations = {
         "watch-interview": "watch-interview",
         challenges: "challenges",
         "watch-challenge": "watch-challenge",
+        teacher: {
+            prefix: "teacher",
+            courses: "courses",
+            seminars: "seminars",
+            mentorships: "mentorships",
+            interviews: "interviews",
+            challenges: "challenges",
+            analytics: "analytics",
+        },
     },
 };
 
@@ -64,7 +82,7 @@ const nextConfig = {
         const routes = translations[locale];
 
         const simpleRoutes = Object.entries(routes)
-            .filter(([page]) => !["chapters"].includes(page))
+            .filter(([page]) => !["chapters", "teacher"].includes(page))
             .flatMap(([page, slug]) => {
                 const isDynamic = routesWithDynamicSlug.includes(page);
 
@@ -96,7 +114,35 @@ const nextConfig = {
             },
         ];
 
-        return [...simpleRoutes, ...complexRoutes];
+        const teacherPrefix = routes.teacher.prefix;
+
+        const teacherRoutes = Object.entries(routes.teacher)
+            .filter(([page]) => page !== "prefix")
+            .flatMap(([page, slug]) => [
+                {
+                    source: `/${teacherPrefix}/${slug}`,
+                    destination: `/teacher/${page}`,
+                },
+                {
+                    source: `/${teacherPrefix}/${slug}/:path*`,
+                    destination: `/teacher/${page}/:path*`,
+                },
+            ]);
+
+        const teacherComplexRoutes = [
+            {
+                source: `/${teacherPrefix}/${routes.teacher.courses}/:courseId/${routes.chapters}/:chapterId`,
+                destination:
+                    "/teacher/courses/:courseId/chapters/:chapterId",
+            },
+        ];
+
+        return [
+            ...simpleRoutes,
+            ...complexRoutes,
+            ...teacherComplexRoutes,
+            ...teacherRoutes,
+        ];
     },
 };
 

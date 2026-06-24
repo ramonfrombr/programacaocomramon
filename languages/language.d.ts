@@ -126,6 +126,7 @@ type ILanguageSidebar = {
     dashboardURL: string;
     browse: string;
     courses: string;
+    coursesURL: string;
     seminars: string;
     seminarsURL: string;
     mentorships: string;
@@ -135,6 +136,8 @@ type ILanguageSidebar = {
     challenges: string;
     challengesURL: string;
     analytics: string;
+    analyticsURL: string;
+    teacherURL: string;
 };
 
 type ILanguageDashboard = {
