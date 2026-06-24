@@ -48,27 +48,27 @@ export const SidebarRoutes = ({ userLoggedIn, onNavigate }: SidebarRoutesProps) 
             locked: false,
         },
         {
-            icon: School,
-            label: language.seminars,
-            href: `/${language.seminarsURL}`,
-            locked: false,
-        },
-        {
             icon: GraduationCap,
             label: language.mentorships,
             href: `/${language.mentorshipsURL}`,
             locked: false,
         },
         {
-            icon: MessagesSquare,
-            label: language.interviews,
-            href: `/${language.interviewsURL}`,
+            icon: School,
+            label: language.seminars,
+            href: `/${language.seminarsURL}`,
             locked: false,
         },
         {
             icon: Puzzle,
             label: language.challenges,
             href: `/${language.challengesURL}`,
+            locked: false,
+        },
+        {
+            icon: MessagesSquare,
+            label: language.interviews,
+            href: `/${language.interviewsURL}`,
             locked: false,
         },
     ];
@@ -81,27 +81,27 @@ export const SidebarRoutes = ({ userLoggedIn, onNavigate }: SidebarRoutesProps) 
             locked: false,
         },
         {
-            icon: School,
-            label: language.seminars,
-            href: `${teacherBase}/${language.seminarsURL}`,
-            locked: false,
-        },
-        {
             icon: GraduationCap,
             label: language.mentorships,
             href: `${teacherBase}/${language.mentorshipsURL}`,
             locked: false,
         },
         {
-            icon: MessagesSquare,
-            label: language.interviews,
-            href: `${teacherBase}/${language.interviewsURL}`,
+            icon: School,
+            label: language.seminars,
+            href: `${teacherBase}/${language.seminarsURL}`,
             locked: false,
         },
         {
             icon: Puzzle,
             label: language.challenges,
             href: `${teacherBase}/${language.challengesURL}`,
+            locked: false,
+        },
+        {
+            icon: MessagesSquare,
+            label: language.interviews,
+            href: `${teacherBase}/${language.interviewsURL}`,
             locked: false,
         },
         {
