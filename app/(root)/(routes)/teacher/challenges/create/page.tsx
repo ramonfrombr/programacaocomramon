@@ -23,6 +23,8 @@ import { useLanguageStore } from "@/hooks/use-language-store";
 
 const CreateChallengePage = () => {
     const language = useLanguageStore().teacherChallengeCreate;
+    const sidebar = useLanguageStore().sidebar;
+    const challengesHref = `/${sidebar.teacherURL}/${sidebar.challengesURL}`;
 
     const router = useRouter();
 
@@ -44,7 +46,7 @@ const CreateChallengePage = () => {
     const onSubmit = async (values: z.infer<typeof formSchema>) => {
         try {
             const response = await axios.post("/api/challenges", values);
-            router.push(`/teacher/challenges/${response.data.id}`);
+            router.push(`${challengesHref}/${response.data.id}`);
             toast.success(language.challengeCreated);
         } catch {
             toast.error(language.somethingWentWrong);
@@ -93,7 +95,7 @@ const CreateChallengePage = () => {
                         />
 
                         <div className="flex items-center gap-x-2">
-                            <Link href="/teacher/challenges">
+                            <Link href={challengesHref}>
                                 <Button variant="ghost" type="button">
                                     {language.cancel}
                                 </Button>

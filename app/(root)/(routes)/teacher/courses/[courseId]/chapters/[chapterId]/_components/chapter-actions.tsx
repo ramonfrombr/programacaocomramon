@@ -23,6 +23,8 @@ export const ChapterActions = ({
   isPublished,
 }: ChapterActionsProps) => {
   const language = useLanguageStore().teacherCourseChapterSetup;
+  const sidebar = useLanguageStore().sidebar;
+  const courseHref = `/${sidebar.teacherURL}/${sidebar.coursesURL}/${courseId}`;
 
   const router = useRouter();
   const [isLoading, setIsLoading] = useState(false);
@@ -56,7 +58,7 @@ export const ChapterActions = ({
       setIsLoading(true);
       await axios.delete(`/api/courses/${courseId}/chapters/${chapterId}`);
       toast.success(language.chapterDeleted);
-      router.push(`/teacher/courses/${courseId}`);
+      router.push(courseHref);
       router.refresh();
     } catch {
       toast.error(language.somethingWentWrong);

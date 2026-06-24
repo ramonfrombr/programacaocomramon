@@ -12,7 +12,10 @@ export const NavbarRoutes = () => {
     const language = useLanguageStore();
     const { userId } = useAuth();
     const pathname = usePathname();
-    const isTeacherPage = pathname?.startsWith("/teacher");
+    const teacherBase = `/${language.sidebar.teacherURL}`;
+    const isTeacherPage =
+        pathname?.startsWith(teacherBase) ||
+        pathname?.startsWith("/teacher");
     const isCoursePage = pathname?.includes(
         `/${language.course.watchCourseURL}/`,
     );
@@ -91,7 +94,7 @@ export const NavbarRoutes = () => {
                         </Button>
                     </Link>
                 ) : isTeacher(userId) ? (
-                    <Link href="/teacher/courses">
+                    <Link href={`/${language.sidebar.teacherURL}/${language.sidebar.coursesURL}`}>
                         <Button size="sm" variant="ghost">
                             {language.navbar.teacherMode}
                         </Button>

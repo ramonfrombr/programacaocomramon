@@ -21,6 +21,8 @@ export const SeminarActions = ({
     isPublished,
 }: SeminarActionsProps) => {
     const language = useLanguageStore().teacherSeminarSetup;
+    const sidebar = useLanguageStore().sidebar;
+    const seminarsHref = `/${sidebar.teacherURL}/${sidebar.seminarsURL}`;
 
     const router = useRouter();
     const [isLoading, setIsLoading] = useState(false);
@@ -50,7 +52,7 @@ export const SeminarActions = ({
             setIsLoading(true);
             await axios.delete(`/api/seminars/${seminarId}`);
             toast.success(language.seminarDeleted);
-            router.push("/teacher/seminars");
+            router.push(seminarsHref);
             router.refresh();
         } catch {
             toast.error(language.somethingWentWrong);

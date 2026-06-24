@@ -32,6 +32,8 @@ const formSchema = z.object({
 
 export const ChaptersForm = ({ initialData, courseId }: ChaptersFormProps) => {
     const language = useLanguageStore().teacherCourseSetup;
+    const sidebar = useLanguageStore().sidebar;
+    const courseLanguage = useLanguageStore().course;
 
     const router = useRouter();
     const [isCreating, setIsCreating] = useState(false);
@@ -78,7 +80,9 @@ export const ChaptersForm = ({ initialData, courseId }: ChaptersFormProps) => {
     };
 
     const onEdit = (id: string) => {
-        router.push(`/teacher/courses/${courseId}/chapters/${id}`);
+        router.push(
+            `/${sidebar.teacherURL}/${sidebar.coursesURL}/${courseId}/${courseLanguage.chaptersURL}/${id}`,
+        );
     };
 
     return (

@@ -110,8 +110,10 @@ const IsPublishedCell = ({ row }: { row: any }) => {
 
 const ActionsCell = ({ row }: { row: any }) => {
     const language = useLanguageStore().teacher;
+    const sidebar = useLanguageStore().sidebar;
 
     const { id } = row.original;
+    const editHref = `/${sidebar.teacherURL}/${sidebar.interviewsURL}/${id}`;
 
     return (
         <DropdownMenu>
@@ -122,7 +124,7 @@ const ActionsCell = ({ row }: { row: any }) => {
                 </Button>
             </DropdownMenuTrigger>
             <DropdownMenuContent align="end">
-                <Link href={`/teacher/interviews/${id}`}>
+                <Link href={editHref}>
                     <DropdownMenuItem>
                         <Pencil className="h-4 w-4 mr-2" />
                         {language.edit}

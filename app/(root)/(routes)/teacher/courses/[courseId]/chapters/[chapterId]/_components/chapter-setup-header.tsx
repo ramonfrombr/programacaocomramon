@@ -22,6 +22,8 @@ export const ChapterSetupHeader = ({
     isComplete,
 }: ChapterSetupHeaderProps) => {
     const language = useLanguageStore().teacherCourseChapterSetup;
+    const sidebar = useLanguageStore().sidebar;
+    const courseHref = `/${sidebar.teacherURL}/${sidebar.coursesURL}/${courseId}`;
 
     return (
         <>
@@ -34,7 +36,7 @@ export const ChapterSetupHeader = ({
             <div className="flex items-center justify-between p-6">
                 <div className="w-full">
                     <Link
-                        href={`/teacher/courses/${courseId}`}
+                        href={courseHref}
                         className="flex items-center text-sm hover:opacity-75 transition mb-6"
                     >
                         <ArrowLeft className="h-4 w-4 mr-2" />

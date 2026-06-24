@@ -21,6 +21,8 @@ export const ChallengeActions = ({
     isPublished,
 }: ChallengeActionsProps) => {
     const language = useLanguageStore().teacherChallengeSetup;
+    const sidebar = useLanguageStore().sidebar;
+    const challengesHref = `/${sidebar.teacherURL}/${sidebar.challengesURL}`;
 
     const router = useRouter();
     const [isLoading, setIsLoading] = useState(false);
@@ -50,7 +52,7 @@ export const ChallengeActions = ({
             setIsLoading(true);
             await axios.delete(`/api/challenges/${challengeId}`);
             toast.success(language.challengeDeleted);
-            router.push("/teacher/challenges");
+            router.push(challengesHref);
             router.refresh();
         } catch {
             toast.error(language.somethingWentWrong);

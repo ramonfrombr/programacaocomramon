@@ -21,6 +21,8 @@ export const InterviewSetupHeader = ({
     isComplete,
 }: InterviewSetupHeaderProps) => {
     const language = useLanguageStore().teacherInterviewSetup;
+    const sidebar = useLanguageStore().sidebar;
+    const interviewsHref = `/${sidebar.teacherURL}/${sidebar.interviewsURL}`;
 
     return (
         <>
@@ -33,7 +35,7 @@ export const InterviewSetupHeader = ({
             <div className="flex items-center justify-between p-6">
                 <div className="w-full">
                     <Link
-                        href="/teacher/interviews"
+                        href={interviewsHref}
                         className="flex items-center text-sm hover:opacity-75 transition mb-6"
                     >
                         <ArrowLeft className="h-4 w-4 mr-2" />

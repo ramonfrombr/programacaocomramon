@@ -21,6 +21,8 @@ export const SeminarSetupHeader = ({
     isComplete,
 }: SeminarSetupHeaderProps) => {
     const language = useLanguageStore().teacherSeminarSetup;
+    const sidebar = useLanguageStore().sidebar;
+    const seminarsHref = `/${sidebar.teacherURL}/${sidebar.seminarsURL}`;
 
     return (
         <>
@@ -33,7 +35,7 @@ export const SeminarSetupHeader = ({
             <div className="flex items-center justify-between p-6">
                 <div className="w-full">
                     <Link
-                        href="/teacher/seminars"
+                        href={seminarsHref}
                         className="flex items-center text-sm hover:opacity-75 transition mb-6"
                     >
                         <ArrowLeft className="h-4 w-4 mr-2" />

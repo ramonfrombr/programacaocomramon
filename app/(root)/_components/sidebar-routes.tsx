@@ -25,8 +25,10 @@ interface SidebarRoutesProps {
 
 export const SidebarRoutes = ({ userLoggedIn, onNavigate }: SidebarRoutesProps) => {
     const pathname = usePathname();
-    const isTeacherPage = pathname.includes("/teacher");
     const language = useLanguageStore().sidebar;
+    const teacherBase = `/${language.teacherURL}`;
+    const isTeacherPage =
+        pathname.startsWith(teacherBase) || pathname.startsWith("/teacher");
 
     const guestRoutes = [
         { icon: Compass, label: language.browse, href: "/", locked: false },
@@ -42,31 +44,31 @@ export const SidebarRoutes = ({ userLoggedIn, onNavigate }: SidebarRoutesProps) 
         {
             icon: Layout,
             label: language.dashboard,
-            href: "/dashboard",
+            href: `/${language.dashboardURL}`,
             locked: false,
         },
         {
             icon: School,
             label: language.seminars,
-            href: "/seminars",
+            href: `/${language.seminarsURL}`,
             locked: false,
         },
         {
             icon: GraduationCap,
             label: language.mentorships,
-            href: "/mentorships",
+            href: `/${language.mentorshipsURL}`,
             locked: false,
         },
         {
             icon: MessagesSquare,
             label: language.interviews,
-            href: "/interviews",
+            href: `/${language.interviewsURL}`,
             locked: false,
         },
         {
             icon: Puzzle,
             label: language.challenges,
-            href: "/challenges",
+            href: `/${language.challengesURL}`,
             locked: false,
         },
     ];
@@ -75,37 +77,37 @@ export const SidebarRoutes = ({ userLoggedIn, onNavigate }: SidebarRoutesProps) 
         {
             icon: List,
             label: language.courses,
-            href: "/teacher/courses",
+            href: `${teacherBase}/${language.coursesURL}`,
             locked: false,
         },
         {
             icon: School,
             label: language.seminars,
-            href: "/teacher/seminars",
+            href: `${teacherBase}/${language.seminarsURL}`,
             locked: false,
         },
         {
             icon: GraduationCap,
             label: language.mentorships,
-            href: "/teacher/mentorships",
+            href: `${teacherBase}/${language.mentorshipsURL}`,
             locked: false,
         },
         {
             icon: MessagesSquare,
             label: language.interviews,
-            href: "/teacher/interviews",
+            href: `${teacherBase}/${language.interviewsURL}`,
             locked: false,
         },
         {
             icon: Puzzle,
             label: language.challenges,
-            href: "/teacher/challenges",
+            href: `${teacherBase}/${language.challengesURL}`,
             locked: false,
         },
         {
             icon: BarChart,
             label: language.analytics,
-            href: "/teacher/analytics",
+            href: `${teacherBase}/${language.analyticsURL}`,
             locked: false,
         },
     ];
