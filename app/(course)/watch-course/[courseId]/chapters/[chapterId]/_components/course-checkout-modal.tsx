@@ -33,6 +33,7 @@ interface CourseCheckoutModalProps {
 }
 
 type CheckoutStep = "method" | "pix";
+type LoadingMethod = "pix" | "card" | null;
 
 export const CourseCheckoutModal = ({
     price,
@@ -44,7 +45,7 @@ export const CourseCheckoutModal = ({
 
     const [open, setOpen] = useState(false);
     const [step, setStep] = useState<CheckoutStep>("method");
-    const [loading, setLoading] = useState(false);
+    const [loadingMethod, setLoadingMethod] = useState<LoadingMethod>(null);
     const [payment, setPayment] = useState<PixPayment | null>(null);
     const [status, setStatus] = useState<
         "pending" | "approved" | "rejected" | null
@@ -63,7 +64,7 @@ export const CourseCheckoutModal = ({
         setStep("method");
         setPayment(null);
         setStatus(null);
-        setLoading(false);
+        setLoadingMethod(null);
         stopPolling();
     }
 
@@ -95,7 +96,7 @@ export const CourseCheckoutModal = ({
 
     async function handlePixCheckout() {
         try {
-            setLoading(true);
+            setLoadingMethod("pix");
 
             const res = await fetch(
                 `/api/courses/${courseId}/mercado_pago_checkout`,
@@ -121,13 +122,13 @@ export const CourseCheckoutModal = ({
             console.error("Erro ao iniciar checkout Pix:", error);
             toast.error(videoPlayer.somethingWentWrong);
         } finally {
-            setLoading(false);
+            setLoadingMethod(null);
         }
     }
 
     async function handleCardCheckout() {
         try {
-            setLoading(true);
+            setLoadingMethod("card");
 
             const response = await axios.post(
                 `/api/courses/${courseId}/checkout`
@@ -138,7 +139,7 @@ export const CourseCheckoutModal = ({
             console.error("Erro ao iniciar checkout Stripe:", error);
             toast.error(videoPlayer.somethingWentWrong);
         } finally {
-            setLoading(false);
+            setLoadingMethod(null);
         }
     }
 
@@ -190,11 +191,11 @@ export const CourseCheckoutModal = ({
                 <DialogTrigger asChild>
                     <Button
                         data-testid="course-checkout-trigger"
-                        disabled={loading}
+                        disabled={loadingMethod !== null}
                         size="sm"
                         className="w-full text-lg p-8 mb-5 md:mb-0"
                     >
-                        {loading && step === "pix"
+                        {loadingMethod === "pix" && step === "pix"
                             ? courseCheckout.generatingPix
                             : `${videoPlayer.enrollFor} ${formatPrice(price)}`}
                     </Button>
@@ -212,17 +213,17 @@ export const CourseCheckoutModal = ({
                             <Button
                                 data-testid="checkout-pix"
                                 onClick={handlePixCheckout}
-                                disabled={loading}
+                                disabled={loadingMethod !== null}
                                 className="w-full p-6 text-lg"
                             >
-                                {loading
+                                {loadingMethod === "pix"
                                     ? courseCheckout.generatingPix
                                     : courseCheckout.payWithPix}
                             </Button>
                             <Button
                                 data-testid="checkout-card"
                                 onClick={handleCardCheckout}
-                                disabled={loading}
+                                disabled={loadingMethod !== null}
                                 variant="outline"
                                 className="w-full p-6 text-lg"
                             >
