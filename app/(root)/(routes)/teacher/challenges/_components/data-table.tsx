@@ -40,6 +40,8 @@ export function DataTable<TData, TValue>({
 }: DataTableProps<TData, TValue>) {
     const teacherChallenges = useLanguageStore().teacherChallenges;
     const teacher = useLanguageStore().teacher;
+    const sidebar = useLanguageStore().sidebar;
+    const createChallengeHref = `/${sidebar.teacherURL}/${sidebar.challengesURL}/create`;
 
     const [sorting, setSorting] = React.useState<SortingState>([]);
     const [columnFilters, setColumnFilters] = React.useState<ColumnFiltersState>(
@@ -77,7 +79,7 @@ export function DataTable<TData, TValue>({
                     }
                     className="max-w-sm"
                 />
-                <Link href="/teacher/challenges/create">
+                <Link href={createChallengeHref}>
                     <Button>
                         <PlusCircle className="h-4 w-4 mr-2" />
                         {teacherChallenges.newChallenge}
