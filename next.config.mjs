@@ -131,6 +131,10 @@ const nextConfig = {
 
         const teacherComplexRoutes = [
             {
+                source: `/${teacherPrefix}/create`,
+                destination: "/teacher/create",
+            },
+            {
                 source: `/${teacherPrefix}/${routes.teacher.courses}/:courseId/${routes.chapters}/:chapterId`,
                 destination:
                     "/teacher/courses/:courseId/chapters/:chapterId",
