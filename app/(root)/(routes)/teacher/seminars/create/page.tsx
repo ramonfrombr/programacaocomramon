@@ -23,6 +23,8 @@ import { useLanguageStore } from "@/hooks/use-language-store";
 
 const CreateSeminarPage = () => {
   const language = useLanguageStore().teacherSeminarCreate;
+  const sidebar = useLanguageStore().sidebar;
+  const seminarsHref = `/${sidebar.teacherURL}/${sidebar.seminarsURL}`;
 
   const router = useRouter();
 
@@ -87,7 +89,7 @@ const CreateSeminarPage = () => {
             />
 
             <div className="flex items-center gap-x-2">
-              <Link href="/teacher/seminars">
+              <Link href={seminarsHref}>
                 <Button variant="ghost" type="button">
                   {language.cancel}
                 </Button>
