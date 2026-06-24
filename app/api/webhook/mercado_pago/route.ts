@@ -24,8 +24,10 @@ export async function POST(request: Request) {
         console.log("Pagamento detalhado: ", mpPayment);
 
         if (mpPayment.status === "approved") {
-            const userId = mpPayment.metadata?.user_id;
-            const courseId = mpPayment.metadata?.course_id;
+            const userId =
+                mpPayment.metadata?.userId ?? mpPayment.metadata?.user_id;
+            const courseId =
+                mpPayment.metadata?.courseId ?? mpPayment.metadata?.course_id;
 
             if (userId && courseId) {
                 const already = await db.purchase.findUnique({

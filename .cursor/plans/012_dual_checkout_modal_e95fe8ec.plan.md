@@ -13,13 +13,13 @@ todos:
     status: completed
   - id: fix-mp-webhook
     content: Fix mercado_pago webhook to read userId/courseId (with snake_case fallback)
-    status: pending
+    status: completed
   - id: add-i18n-keys
     content: Add courseCheckout strings to language.d.ts and all 4 language files
-    status: pending
+    status: completed
   - id: verify-manually
     content: "Manual test: modal flow (PT), Stripe-only (other locales), webhook purchase creation"
-    status: pending
+    status: completed
 isProject: false
 ---
 
