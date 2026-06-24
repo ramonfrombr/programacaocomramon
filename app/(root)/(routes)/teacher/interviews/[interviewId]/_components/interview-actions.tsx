@@ -21,6 +21,8 @@ export const InterviewActions = ({
     isPublished,
 }: InterviewActionsProps) => {
     const language = useLanguageStore().teacherInterviewSetup;
+    const sidebar = useLanguageStore().sidebar;
+    const interviewsHref = `/${sidebar.teacherURL}/${sidebar.interviewsURL}`;
 
     const router = useRouter();
     const [isLoading, setIsLoading] = useState(false);
@@ -50,7 +52,7 @@ export const InterviewActions = ({
             setIsLoading(true);
             await axios.delete(`/api/interviews/${interviewId}`);
             toast.success(language.interviewDeleted);
-            router.push("/teacher/interviews");
+            router.push(interviewsHref);
             router.refresh();
         } catch {
             toast.error(language.somethingWentWrong);
