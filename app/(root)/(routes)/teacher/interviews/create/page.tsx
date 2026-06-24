@@ -46,7 +46,7 @@ const CreateInterviewPage = () => {
     const onSubmit = async (values: z.infer<typeof formSchema>) => {
         try {
             const response = await axios.post("/api/interviews", values);
-            router.push(`/teacher/interviews/${response.data.id}`);
+            router.push(`${interviewsHref}/${response.data.id}`);
             toast.success(language.interviewCreated);
         } catch {
             toast.error(language.somethingWentWrong);
