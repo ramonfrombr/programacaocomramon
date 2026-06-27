@@ -3,6 +3,7 @@ import { auth } from "@clerk/nextjs/server";
 import { NextResponse } from "next/server";
 
 import { db } from "@/lib/db";
+import { muxDataForeignKeys } from "@/lib/mux-sentinel-ids";
 
 const mux = new Mux({
     tokenId: process.env.MUX_TOKEN_ID!,
@@ -169,7 +170,7 @@ export async function PATCH(
 
             await db.muxData.create({
                 data: {
-                    chapterId: params.chapterId,
+                    ...muxDataForeignKeys({ chapterId: params.chapterId }),
                     assetId: asset.id,
                     playbackId: asset.playback_ids?.[0]?.id,
                 },
