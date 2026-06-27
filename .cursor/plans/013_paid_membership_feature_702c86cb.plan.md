@@ -10,7 +10,7 @@ todos:
     status: completed
   - id: stripe-checkout-portal
     content: Implement POST /api/membership/checkout (subscribe + upgrade) and POST /api/membership/portal
-    status: pending
+    status: completed
   - id: webhook-lifecycle
     content: Extend Stripe webhook for membership checkout.session.completed, subscription.updated/deleted, invoice.payment_failed
     status: pending
