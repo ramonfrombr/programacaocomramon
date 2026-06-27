@@ -13,7 +13,7 @@ todos:
     status: completed
   - id: webhook-lifecycle
     content: Extend Stripe webhook for membership checkout.session.completed, subscription.updated/deleted, invoice.payment_failed
-    status: pending
+    status: completed
   - id: student-membership-page
     content: Add sidebar link, /membership page with tier cards, member panel, i18n keys (4 locales)
     status: pending
