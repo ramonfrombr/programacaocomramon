@@ -1,5 +1,6 @@
 import { MembershipTierSlug } from "@prisma/client";
 
+import { db } from "@/lib/db";
 import { stripe } from "@/lib/stripe";
 
 type SyncStripeMembershipTierInput = {
@@ -62,4 +63,49 @@ export async function syncStripeMembershipTier(
     stripeProductId,
     stripePriceId,
   };
+}
+
+export async function ensureStripeMembershipTierConfigured(tierId: string) {
+  const tier = await db.membershipTier.findUnique({
+    where: { id: tierId },
+    include: {
+      translations: {
+        where: { locale: "english" },
+        take: 1,
+      },
+    },
+  });
+
+  if (!tier) {
+    throw new Error("Tier not found");
+  }
+
+  if (tier.stripePriceId && tier.stripeProductId) {
+    return {
+      stripePriceId: tier.stripePriceId,
+      stripeProductId: tier.stripeProductId,
+    };
+  }
+
+  const productName = tier.translations[0]?.name ?? tier.slug;
+
+  const stripeIds = await syncStripeMembershipTier({
+    id: tier.id,
+    slug: tier.slug,
+    monthlyPriceBrl: tier.monthlyPriceBrl,
+    stripeProductId: tier.stripeProductId,
+    stripePriceId: tier.stripePriceId,
+    productName,
+    previousMonthlyPriceBrl: tier.monthlyPriceBrl,
+  });
+
+  await db.membershipTier.update({
+    where: { id: tier.id },
+    data: {
+      stripeProductId: stripeIds.stripeProductId,
+      stripePriceId: stripeIds.stripePriceId,
+    },
+  });
+
+  return stripeIds;
 }

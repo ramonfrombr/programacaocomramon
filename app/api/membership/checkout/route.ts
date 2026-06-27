@@ -7,6 +7,7 @@ import { NextResponse } from "next/server";
 
 import { db } from "@/lib/db";
 import { getOrCreateStripeCustomer } from "@/lib/stripe-customer";
+import { ensureStripeMembershipTierConfigured } from "@/lib/stripe-membership-tier";
 import { stripe } from "@/lib/stripe";
 
 const TIER_SLUGS = new Set<string>(Object.values(MembershipTierSlug));
@@ -34,11 +35,9 @@ export async function POST(req: Request) {
       return new NextResponse("Tier not available", { status: 404 });
     }
 
-    if (!tier.stripePriceId) {
-      return new NextResponse("Tier not configured for checkout", {
-        status: 400,
-      });
-    }
+    const { stripePriceId } = await ensureStripeMembershipTierConfigured(
+      tier.id
+    );
 
     const existingSubscription = await db.membershipSubscription.findUnique({
       where: { userId: user.id },
@@ -72,7 +71,7 @@ export async function POST(req: Request) {
       const updatedSubscription = await stripe.subscriptions.update(
         existingSubscription.stripeSubscriptionId,
         {
-          items: [{ id: subscriptionItemId, price: tier.stripePriceId }],
+          items: [{ id: subscriptionItemId, price: stripePriceId }],
           proration_behavior: "create_prorations",
         }
       );
@@ -99,7 +98,7 @@ export async function POST(req: Request) {
 
     const session = await stripe.checkout.sessions.create({
       customer: stripeCustomerId,
-      line_items: [{ price: tier.stripePriceId, quantity: 1 }],
+      line_items: [{ price: stripePriceId, quantity: 1 }],
       mode: "subscription",
       payment_method_types: ["card"],
       success_url: `${process.env.NEXT_PUBLIC_APP_URL}/membership?success=1`,
