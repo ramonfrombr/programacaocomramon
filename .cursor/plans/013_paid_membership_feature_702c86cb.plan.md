@@ -25,7 +25,7 @@ todos:
     status: completed
   - id: verify-e2e
     content: "Manual + e2e tests: subscribe, access course, upgrade, payment failure revoke, cancel at period end"
-    status: pending
+    status: completed
 isProject: false
 ---
 
