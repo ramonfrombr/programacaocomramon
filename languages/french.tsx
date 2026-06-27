@@ -167,6 +167,8 @@ export const frenchLanguage: ILanguage = {
         challengesURL: "defis",
         analytics: "Analytics",
         analyticsURL: "analytics",
+        membership: "Abonnement",
+        membershipURL: "membership",
         teacherURL: "teacher",
     },
     dashboard: {
@@ -749,6 +751,25 @@ export const frenchLanguage: ILanguage = {
         thisCourseIsOnlyAvailableOnYoutube:
             "This course is only available on YouTube for now. I'll add it to the platform as soon as possible.",
         watchOnYoutube: "Watch on YouTube",
+    },
+    membership: {
+        pageTitle: "Abonnement",
+        manageSubscription: "Gérer l'abonnement",
+        renewalLabel: "Renouvellement le",
+        cancelAtPeriodEnd: "Votre abonnement sera annulé à la fin de la période en cours.",
+        upgradeCta: "Passer au niveau supérieur",
+        subscribeCta: "S'abonner",
+        currentPlan: "Votre formule actuelle",
+        perMonth: "/mois",
+        statusActive: "Actif",
+        statusPastDue: "Paiement en retard",
+        statusCanceled: "Annulé",
+        statusIncomplete: "Incomplet",
+        checkoutSuccess: "Abonnement confirmé avec succès.",
+        checkoutCanceled: "Paiement annulé.",
+        checkoutError: "Impossible de démarrer le paiement. Réessayez.",
+        upgradeSuccess: "Mise à niveau effectuée avec succès.",
+        noTiersAvailable: "Aucune formule disponible pour le moment.",
     },
     footer: {
         about: {

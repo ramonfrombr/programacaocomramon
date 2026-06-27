@@ -16,7 +16,7 @@ todos:
     status: completed
   - id: student-membership-page
     content: Add sidebar link, /membership page with tier cards, member panel, i18n keys (4 locales)
-    status: pending
+    status: completed
   - id: teacher-tier-admin
     content: Build /teacher/membership CRUD with per-locale content and Stripe Product/Price sync on save
     status: pending

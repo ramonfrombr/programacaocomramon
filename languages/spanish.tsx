@@ -168,6 +168,8 @@ export const spanishLanguage: ILanguage = {
         challengesURL: "desafios",
         analytics: "Analytics",
         analyticsURL: "analytics",
+        membership: "Membresía",
+        membershipURL: "membership",
         teacherURL: "teacher",
     },
     dashboard: {
@@ -749,6 +751,25 @@ export const spanishLanguage: ILanguage = {
         thisCourseIsOnlyAvailableOnYoutube:
             "This course is only available on YouTube for now. I'll add it to the platform as soon as possible.",
         watchOnYoutube: "Watch on YouTube",
+    },
+    membership: {
+        pageTitle: "Membresía",
+        manageSubscription: "Administrar membresía",
+        renewalLabel: "Se renueva el",
+        cancelAtPeriodEnd: "Tu membresía se cancelará al final del período actual.",
+        upgradeCta: "Mejorar plan",
+        subscribeCta: "Suscribirse",
+        currentPlan: "Tu plan actual",
+        perMonth: "/mes",
+        statusActive: "Activa",
+        statusPastDue: "Pago pendiente",
+        statusCanceled: "Cancelada",
+        statusIncomplete: "Incompleta",
+        checkoutSuccess: "Membresía confirmada con éxito.",
+        checkoutCanceled: "Pago cancelado.",
+        checkoutError: "No se pudo iniciar el pago. Inténtalo de nuevo.",
+        upgradeSuccess: "Mejora de plan completada con éxito.",
+        noTiersAvailable: "No hay planes disponibles en este momento.",
     },
     footer: {
         about: {

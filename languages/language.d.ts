@@ -35,6 +35,7 @@ type ILanguage = {
     videoPlayer: ILanguageVideoPlayer;
     courseCheckout: ILanguageCourseCheckout;
     course: ILanguageCourse;
+    membership: ILanguageMembership;
     footer: ILanguageFooter;
     salesFunnel: ISalesFunnel;
 };
@@ -138,6 +139,8 @@ type ILanguageSidebar = {
     challengesURL: string;
     analytics: string;
     analyticsURL: string;
+    membership: string;
+    membershipURL: string;
     teacherURL: string;
 };
 
@@ -778,6 +781,26 @@ type ILanguageCourse = {
     onlyOnYoutube: string;
     thisCourseIsOnlyAvailableOnYoutube: string;
     watchOnYoutube: string;
+};
+
+type ILanguageMembership = {
+    pageTitle: string;
+    manageSubscription: string;
+    renewalLabel: string;
+    cancelAtPeriodEnd: string;
+    upgradeCta: string;
+    subscribeCta: string;
+    currentPlan: string;
+    perMonth: string;
+    statusActive: string;
+    statusPastDue: string;
+    statusCanceled: string;
+    statusIncomplete: string;
+    checkoutSuccess: string;
+    checkoutCanceled: string;
+    checkoutError: string;
+    upgradeSuccess: string;
+    noTiersAvailable: string;
 };
 
 type ILanguageFooter = {

@@ -163,6 +163,8 @@ export const englishLanguage: ILanguage = {
         challengesURL: "challenges",
         analytics: "Analytics",
         analyticsURL: "analytics",
+        membership: "Membership",
+        membershipURL: "membership",
         teacherURL: "teacher",
     },
     dashboard: {
@@ -737,6 +739,25 @@ export const englishLanguage: ILanguage = {
         thisCourseIsOnlyAvailableOnYoutube:
             "This course is only available on YouTube for now. I'll add it to the platform as soon as possible.",
         watchOnYoutube: "Watch on YouTube",
+    },
+    membership: {
+        pageTitle: "Membership",
+        manageSubscription: "Manage subscription",
+        renewalLabel: "Renews on",
+        cancelAtPeriodEnd: "Your subscription will cancel at the end of the current period.",
+        upgradeCta: "Upgrade",
+        subscribeCta: "Subscribe",
+        currentPlan: "Your current plan",
+        perMonth: "/month",
+        statusActive: "Active",
+        statusPastDue: "Past due",
+        statusCanceled: "Canceled",
+        statusIncomplete: "Incomplete",
+        checkoutSuccess: "Membership confirmed successfully.",
+        checkoutCanceled: "Checkout canceled.",
+        checkoutError: "Could not start checkout. Please try again.",
+        upgradeSuccess: "Upgrade completed successfully.",
+        noTiersAvailable: "No plans available at the moment.",
     },
     footer: {
         about: {

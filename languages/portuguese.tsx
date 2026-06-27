@@ -168,6 +168,8 @@ export const portugueseLanguage: ILanguage = {
         challengesURL: "desafios",
         analytics: "Vendas",
         analyticsURL: "analytics",
+        membership: "Assinatura",
+        membershipURL: "assinatura",
         teacherURL: "professor",
     },
     dashboard: {
@@ -750,6 +752,25 @@ export const portugueseLanguage: ILanguage = {
         thisCourseIsOnlyAvailableOnYoutube:
             "Este curso está disponível apenas no YouTube por enquanto. Irei adicionar na plataforma assim que possível.",
         watchOnYoutube: "Assista no YouTube",
+    },
+    membership: {
+        pageTitle: "Assinatura",
+        manageSubscription: "Gerenciar assinatura",
+        renewalLabel: "Renova em",
+        cancelAtPeriodEnd: "Sua assinatura será cancelada ao final do período atual.",
+        upgradeCta: "Fazer upgrade",
+        subscribeCta: "Assinar",
+        currentPlan: "Seu plano atual",
+        perMonth: "/mês",
+        statusActive: "Ativa",
+        statusPastDue: "Pagamento pendente",
+        statusCanceled: "Cancelada",
+        statusIncomplete: "Incompleta",
+        checkoutSuccess: "Assinatura confirmada com sucesso.",
+        checkoutCanceled: "Checkout cancelado.",
+        checkoutError: "Não foi possível iniciar o checkout. Tente novamente.",
+        upgradeSuccess: "Upgrade realizado com sucesso.",
+        noTiersAvailable: "Nenhum plano disponível no momento.",
     },
     footer: {
         about: {
