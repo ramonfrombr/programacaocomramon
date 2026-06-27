@@ -2,6 +2,7 @@ import { NextResponse } from "next/server";
 import { MercadoPagoConfig, Payment } from "mercadopago";
 import { currentUser } from "@clerk/nextjs/server";
 import { db } from "@/lib/db";
+import { getActiveMembership } from "@/lib/membership";
 
 const client = new MercadoPagoConfig({
     accessToken: process.env.MP_ACCESS_TOKEN!,
@@ -34,6 +35,11 @@ export async function POST(
 
         if (purchase) {
             return new NextResponse("Already purchased", { status: 400 });
+        }
+
+        const activeMembership = await getActiveMembership(user.id);
+        if (activeMembership) {
+            return new NextResponse("Included in membership", { status: 400 });
         }
 
         const payment = new Payment(client);

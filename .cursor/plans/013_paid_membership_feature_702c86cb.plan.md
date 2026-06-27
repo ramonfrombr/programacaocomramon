@@ -22,7 +22,7 @@ todos:
     status: completed
   - id: course-ui-guards
     content: Hide course checkout modal for active members; optional checkout API guard
-    status: pending
+    status: completed
   - id: verify-e2e
     content: "Manual + e2e tests: subscribe, access course, upgrade, payment failure revoke, cancel at period end"
     status: pending
