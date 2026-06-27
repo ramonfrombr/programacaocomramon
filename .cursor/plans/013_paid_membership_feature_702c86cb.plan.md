@@ -19,7 +19,7 @@ todos:
     status: completed
   - id: teacher-tier-admin
     content: Build /teacher/membership CRUD with per-locale content and Stripe Product/Price sync on save
-    status: pending
+    status: completed
   - id: course-ui-guards
     content: Hide course checkout modal for active members; optional checkout API guard
     status: pending

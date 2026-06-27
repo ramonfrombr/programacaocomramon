@@ -15,6 +15,7 @@ import {
     Pencil,
     GraduationCap,
     Crown,
+    Gem,
 } from "lucide-react";
 import { useLanguageStore } from "@/hooks/use-language-store";
 import { SidebarItem } from "@/app/(root)/_components/sidebar-item";
@@ -109,6 +110,12 @@ export const SidebarRoutes = ({ userLoggedIn, onNavigate }: SidebarRoutesProps) 
             icon: MessagesSquare,
             label: language.interviews,
             href: `${teacherBase}/${language.interviewsURL}`,
+            locked: false,
+        },
+        {
+            icon: Gem,
+            label: language.membership,
+            href: `${teacherBase}/${language.membershipURL}`,
             locked: false,
         },
         {

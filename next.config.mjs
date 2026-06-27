@@ -30,6 +30,7 @@ const translations = {
             interviews: "entrevistas",
             challenges: "desafios",
             analytics: "analytics",
+            membership: "assinatura",
         },
     },
     english: {
@@ -61,6 +62,7 @@ const translations = {
             interviews: "interviews",
             challenges: "challenges",
             analytics: "analytics",
+            membership: "membership",
         },
     },
 };

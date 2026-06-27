@@ -36,6 +36,7 @@ type ILanguage = {
     courseCheckout: ILanguageCourseCheckout;
     course: ILanguageCourse;
     membership: ILanguageMembership;
+    teacherMembership: ILanguageTeacherMembership;
     footer: ILanguageFooter;
     salesFunnel: ISalesFunnel;
 };
@@ -801,6 +802,32 @@ type ILanguageMembership = {
     checkoutError: string;
     upgradeSuccess: string;
     noTiersAvailable: string;
+};
+
+type ILanguageTeacherMembership = {
+    pageTitle: string;
+    tierLabel: string;
+    monthlyPrice: string;
+    monthlyPricePlaceholder: string;
+    activeTier: string;
+    stripeConfigured: string;
+    stripeNotConfigured: string;
+    save: string;
+    tierUpdated: string;
+    somethingWentWrong: string;
+    localePortuguese: string;
+    localeEnglish: string;
+    localeFrench: string;
+    localeSpanish: string;
+    name: string;
+    tagline: string;
+    features: string;
+    featuresHint: string;
+    newFeaturesHeading: string;
+    newFeatures: string;
+    exclusiveAccessHeading: string;
+    exclusiveAccess: string;
+    optionalField: string;
 };
 
 type ILanguageFooter = {
