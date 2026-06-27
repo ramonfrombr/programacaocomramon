@@ -67,6 +67,7 @@ npm run db:e2e:reset
 ```bash
 npm run test:e2e -- --project=guest
 npm run test:e2e -- --project=student
+npm run test:e2e -- --project=student-membership
 npm run test:e2e -- --project=teacher
 npm run test:e2e -- e2e/guest/catalog.spec.ts
 ```
@@ -81,7 +82,8 @@ Playwright uses **project dependencies** (not a single global setup file) so Cle
 | `auth-student` | Sign in student, seed purchase, save cookies | writes `playwright/.auth/student.json` |
 | `auth-teacher` | Sign in teacher, verify teacher gate       | writes `playwright/.auth/teacher.json` |
 | `guest`        | Unauthenticated smoke tests                  | none                                |
-| `student`      | Authenticated student flows                    | `student.json`                      |
+| `student`      | Authenticated student flows (except membership lifecycle) | `student.json`                      |
+| `student-membership` | Membership subscribe, access, upgrade, webhook revoke | `student.json` (depends on `auth-student` only) |
 | `teacher`      | Teacher CMS flows                              | `teacher.json`                      |
 
 ```
@@ -93,6 +95,7 @@ e2e/
     auth-teacher.setup.ts
   guest/catalog.spec.ts
   student/learning.spec.ts
+  student/membership.spec.ts
   student/seminars.spec.ts
   student/interviews.spec.ts
   student/challenges.spec.ts
@@ -130,6 +133,19 @@ Fixture identifiers live in [`constants.ts`](./constants.ts). Tests reference sl
 - Free chapter watch page shows chapter title (no Mux playback assertion)
 - Paid chapter accessible after purchase seeded in setup
 - Mark chapter complete → refresh → progress updates on dashboard
+
+### Student — `e2e/student/membership.spec.ts`
+
+Membership lifecycle via webhook handlers (no live Stripe Checkout). Runs in the `student-membership` project after other student specs.
+
+- Non-member sees three tier cards with Subscribe CTAs
+- Checkout webhook activates Silver → member panel with renewal date
+- Active member opens paid chapter without a course purchase
+- Upgrade webhook switches highlight to Gold
+- Payment-failure webhook locks paid chapter immediately
+- Cancel-at-period-end keeps access until subscription-deleted webhook
+
+See [`MEMBERSHIP_VERIFY.md`](./MEMBERSHIP_VERIFY.md) for manual Stripe sandbox steps.
 
 ### Student — `e2e/student/seminars.spec.ts`
 
@@ -169,7 +185,7 @@ These areas are **intentionally out of scope** for the initial E2E suite. Dummy 
 
 | Area | Why deferred |
 |------|----------------|
-| Stripe / Mercado Pago checkout UI and webhooks | Requires real payment sandboxes and flaky browser flows |
+| Stripe / Mercado Pago checkout UI | Requires real payment sandboxes; membership lifecycle is covered via webhook simulation in `student/membership.spec.ts` — see `MEMBERSHIP_VERIFY.md` for manual Checkout/Portal steps |
 | Mux video playback (courses and seminars) | Needs real video assets; access-control boundaries and page titles are tested instead |
 | UploadThing file uploads | Teacher media uploads need live storage credentials |
 | Drag-and-drop chapter reorder | Complex interaction; low ROI for initial gate |

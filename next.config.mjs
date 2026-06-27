@@ -10,6 +10,7 @@ const translations = {
         "privacy-policy": "politica-de-privacidade",
         "terms-of-use": "termos-de-uso",
         dashboard: "painel",
+        membership: "assinatura",
         courses: "cursos",
         "watch-course": "assistir-curso",
         chapters: "capitulos",
@@ -29,6 +30,7 @@ const translations = {
             interviews: "entrevistas",
             challenges: "desafios",
             analytics: "analytics",
+            membership: "assinatura",
         },
     },
     english: {
@@ -40,6 +42,7 @@ const translations = {
         "privacy-policy": "privacy-policy",
         "terms-of-use": "terms-of-use",
         dashboard: "dashboard",
+        membership: "membership",
         courses: "courses",
         "watch-course": "watch-course",
         chapters: "chapters",
@@ -59,6 +62,7 @@ const translations = {
             interviews: "interviews",
             challenges: "challenges",
             analytics: "analytics",
+            membership: "membership",
         },
     },
 };

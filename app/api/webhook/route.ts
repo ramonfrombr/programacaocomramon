@@ -2,8 +2,13 @@ import Stripe from "stripe";
 import { headers } from "next/headers";
 import { NextResponse } from "next/server";
 
+import {
+  handleCheckoutSessionCompleted,
+  handleInvoicePaymentFailed,
+  handleSubscriptionDeleted,
+  handleSubscriptionUpdated,
+} from "@/lib/stripe-webhooks/handlers";
 import { stripe } from "@/lib/stripe";
-import { db } from "@/lib/db";
 
 export async function POST(req: Request) {
   const body = await req.text();
@@ -21,32 +26,25 @@ export async function POST(req: Request) {
     return new NextResponse(`Webhook Error: ${error.message}`, { status: 400 });
   }
 
-  const session = event.data.object as Stripe.Checkout.Session;
-
-  const userId = session?.metadata?.userId;
-  const courseId = session?.metadata?.courseId;
-
-  if (event.type === "checkout.session.completed") {
-    if (!userId || !courseId) {
-      return new NextResponse(`Webhook Error: Missing metadata`, {
-        status: 400,
-      });
-    }
-
-    await db.purchase.create({
-      data: {
-        courseId: courseId,
-        userId: userId,
-        price:  (session.amount_total || 0) / 100
-      },
-    });
-  } else {
-    // Passing status 200 because stripe breaks if there are many status 400 responses
-    return new NextResponse(
-      `Webhook Error: Unhandled event type ${event.type}`,
-      { status: 200 }
-    );
+  switch (event.type) {
+    case "checkout.session.completed":
+      return handleCheckoutSessionCompleted(
+        event.data.object as Stripe.Checkout.Session
+      );
+    case "customer.subscription.updated":
+      return handleSubscriptionUpdated(
+        event.data.object as Stripe.Subscription
+      );
+    case "customer.subscription.deleted":
+      return handleSubscriptionDeleted(
+        event.data.object as Stripe.Subscription
+      );
+    case "invoice.payment_failed":
+      return handleInvoicePaymentFailed(event.data.object as Stripe.Invoice);
+    default:
+      return new NextResponse(
+        `Webhook Error: Unhandled event type ${event.type}`,
+        { status: 200 }
+      );
   }
-
-  return new NextResponse(null, { status: 200 });
 }

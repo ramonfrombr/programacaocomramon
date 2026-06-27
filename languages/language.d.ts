@@ -35,6 +35,8 @@ type ILanguage = {
     videoPlayer: ILanguageVideoPlayer;
     courseCheckout: ILanguageCourseCheckout;
     course: ILanguageCourse;
+    membership: ILanguageMembership;
+    teacherMembership: ILanguageTeacherMembership;
     footer: ILanguageFooter;
     salesFunnel: ISalesFunnel;
 };
@@ -138,6 +140,8 @@ type ILanguageSidebar = {
     challengesURL: string;
     analytics: string;
     analyticsURL: string;
+    membership: string;
+    membershipURL: string;
     teacherURL: string;
 };
 
@@ -778,6 +782,52 @@ type ILanguageCourse = {
     onlyOnYoutube: string;
     thisCourseIsOnlyAvailableOnYoutube: string;
     watchOnYoutube: string;
+};
+
+type ILanguageMembership = {
+    pageTitle: string;
+    manageSubscription: string;
+    renewalLabel: string;
+    cancelAtPeriodEnd: string;
+    upgradeCta: string;
+    subscribeCta: string;
+    currentPlan: string;
+    perMonth: string;
+    statusActive: string;
+    statusPastDue: string;
+    statusCanceled: string;
+    statusIncomplete: string;
+    checkoutSuccess: string;
+    checkoutCanceled: string;
+    checkoutError: string;
+    upgradeSuccess: string;
+    noTiersAvailable: string;
+};
+
+type ILanguageTeacherMembership = {
+    pageTitle: string;
+    tierLabel: string;
+    monthlyPrice: string;
+    monthlyPricePlaceholder: string;
+    activeTier: string;
+    stripeConfigured: string;
+    stripeNotConfigured: string;
+    save: string;
+    tierUpdated: string;
+    somethingWentWrong: string;
+    localePortuguese: string;
+    localeEnglish: string;
+    localeFrench: string;
+    localeSpanish: string;
+    name: string;
+    tagline: string;
+    features: string;
+    featuresHint: string;
+    newFeaturesHeading: string;
+    newFeatures: string;
+    exclusiveAccessHeading: string;
+    exclusiveAccess: string;
+    optionalField: string;
 };
 
 type ILanguageFooter = {

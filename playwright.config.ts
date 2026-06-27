@@ -104,6 +104,16 @@ export default defineConfig({
     {
       name: "student",
       testMatch: /student\/.*\.spec\.ts/,
+      testIgnore: /student\/membership\.spec\.ts/,
+      use: {
+        ...chromium,
+        storageState: STUDENT_AUTH_FILE,
+      },
+      dependencies: ["auth-student"],
+    },
+    {
+      name: "student-membership",
+      testMatch: /student\/membership\.spec\.ts/,
       use: {
         ...chromium,
         storageState: STUDENT_AUTH_FILE,

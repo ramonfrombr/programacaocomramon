@@ -271,3 +271,65 @@ model StripeCustomer {
 
   @@map("stripe_customers")
 }
+
+enum MembershipTierSlug {
+  SILVER
+  GOLD
+  DIAMOND
+}
+
+enum MembershipSubscriptionStatus {
+  ACTIVE
+  PAST_DUE
+  CANCELED
+  INCOMPLETE
+}
+
+model MembershipTier {
+  id              String             @id @default(auto()) @map("_id") @db.ObjectId
+  slug            MembershipTierSlug @unique
+  position        Int
+  monthlyPriceBrl Float
+  stripeProductId String?
+  stripePriceId   String?
+  isActive        Boolean            @default(true)
+  translations    MembershipTierTranslation[]
+  subscriptions   MembershipSubscription[]
+  createdAt       DateTime           @default(now())
+  updatedAt       DateTime           @updatedAt
+
+  @@map("membership_tiers")
+}
+
+model MembershipTierTranslation {
+  id                     String         @id @default(auto()) @map("_id") @db.ObjectId
+  tierId                 String         @db.ObjectId
+  tier                   MembershipTier @relation(fields: [tierId], references: [id], onDelete: Cascade)
+  locale                 String
+  name                   String
+  tagline                String?
+  features               String[]
+  newFeaturesHeading     String?
+  newFeatures            String[]
+  exclusiveAccessHeading String?
+  exclusiveAccess        String[]
+
+  @@unique([tierId, locale])
+  @@map("membership_tier_translations")
+}
+
+model MembershipSubscription {
+  id                   String                       @id @default(auto()) @map("_id") @db.ObjectId
+  userId               String                       @unique
+  tierId               String                       @db.ObjectId
+  tier                 MembershipTier               @relation(fields: [tierId], references: [id])
+  stripeSubscriptionId String                       @unique
+  stripeCustomerId     String
+  status               MembershipSubscriptionStatus
+  currentPeriodEnd     DateTime?
+  cancelAtPeriodEnd    Boolean                      @default(false)
+  createdAt            DateTime                     @default(now())
+  updatedAt            DateTime                     @updatedAt
+
+  @@map("membership_subscriptions")
+}

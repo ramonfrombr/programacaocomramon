@@ -25,6 +25,10 @@ import {
   E2E_PUBLISHED_MENTORSHIP_MUX,
   E2E_PUBLISHED_SEMINAR,
   E2E_PUBLISHED_SEMINAR_MUX,
+  E2E_MEMBERSHIP_ACCESS_CHAPTER,
+  E2E_MEMBERSHIP_ACCESS_COURSE,
+  E2E_MEMBERSHIP_STRIPE_PRICE_IDS,
+  E2E_MEMBERSHIP_TIERS,
 } from "../e2e/constants";
 import { loadE2EEnv } from "../e2e/setup/env";
 
@@ -166,6 +170,106 @@ async function seedPublishedCourse(teacherId: string) {
       },
     });
   }
+}
+
+async function seedMembershipTiers() {
+  for (const tier of E2E_MEMBERSHIP_TIERS) {
+    const stripePriceId =
+      E2E_MEMBERSHIP_STRIPE_PRICE_IDS[
+        tier.slug.toLowerCase() as "silver" | "gold" | "diamond"
+      ];
+
+    const record = await database.membershipTier.upsert({
+      where: { slug: tier.slug },
+      create: {
+        id: tier.id,
+        slug: tier.slug,
+        position: tier.position,
+        monthlyPriceBrl: tier.monthlyPriceBrl,
+        stripeProductId: `prod_e2e_${tier.slug.toLowerCase()}`,
+        stripePriceId,
+        isActive: true,
+      },
+      update: {
+        position: tier.position,
+        monthlyPriceBrl: tier.monthlyPriceBrl,
+        stripeProductId: `prod_e2e_${tier.slug.toLowerCase()}`,
+        stripePriceId,
+        isActive: true,
+      },
+    });
+
+    await database.membershipTierTranslation.upsert({
+      where: {
+        tierId_locale: {
+          tierId: record.id,
+          locale: "english",
+        },
+      },
+      create: {
+        tierId: record.id,
+        locale: "english",
+        name: tier.englishName,
+        features: ["Monthly access to all paid courses on the platform"],
+      },
+      update: {
+        name: tier.englishName,
+        features: ["Monthly access to all paid courses on the platform"],
+      },
+    });
+  }
+}
+
+async function seedMembershipAccessCourse(teacherId: string) {
+  await database.course.upsert({
+    where: { id: E2E_MEMBERSHIP_ACCESS_COURSE.id },
+    create: {
+      id: E2E_MEMBERSHIP_ACCESS_COURSE.id,
+      userId: teacherId,
+      title: E2E_MEMBERSHIP_ACCESS_COURSE.title,
+      slug: E2E_MEMBERSHIP_ACCESS_COURSE.slug,
+      description: E2E_MEMBERSHIP_ACCESS_COURSE.description,
+      imageUrl: E2E_MEMBERSHIP_ACCESS_COURSE.imageUrl,
+      price: E2E_MEMBERSHIP_ACCESS_COURSE.price,
+      isPublished: true,
+      position: E2E_MEMBERSHIP_ACCESS_COURSE.position,
+      categoryIDs: [...E2E_MEMBERSHIP_ACCESS_COURSE.categoryIds],
+    },
+    update: {
+      userId: teacherId,
+      title: E2E_MEMBERSHIP_ACCESS_COURSE.title,
+      slug: E2E_MEMBERSHIP_ACCESS_COURSE.slug,
+      description: E2E_MEMBERSHIP_ACCESS_COURSE.description,
+      imageUrl: E2E_MEMBERSHIP_ACCESS_COURSE.imageUrl,
+      price: E2E_MEMBERSHIP_ACCESS_COURSE.price,
+      isPublished: true,
+      position: E2E_MEMBERSHIP_ACCESS_COURSE.position,
+      categoryIDs: [...E2E_MEMBERSHIP_ACCESS_COURSE.categoryIds],
+    },
+  });
+
+  const chapter = E2E_MEMBERSHIP_ACCESS_CHAPTER;
+
+  await database.chapter.upsert({
+    where: { id: chapter.id },
+    create: {
+      id: chapter.id,
+      courseId: E2E_MEMBERSHIP_ACCESS_COURSE.id,
+      title: chapter.title,
+      description: chapter.description,
+      position: chapter.position,
+      isFree: chapter.isFree,
+      isPublished: chapter.isPublished,
+    },
+    update: {
+      courseId: E2E_MEMBERSHIP_ACCESS_COURSE.id,
+      title: chapter.title,
+      description: chapter.description,
+      position: chapter.position,
+      isFree: chapter.isFree,
+      isPublished: chapter.isPublished,
+    },
+  });
 }
 
 async function seedDraftCourse(teacherId: string) {
@@ -511,6 +615,8 @@ async function main() {
   await seedChallengeCategories();
   await seedPublishedCourse(teacherId);
   await seedDraftCourse(teacherId);
+  await seedMembershipAccessCourse(teacherId);
+  await seedMembershipTiers();
   await seedPublishedSeminar(teacherId);
   await seedDraftSeminar(teacherId);
   await seedPublishedInterview(teacherId);
@@ -527,6 +633,8 @@ async function main() {
     challengeCategories: E2E_CHALLENGE_CATEGORIES.length,
     publishedCourse: E2E_PUBLISHED_COURSE.slug,
     draftCourse: E2E_DRAFT_COURSE.slug,
+    membershipAccessCourse: E2E_MEMBERSHIP_ACCESS_COURSE.slug,
+    membershipTiers: E2E_MEMBERSHIP_TIERS.length,
     chapters: E2E_PUBLISHED_CHAPTERS.length,
     publishedSeminar: E2E_PUBLISHED_SEMINAR.title,
     draftSeminar: E2E_DRAFT_SEMINAR.title,

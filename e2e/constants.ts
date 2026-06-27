@@ -47,9 +47,22 @@ export const E2E_DRAFT_COURSE = {
   position: 2,
 } as const;
 
+/** Published course with a paid chapter — never seeded with a Purchase (membership access tests). */
+export const E2E_MEMBERSHIP_ACCESS_COURSE = {
+  id: "e2e000000000000000000012",
+  slug: "e2e-membership-access-course",
+  title: "E2E Membership Access Course",
+  description: "Paid course unlocked by membership in E2E tests.",
+  price: 59.99,
+  imageUrl: E2E_FIXTURE_IMAGE_URL,
+  categoryIds: [E2E_CATEGORY_IDS.javascript] as const,
+  position: 3,
+} as const;
+
 export const E2E_CHAPTER_IDS = {
   free: "e2e000000000000000000020",
   paid: "e2e000000000000000000021",
+  membershipPaid: "e2e000000000000000000022",
 } as const;
 
 export const E2E_PUBLISHED_CHAPTERS = [
@@ -70,6 +83,15 @@ export const E2E_PUBLISHED_CHAPTERS = [
     isPublished: true,
   },
 ] as const;
+
+export const E2E_MEMBERSHIP_ACCESS_CHAPTER = {
+  id: E2E_CHAPTER_IDS.membershipPaid,
+  title: "E2E Membership Paid Chapter",
+  description: "Paid chapter unlocked by membership without purchase.",
+  position: 1,
+  isFree: false,
+  isPublished: true,
+} as const;
 
 export const E2E_COURSE_SLUGS = {
   published: E2E_PUBLISHED_COURSE.slug,
@@ -318,3 +340,44 @@ export function watchChallengePath(challengeId: string): string {
 export function teacherChallengeSetupPath(challengeId: string): string {
   return `/teacher/challenges/${challengeId}`;
 }
+
+export const E2E_MEMBERSHIP_TIER_IDS = {
+  silver: "e2e000000000000000000120",
+  gold: "e2e000000000000000000121",
+  diamond: "e2e000000000000000000122",
+} as const;
+
+/** Fake Stripe price IDs — matched to tiers in scripts/e2e-seed.ts for webhook sync tests. */
+export const E2E_MEMBERSHIP_STRIPE_PRICE_IDS = {
+  silver: "price_e2e_membership_silver",
+  gold: "price_e2e_membership_gold",
+  diamond: "price_e2e_membership_diamond",
+} as const;
+
+export const E2E_MEMBERSHIP_TIERS = [
+  {
+    id: E2E_MEMBERSHIP_TIER_IDS.silver,
+    slug: "SILVER" as const,
+    position: 1,
+    monthlyPriceBrl: 99,
+    englishName: "Silver Member",
+  },
+  {
+    id: E2E_MEMBERSHIP_TIER_IDS.gold,
+    slug: "GOLD" as const,
+    position: 2,
+    monthlyPriceBrl: 149,
+    englishName: "Gold Member",
+  },
+  {
+    id: E2E_MEMBERSHIP_TIER_IDS.diamond,
+    slug: "DIAMOND" as const,
+    position: 3,
+    monthlyPriceBrl: 199,
+    englishName: "Diamond Member",
+  },
+] as const;
+
+export const E2E_MEMBERSHIP_STRIPE_CUSTOMER_ID = "cus_e2e_membership_student";
+export const E2E_MEMBERSHIP_STRIPE_SUBSCRIPTION_ID =
+  "sub_e2e_membership_student";

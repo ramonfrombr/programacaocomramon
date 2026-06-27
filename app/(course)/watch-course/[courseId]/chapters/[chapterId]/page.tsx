@@ -27,6 +27,7 @@ const ChapterIdPage = async ({
         nextChapter,
         userProgress,
         purchase,
+        hasAccess,
     } = await getChapter({
         userId: userId || "",
         chapterId: params.chapterId,
@@ -37,11 +38,13 @@ const ChapterIdPage = async ({
         return redirect("/");
     }
 
-    const isLocked = !isTeacher(userId) && !chapter.isFree && !purchase;
+    const isLocked = !isTeacher(userId) && !chapter.isFree && !hasAccess;
 
-    const completeOnEnd = !!purchase && !userProgress?.isCompleted;
+    const hasEnrolledAccess =
+        !!purchase || (hasAccess && !isTeacher(userId));
+    const completeOnEnd = hasEnrolledAccess && !userProgress?.isCompleted;
 
-    const showPurchaseButton: boolean = !purchase && !isTeacher(userId);
+    const showPurchaseButton = !hasAccess && !isTeacher(userId);
 
     const courseFull = await getCourse({
         courseId: params.courseId,

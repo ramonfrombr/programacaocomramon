@@ -1,4 +1,5 @@
 import { db } from "@/lib/db";
+import { getActiveMembership } from "@/lib/membership";
 import { stripe } from "@/lib/stripe";
 import { currentUser } from "@clerk/nextjs/server";
 import { NextResponse } from "next/server";
@@ -33,6 +34,11 @@ export async function POST(
 
     if (purchase) {
       return new NextResponse("Already purchased", { status: 400 });
+    }
+
+    const activeMembership = await getActiveMembership(user.id);
+    if (activeMembership) {
+      return new NextResponse("Included in membership", { status: 400 });
     }
 
     if (!course) {
