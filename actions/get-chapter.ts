@@ -1,5 +1,5 @@
+import { hasCourseAccess } from "@/lib/membership";
 import { db } from "@/lib/db";
-import { isTeacher } from "@/lib/teacher";
 import { Attachment, Chapter } from "@prisma/client";
 
 interface GetChapterProps {
@@ -14,14 +14,17 @@ export const getChapter = async ({
   chapterId,
 }: GetChapterProps) => {
   try {
-    const purchase = await db.purchase.findUnique({
-      where: {
-        userId_courseId: {
-          userId,
-          courseId: courseId,
+    const [purchase, hasAccess] = await Promise.all([
+      db.purchase.findUnique({
+        where: {
+          userId_courseId: {
+            userId,
+            courseId: courseId,
+          },
         },
-      },
-    });
+      }),
+      hasCourseAccess({ userId, courseId }),
+    ]);
 
     const course = await db.course.findUnique({
       where: {
@@ -48,7 +51,7 @@ export const getChapter = async ({
     let attachments: Attachment[] = [];
     let nextChapter: Chapter | null = null;
 
-    if (purchase) {
+    if (hasAccess) {
       attachments = await db.attachment.findMany({
         where: {
           courseId: courseId,
@@ -56,7 +59,7 @@ export const getChapter = async ({
       });
     }
 
-    if (chapter.isFree || purchase || isTeacher(userId)) {
+    if (chapter.isFree || hasAccess) {
       muxData = await db.muxData.findUnique({
         where: {
           chapterId: chapterId,
@@ -94,6 +97,7 @@ export const getChapter = async ({
       nextChapter,
       userProgress,
       purchase,
+      hasAccess,
     };
   } catch (error) {
     console.log("[GET_CHAPTER]", error);
@@ -106,6 +110,7 @@ export const getChapter = async ({
       nextChapter: null,
       userProgress: null,
       purchase: null,
+      hasAccess: false,
     };
   }
 };

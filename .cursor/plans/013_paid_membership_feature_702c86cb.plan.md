@@ -7,7 +7,7 @@ todos:
     status: completed
   - id: access-helper
     content: Create lib/membership.ts and wire hasCourseAccess into get-chapter, get-dashboard-courses, get-courses
-    status: pending
+    status: completed
   - id: stripe-checkout-portal
     content: Implement POST /api/membership/checkout (subscribe + upgrade) and POST /api/membership/portal
     status: pending

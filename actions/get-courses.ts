@@ -1,6 +1,7 @@
-import { Category, Course } from "@prisma/client";
 import { getProgress } from "@/actions/get-progress";
 import { db } from "@/lib/db";
+import { getActiveMembership } from "@/lib/membership";
+import { Category, Course } from "@prisma/client";
 
 type CourseWithProgressWithCategory = Course & {
   categories: Category[] | null;
@@ -20,6 +21,8 @@ export const getCourses = async ({
   categoryId,
 }: GetCourses): Promise<CourseWithProgressWithCategory[]> => {
   try {
+    const activeMembership = userId ? await getActiveMembership(userId) : null;
+
     const courses = await db.course.findMany({
       where: {
         isPublished: true,
@@ -56,7 +59,10 @@ export const getCourses = async ({
     const coursesWithProgress: CourseWithProgressWithCategory[] =
       await Promise.all(
         courses.map(async (course) => {
-          if (course.purchases.length === 0) {
+          const hasAccess =
+            activeMembership !== null || course.purchases.length > 0;
+
+          if (!hasAccess) {
             return {
               ...course,
               progress: null,
