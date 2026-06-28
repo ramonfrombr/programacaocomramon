@@ -10,7 +10,7 @@ todos:
     status: completed
   - id: action-guards
     content: Wire hasDiamondAccess into get-challenge.ts and get-interview.ts
-    status: pending
+    status: completed
   - id: sidebar-locked
     content: Thread hasDiamondAccess prop through layout chain; lock student Challenges + Interviews tabs
     status: pending
