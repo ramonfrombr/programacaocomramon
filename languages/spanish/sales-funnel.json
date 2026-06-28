@@ -20,14 +20,14 @@
     "tiers": {
       "silver": {
         "name": "MIEMBRO SILVER DE POR VIDA",
-        "price": "£397",
+        "price": "R$99/mes",
         "features": [
           "Acceso de por vida al curso Zero to Full Stack Hero 2.0"
         ]
       },
       "gold": {
         "name": "MIEMBRO GOLD DE POR VIDA",
-        "price": "£597",
+        "price": "R$149/mes",
         "tagline": "🌟 Todo lo incluido en Silver y mucho más...",
         "features": [
           "Acceso de por vida al curso Zero to Full Stack Hero 2.0",
@@ -51,7 +51,7 @@
       },
       "diamond": {
         "name": "MIEMBRO DIAMOND DE POR VIDA",
-        "price": "£997",
+        "price": "R$199/mes",
         "tagline": "🌟 Todo lo incluido en Platinum y mucho más...",
         "features": [
           "2 llamadas semanales adicionales en vivo con Ramon (4 sesiones de mentoría al mes)",
