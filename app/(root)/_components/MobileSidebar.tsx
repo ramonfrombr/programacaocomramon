@@ -7,8 +7,10 @@ import { Sidebar } from "@/app/(root)/_components/sidebar";
 
 export const MobileSidebar = ({
     hasGoldOrDiamondAccess,
+    hasDiamondAccess,
 }: {
     hasGoldOrDiamondAccess: boolean;
+    hasDiamondAccess: boolean;
 }) => {
     const [open, setOpen] = useState(false);
     const { userId } = useAuth();
@@ -23,6 +25,7 @@ export const MobileSidebar = ({
                 <Sidebar
                     userLoggedIn={!!userId}
                     hasGoldOrDiamondAccess={hasGoldOrDiamondAccess}
+                    hasDiamondAccess={hasDiamondAccess}
                     onNavigate={() => setOpen(false)}
                 />
             </SheetContent>

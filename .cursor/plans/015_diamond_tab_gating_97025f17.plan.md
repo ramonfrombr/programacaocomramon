@@ -13,7 +13,7 @@ todos:
     status: completed
   - id: sidebar-locked
     content: Thread hasDiamondAccess prop through layout chain; lock student Challenges + Interviews tabs
-    status: pending
+    status: completed
   - id: e2e-tests
     content: Add diamond gating cases to membership.spec.ts; add DIAMOND beforeAll to challenges/interviews specs
     status: pending

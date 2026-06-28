@@ -23,12 +23,14 @@ import { SidebarItem } from "@/app/(root)/_components/sidebar-item";
 interface SidebarRoutesProps {
     userLoggedIn: boolean;
     hasGoldOrDiamondAccess: boolean;
+    hasDiamondAccess: boolean;
     onNavigate?: () => void;
 }
 
 export const SidebarRoutes = ({
     userLoggedIn,
     hasGoldOrDiamondAccess,
+    hasDiamondAccess,
     onNavigate,
 }: SidebarRoutesProps) => {
     const pathname = usePathname();
@@ -76,13 +78,13 @@ export const SidebarRoutes = ({
             icon: Puzzle,
             label: language.challenges,
             href: `/${language.challengesURL}`,
-            locked: false,
+            locked: !hasDiamondAccess,
         },
         {
             icon: MessagesSquare,
             label: language.interviews,
             href: `/${language.interviewsURL}`,
-            locked: false,
+            locked: !hasDiamondAccess,
         },
     ];
 

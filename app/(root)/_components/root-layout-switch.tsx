@@ -8,12 +8,14 @@ type RootLayoutSwitchProps = {
     children: React.ReactNode;
     userLoggedIn: boolean;
     hasGoldOrDiamondAccess: boolean;
+    hasDiamondAccess: boolean;
 };
 
 export const RootLayoutSwitch = ({
     children,
     userLoggedIn,
     hasGoldOrDiamondAccess,
+    hasDiamondAccess,
 }: RootLayoutSwitchProps) => {
     const pathname = usePathname();
     const showMarketing = !userLoggedIn && pathname === "/";
@@ -26,6 +28,7 @@ export const RootLayoutSwitch = ({
         <DashboardLayout
             userLoggedIn={userLoggedIn}
             hasGoldOrDiamondAccess={hasGoldOrDiamondAccess}
+            hasDiamondAccess={hasDiamondAccess}
         >
             {children}
         </DashboardLayout>
