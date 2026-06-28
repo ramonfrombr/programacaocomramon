@@ -1,6 +1,7 @@
 import { redirect } from "next/navigation";
 import { auth } from "@clerk/nextjs/server";
 import { getInterviews } from "@/actions/get-interviews";
+import { hasDiamondAccess } from "@/lib/membership";
 import { SearchInput } from "@/components/search-input";
 import { InterviewsList } from "@/components/interviews-list";
 
@@ -17,6 +18,10 @@ export default async function InterviewsPage({
 
   if (!userId) {
     return redirect("/");
+  }
+
+  if (!(await hasDiamondAccess(userId))) {
+    return redirect("/membership");
   }
 
   const interviews = await getInterviews({

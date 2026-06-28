@@ -7,7 +7,7 @@ todos:
     status: completed
   - id: route-guards
     content: Guard challenges/interviews pages and watch-challenge/watch-interview layouts with redirect to /membership
-    status: pending
+    status: completed
   - id: action-guards
     content: Wire hasDiamondAccess into get-challenge.ts and get-interview.ts
     status: pending
