@@ -1,12 +1,19 @@
 import { auth } from "@clerk/nextjs/server";
 import { RootLayoutSwitch } from "@/app/(root)/_components/root-layout-switch";
+import { hasGoldOrDiamondAccess } from "@/lib/membership";
 
-const RootLayout = ({ children }: { children: React.ReactNode }) => {
+const RootLayout = async ({ children }: { children: React.ReactNode }) => {
     const { userId } = auth();
     const userLoggedIn = !!userId;
+    const premiumContentAccess = userId
+        ? await hasGoldOrDiamondAccess(userId)
+        : false;
 
     return (
-        <RootLayoutSwitch userLoggedIn={userLoggedIn}>
+        <RootLayoutSwitch
+            userLoggedIn={userLoggedIn}
+            hasGoldOrDiamondAccess={premiumContentAccess}
+        >
             {children}
         </RootLayoutSwitch>
     );

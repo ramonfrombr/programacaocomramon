@@ -22,10 +22,15 @@ import { SidebarItem } from "@/app/(root)/_components/sidebar-item";
 
 interface SidebarRoutesProps {
     userLoggedIn: boolean;
+    hasGoldOrDiamondAccess: boolean;
     onNavigate?: () => void;
 }
 
-export const SidebarRoutes = ({ userLoggedIn, onNavigate }: SidebarRoutesProps) => {
+export const SidebarRoutes = ({
+    userLoggedIn,
+    hasGoldOrDiamondAccess,
+    onNavigate,
+}: SidebarRoutesProps) => {
     const pathname = usePathname();
     const language = useLanguageStore().sidebar;
     const teacherBase = `/${language.teacherURL}`;
@@ -59,13 +64,13 @@ export const SidebarRoutes = ({ userLoggedIn, onNavigate }: SidebarRoutesProps) 
             icon: GraduationCap,
             label: language.mentorships,
             href: `/${language.mentorshipsURL}`,
-            locked: false,
+            locked: !hasGoldOrDiamondAccess,
         },
         {
             icon: School,
             label: language.seminars,
             href: `/${language.seminarsURL}`,
-            locked: false,
+            locked: !hasGoldOrDiamondAccess,
         },
         {
             icon: Puzzle,

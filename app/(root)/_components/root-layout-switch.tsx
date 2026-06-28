@@ -7,11 +7,13 @@ import { MarketingLayout } from "@/app/landing_page/_components/marketing-layout
 type RootLayoutSwitchProps = {
     children: React.ReactNode;
     userLoggedIn: boolean;
+    hasGoldOrDiamondAccess: boolean;
 };
 
 export const RootLayoutSwitch = ({
     children,
     userLoggedIn,
+    hasGoldOrDiamondAccess,
 }: RootLayoutSwitchProps) => {
     const pathname = usePathname();
     const showMarketing = !userLoggedIn && pathname === "/";
@@ -21,7 +23,10 @@ export const RootLayoutSwitch = ({
     }
 
     return (
-        <DashboardLayout userLoggedIn={userLoggedIn}>
+        <DashboardLayout
+            userLoggedIn={userLoggedIn}
+            hasGoldOrDiamondAccess={hasGoldOrDiamondAccess}
+        >
             {children}
         </DashboardLayout>
     );

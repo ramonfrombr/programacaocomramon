@@ -1,6 +1,7 @@
 "use client";
 
 import { cn } from "@/lib/utils";
+import { useLanguageStore } from "@/hooks/use-language-store";
 import { Lock, LucideIcon } from "lucide-react";
 import { usePathname, useRouter } from "next/navigation";
 
@@ -21,6 +22,7 @@ export const SidebarItem = ({
 }: SidebarItemProps) => {
     const pathname = usePathname();
     const router = useRouter();
+    const language = useLanguageStore().sidebar;
 
     // This logic checks for the root url, a specific child url, or a subroute of a specific route
     const isActive =
@@ -29,7 +31,10 @@ export const SidebarItem = ({
         pathname?.startsWith(`${href}/`);
 
     const handleClick = () => {
-        router.push(href);
+        const destination = locked
+            ? `/${language.membershipURL}`
+            : href;
+        router.push(destination);
 
         if (onClick) {
             onClick();

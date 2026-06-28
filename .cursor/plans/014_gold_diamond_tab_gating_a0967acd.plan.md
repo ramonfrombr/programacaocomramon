@@ -13,7 +13,7 @@ todos:
     status: completed
   - id: sidebar-locked
     content: Thread hasGoldOrDiamondAccess prop through layout chain; lock student tabs; fix sidebar-item locked click → membership
-    status: pending
+    status: completed
   - id: e2e-tests
     content: "Add e2e cases: no membership/Silver blocked, Gold allowed, guest unchanged"
     status: pending

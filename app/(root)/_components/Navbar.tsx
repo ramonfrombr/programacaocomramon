@@ -3,10 +3,14 @@
 import { NavbarRoutes } from "@/components/navbar-routes";
 import { MobileSidebar } from "@/app/(root)/_components/MobileSidebar";
 
-export const Navbar = () => {
+export const Navbar = ({
+    hasGoldOrDiamondAccess,
+}: {
+    hasGoldOrDiamondAccess: boolean;
+}) => {
     return (
         <div className="p-4 border-b h-full flex items-center bg-white shadow-sm">
-            <MobileSidebar />
+            <MobileSidebar hasGoldOrDiamondAccess={hasGoldOrDiamondAccess} />
             <NavbarRoutes />
         </div>
     );
