@@ -38,6 +38,12 @@ export const SidebarRoutes = ({ userLoggedIn, onNavigate }: SidebarRoutesProps) 
 
     const userRoutes = [
         {
+            icon: Crown,
+            label: language.membership,
+            href: `/${language.membershipURL}`,
+            locked: false,
+        },
+        {
             icon: Compass,
             label: language.browse,
             href: "/",
@@ -47,12 +53,6 @@ export const SidebarRoutes = ({ userLoggedIn, onNavigate }: SidebarRoutesProps) 
             icon: Layout,
             label: language.dashboard,
             href: `/${language.dashboardURL}`,
-            locked: false,
-        },
-        {
-            icon: Crown,
-            label: language.membership,
-            href: `/${language.membershipURL}`,
             locked: false,
         },
         {
@@ -83,6 +83,12 @@ export const SidebarRoutes = ({ userLoggedIn, onNavigate }: SidebarRoutesProps) 
 
     const teacherRoutes = [
         {
+            icon: Crown,
+            label: language.membership,
+            href: `${teacherBase}/${language.membershipURL}`,
+            locked: false,
+        },
+        {
             icon: List,
             label: language.courses,
             href: `${teacherBase}/${language.coursesURL}`,
@@ -112,12 +118,7 @@ export const SidebarRoutes = ({ userLoggedIn, onNavigate }: SidebarRoutesProps) 
             href: `${teacherBase}/${language.interviewsURL}`,
             locked: false,
         },
-        {
-            icon: Gem,
-            label: language.membership,
-            href: `${teacherBase}/${language.membershipURL}`,
-            locked: false,
-        },
+     
         {
             icon: BarChart,
             label: language.analytics,
