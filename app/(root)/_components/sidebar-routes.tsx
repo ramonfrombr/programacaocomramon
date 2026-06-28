@@ -22,10 +22,17 @@ import { SidebarItem } from "@/app/(root)/_components/sidebar-item";
 
 interface SidebarRoutesProps {
     userLoggedIn: boolean;
+    hasGoldOrDiamondAccess: boolean;
+    hasDiamondAccess: boolean;
     onNavigate?: () => void;
 }
 
-export const SidebarRoutes = ({ userLoggedIn, onNavigate }: SidebarRoutesProps) => {
+export const SidebarRoutes = ({
+    userLoggedIn,
+    hasGoldOrDiamondAccess,
+    hasDiamondAccess,
+    onNavigate,
+}: SidebarRoutesProps) => {
     const pathname = usePathname();
     const language = useLanguageStore().sidebar;
     const teacherBase = `/${language.teacherURL}`;
@@ -37,6 +44,12 @@ export const SidebarRoutes = ({ userLoggedIn, onNavigate }: SidebarRoutesProps) 
     ];
 
     const userRoutes = [
+        {
+            icon: Crown,
+            label: language.membership,
+            href: `/${language.membershipURL}`,
+            locked: false,
+        },
         {
             icon: Compass,
             label: language.browse,
@@ -50,38 +63,38 @@ export const SidebarRoutes = ({ userLoggedIn, onNavigate }: SidebarRoutesProps) 
             locked: false,
         },
         {
-            icon: Crown,
-            label: language.membership,
-            href: `/${language.membershipURL}`,
-            locked: false,
-        },
-        {
             icon: GraduationCap,
             label: language.mentorships,
             href: `/${language.mentorshipsURL}`,
-            locked: false,
+            locked: !hasGoldOrDiamondAccess,
         },
         {
             icon: School,
             label: language.seminars,
             href: `/${language.seminarsURL}`,
-            locked: false,
+            locked: !hasGoldOrDiamondAccess,
         },
         {
             icon: Puzzle,
             label: language.challenges,
             href: `/${language.challengesURL}`,
-            locked: false,
+            locked: !hasDiamondAccess,
         },
         {
             icon: MessagesSquare,
             label: language.interviews,
             href: `/${language.interviewsURL}`,
-            locked: false,
+            locked: !hasDiamondAccess,
         },
     ];
 
     const teacherRoutes = [
+        {
+            icon: Crown,
+            label: language.membership,
+            href: `${teacherBase}/${language.membershipURL}`,
+            locked: false,
+        },
         {
             icon: List,
             label: language.courses,
@@ -112,12 +125,7 @@ export const SidebarRoutes = ({ userLoggedIn, onNavigate }: SidebarRoutesProps) 
             href: `${teacherBase}/${language.interviewsURL}`,
             locked: false,
         },
-        {
-            icon: Gem,
-            label: language.membership,
-            href: `${teacherBase}/${language.membershipURL}`,
-            locked: false,
-        },
+     
         {
             icon: BarChart,
             label: language.analytics,

@@ -7,17 +7,28 @@ import { Footer } from "@/components/footer";
 export const DashboardLayout = ({
     children,
     userLoggedIn,
+    hasGoldOrDiamondAccess,
+    hasDiamondAccess,
 }: {
     children: React.ReactNode;
     userLoggedIn: boolean;
+    hasGoldOrDiamondAccess: boolean;
+    hasDiamondAccess: boolean;
 }) => {
     return (
         <div className="h-full">
             <div className="h-[80px] md:pl-[320px] fixed inset-y-0 w-full z-50">
-                <Navbar />
+                <Navbar
+                    hasGoldOrDiamondAccess={hasGoldOrDiamondAccess}
+                    hasDiamondAccess={hasDiamondAccess}
+                />
             </div>
             <div className="hidden md:flex w-56 flex-col fixed inset-y-0 z-50">
-                <Sidebar userLoggedIn={userLoggedIn} />
+                <Sidebar
+                    userLoggedIn={userLoggedIn}
+                    hasGoldOrDiamondAccess={hasGoldOrDiamondAccess}
+                    hasDiamondAccess={hasDiamondAccess}
+                />
             </div>
             <main className="md:pl-[320px] pt-[80px] min-h-screen bg-gray-50 flex flex-col justify-between">
                 {children}

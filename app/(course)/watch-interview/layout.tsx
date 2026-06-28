@@ -3,6 +3,7 @@ import React from "react";
 import { auth } from "@clerk/nextjs/server";
 import { redirect } from "next/navigation";
 import { getInterviews } from "@/actions/get-interviews";
+import { hasDiamondAccess } from "@/lib/membership";
 import { InterviewNavbar } from "@/app/(course)/watch-interview/_components/interview-navbar";
 import { InterviewSidebar } from "@/app/(course)/watch-interview/_components/interview-sidebar";
 
@@ -11,6 +12,10 @@ const InterviewLayout = async ({ children }: { children: React.ReactNode }) => {
 
   if (!userId) {
     return redirect("/");
+  }
+
+  if (!(await hasDiamondAccess(userId))) {
+    return redirect("/membership");
   }
 
   const interviews = await getInterviews({});

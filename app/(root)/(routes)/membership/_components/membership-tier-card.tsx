@@ -78,7 +78,7 @@ export function MembershipTierCard({
   const priceLabel = `${formatMembershipPrice(tier.monthlyPriceBrl)}${membership.perMonth}`;
 
   const cardClassName = cn(
-    "flex flex-col p-5 rounded-md border shadow-md h-full text-left transition-colors",
+    "flex flex-col p-5 rounded-md border shadow-md h-full text-left transition-colors bg-white",
     highlighted && "border-blue-600 ring-2 ring-blue-600/20",
     mode === "lower" && "opacity-60",
     isInteractive && !isLoading && "cursor-pointer hover:border-blue-500",

@@ -1,5 +1,7 @@
 import { Category, Mentorship, MuxData } from "@prisma/client";
+
 import { db } from "@/lib/db";
+import { hasGoldOrDiamondAccess } from "@/lib/membership";
 
 interface GetMentorshipProps {
   userId: string | null;
@@ -34,7 +36,15 @@ export const getMentorship = async ({
       throw new Error("Mentorship not found");
     }
 
-    const canAccess = mentorship.isPublished && !!userId;
+    if (!userId) {
+      return {
+        mentorship: null,
+        muxData: null,
+      };
+    }
+
+    const canAccess =
+      mentorship.isPublished && (await hasGoldOrDiamondAccess(userId));
 
     if (!canAccess) {
       return {

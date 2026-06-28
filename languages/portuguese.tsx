@@ -156,7 +156,7 @@ export const portugueseLanguage: ILanguage = {
         dashboard: "Painel",
         dashboardURL: "painel",
         browse: "Cursos",
-        courses: "Meus Cursos",
+        courses: "Cursos",
         coursesURL: "cursos",
         seminars: "Seminários",
         seminarsURL: "seminarios",

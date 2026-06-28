@@ -14,7 +14,8 @@
     "test:e2e:debug": "PLAYWRIGHT_BROWSERS_PATH=0 playwright test --debug",
     "test:e2e:report": "PLAYWRIGHT_BROWSERS_PATH=0 playwright show-report",
     "db:e2e:reset": "prisma db push --force-reset && tsx scripts/e2e-seed.ts",
-    "db:seed:membership": "tsx prisma/seed-membership.ts"
+    "db:seed:membership": "tsx prisma/seed-membership.ts",
+    "db:migrate:mux-sentinels": "tsx scripts/migrate-mux-sentinel-fks.ts"
   },
   "dependencies": {
     "@clerk/localizations": "^1.26.15",

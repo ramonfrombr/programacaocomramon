@@ -1,5 +1,7 @@
 import { Category, Interview, MuxData } from "@prisma/client";
+
 import { db } from "@/lib/db";
+import { hasDiamondAccess } from "@/lib/membership";
 
 interface GetInterviewProps {
   userId: string | null;
@@ -34,7 +36,15 @@ export const getInterview = async ({
       throw new Error("Interview not found");
     }
 
-    const canAccess = interview.isPublished && !!userId;
+    if (!userId) {
+      return {
+        interview: null,
+        muxData: null,
+      };
+    }
+
+    const canAccess =
+      interview.isPublished && (await hasDiamondAccess(userId));
 
     if (!canAccess) {
       return {

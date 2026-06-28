@@ -1,6 +1,7 @@
 import { redirect } from "next/navigation";
 import { auth } from "@clerk/nextjs/server";
 import { getChallenges } from "@/actions/get-challenges";
+import { hasDiamondAccess } from "@/lib/membership";
 import { SearchInput } from "@/components/search-input";
 import { ChallengesList } from "@/components/challenges-list";
 
@@ -17,6 +18,10 @@ export default async function ChallengesPage({
 
   if (!userId) {
     return redirect("/");
+  }
+
+  if (!(await hasDiamondAccess(userId))) {
+    return redirect("/membership");
   }
 
   const challenges = await getChallenges({

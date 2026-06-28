@@ -3,6 +3,7 @@ import React from "react";
 import { auth } from "@clerk/nextjs/server";
 import { redirect } from "next/navigation";
 import { getChallenges } from "@/actions/get-challenges";
+import { hasDiamondAccess } from "@/lib/membership";
 import { ChallengeNavbar } from "@/app/(course)/watch-challenge/_components/challenge-navbar";
 import { ChallengeSidebar } from "@/app/(course)/watch-challenge/_components/challenge-sidebar";
 
@@ -11,6 +12,10 @@ const ChallengeLayout = async ({ children }: { children: React.ReactNode }) => {
 
   if (!userId) {
     return redirect("/");
+  }
+
+  if (!(await hasDiamondAccess(userId))) {
+    return redirect("/membership");
   }
 
   const challenges = await getChallenges({});

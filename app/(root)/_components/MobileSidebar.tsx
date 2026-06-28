@@ -5,7 +5,13 @@ import { useAuth } from "@clerk/nextjs";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import { Sidebar } from "@/app/(root)/_components/sidebar";
 
-export const MobileSidebar = () => {
+export const MobileSidebar = ({
+    hasGoldOrDiamondAccess,
+    hasDiamondAccess,
+}: {
+    hasGoldOrDiamondAccess: boolean;
+    hasDiamondAccess: boolean;
+}) => {
     const [open, setOpen] = useState(false);
     const { userId } = useAuth();
 
@@ -16,7 +22,12 @@ export const MobileSidebar = () => {
             </SheetTrigger>
 
             <SheetContent side="left" className="p-0 bg-white">
-                <Sidebar userLoggedIn={!!userId} onNavigate={() => setOpen(false)} />
+                <Sidebar
+                    userLoggedIn={!!userId}
+                    hasGoldOrDiamondAccess={hasGoldOrDiamondAccess}
+                    hasDiamondAccess={hasDiamondAccess}
+                    onNavigate={() => setOpen(false)}
+                />
             </SheetContent>
         </Sheet>
     );

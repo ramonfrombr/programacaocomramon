@@ -4,6 +4,7 @@ import { auth } from "@clerk/nextjs/server";
 import { redirect } from "next/navigation";
 import { getSeminars } from "@/actions/get-seminars";
 import { SeminarNavbar } from "@/app/(course)/watch-seminar/_components/seminar-navbar";
+import { hasGoldOrDiamondAccess } from "@/lib/membership";
 import { SeminarSidebar } from "@/app/(course)/watch-seminar/_components/seminar-sidebar";
 
 const SeminarLayout = async ({ children }: { children: React.ReactNode }) => {
@@ -11,6 +12,10 @@ const SeminarLayout = async ({ children }: { children: React.ReactNode }) => {
 
     if (!userId) {
         return redirect("/");
+    }
+
+    if (!(await hasGoldOrDiamondAccess(userId))) {
+        return redirect("/membership");
     }
 
     const seminars = await getSeminars({});

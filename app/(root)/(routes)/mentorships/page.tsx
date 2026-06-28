@@ -1,6 +1,7 @@
 import { redirect } from "next/navigation";
 import { auth } from "@clerk/nextjs/server";
 import { getMentorships } from "@/actions/get-mentorships";
+import { hasGoldOrDiamondAccess } from "@/lib/membership";
 import { SearchInput } from "@/components/search-input";
 import { MentorshipsList } from "@/components/mentorships-list";
 
@@ -17,6 +18,10 @@ export default async function MentorshipsPage({
 
   if (!userId) {
     return redirect("/");
+  }
+
+  if (!(await hasGoldOrDiamondAccess(userId))) {
+    return redirect("/membership");
   }
 
   const mentorships = await getMentorships({

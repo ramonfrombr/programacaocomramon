@@ -20,14 +20,14 @@
     "tiers": {
       "silver": {
         "name": "LIFETIME SILVER MEMBER",
-        "price": "£397",
+        "price": "R$99/month",
         "features": [
           "Lifetime access to the Zero to Full Stack Hero 2.0 course"
         ]
       },
       "gold": {
         "name": "LIFETIME GOLD MEMBER",
-        "price": "£597",
+        "price": "R$149/month",
         "tagline": "🌟 Everything included in Silver and much more...",
         "features": [
           "Lifetime access to the Zero to Full Stack Hero 2.0 course",
@@ -51,7 +51,7 @@
       },
       "diamond": {
         "name": "LIFETIME DIAMOND MEMBER",
-        "price": "£997",
+        "price": "R$199/month",
         "tagline": "🌟 Everything included in Platinum and much more...",
         "features": [
           "2 additional weekly live calls with Ramon (4 mentoring sessions per month)",

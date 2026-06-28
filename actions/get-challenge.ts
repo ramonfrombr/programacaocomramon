@@ -1,5 +1,7 @@
 import { Category, Challenge, MuxData } from "@prisma/client";
+
 import { db } from "@/lib/db";
+import { hasDiamondAccess } from "@/lib/membership";
 
 interface GetChallengeProps {
   userId: string | null;
@@ -34,7 +36,15 @@ export const getChallenge = async ({
       throw new Error("Challenge not found");
     }
 
-    const canAccess = challenge.isPublished && !!userId;
+    if (!userId) {
+      return {
+        challenge: null,
+        muxData: null,
+      };
+    }
+
+    const canAccess =
+      challenge.isPublished && (await hasDiamondAccess(userId));
 
     if (!canAccess) {
       return {
