@@ -10,7 +10,7 @@ todos:
     status: completed
   - id: action-guards
     content: Wire hasGoldOrDiamondAccess into get-seminar.ts and get-mentorship.ts
-    status: pending
+    status: completed
   - id: sidebar-locked
     content: Thread hasGoldOrDiamondAccess prop through layout chain; lock student tabs; fix sidebar-item locked click → membership
     status: pending

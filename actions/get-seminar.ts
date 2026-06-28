@@ -1,6 +1,8 @@
-import { db } from "@/lib/db";
-import { isTeacher } from "@/lib/teacher";
 import { MuxData, Seminar } from "@prisma/client";
+
+import { db } from "@/lib/db";
+import { hasGoldOrDiamondAccess } from "@/lib/membership";
+import { isTeacher } from "@/lib/teacher";
 
 interface GetSeminarProps {
   userId: string | null;
@@ -30,8 +32,16 @@ export const getSeminar = async ({
       throw new Error("Seminar not found");
     }
 
-    const canAccess =
-      (seminar.isPublished && !!userId) || (!!userId && isTeacher(userId));
+    if (!userId) {
+      return {
+        seminar: null,
+        muxData: null,
+      };
+    }
+
+    const canAccess = seminar.isPublished
+      ? await hasGoldOrDiamondAccess(userId)
+      : isTeacher(userId);
 
     if (!canAccess) {
       return {
