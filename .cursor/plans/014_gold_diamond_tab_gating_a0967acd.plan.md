@@ -16,7 +16,7 @@ todos:
     status: completed
   - id: e2e-tests
     content: "Add e2e cases: no membership/Silver blocked, Gold allowed, guest unchanged"
-    status: pending
+    status: completed
 isProject: false
 ---
 
