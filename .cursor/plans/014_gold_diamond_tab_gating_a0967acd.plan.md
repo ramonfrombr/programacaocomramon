@@ -7,7 +7,7 @@ todos:
     status: completed
   - id: route-guards
     content: Guard seminars/mentorships pages and watch-seminar/watch-mentorship layouts with redirect to /membership
-    status: pending
+    status: completed
   - id: action-guards
     content: Wire hasGoldOrDiamondAccess into get-seminar.ts and get-mentorship.ts
     status: pending

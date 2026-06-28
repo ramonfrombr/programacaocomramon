@@ -1,6 +1,7 @@
 import { redirect } from "next/navigation";
 import { auth } from "@clerk/nextjs/server";
 import { getSeminars } from "@/actions/get-seminars";
+import { hasGoldOrDiamondAccess } from "@/lib/membership";
 import { SearchInput } from "@/components/search-input";
 import { SeminarsList } from "@/components/seminars-list";
 
@@ -15,6 +16,10 @@ export default async function SeminarsPage({ searchParams }: SeminarsPageProps) 
 
   if (!userId) {
     return redirect("/");
+  }
+
+  if (!(await hasGoldOrDiamondAccess(userId))) {
+    return redirect("/membership");
   }
 
   const seminars = await getSeminars({

@@ -4,6 +4,7 @@ import { auth } from "@clerk/nextjs/server";
 import { redirect } from "next/navigation";
 import { getMentorships } from "@/actions/get-mentorships";
 import { MentorshipNavbar } from "@/app/(course)/watch-mentorship/_components/mentorship-navbar";
+import { hasGoldOrDiamondAccess } from "@/lib/membership";
 import { MentorshipSidebar } from "@/app/(course)/watch-mentorship/_components/mentorship-sidebar";
 
 const MentorshipLayout = async ({ children }: { children: React.ReactNode }) => {
@@ -11,6 +12,10 @@ const MentorshipLayout = async ({ children }: { children: React.ReactNode }) => 
 
   if (!userId) {
     return redirect("/");
+  }
+
+  if (!(await hasGoldOrDiamondAccess(userId))) {
+    return redirect("/membership");
   }
 
   const mentorships = await getMentorships({});
