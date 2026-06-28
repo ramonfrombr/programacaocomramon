@@ -23,6 +23,15 @@ export async function hasGoldOrDiamondAccess(userId: string): Promise<boolean> {
   return membership !== null && PREMIUM_CONTENT_TIERS.has(membership.tier.slug);
 }
 
+export async function hasDiamondAccess(userId: string): Promise<boolean> {
+  if (isTeacher(userId)) {
+    return true;
+  }
+
+  const membership = await getActiveMembership(userId);
+  return membership?.tier.slug === MembershipTierSlug.DIAMOND;
+}
+
 export async function getActiveMembership(
   userId: string
 ): Promise<ActiveMembership | null> {

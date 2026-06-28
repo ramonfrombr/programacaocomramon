@@ -4,7 +4,7 @@ overview: Restrict Challenges and Interviews (catalog + watch flows) to users wi
 todos:
   - id: access-helper
     content: Add hasDiamondAccess to lib/membership.ts (DIAMOND tier + teacher bypass)
-    status: pending
+    status: completed
   - id: route-guards
     content: Guard challenges/interviews pages and watch-challenge/watch-interview layouts with redirect to /membership
     status: pending
