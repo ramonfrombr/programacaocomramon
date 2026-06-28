@@ -16,7 +16,7 @@ todos:
     status: completed
   - id: e2e-tests
     content: Add diamond gating cases to membership.spec.ts; add DIAMOND beforeAll to challenges/interviews specs
-    status: pending
+    status: completed
 isProject: false
 ---
 

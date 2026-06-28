@@ -4,6 +4,8 @@ import {
   E2E_MEMBERSHIP_ACCESS_CHAPTER,
   E2E_MEMBERSHIP_ACCESS_COURSE,
   E2E_MEMBERSHIP_TIERS,
+  E2E_PUBLISHED_CHALLENGE,
+  E2E_PUBLISHED_INTERVIEW,
   E2E_PUBLISHED_MENTORSHIP,
   E2E_PUBLISHED_SEMINAR,
   watchChapterPath,
@@ -171,6 +173,83 @@ test.describe("student membership", () => {
       await expect(page).toHaveURL(/\/mentorships/);
       await expect(
         page.getByRole("link", { name: E2E_PUBLISHED_MENTORSHIP.title })
+      ).toBeVisible();
+    });
+  });
+
+  test.describe("diamond content gating (challenges and interviews)", () => {
+    test("non-member visiting /challenges is redirected to membership", async ({
+      page,
+    }) => {
+      await clearMembershipSubscription(db, userId);
+
+      await page.goto("/challenges");
+
+      await expect(page).toHaveURL(/\/membership/);
+    });
+
+    test("non-member visiting /interviews is redirected to membership", async ({
+      page,
+    }) => {
+      await clearMembershipSubscription(db, userId);
+
+      await page.goto("/interviews");
+
+      await expect(page).toHaveURL(/\/membership/);
+    });
+
+    test("Silver member visiting /challenges is redirected to membership", async ({
+      page,
+    }) => {
+      await simulateMembershipCheckoutCompleted(userId, "SILVER");
+
+      await page.goto("/challenges");
+
+      await expect(page).toHaveURL(/\/membership/);
+    });
+
+    test("Gold member visiting /challenges is redirected to membership", async ({
+      page,
+    }) => {
+      await simulateMembershipCheckoutCompleted(userId, "GOLD");
+
+      await page.goto("/challenges");
+
+      await expect(page).toHaveURL(/\/membership/);
+    });
+
+    test("Gold member visiting /interviews is redirected to membership", async ({
+      page,
+    }) => {
+      await simulateMembershipCheckoutCompleted(userId, "GOLD");
+
+      await page.goto("/interviews");
+
+      await expect(page).toHaveURL(/\/membership/);
+    });
+
+    test("Diamond member can access challenges and interviews catalogs", async ({
+      page,
+    }) => {
+      await simulateMembershipCheckoutCompleted(userId, "DIAMOND");
+
+      await page.goto("/membership");
+      await expect(
+        page.getByRole("heading", { name: "Diamond Member", level: 2 })
+      ).toBeVisible();
+
+      await page.goto("/challenges");
+
+      await expect(page).toHaveURL(/\/challenges/);
+      await expect(
+        page.getByRole("link", { name: E2E_PUBLISHED_CHALLENGE.title })
+      ).toBeVisible();
+
+      await page.goto("/interviews");
+
+      await expect(page).toHaveURL(/\/interviews/);
+      await expect(
+        page.getByRole("link", { name: E2E_PUBLISHED_INTERVIEW.title })
       ).toBeVisible();
     });
   });

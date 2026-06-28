@@ -4,8 +4,37 @@ import {
   E2E_PUBLISHED_INTERVIEW,
   watchInterviewPath,
 } from "../constants";
+import {
+  clearMembershipSubscription,
+  createMembershipDb,
+  readClerkUserId,
+  simulateMembershipCheckoutCompleted,
+} from "../helpers/membership";
+
+test.describe.configure({ mode: "serial" });
 
 test.describe("student interviews", () => {
+  let userId: string;
+  const db = createMembershipDb();
+
+  test.beforeAll(async ({ browser }) => {
+    const context = await browser.newContext({
+      storageState: "playwright/.auth/student.json",
+    });
+    const page = await context.newPage();
+    userId = await readClerkUserId(page);
+    await simulateMembershipCheckoutCompleted(userId, "DIAMOND");
+    await context.close();
+  });
+
+  test.afterAll(async () => {
+    if (userId) {
+      await clearMembershipSubscription(db, userId);
+    }
+
+    await db.$disconnect();
+  });
+
   test("published interview appears on the catalog", async ({ page }) => {
     await page.goto("/interviews");
 
