@@ -7,35 +7,29 @@
     "highlights": [
       "⭐️ Certificado oficial da Universidade de Harvard reconhecido mundialmente",
       "✔ Nenhuma experiência em programação é necessária",
-      "✔ Do aprendizado dos Fundamentos do Desenvolvimento Web ao domínio do Next.js!",
-      "✔ Ensinamos tecnologias empolgantes como Next.js 16, React.js, Firebase, TypeScript, Tailwind CSS e MUITO MAIS!",
-      "✔ Sessões semanais de mentoria ao vivo com Ramon oferecem conteúdo dinâmico, diferente de qualquer curso da Udemy!",
-      "✔ Acesso a mais de 60 Projetos Reais e 100 Desafios de Programação para elevar ainda mais suas habilidades!",
-      "✔ Acesso exclusivo às comunidades Escola de Programação e Discord",
-      "✔ A comunidade DEFINITIVA para ter sucesso como desenvolvedor Full Stack, mesmo depois de conseguir seu emprego!",
-      "✔ Módulo de Domínio de IA: aprenda a utilizar IA e ferramentas de IA para potencializar sua carreira como desenvolvedor!",
-      "✔ Módulo Completo de SaaS: tudo o que você precisa saber sobre criação, escalabilidade e marketing de aplicações SaaS de sucesso!"
+      "✔ Do zero ao Full Stack e pronto para conquistar salários de até R$ 20 mil.",
+      "✔ Ensinamos tecnologias empolgantes como Node.js, Express.js, React.js, Next.js, MongoDB, Firebase, TypeScript, TailwindCSS e MUITO MAIS!",
+      "✔ Sessões mentoria oferecem conteúdo dinâmico, diferente de qualquer curso da Udemy!",
+      "✔ Acesso a mais de 50 Projetos Reais e 30 Desafios de Programação para elevar ainda mais suas habilidades!",
+      "✔ A comunidade DEFINITIVA para ter sucesso como desenvolvedor Full Stack, mesmo depois de conseguir seu emprego!"
     ],
     "techStackHeading": "Aprenda as tecnologias utilizadas pelas maiores empresas",
     "ctaHeading": "O que você está esperando? Junte-se ao Zero ao Herói Full Stack 2.0 hoje mesmo!",
     "tiers": {
       "silver": {
-        "name": "MEMBRO PRATA VITALÍCIO",
+        "name": "MEMBRO PRATA",
         "price": "R$199/mês",
         "features": [
-          "Acesso vitalício a todos os cursos da formação Zero ao Herói Full Stack 2.0",
-          "Acesso aos nossos e-books exclusivos da plataforma (HTML, CSS, JavaScript, TypeScript, Next.js, React.js, etc.)"
+          "Acesso a todos os cursos da formação Zero ao Herói Full Stack 2.0"
         ]
       },
       "gold": {
-        "name": "MEMBRO OURO VITALÍCIO",
+        "name": "MEMBRO OURO",
         "price": "R$299/mês",
         "tagline": "🌟 Tudo incluído no Prata e muito mais...",
         "features": [
-          "Acesso vitalício à formação Zero ao Herói Full Stack 2.0",
           "Entenda o passo a passo para atingir seus objetivos e se tornar um desenvolvedor Full Stack de sucesso com os nossos guias",
           "Aprenda ferramentas e tópicos diversos com nossos seminários",
-          "Aulas ao vivo no curso CS50x da Universidade de Harvard (com certificado)",
           "2 chamadas de mentoria ao vivo por mês com Ramon",
           "Sessões semanais com os Coaches de Sucesso da Escola de Programação",
           "Aprenda a dominar entrevistas técnicas e conquistar o emprego dos seus sonhos",
@@ -43,22 +37,22 @@
         ],
         "exclusiveAccessHeading": "Acesso Especial",
         "exclusiveAccess": [
-          "Código-fonte de mais de 60 projetos reais",
+          "Código-fonte de mais de 50 projetos reais",
           "Kit inicial de currículo e portfólio",
-          "5 eBooks para dominar Next.js, JavaScript e Tailwind CSS",
-          "Convite para o Discord Platinum"
+          "Convite para o Discord"
         ]
       },
       "diamond": {
-        "name": "MEMBRO DIAMANTE VITALÍCIO",
+        "name": "MEMBRO DIAMANTE",
         "price": "R$399/mês",
         "tagline": "🌟 Tudo incluído no Ouro e muito mais...",
         "features": [
+          "⭐️ Aulas ao vivo no curso CS50x da Universidade de Harvard (com certificado)",
           "2 chamadas semanais adicionais ao vivo com Ramon (4 sessões de mentoria por mês)",
-          "Mais de 170 horas de conteúdo exclusivo de mentoria",
+          "Mais de 50 horas de conteúdo exclusivo de mentoria",
           "Acesso exclusivo a uma rede de desenvolvedores de alto nível e conexões profissionais",
           "Kit do Empreendedor: aprenda sobre criação de negócios, freelancing, habilidades interpessoais e estratégias reais para gerar renda",
-          "Acesso à comunidade exclusiva Diamond"
+          "Acesso à comunidade exclusiva Diamante"
         ],
         "newFeaturesHeading": "NOVO no Zero ao Herói Full Stack 2.0 👇",
         "newFeatures": [
@@ -67,8 +61,8 @@
         ],
         "exclusiveAccessHeading": "Acesso Exclusivo",
         "exclusiveAccess": [
-          "100 desafios de programação com soluções para dominar entrevistas técnicas (valor de R$ 1490)",
-          "Convite para o Discord Diamond"
+          "50 desafios de programação com soluções para dominar entrevistas técnicas",
+          "Convite para o Discord Diamante"
         ]
       }
     },
@@ -92,8 +86,8 @@
         ]
       },
       "coaches": {
-        "heading": "Receba Suporte da Equipe de Success Coaches da Escola de Programação",
-        "body": "Os Success Coaches da Escola de Programação estão aqui para ajudá-lo a superar desafios que o Stack Overflow não consegue resolver.\nReceba revisões personalizadas de código e orientação prática para seus problemas de programação."
+        "heading": "Receba Suporte da Equipe de Coaches de Sucesso da Escola de Programação",
+        "body": "Os Coaches de Sucesso da Escola de Programação estão aqui para ajudá-lo a superar desafios que o Stack Overflow não consegue resolver.\nReceba revisões personalizadas de código e orientação prática para seus problemas de programação."
       },
       "discord": {
         "heading": "Canais Exclusivos no Discord, Emojis e Muito Mais!",
@@ -161,7 +155,7 @@
       },
       {
         "imageKey": "icon-react-native",
-        "title": "REACT NATIVE 101",
+        "title": "REACT NATIVE",
         "description": "Quer criar aplicativos para:\nNós temos tudo o que você precisa.",
         "bullets": [
           "iOS",
@@ -170,7 +164,7 @@
       },
       {
         "imageKey": "icon-payments-101",
-        "title": "PAGAMENTOS 101",
+        "title": "PAGAMENTOS",
         "description": "Simplifique a implementação de pagamentos utilizando:\ne outras soluções modernas.",
         "bullets": [
           "Stripe",
@@ -184,7 +178,7 @@
       },
       {
         "imageKey": "icon-project-management-101",
-        "title": "GERENCIAMENTO DE PROJETOS 101",
+        "title": "GERENCIAMENTO DE PROJETOS",
         "description": "Domine as metodologias modernas de trabalho.\nAprenda:\nÉ hora de se tornar um líder.",
         "bullets": [
           "Agile",
@@ -1548,7 +1542,7 @@
       "heading": "👨‍🏫 Conheça seu Instrutor",
       "name": "Eu sou Ramon Rodrigues 💯",
       "alias": "Escola de Programação",
-      "intro": "Serei seu mentor e treinador dentro da comunidade Escola de Programação.",
+      "intro": "Serei seu mentor e professor dentro da comunidade Escola de Programação.",
       "bio": [
         "Tenho mais de 15 anos de experiência em programação.",
         "Como desenvolvedor Full Stack, trabalhei tanto em startups quanto em grandes empresas, ajudando organizações a criar, escalar e otimizar seus produtos.",
@@ -1566,75 +1560,35 @@
       "subheading": "Resultados Reais para Pessoas Reais",
       "testimonials": [
         {
-          "name": "Francisco Ramos",
-          "role": "Graduado em Harvard e desenvolvedor sênior com mais de 15 anos de experiência.",
-          "outcome": "Trabalhou em algumas das maiores empresas de tecnologia do mundo e recentemente conquistou um contrato de US$ 170.000 com a SONOS utilizando conhecimentos obtidos em projetos ensinados por Ramon."
-        },
-        {
-          "name": "Gabriel Oliveira",
-          "role": "Membro Platinum da Escola de Programação",
-          "outcome": "Conquistou uma vaga de Software Engineer na PayPal com salário superior a US$ 120.000 anuais e benefícios."
-        },
-        {
           "name": "Vítor Pereira",
           "quote": "Comprei diversos cursos ao longo dos anos, mas queria levar minhas habilidades para o próximo nível. Quando entrei neste curso, foi o melhor investimento que já fiz. O conhecimento que recebi é absolutamente inestimável.",
-          "role": "Membro Diamond"
+          "role": "Membro Diamante"
+        },
+        {
+          "name": "Roberto Bittencourt",
+          "quote": "Ramon possui a experiência e a empatia necessárias para levar qualquer pessoa ao próximo nível. Tudo o que ele toca ganha valor.",
+          "role": "Membro Diamante"
         },
         {
           "name": "Lucas Mendonça",
-          "role": "Membro Diamond",
-          "outcome": "Conquistou uma posição de desenvolvedor com salário superior a R$40.000 por ano."
-        },
-        {
-          "name": "Silvestre Fernandes",
-          "quote": "Um curso comum é apenas conteúdo gravado. Aqui fui recebido por pessoas reais, adicionado a grupos, Discord e outros canais. Isso faz toda a diferença. É outro nível.",
-          "role": "Membro Platinum"
-        },
-        {
-          "name": "Alexandre Costa",
-          "role": "Membro Diamond",
-          "outcome": "Conquistou uma vaga remota como Front-End Developer na Tailândia com remuneração superior a US$ 30.000."
-        },
-        {
-          "name": "Jonas Silva",
-          "role": "Membro Platinum",
-          "outcome": "Conquistou uma vaga de Senior React Developer no Canadá com remuneração superior a 50 mil dólares canadenses."
-        },
-        {
-          "name": "Bruno Ferreira",
-          "quote": "Acordo pela manhã, vejo um meme de programação, compartilho com a comunidade e nos divertimos juntos. Não é apenas estudar programação. Somos realmente uma comunidade.",
-          "role": "Membro Platinum"
-        },
-        {
-          "name": "Roberto Paranhos",
-          "quote": "Ramon possui a experiência e a empatia necessárias para levar qualquer pessoa ao próximo nível. Tudo o que ele toca ganha valor.",
-          "role": "Membro Diamond"
-        },
-        {
-          "name": "Ricardo Campos",
-          "role": "15 anos de idade — Membro Platinum",
-          "outcome": "Conseguiu uma vaga de desenvolvimento web rendendo aproximadamente 500 dólares canadenses por mês."
-        },
-        {
-          "name": "André Costa",
-          "quote": "Aprender com Ramon foi incrível. Ele torna React extremamente acessível e fácil de entender.",
-          "role": "Membro Platinum"
+          "role": "Membro Diamante",
+          "outcome": "Conquistei uma vaga de desenvolvedor com salário superior a R$100.000 por ano."
         },
         {
           "name": "Francisco Reis",
           "quote": "Este curso é ideal tanto para iniciantes quanto para profissionais experientes. Ramon é extremamente apaixonado pelo que faz e realmente quer ajudar seus alunos a crescer.",
-          "role": "Membro Platinum"
-        },
-        {
-          "name": "Miguel Barreto",
-          "quote": "Faça parte da comunidade Escola de Programação, reconhecida pelos melhores profissionais do mercado.",
-          "role": "Desenvolvedor da equipe Stripe Checkout"
+          "role": "Membro Diamante"
         },
         {
           "name": "Jorge Fouto",
           "quote": "Ramon é excelente. Seu conhecimento profundo e sua mentoria tiveram enorme impacto em nossa equipe. Recomendo sem hesitação.",
-          "role": "GM | CPO | CTO da Lively.tv"
-        }
+          "role": "Membro Gold"
+        },
+        {
+          "name": "Miguel Barreto",
+          "quote": "Faça parte da comunidade Escola de Programação, reconhecida pelos melhores profissionais do mercado.",
+          "role": "Membro Gold"
+        }        
       ]
     },
     "faq": [
@@ -1672,7 +1626,7 @@
         "question": "Receberei certificado de conclusão?",
         "answer": [
           "Sim 🎉",
-          "Ao concluir o curso, você receberá um Certificado Oficial de Conclusão.",
+          "Ao concluir o curso CS50x em Português, você receberá um Certificado Oficial da Universidade de Harvard.",
           "Você poderá utilizá-lo em:",
           "O certificado servirá como comprovação formal das habilidades adquiridas durante a formação."
         ],
